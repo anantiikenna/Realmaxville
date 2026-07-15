@@ -2,6 +2,22 @@
 import { useState, useRef } from "react";
 import ScrollReveal from "./ScrollReveal";
 
+function FieldError({ id, message }: { id: string; message: string }) {
+  return (
+    <p
+      id={id}
+      role="alert"
+      className="flex items-center gap-1.5 mt-1.5 text-xs text-red-400"
+      style={{ animation: "slideDown 0.2s ease-out" }}
+    >
+      <svg viewBox="0 0 16 16" fill="currentColor" className="w-3.5 h-3.5 shrink-0" aria-hidden="true">
+        <path d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 3.5a.75.75 0 01.75.75v3a.75.75 0 01-1.5 0v-3A.75.75 0 018 4.5zm0 6.5a.875.875 0 110-1.75.875.875 0 010 1.75z" />
+      </svg>
+      {message}
+    </p>
+  );
+}
+
 export default function ContactForm() {
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
   const [sent, setSent] = useState(false);
@@ -31,13 +47,17 @@ export default function ContactForm() {
     setTimeout(() => setSent(false), 5000);
   };
 
+  const inputBase = "w-full px-4 py-3 rounded-xl bg-white/5 border text-[#e5e2e1] text-sm focus:outline-none transition-all duration-200";
+  const inputValid = "border-white/10 focus:border-[#c7f300] focus:shadow-[0_0_0_2px_rgba(199,243,0,0.1)]";
+  const inputError = "border-red-500/70 shadow-[0_0_0_2px_rgba(239,68,68,0.1)] focus:border-red-400";
+
   return (
-    <section className="site-container" style={{ paddingTop: "8rem", paddingBottom: "8rem" }} aria-labelledby="contact-heading">
+    <section className="section-inner" style={{ paddingTop: "8rem", paddingBottom: "8rem" }} aria-labelledby="contact-heading">
       <ScrollReveal>
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-2 mb-4" aria-hidden="true">
             <div className="h-px w-12 bg-[#c7f300]" />
-            <span className="font-[var(--font-space-mono)] text-xs tracking-[0.2em] text-[#c7f300]">GET IN TOUCH</span>
+            <span className="font-(--font-space-mono) text-xs tracking-[0.2em] text-[#c7f300]">GET IN TOUCH</span>
             <div className="h-px w-12 bg-[#c7f300]" />
           </div>
           <h2 id="contact-heading" className="text-4xl md:text-[48px] font-extrabold">
@@ -56,18 +76,18 @@ export default function ContactForm() {
               { icon: "🕐", label: "WORKING HOURS", value: "Mon-Fri: 10AM - 5PM", sub: "Sat-Sun: 1PM - 5PM" },
             ].map((item) => (
               <div key={item.label} className="flex gap-4 group">
-                <div className="w-12 h-12 rounded-xl bg-[#c7f300]/10 flex items-center justify-center text-xl flex-shrink-0 group-hover:bg-[#c7f300]/20 transition-colors" aria-hidden="true">
+                <div className="w-12 h-12 rounded-xl bg-[#c7f300]/10 flex items-center justify-center text-xl shrink-0 group-hover:bg-[#c7f300]/20 transition-colors" aria-hidden="true">
                   {item.icon}
                 </div>
                 <div>
-                  <div className="font-[var(--font-space-mono)] text-[10px] tracking-[0.2em] text-[#c7f300] mb-1">{item.label}</div>
+                  <div className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#c7f300] mb-1">{item.label}</div>
                   <div className="text-[#e5e2e1] text-sm font-semibold">{item.value}</div>
-                  <div className="text-[#8e9192] text-xs">{item.sub}</div>
+                  <div className="text-outline text-xs">{item.sub}</div>
                 </div>
               </div>
             ))}
 
-            <div className="rounded-xl overflow-hidden aspect-video bg-[#0e0e0e] border border-[#c7f300]/10 relative mt-8">
+            <div className="rounded-xl overflow-hidden aspect-video bg-surface-container-lowest border border-[#c7f300]/10 relative mt-8">
               <iframe
                 src="https://maps.google.com/maps?q=4a%2C%20Ogombo%20Rd%2C%20Opp%20Abraham%20Adesanya%20Estate%2C%20Eti%20-%20Osa%2C%20Lagos&t=m&z=14&output=embed"
                 className="w-full h-full border-0 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
@@ -82,7 +102,7 @@ export default function ContactForm() {
           <form ref={formRef} onSubmit={handleSubmit} noValidate className="glass-panel p-8 rounded-2xl cyber-border space-y-6">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div>
-                <label htmlFor="contact-name" className="font-[var(--font-space-mono)] text-[10px] tracking-[0.2em] text-[#8e9192] uppercase mb-2 block">
+                <label htmlFor="contact-name" className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-outline uppercase mb-2 block">
                   Name <span className="text-[#c7f300]" aria-hidden="true">*</span>
                 </label>
                 <input
@@ -94,13 +114,13 @@ export default function ContactForm() {
                   aria-describedby={errors.name ? "contact-name-error" : undefined}
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
-                  className={`w-full px-4 py-3 rounded-xl bg-white/5 border text-[#e5e2e1] text-sm focus:border-[#c7f300] focus:outline-none transition-colors ${errors.name ? "border-red-500" : "border-white/10"}`}
+                  className={`${inputBase} ${errors.name ? inputError : inputValid}`}
                   placeholder="Your name"
                 />
-                {errors.name && <p id="contact-name-error" role="alert" className="text-red-400 text-xs mt-1">{errors.name}</p>}
+                {errors.name && <FieldError id="contact-name-error" message={errors.name} />}
               </div>
               <div>
-                <label htmlFor="contact-email" className="font-[var(--font-space-mono)] text-[10px] tracking-[0.2em] text-[#8e9192] uppercase mb-2 block">
+                <label htmlFor="contact-email" className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-outline uppercase mb-2 block">
                   Email <span className="text-[#c7f300]" aria-hidden="true">*</span>
                 </label>
                 <input
@@ -112,25 +132,25 @@ export default function ContactForm() {
                   aria-describedby={errors.email ? "contact-email-error" : undefined}
                   value={form.email}
                   onChange={(e) => setForm({ ...form, email: e.target.value })}
-                  className={`w-full px-4 py-3 rounded-xl bg-white/5 border text-[#e5e2e1] text-sm focus:border-[#c7f300] focus:outline-none transition-colors ${errors.email ? "border-red-500" : "border-white/10"}`}
+                  className={`${inputBase} ${errors.email ? inputError : inputValid}`}
                   placeholder="you@email.com"
                 />
-                {errors.email && <p id="contact-email-error" role="alert" className="text-red-400 text-xs mt-1">{errors.email}</p>}
+                {errors.email && <FieldError id="contact-email-error" message={errors.email} />}
               </div>
             </div>
             <div>
-              <label htmlFor="contact-subject" className="font-[var(--font-space-mono)] text-[10px] tracking-[0.2em] text-[#8e9192] uppercase mb-2 block">Subject</label>
+              <label htmlFor="contact-subject" className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-outline uppercase mb-2 block">Subject</label>
               <input
                 id="contact-subject"
                 type="text"
                 value={form.subject}
                 onChange={(e) => setForm({ ...form, subject: e.target.value })}
-                className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-[#e5e2e1] text-sm focus:border-[#c7f300] focus:outline-none transition-colors"
+                className={`${inputBase} ${inputValid}`}
                 placeholder="How can we help?"
               />
             </div>
             <div>
-              <label htmlFor="contact-message" className="font-[var(--font-space-mono)] text-[10px] tracking-[0.2em] text-[#8e9192] uppercase mb-2 block">
+              <label htmlFor="contact-message" className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-outline uppercase mb-2 block">
                 Message <span className="text-[#c7f300]" aria-hidden="true">*</span>
               </label>
               <textarea
@@ -142,19 +162,19 @@ export default function ContactForm() {
                 aria-describedby={errors.message ? "contact-message-error" : undefined}
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
-                className={`w-full px-4 py-3 rounded-xl bg-white/5 border text-[#e5e2e1] text-sm focus:border-[#c7f300] focus:outline-none transition-colors resize-none ${errors.message ? "border-red-500" : "border-white/10"}`}
+                className={`${inputBase} resize-none ${errors.message ? inputError : inputValid}`}
                 placeholder="Tell us about your project..."
               />
-              {errors.message && <p id="contact-message-error" role="alert" className="text-red-400 text-xs mt-1">{errors.message}</p>}
+              {errors.message && <FieldError id="contact-message-error" message={errors.message} />}
             </div>
             <button
               type="submit"
               disabled={submitting}
-              className="w-full py-4 rounded-xl bg-[#c7f300] text-[#171e00] font-bold font-[var(--font-space-mono)] text-sm tracking-[0.1em] hover:shadow-[0_0_20px_rgba(199,243,0,0.3)] transition-all active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed"
+              className="w-full py-4 rounded-xl bg-[#c7f300] text-on-accent font-(--font-space-mono) text-sm tracking-widest hover:shadow-[0_0_20px_rgba(199,243,0,0.3)] transition-all active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed"
             >
               {submitting ? "SENDING..." : sent ? "✓ MESSAGE SENT!" : "SEND MESSAGE →"}
             </button>
-            <p className="text-center font-[var(--font-space-mono)] text-[10px] text-[#8e9192]">WE TYPICALLY RESPOND WITHIN 24 HOURS</p>
+            <p className="text-center font-(--font-space-mono) text-[10px] text-outline">WE TYPICALLY RESPOND WITHIN 24 HOURS</p>
           </form>
         </ScrollReveal>
       </div>

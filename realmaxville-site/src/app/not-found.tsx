@@ -19,6 +19,19 @@ export default function NotFound() {
         >
           RETURN HOME
         </Link>
+        <div className="flex items-center justify-center gap-6 pt-2">
+          <Link href="/plans" className="font-[var(--font-space-mono)] text-[10px] tracking-[0.2em] text-[#c7f300]/70 hover:text-[#c7f300] transition-colors uppercase">
+            Building Plans
+          </Link>
+          <span className="text-[#444748]" aria-hidden="true">·</span>
+          <Link href="/contact" className="font-[var(--font-space-mono)] text-[10px] tracking-[0.2em] text-[#c7f300]/70 hover:text-[#c7f300] transition-colors uppercase">
+            Contact Us
+          </Link>
+          <span className="text-[#444748]" aria-hidden="true">·</span>
+          <Link href="/about" className="font-[var(--font-space-mono)] text-[10px] tracking-[0.2em] text-[#c7f300]/70 hover:text-[#c7f300] transition-colors uppercase">
+            About Us
+          </Link>
+        </div>
       </div>
     </section>
   );

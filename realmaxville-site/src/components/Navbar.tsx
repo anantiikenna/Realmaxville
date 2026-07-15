@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -12,6 +13,7 @@ const navLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -65,50 +67,38 @@ export default function Navbar() {
             textDecoration: "none",
           }}
         >
-          <span
-            style={{
-              fontSize: "1.25rem",
-              fontWeight: 800,
-              letterSpacing: "-0.04em",
-              color: "#e5e2e1",
-            }}
-          >
+          <span style={{ fontSize: "1.25rem", fontWeight: 800, letterSpacing: "-0.04em", color: "#e5e2e1" }}>
             REALMAXVILLE
           </span>
-          <span
-            className="pulse-active"
-            style={{
-              width: 8,
-              height: 8,
-              borderRadius: "50%",
-              backgroundColor: "#c7f300",
-              display: "inline-block",
-            }}
-            aria-hidden="true"
-          />
+          <span className="pulse-active" style={{ width: 8, height: 8, borderRadius: "50%", backgroundColor: "#c7f300", display: "inline-block" }} aria-hidden="true" />
         </Link>
 
         {/* Desktop nav links — uses .nav-desktop CSS class for responsive show/hide */}
         <div className="nav-desktop">
-          {navLinks.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              style={{
-                fontFamily: "var(--font-space-mono)",
-                fontSize: "0.7rem",
-                letterSpacing: "0.2em",
-                textTransform: "uppercase",
-                color: "#b0b3b4",
-                textDecoration: "none",
-                transition: "color 0.2s",
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "#c7f300")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "#b0b3b4")}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href;
+            return (
+              <Link
+                key={link.label}
+                href={link.href}
+                style={{
+                  fontFamily: "var(--font-space-mono)",
+                  fontSize: "0.7rem",
+                  letterSpacing: "0.2em",
+                  textTransform: "uppercase",
+                  color: isActive ? "#c7f300" : "#b0b3b4",
+                  textDecoration: "none",
+                  transition: "color 0.2s",
+                  borderBottom: isActive ? "1px solid #c7f300" : "1px solid transparent",
+                  paddingBottom: "2px",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#c7f300")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = isActive ? "#c7f300" : "#b0b3b4")}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
           <Link href="/contact" className="btn-cta" style={{ marginLeft: "1rem" }}>
             Get a Quote
           </Link>

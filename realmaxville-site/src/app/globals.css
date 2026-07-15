@@ -235,6 +235,12 @@ body.modal-open {
   .team-scroll-track { animation: none !important; }
 }
 
+/* Slide-down for error messages */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 /* =============================================
    LAYOUT SYSTEM — Direct CSS (not Tailwind-dependent)
    ============================================= */

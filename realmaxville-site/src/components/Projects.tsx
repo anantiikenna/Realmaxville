@@ -14,14 +14,14 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section className="py-32 bg-[#0e0e0e] overflow-hidden" aria-labelledby="projects-heading">
-      <div className="px-8 lg:px-12 max-w-7xl mx-auto w-full space-y-20">
+    <section style={{ padding: "8rem 0", backgroundColor: "#0e0e0e", overflow: "hidden" }} aria-labelledby="projects-heading">
+      <div className="section-inner" style={{ display: "flex", flexDirection: "column", gap: "5rem" }}>
         <ScrollReveal>
-          <div className="text-center space-y-4">
-            <h2 id="projects-heading" className="text-4xl md:text-[48px] font-extrabold uppercase tracking-tight">
+          <div style={{ textAlign: "center" }}>
+            <h2 id="projects-heading" style={{ fontSize: "clamp(2rem, 5vw, 3rem)", fontWeight: 800, textTransform: "uppercase", letterSpacing: "-0.02em", marginBottom: "1rem" }}>
               OUR FEATURED PROJECTS
             </h2>
-            <div className="w-24 h-1 bg-[#c7f300] mx-auto" aria-hidden="true" />
+            <div style={{ width: 96, height: 4, backgroundColor: "#c7f300", margin: "0 auto" }} aria-hidden="true" />
           </div>
         </ScrollReveal>
 
@@ -51,8 +51,12 @@ export default function Projects() {
           </div>
         </ScrollReveal>
 
-        <div className="text-center pt-12">
-          <button className="border border-[#c7f300] text-[#c7f300] px-12 py-4 rounded-full font-[var(--font-space-mono)] text-xs tracking-[0.2em] uppercase hover:bg-[#c7f300] hover:text-[#171e00] transition-all">
+        <div style={{ textAlign: "center" }}>
+          <button
+            style={{ border: "1px solid #c7f300", color: "#c7f300", padding: "1rem 3rem", borderRadius: 9999, fontFamily: "var(--font-space-mono)", fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", background: "transparent", cursor: "pointer", transition: "all 0.2s" }}
+            onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.background = "#c7f300"; (e.currentTarget as HTMLButtonElement).style.color = "#171e00"; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.background = "transparent"; (e.currentTarget as HTMLButtonElement).style.color = "#c7f300"; }}
+          >
             VIEW ALL PROJECTS
           </button>
         </div>

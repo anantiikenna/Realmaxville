@@ -33,7 +33,7 @@ export default function Hero() {
           aria-hidden="true"
         />
         <div className="absolute inset-0 blueprint-grid opacity-30" aria-hidden="true" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-transparent" style={{ zIndex: 10 }} aria-hidden="true" />
+        <div className="absolute inset-0 bg-linear-to-r from-black via-black/40 to-transparent" style={{ zIndex: 10 }} aria-hidden="true" />
         <div className="absolute top-20 right-20 w-[600px] h-[600px] bg-[#c7f300]/5 blur-[120px] rounded-full" aria-hidden="true" />
         <div className="absolute bottom-20 left-20 w-48 h-48 border border-[#c7f300]/10 rounded-full animate-spin-slow" aria-hidden="true" />
         <img
@@ -45,11 +45,11 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="site-container" style={{ position: "relative", zIndex: 20, width: "100%" }}>
+      <div className="section-inner" style={{ position: "relative", zIndex: 20, width: "100%" }}>
         <div style={{ maxWidth: "56rem" }}>
           <div className="flex items-center gap-2" style={{ marginBottom: "1.5rem" }} aria-hidden="true">
             <div style={{ height: 1, width: 48, backgroundColor: "#c7f300" }} />
-            <span className="font-[var(--font-space-mono)]" style={{ fontSize: "0.7rem", letterSpacing: "0.3em", color: "#c7f300" }}>
+            <span className="font-(--font-space-mono)" style={{ fontSize: "0.7rem", letterSpacing: "0.3em", color: "#c7f300" }}>
               EST. 2017 · LAGOS, NIGERIA
             </span>
           </div>
@@ -77,7 +77,7 @@ export default function Hero() {
               </svg>
             </Link>
             <Link
-              href="/about"
+              href="/plans"
               style={{
                 display: "inline-flex",
                 alignItems: "center",
@@ -97,7 +97,7 @@ export default function Hero() {
               onMouseEnter={e => (e.currentTarget.style.background = "rgba(199,243,0,0.1)")}
               onMouseLeave={e => (e.currentTarget.style.background = "transparent")}
             >
-              EXPLORE PROJECTS
+              EXPLORE PLANS
             </Link>
           </div>
         </div>

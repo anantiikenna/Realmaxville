@@ -26,10 +26,10 @@ export default function AboutPage() {
             pointerEvents: "none",
           }}
         />
-        <div className="site-container" style={{ position: "relative", zIndex: 10, textAlign: "center" }}>
+        <div className="section-inner" style={{ position: "relative", zIndex: 10, textAlign: "center" }}>
           <div className="flex items-center justify-center gap-2" style={{ marginBottom: "1.5rem" }}>
             <div style={{ height: 1, width: 48, backgroundColor: "#c7f300" }} />
-            <span className="font-[var(--font-space-mono)]" style={{ fontSize: "0.7rem", letterSpacing: "0.3em", color: "#c7f300" }}>
+            <span className="font-(--font-space-mono)" style={{ fontSize: "0.7rem", letterSpacing: "0.3em", color: "#c7f300" }}>
               WHO WE ARE
             </span>
             <div style={{ height: 1, width: 48, backgroundColor: "#c7f300" }} />
@@ -50,7 +50,7 @@ export default function AboutPage() {
 
       {/* CTA */}
       <section style={{ padding: "8rem 0", backgroundColor: "#0e0e0e" }}>
-        <div className="site-container">
+        <div className="section-inner">
           <div
             className="relative overflow-hidden"
             style={{
@@ -110,7 +110,15 @@ export default function AboutPage() {
                   letterSpacing: "0.2em",
                   textTransform: "uppercase",
                   textDecoration: "none",
-                  transition: "background 0.2s",
+                  transition: "background 0.2s, border-color 0.2s",
+                }}
+                onMouseEnter={e => {
+                  (e.currentTarget as HTMLAnchorElement).style.background = "rgba(255,255,255,0.08)";
+                  (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(255,255,255,0.35)";
+                }}
+                onMouseLeave={e => {
+                  (e.currentTarget as HTMLAnchorElement).style.background = "";
+                  (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(255,255,255,0.15)";
                 }}
               >
                 BOOK CONSULTATION

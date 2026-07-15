@@ -49,13 +49,20 @@ function Counter({ target, suffix }: { target: number; suffix: string }) {
 
 export default function Stats() {
   return (
-    <section className="site-container" style={{ position: "relative", zIndex: 30, marginTop: "-5rem" }} aria-label="Company statistics">
+    <section className="section-inner" style={{ position: "relative", zIndex: 10, paddingTop: "4rem", paddingBottom: "4rem" }} aria-label="Company statistics">
       <ScrollReveal>
         <div className="glass-panel rounded-lg grid grid-cols-2 md:grid-cols-4 gap-8 p-12 cyber-border shadow-2xl">
           {stats.map((stat, i) => (
-            <div key={stat.label} className={`text-center space-y-2 ${i > 0 ? "border-l border-white/5" : ""}`}>
+            <div
+              key={stat.label}
+              className={`text-center space-y-2
+                ${i > 0 ? "md:border-l md:border-white/5" : ""}
+                ${i >= 2 ? "border-t border-white/5 md:border-t-0 pt-6 md:pt-0" : ""}
+                ${i === 1 ? "border-l border-white/5 md:border-l md:border-white/5" : ""}
+              `}
+            >
               <Counter target={stat.target} suffix={stat.suffix} />
-              <div className="font-[var(--font-space-mono)] text-[10px] tracking-[0.2em] uppercase text-[#b0b3b4]">
+              <div className="font-(--font-space-mono) text-[10px] tracking-[0.2em] uppercase text-[#b0b3b4]">
                 {stat.label}
               </div>
             </div>

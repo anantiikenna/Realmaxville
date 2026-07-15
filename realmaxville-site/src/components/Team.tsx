@@ -59,16 +59,16 @@ export default function Team() {
   const doubled = [...team, ...team];
 
   return (
-    <section className="py-32 bg-[#0e0e0e]" aria-labelledby="team-heading">
-      <div className="max-w-7xl mx-auto px-8 lg:px-12 w-full">
+    <section style={{ padding: "8rem 0", backgroundColor: "#0e0e0e" }} aria-labelledby="team-heading">
+      <div className="section-inner">
         <ScrollReveal>
-          <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8 px-6 md:px-16">
-            <div className="max-w-xl">
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-12 h-px bg-[#c7f300]" aria-hidden="true" />
-                <span className="font-[var(--font-space-mono)] text-xs tracking-[0.2em] text-[#c7f300]">OUR CORE</span>
+          <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "5rem", gap: "2rem" }}>
+            <div style={{ maxWidth: "36rem" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "1rem" }}>
+                <div style={{ width: 48, height: 1, backgroundColor: "#c7f300" }} aria-hidden="true" />
+                <span style={{ fontFamily: "var(--font-space-mono)", fontSize: "0.7rem", letterSpacing: "0.2em", color: "#c7f300", textTransform: "uppercase" }}>OUR CORE</span>
               </div>
-              <h2 id="team-heading" className="text-4xl md:text-[48px] font-extrabold leading-tight">
+              <h2 id="team-heading" style={{ fontSize: "clamp(2rem, 5vw, 3rem)", fontWeight: 800, lineHeight: 1.15 }}>
                 THE ARCHITECTS <br />OF THE LAB
               </h2>
             </div>
