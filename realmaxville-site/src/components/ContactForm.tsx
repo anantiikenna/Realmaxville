@@ -18,6 +18,54 @@ function FieldError({ id, message }: { id: string; message: string }) {
   );
 }
 
+const contactItems = [
+  {
+    label: "CALL US",
+    value: "0808 041 9259",
+    sub: "0703 719 0399",
+    href: "tel:08080419259",
+    icon: (
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+      </svg>
+    ),
+  },
+  {
+    label: "EMAIL",
+    value: "admin@realmaxville.com",
+    sub: "realmaxville@gmail.com",
+    href: "mailto:admin@realmaxville.com",
+    icon: (
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+      </svg>
+    ),
+  },
+  {
+    label: "LOCATION",
+    value: "4a, Ogombo Rd",
+    sub: "Opp Abraham Adesanya Estate, Lagos",
+    href: "https://maps.google.com/?q=4a,Ogombo+Rd,Lagos",
+    icon: (
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+      </svg>
+    ),
+  },
+  {
+    label: "WORKING HOURS",
+    value: "Mon – Fri: 10AM – 5PM",
+    sub: "Sat – Sun: 1PM – 5PM",
+    href: null,
+    icon: (
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    ),
+  },
+];
+
 export default function ContactForm() {
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
   const [sent, setSent] = useState(false);
@@ -47,63 +95,125 @@ export default function ContactForm() {
     setTimeout(() => setSent(false), 5000);
   };
 
-  const inputBase = "w-full px-4 py-3 rounded-xl bg-white/5 border text-[#e5e2e1] text-sm focus:outline-none transition-all duration-200";
-  const inputValid = "border-white/10 focus:border-[#c7f300] focus:shadow-[0_0_0_2px_rgba(199,243,0,0.1)]";
-  const inputError = "border-red-500/70 shadow-[0_0_0_2px_rgba(239,68,68,0.1)] focus:border-red-400";
+  const inputBase =
+    "w-full px-4 py-3.5 rounded-xl bg-white/4 border text-[#e5e2e1] text-sm focus:outline-none transition-all duration-200 placeholder:text-[#555]";
+  const inputValid =
+    "border-white/8 focus:border-[#c7f300] focus:bg-white/6 focus:shadow-[0_0_0_3px_rgba(199,243,0,0.08)]";
+  const inputError =
+    "border-red-500/70 bg-red-500/5 shadow-[0_0_0_2px_rgba(239,68,68,0.1)] focus:border-red-400";
 
   return (
-    <section className="section-inner" style={{ paddingTop: "8rem", paddingBottom: "8rem" }} aria-labelledby="contact-heading">
+    <section
+      id="contact-form"
+      className="section-inner"
+      style={{ paddingTop: "7rem", paddingBottom: "7rem" }}
+      aria-labelledby="contact-heading"
+    >
       <ScrollReveal>
-        <div className="text-center mb-16">
-          <div className="flex items-center justify-center gap-2 mb-4" aria-hidden="true">
+        <div className="text-center mb-20">
+          <div className="flex items-center justify-center gap-3 mb-5" aria-hidden="true">
             <div className="h-px w-12 bg-[#c7f300]" />
-            <span className="font-(--font-space-mono) text-xs tracking-[0.2em] text-[#c7f300]">GET IN TOUCH</span>
+            <span className="font-(--font-space-mono) text-[10px] tracking-[0.3em] text-[#c7f300] uppercase">
+              Direct Contact
+            </span>
             <div className="h-px w-12 bg-[#c7f300]" />
           </div>
-          <h2 id="contact-heading" className="text-4xl md:text-[48px] font-extrabold">
-            CONTACT <span className="text-[#c7f300]">US</span>
+          <h2
+            id="contact-heading"
+            className="text-4xl md:text-[52px] font-extrabold tracking-tight"
+          >
+            REACH OUT TO <span className="text-[#c7f300] neon-text-glow">OUR TEAM</span>
           </h2>
+          <p className="text-outline max-w-xl mx-auto mt-5 leading-relaxed">
+            We&apos;re passionate about bringing your vision to life. Share your project ideas and we&apos;ll get back to you within 24 hours.
+          </p>
         </div>
       </ScrollReveal>
 
-      <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
-        <ScrollReveal className="lg:col-span-2">
-          <div className="space-y-10">
-            {[
-              { icon: "📞", label: "CALL US", value: "0808 041 9259", sub: "0703 719 0399" },
-              { icon: "✉️", label: "EMAIL", value: "admin@realmaxville.com", sub: "realmaxville@gmail.com" },
-              { icon: "📍", label: "LOCATION", value: "4a, Ogombo Rd, Opp Abraham Adesanya Estate", sub: "Eti-Osa, Lagos" },
-              { icon: "🕐", label: "WORKING HOURS", value: "Mon-Fri: 10AM - 5PM", sub: "Sat-Sun: 1PM - 5PM" },
-            ].map((item) => (
-              <div key={item.label} className="flex gap-4 group">
-                <div className="w-12 h-12 rounded-xl bg-[#c7f300]/10 flex items-center justify-center text-xl shrink-0 group-hover:bg-[#c7f300]/20 transition-colors" aria-hidden="true">
-                  {item.icon}
+      <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 xl:gap-16">
+        {/* Contact info sidebar */}
+        <ScrollReveal className="lg:col-span-2" direction="left">
+          <div className="space-y-4">
+            {contactItems.map((item) => {
+              const Card = (
+                <div
+                  key={item.label}
+                  className="group flex gap-5 items-start p-5 rounded-2xl border border-white/5 bg-white/2 hover:border-[#c7f300]/25 hover:bg-[#c7f300]/3 transition-all duration-300 cursor-default"
+                >
+                  {/* Icon badge */}
+                  <div className="w-11 h-11 rounded-xl bg-[#c7f300]/10 border border-[#c7f300]/20 flex items-center justify-center text-[#c7f300] shrink-0 group-hover:bg-[#c7f300]/20 group-hover:border-[#c7f300]/40 group-hover:shadow-[0_0_12px_rgba(199,243,0,0.12)] transition-all duration-300">
+                    {item.icon}
+                  </div>
+                  <div className="min-w-0">
+                    <div className="font-(--font-space-mono) text-[9px] tracking-[0.25em] text-[#c7f300] mb-1.5 uppercase">
+                      {item.label}
+                    </div>
+                    <div className="text-[#e5e2e1] text-sm font-semibold truncate">{item.value}</div>
+                    <div className="text-outline text-xs mt-0.5 leading-relaxed">{item.sub}</div>
+                  </div>
                 </div>
-                <div>
-                  <div className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#c7f300] mb-1">{item.label}</div>
-                  <div className="text-[#e5e2e1] text-sm font-semibold">{item.value}</div>
-                  <div className="text-outline text-xs">{item.sub}</div>
-                </div>
-              </div>
-            ))}
+              );
 
-            <div className="rounded-xl overflow-hidden aspect-video bg-surface-container-lowest border border-[#c7f300]/10 relative mt-8">
-              <iframe
-                src="https://maps.google.com/maps?q=4a%2C%20Ogombo%20Rd%2C%20Opp%20Abraham%20Adesanya%20Estate%2C%20Eti%20-%20Osa%2C%20Lagos&t=m&z=14&output=embed"
-                className="w-full h-full border-0 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
-                loading="lazy"
-                title="Realmaxville office location on Google Maps"
-              />
+              return item.href ? (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  target={item.href.startsWith("http") ? "_blank" : undefined}
+                  rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  className="block no-underline"
+                  aria-label={`${item.label}: ${item.value}`}
+                >
+                  {Card}
+                </a>
+              ) : (
+                <div key={item.label}>{Card}</div>
+              );
+            })}
+          </div>
+
+          {/* Map embed */}
+          <div className="mt-6 rounded-2xl overflow-hidden border border-[#c7f300]/10 relative" style={{ aspectRatio: "16/9" }}>
+            {/* Map label overlay */}
+            <div className="absolute top-3 left-3 z-10 flex items-center gap-2 bg-surface-container-lowest/80 backdrop-blur-sm px-3 py-1.5 rounded-full border border-[#c7f300]/20">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#c7f300] pulse-active" aria-hidden="true" />
+              <span className="font-(--font-space-mono) text-[9px] tracking-widest text-[#c7f300]">OUR OFFICE</span>
             </div>
+            <iframe
+              src="https://maps.google.com/maps?q=4a%2C%20Ogombo%20Rd%2C%20Opp%20Abraham%20Adesanya%20Estate%2C%20Eti%20-%20Osa%2C%20Lagos&t=m&z=14&output=embed"
+              className="w-full h-full border-0 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+              loading="lazy"
+              title="Realmaxville office location on Google Maps"
+            />
           </div>
         </ScrollReveal>
 
-        <ScrollReveal className="lg:col-span-3">
-          <form ref={formRef} onSubmit={handleSubmit} noValidate className="glass-panel p-8 rounded-2xl cyber-border space-y-6">
+        {/* Form */}
+        <ScrollReveal className="lg:col-span-3" direction="right">
+          <form
+            ref={formRef}
+            onSubmit={handleSubmit}
+            noValidate
+            className="glass-panel p-8 md:p-10 rounded-2xl cyber-border space-y-7 relative overflow-hidden"
+          >
+            {/* Top accent bar */}
+            <div className="absolute top-0 left-8 right-8 h-px bg-linear-to-r from-transparent via-[#c7f300]/40 to-transparent" aria-hidden="true" />
+
+            <div>
+              <h3 className="font-(--font-space-mono) text-[10px] tracking-[0.3em] text-[#c7f300] uppercase mb-1">
+                Send Us a Message
+              </h3>
+              <p className="text-outline text-xs leading-relaxed">
+                Fill in the details below and we&apos;ll respond as soon as possible.
+              </p>
+            </div>
+
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div>
-                <label htmlFor="contact-name" className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-outline uppercase mb-2 block">
-                  Name <span className="text-[#c7f300]" aria-hidden="true">*</span>
+                <label
+                  htmlFor="contact-name"
+                  className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-outline uppercase mb-2.5 block"
+                >
+                  Full Name <span className="text-[#c7f300]" aria-hidden="true">*</span>
                 </label>
                 <input
                   id="contact-name"
@@ -115,13 +225,16 @@ export default function ContactForm() {
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
                   className={`${inputBase} ${errors.name ? inputError : inputValid}`}
-                  placeholder="Your name"
+                  placeholder="John Doe"
                 />
                 {errors.name && <FieldError id="contact-name-error" message={errors.name} />}
               </div>
               <div>
-                <label htmlFor="contact-email" className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-outline uppercase mb-2 block">
-                  Email <span className="text-[#c7f300]" aria-hidden="true">*</span>
+                <label
+                  htmlFor="contact-email"
+                  className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-outline uppercase mb-2.5 block"
+                >
+                  Email Address <span className="text-[#c7f300]" aria-hidden="true">*</span>
                 </label>
                 <input
                   id="contact-email"
@@ -138,20 +251,53 @@ export default function ContactForm() {
                 {errors.email && <FieldError id="contact-email-error" message={errors.email} />}
               </div>
             </div>
+
             <div>
-              <label htmlFor="contact-subject" className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-outline uppercase mb-2 block">Subject</label>
+              <label
+                htmlFor="contact-phone"
+                className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-outline uppercase mb-2.5 block"
+              >
+                Phone Number
+              </label>
               <input
+                id="contact-phone"
+                type="tel"
+                className={`${inputBase} ${inputValid}`}
+                placeholder="+234 800 000 0000"
+              />
+            </div>
+
+            <div>
+              <label
+                htmlFor="contact-subject"
+                className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-outline uppercase mb-2.5 block"
+              >
+                Project Type
+              </label>
+              <select
                 id="contact-subject"
-                type="text"
                 value={form.subject}
                 onChange={(e) => setForm({ ...form, subject: e.target.value })}
                 className={`${inputBase} ${inputValid}`}
-                placeholder="How can we help?"
-              />
+                style={{ appearance: "none", backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23c7f300'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E\")", backgroundRepeat: "no-repeat", backgroundPosition: "right 1rem center", backgroundSize: "1.25rem" }}
+              >
+                <option value="" className="bg-surface">Select a service...</option>
+                <option value="Architectural Design" className="bg-surface">Architectural Design</option>
+                <option value="Construction" className="bg-surface">Construction</option>
+                <option value="Interior Design" className="bg-surface">Interior Design</option>
+                <option value="Renovation" className="bg-surface">Renovation</option>
+                <option value="Site Planning" className="bg-surface">Site Planning</option>
+                <option value="Geophysical Survey" className="bg-surface">Geophysical Survey</option>
+                <option value="Other" className="bg-surface">Other</option>
+              </select>
             </div>
+
             <div>
-              <label htmlFor="contact-message" className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-outline uppercase mb-2 block">
-                Message <span className="text-[#c7f300]" aria-hidden="true">*</span>
+              <label
+                htmlFor="contact-message"
+                className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-outline uppercase mb-2.5 block"
+              >
+                Your Message <span className="text-[#c7f300]" aria-hidden="true">*</span>
               </label>
               <textarea
                 id="contact-message"
@@ -163,18 +309,46 @@ export default function ContactForm() {
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
                 className={`${inputBase} resize-none ${errors.message ? inputError : inputValid}`}
-                placeholder="Tell us about your project..."
+                placeholder="Tell us about your project — location, size, budget, timeline..."
               />
               {errors.message && <FieldError id="contact-message-error" message={errors.message} />}
             </div>
+
             <button
               type="submit"
-              disabled={submitting}
-              className="w-full py-4 rounded-xl bg-[#c7f300] text-on-accent font-(--font-space-mono) text-sm tracking-widest hover:shadow-[0_0_20px_rgba(199,243,0,0.3)] transition-all active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed"
+              disabled={submitting || sent}
+              className="w-full py-4 rounded-xl font-(--font-space-mono) text-sm tracking-widest transition-all active:scale-[0.98] disabled:cursor-not-allowed relative overflow-hidden"
+              style={{
+                backgroundColor: sent ? "rgba(199,243,0,0.15)" : "#c7f300",
+                color: sent ? "#c7f300" : "#171e00",
+                border: sent ? "1px solid rgba(199,243,0,0.4)" : "none",
+                boxShadow: submitting ? "0 0 20px rgba(199,243,0,0.2)" : undefined,
+              }}
             >
-              {submitting ? "SENDING..." : sent ? "✓ MESSAGE SENT!" : "SEND MESSAGE →"}
+              {submitting ? (
+                <span className="flex items-center justify-center gap-3">
+                  <span className="w-4 h-4 border-2 border-on-accent/30 border-t-on-accent rounded-full animate-spin" />
+                  SENDING MESSAGE...
+                </span>
+              ) : sent ? (
+                <span className="flex items-center justify-center gap-2">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                  </svg>
+                  MESSAGE SENT — WE&apos;LL BE IN TOUCH!
+                </span>
+              ) : (
+                "SEND MESSAGE →"
+              )}
             </button>
-            <p className="text-center font-(--font-space-mono) text-[10px] text-outline">WE TYPICALLY RESPOND WITHIN 24 HOURS</p>
+
+            <div className="flex items-center justify-center gap-4 pt-1">
+              <div className="h-px flex-1 bg-white/5" />
+              <p className="font-(--font-space-mono) text-[9px] tracking-widest text-[#555] text-center whitespace-nowrap">
+                TYPICALLY RESPOND WITHIN 24 HOURS · 100% CONFIDENTIAL
+              </p>
+              <div className="h-px flex-1 bg-white/5" />
+            </div>
           </form>
         </ScrollReveal>
       </div>
