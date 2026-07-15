@@ -90,7 +90,7 @@ export default function Services() {
                   hover:bg-white/5 hover:border-[#c7f300]/30 hover:shadow-[0_0_24px_rgba(199,243,0,0.06)]"
               >
                 {/* left accent bar */}
-                <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-[#c7f300]/0 group-hover:bg-[#c7f300]/60 transition-all duration-300 rounded-r" aria-hidden="true" />
+                <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-[#c7f300]/0 group-hover:bg-[#c7f300]/60 transition-all duration-300 rounded-r" aria-hidden="true" />
                 {/* bottom shimmer line */}
                 <div className="absolute bottom-0 left-8 right-8 h-px bg-linear-to-r from-transparent via-[#c7f300]/0 group-hover:via-[#c7f300]/30 to-transparent transition-all duration-500" aria-hidden="true" />
 

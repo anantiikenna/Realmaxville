@@ -28,16 +28,16 @@ export default function Projects() {
         <ScrollReveal className="stagger">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {projects.map((p) => (
-              <article key={p.name} className="group relative overflow-hidden rounded-lg aspect-[3/4] cursor-pointer">
+              <article key={p.name} className="group relative overflow-hidden rounded-lg aspect-3/4 cursor-pointer">
                 <img
                   src={p.img}
                   alt={`${p.name} - ${p.type} project in ${p.location}`}
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80" />
+                <div className="absolute inset-0 bg-linear-to-t from-black via-transparent to-transparent opacity-80" />
                 <div className="absolute bottom-0 left-0 p-8 w-full">
-                  <p className="text-[#c7f300] font-[var(--font-space-mono)] text-[10px] tracking-[0.2em]">{p.type}</p>
+                  <p className="text-[#c7f300] font-(--font-space-mono) text-[10px] tracking-[0.2em]">{p.type}</p>
                   <h4 className="text-xl font-bold mt-1 group-hover:text-[#c7f300] transition-colors">{p.name}</h4>
                   <div className="flex justify-between items-center mt-4 border-t border-white/10 pt-4">
                     <span className="text-xs text-[#b0b3b4]">{p.location} · {p.year}</span>

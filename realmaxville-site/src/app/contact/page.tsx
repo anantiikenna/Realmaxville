@@ -52,7 +52,7 @@ export default function ContactPage() {
             href="https://wa.me/2348080419259"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center mt-8 px-10 h-14 rounded-full bg-[#16a34a] text-white font-bold text-[0.85rem] tracking-[0.1em] transition-all duration-200 hover:bg-[#22c55e] hover:shadow-[0_0_24px_rgba(34,197,94,0.4)]"
+            className="inline-flex items-center justify-center mt-8 px-10 h-14 rounded-full bg-[#16a34a] text-white font-bold text-[0.85rem] tracking-widest transition-all duration-200 hover:bg-[#22c55e] hover:shadow-[0_0_24px_rgba(34,197,94,0.4)]"
           >
             CHAT ON WHATSAPP →
           </a>

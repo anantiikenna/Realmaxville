@@ -128,10 +128,10 @@ export default function Plans({ initialPlans, initialTypes, hasDb = false }: Pro
               key={t}
               onClick={() => handleFilterChange(t)}
               aria-pressed={filter === t}
-              className={`px-6 py-2.5 rounded-full font-[var(--font-space-mono)] text-[10px] tracking-[0.2em] uppercase transition-all duration-300 active:scale-95 min-h-[44px] flex items-center ${
+              className={`px-6 py-2.5 rounded-full font-(--font-space-mono) text-[10px] tracking-[0.2em] uppercase transition-all duration-300 active:scale-95 min-h-11 flex items-center ${
                 filter === t
-                  ? "bg-[#c7f300] text-[#171e00] font-bold"
-                  : "bg-white/5 text-[#c4c7c7] hover:bg-white/10 hover:text-[#c7f300] border border-[#c7f300]/20"
+                  ? "bg-[#c7f300] text-on-accent font-bold"
+                  : "bg-white/5 text-on-surface-variant hover:bg-white/10 hover:text-[#c7f300] border border-[#c7f300]/20"
               }`}
             >
               {t}
@@ -158,7 +158,7 @@ export default function Plans({ initialPlans, initialTypes, hasDb = false }: Pro
                   </>
                 )}
                 <div className="absolute top-4 left-4 bg-[#c7f300]/10 backdrop-blur-md px-3 py-1 rounded-full border border-[#c7f300]/20">
-                  <span className="font-[var(--font-space-mono)] text-[10px] tracking-[0.1em] text-[#c7f300]">{plan.type.toUpperCase()}</span>
+                  <span className="font-(--font-space-mono) text-[10px] tracking-widest text-[#c7f300]">{plan.type.toUpperCase()}</span>
                 </div>
               </div>
 
@@ -168,11 +168,11 @@ export default function Plans({ initialPlans, initialTypes, hasDb = false }: Pro
                     <h3 className="text-lg font-bold text-[#e5e2e1] group-hover:text-[#c7f300] transition-colors">
                       {plan.name}
                     </h3>
-                    <p className="font-[var(--font-space-mono)] text-[10px] text-[#8e9192] mt-1">SKU: {plan.sku}</p>
+                    <p className="font-(--font-space-mono) text-[10px] text-outline mt-1">SKU: {plan.sku}</p>
                   </div>
                   <div className="text-right">
                     <span className="text-xl font-bold text-[#c7f300]">{formatPrice(plan.price)}</span>
-                    <p className="font-[var(--font-space-mono)] text-[10px] text-[#8e9192]">BLUEPRINT</p>
+                    <p className="font-(--font-space-mono) text-[10px] text-outline">BLUEPRINT</p>
                   </div>
                 </div>
 
@@ -180,22 +180,22 @@ export default function Plans({ initialPlans, initialTypes, hasDb = false }: Pro
                   {plan.beds > 0 && (
                     <div className="flex flex-col items-center border-r border-white/5" role="listitem">
                       <span className="text-[#c7f300] text-sm" aria-hidden="true">🛏</span>
-                      <span className="font-[var(--font-space-mono)] text-[10px] text-[#e5e2e1] mt-1">{plan.beds} BED</span>
+                      <span className="font-(--font-space-mono) text-[10px] text-[#e5e2e1] mt-1">{plan.beds} BED</span>
                     </div>
                   )}
                   <div className="flex flex-col items-center border-r border-white/5" role="listitem">
                     <span className="text-[#c7f300] text-sm" aria-hidden="true">🚿</span>
-                    <span className="font-[var(--font-space-mono)] text-[10px] text-[#e5e2e1] mt-1">{plan.baths} BATH</span>
+                    <span className="font-(--font-space-mono) text-[10px] text-[#e5e2e1] mt-1">{plan.baths} BATH</span>
                   </div>
                   <div className="flex flex-col items-center" role="listitem">
                     <span className="text-[#c7f300] text-sm" aria-hidden="true">📐</span>
-                    <span className="font-[var(--font-space-mono)] text-[10px] text-[#e5e2e1] mt-1">{plan.sqft.toLocaleString()} SQFT</span>
+                    <span className="font-(--font-space-mono) text-[10px] text-[#e5e2e1] mt-1">{plan.sqft.toLocaleString()} SQFT</span>
                   </div>
                 </div>
 
                 <div className="flex flex-wrap gap-2" role="list">
                   {plan.features.slice(0, 3).map((f) => (
-                    <span key={f} role="listitem" className="px-2 py-1 rounded bg-white/5 font-[var(--font-space-mono)] text-[10px] text-[#8e9192]">
+                    <span key={f} role="listitem" className="px-2 py-1 rounded bg-white/5 font-(--font-space-mono) text-[10px] text-outline">
                       {f}
                     </span>
                   ))}
@@ -203,12 +203,12 @@ export default function Plans({ initialPlans, initialTypes, hasDb = false }: Pro
 
                 <div className="mt-auto flex items-center justify-between">
                   <div>
-                    <span className="font-[var(--font-space-mono)] text-[10px] text-[#8e9192] block">EST. BUILD COST</span>
+                    <span className="font-(--font-space-mono) text-[10px] text-outline block">EST. BUILD COST</span>
                     <span className="text-sm font-bold text-[#c7f300]">{plan.est_build_cost}</span>
                   </div>
                   <button
                     onClick={() => setSelected(plan)}
-                    className="bg-white text-black px-6 py-3 rounded-xl font-[var(--font-space-mono)] text-[12px] tracking-[0.1em] hover:bg-[#c7f300] transition-colors active:scale-95 flex items-center gap-2"
+                    className="bg-white text-black px-6 py-3 rounded-xl font-(--font-space-mono) text-[12px] tracking-widest hover:bg-[#c7f300] transition-colors active:scale-95 flex items-center gap-2"
                     aria-label={`View details for ${plan.name}`}
                   >
                     VIEW DETAILS
@@ -229,15 +229,15 @@ export default function Plans({ initialPlans, initialTypes, hasDb = false }: Pro
           <div ref={sentinelRef} className="h-4" aria-hidden="true" />
           {loading && (
             <div className="flex justify-center py-12">
-              <div className="flex items-center gap-3 text-[#8e9192]">
+              <div className="flex items-center gap-3 text-outline">
                 <div className="w-5 h-5 border-2 border-[#c7f300]/30 border-t-[#c7f300] rounded-full animate-spin" />
-                <span className="font-[var(--font-space-mono)] text-xs tracking-wider">LOADING MORE PLANS...</span>
+                <span className="font-(--font-space-mono) text-xs tracking-wider">LOADING MORE PLANS...</span>
               </div>
             </div>
           )}
           {!hasMore && plans.length > 0 && (
             <div className="text-center py-12">
-              <p className="font-[var(--font-space-mono)] text-[10px] tracking-[0.2em] text-[#8e9192]">
+              <p className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-outline">
                 ALL {plans.length} PLANS LOADED
               </p>
             </div>
@@ -254,7 +254,7 @@ export default function Plans({ initialPlans, initialTypes, hasDb = false }: Pro
           aria-modal="true"
           aria-labelledby="modal-title"
         >
-          <div ref={modalRef} className="bg-[#131313] rounded-2xl border border-[#c7f300]/20 max-w-lg w-full p-8 max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
+          <div ref={modalRef} className="bg-surface rounded-2xl border border-[#c7f300]/20 max-w-lg w-full p-8 max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
             <div className="flex items-center justify-between mb-6">
               <h3 id="modal-title" className="text-xl font-bold text-[#e5e2e1]">{selected.name}</h3>
               <button
@@ -271,25 +271,25 @@ export default function Plans({ initialPlans, initialTypes, hasDb = false }: Pro
               <img src={selected.image_url} alt={selected.name} className="w-full h-48 object-cover rounded-xl mb-6" />
             )}
 
-            <div className="h-32 rounded-xl blueprint-grid bg-[#0e0e0e] mb-6 flex items-center justify-center">
+            <div className="h-32 rounded-xl blueprint-grid bg-surface-container-lowest mb-6 flex items-center justify-center">
               <span className="text-3xl font-bold text-[#c7f300]/30">{formatPrice(selected.price)}</span>
             </div>
             <p className="text-sm text-[#b0b3b4] mb-8">{selected.description}</p>
             <div className="space-y-3 mb-8" role="list">
               {selected.features.map((f) => (
-                <div key={f} className="flex items-center gap-3 text-sm text-[#c4c7c7]" role="listitem">
+                <div key={f} className="flex items-center gap-3 text-sm text-on-surface-variant" role="listitem">
                   <span className="w-5 h-5 rounded-full bg-[#c7f300]/20 flex items-center justify-center text-[#c7f300] text-xs" aria-hidden="true">✓</span>
                   {f}
                 </div>
               ))}
             </div>
             <div className="mb-8 p-4 rounded-xl bg-white/5 border border-[#c7f300]/10">
-              <p className="text-xs text-[#8e9192]">Includes: Architectural drawings, Structural plans, Electrical layout, Plumbing diagrams, Bill of Quantities</p>
+              <p className="text-xs text-outline">Includes: Architectural drawings, Structural plans, Electrical layout, Plumbing diagrams, Bill of Quantities</p>
             </div>
-            <button className="w-full py-4 rounded-xl bg-[#c7f300] text-[#171e00] font-bold font-[var(--font-space-mono)] text-sm tracking-[0.1em] hover:shadow-[0_0_20px_rgba(199,243,0,0.3)] transition-all active:scale-[0.98]">
+            <button className="w-full py-4 rounded-xl bg-[#c7f300] text-on-accent font-(--font-space-mono) text-sm tracking-widest hover:shadow-[0_0_20px_rgba(199,243,0,0.3)] transition-all active:scale-[0.98]">
               PAY {formatPrice(selected.price)} — PURCHASE NOW
             </button>
-            <p className="mt-3 text-center font-[var(--font-space-mono)] text-[10px] text-[#8e9192]">SECURE PAYMENT · INSTANT DOWNLOAD · SUPPORT INCLUDED</p>
+            <p className="mt-3 text-center font-(--font-space-mono) text-[10px] text-outline">SECURE PAYMENT · INSTANT DOWNLOAD · SUPPORT INCLUDED</p>
           </div>
         </div>
       )}

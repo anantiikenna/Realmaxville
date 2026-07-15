@@ -34,7 +34,7 @@ export default function Hero() {
         />
         <div className="absolute inset-0 blueprint-grid opacity-30" aria-hidden="true" />
         <div className="absolute inset-0 bg-linear-to-r from-black via-black/40 to-transparent" style={{ zIndex: 10 }} aria-hidden="true" />
-        <div className="absolute top-20 right-20 w-[600px] h-[600px] bg-[#c7f300]/5 blur-[120px] rounded-full" aria-hidden="true" />
+        <div className="absolute top-20 right-20 w-150 h-150 bg-[#c7f300]/5 blur-[120px] rounded-full" aria-hidden="true" />
         <div className="absolute bottom-20 left-20 w-48 h-48 border border-[#c7f300]/10 rounded-full animate-spin-slow" aria-hidden="true" />
         <img
           src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvcUcOsQVtY-fNp_qjKejkx0KxuMqEOyeO_sjfUP99ddMNB4P0SIL60gz68JXGDDwROPdK6xl1hMM306VJ1lcrSzCJ5Pa8mljjU7GX-1F21rwk_Er_F9lgoiPmwSGdO33q780zXqCBk7y4PklsRKkNiCyJtjQ1m7oNr519l_P3eBZlAZZdV7pdLYcF03rZkRv30yosr1L3PQU87ByLDP2rohC8NbM6hdyaVDBpcqJIl9hpjIqv58y3ru_EOPrRrjl8mFtYhP20-Bs9"
