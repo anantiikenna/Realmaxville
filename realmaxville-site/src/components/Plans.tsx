@@ -112,7 +112,7 @@ export default function Plans({ initialPlans, initialTypes, hasDb = false }: Pro
   };
 
   return (
-    <section className="py-24 px-8 lg:px-12 max-w-7xl mx-auto w-full" aria-labelledby="plans-heading">
+    <section className="site-container" style={{ paddingTop: "6rem", paddingBottom: "6rem" }} aria-labelledby="plans-heading">
       <ScrollReveal>
         <div className="text-center space-y-4 mb-16">
           <h2 id="plans-heading" className="text-4xl md:text-[48px] font-extrabold uppercase tracking-tight">

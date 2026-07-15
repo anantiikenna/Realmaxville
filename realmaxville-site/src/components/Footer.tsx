@@ -3,8 +3,8 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="w-full py-16 px-6 md:px-16 bg-[#050505] border-t border-[#c7f300]/10" role="contentinfo">
-      <div className="max-w-7xl mx-auto px-8 lg:px-12 w-full">
+    <footer style={{ width: "100%", padding: "4rem 0", backgroundColor: "#050505", borderTop: "1px solid rgba(199,243,0,0.1)" }} role="contentinfo">
+      <div className="site-container">
         <div className="text-center mb-16">
           <div className="text-[120px] md:text-[180px] font-extrabold text-[#e5e2e1] opacity-5 select-none leading-none" aria-hidden="true">
             REALMAXVILLE

@@ -11,26 +11,28 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero banner */}
-      <section className="relative pt-48 pb-20 bg-[#050505] overflow-hidden">
+      <section className="page-hero">
         <div className="absolute inset-0 data-grid-bg opacity-30" />
-        <div className="relative z-10 max-w-7xl mx-auto px-8 lg:px-12 w-full">
-          <div className="flex flex-col md:flex-row items-end justify-between gap-8 border-l-4 border-[#c7f300] pl-8">
-            <div className="max-w-3xl">
-              <span className="font-[var(--font-space-mono)] text-xs tracking-[0.2em] text-[#c7f300] mb-4 block">PROTOCOL v4.0.2</span>
-              <h1 className="text-5xl md:text-6xl font-extrabold uppercase leading-none mb-6">
-                CONTACT <span className="text-[#c7f300] neon-text-glow">US</span>
-              </h1>
-              <p className="text-[#c4c7c7] text-lg max-w-xl leading-relaxed">
-                At RealMaxVille we give priority to our valued customers and how to provide better services for them while adding value to the society at large.
-              </p>
-            </div>
-            <div className="hidden md:block text-right">
-              <div className="flex items-center gap-2 text-[#c7f300] mb-2">
-                <span className="w-2 h-2 rounded-full bg-[#c7f300] pulse-active" />
-                <span className="font-[var(--font-space-mono)] text-xs tracking-[0.2em]">LIFECYCLE ACTIVE</span>
-              </div>
-              <div className="font-[var(--font-space-mono)] text-[10px] tracking-[0.2em] text-[#8e9192]">NODE: PRIMARY_LAB_01</div>
-            </div>
+        <div className="site-container" style={{ position: "relative", zIndex: 10 }}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "1.5rem",
+              borderLeft: "4px solid #c7f300",
+              paddingLeft: "2rem",
+              maxWidth: "50rem",
+            }}
+          >
+            <span className="font-[var(--font-space-mono)]" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", color: "#c7f300" }}>
+              PROTOCOL v4.0.2
+            </span>
+            <h1 style={{ fontSize: "clamp(2.5rem, 6vw, 4rem)", fontWeight: 800, textTransform: "uppercase", lineHeight: 1 }}>
+              CONTACT <span className="neon-text-glow" style={{ color: "#c7f300" }}>US</span>
+            </h1>
+            <p style={{ color: "#c4c7c7", fontSize: "1.1rem", maxWidth: "36rem", lineHeight: 1.7 }}>
+              At RealMaxVille we give priority to our valued customers and how to provide better services for them while adding value to the society at large.
+            </p>
           </div>
         </div>
       </section>
@@ -38,19 +40,35 @@ export default function ContactPage() {
       <ContactForm />
 
       {/* WhatsApp CTA */}
-      <section className="py-20 bg-[#0e0e0e]">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-2xl font-bold uppercase">
-            PREFER TO CHAT? <span className="text-[#c7f300]">WHATSAPP US</span>
+      <section style={{ padding: "5rem 0", backgroundColor: "#0e0e0e" }}>
+        <div className="site-container" style={{ textAlign: "center" }}>
+          <h2 style={{ fontSize: "1.5rem", fontWeight: 700, textTransform: "uppercase" }}>
+            PREFER TO CHAT? <span style={{ color: "#c7f300" }}>WHATSAPP US</span>
           </h2>
-          <p className="mt-4 text-[#8e9192] text-sm font-[var(--font-space-mono)] tracking-[0.1em]">
+          <p className="font-[var(--font-space-mono)]" style={{ marginTop: "1rem", color: "#8e9192", fontSize: "0.7rem", letterSpacing: "0.1em" }}>
             GET INSTANT RESPONSES ON WHATSAPP
           </p>
           <a
             href="https://wa.me/2348080419259"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block mt-8 px-8 py-4 rounded-full bg-green-600 text-white font-bold text-sm hover:bg-green-700 hover:shadow-lg transition-all font-[var(--font-space-mono)] tracking-[0.1em]"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              marginTop: "2rem",
+              paddingLeft: "2.5rem",
+              paddingRight: "2.5rem",
+              height: "3.5rem",
+              borderRadius: 9999,
+              backgroundColor: "#16a34a",
+              color: "#fff",
+              fontWeight: 700,
+              fontSize: "0.85rem",
+              letterSpacing: "0.1em",
+              textDecoration: "none",
+              transition: "background 0.2s, box-shadow 0.2s",
+            }}
           >
             CHAT ON WHATSAPP →
           </a>

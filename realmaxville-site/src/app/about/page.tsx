@@ -13,19 +13,31 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero banner */}
-      <section className="relative pt-32 pb-20 bg-[#050505] overflow-hidden">
+      <section className="page-hero">
         <div className="absolute inset-0 data-grid-bg opacity-30" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#c7f300]/5 blur-[120px] rounded-full" />
-        <div className="relative z-10 max-w-7xl mx-auto px-8 lg:px-12 text-center w-full">
-          <div className="flex items-center justify-center gap-2 mb-6">
-            <div className="h-px w-12 bg-[#c7f300]" />
-            <span className="font-[var(--font-space-mono)] text-xs tracking-[0.3em] text-[#c7f300]">WHO WE ARE</span>
-            <div className="h-px w-12 bg-[#c7f300]" />
+        <div
+          className="absolute rounded-full"
+          style={{
+            top: "50%", left: "50%",
+            transform: "translate(-50%, -50%)",
+            width: 800, height: 800,
+            background: "radial-gradient(circle, rgba(199,243,0,0.06), transparent 70%)",
+            filter: "blur(80px)",
+            pointerEvents: "none",
+          }}
+        />
+        <div className="site-container" style={{ position: "relative", zIndex: 10, textAlign: "center" }}>
+          <div className="flex items-center justify-center gap-2" style={{ marginBottom: "1.5rem" }}>
+            <div style={{ height: 1, width: 48, backgroundColor: "#c7f300" }} />
+            <span className="font-[var(--font-space-mono)]" style={{ fontSize: "0.7rem", letterSpacing: "0.3em", color: "#c7f300" }}>
+              WHO WE ARE
+            </span>
+            <div style={{ height: 1, width: 48, backgroundColor: "#c7f300" }} />
           </div>
-          <h1 className="text-5xl md:text-6xl font-extrabold uppercase leading-none">
-            ABOUT <span className="text-[#c7f300] neon-text-glow">REALMAXVILLE</span>
+          <h1 style={{ fontSize: "clamp(2.5rem, 6vw, 4rem)", fontWeight: 800, textTransform: "uppercase", lineHeight: 1 }}>
+            ABOUT <span className="neon-text-glow" style={{ color: "#c7f300" }}>REALMAXVILLE</span>
           </h1>
-          <p className="mt-6 text-[#c4c7c7] max-w-2xl mx-auto text-lg leading-relaxed">
+          <p style={{ marginTop: "1.5rem", color: "#c4c7c7", maxWidth: "40rem", marginLeft: "auto", marginRight: "auto", fontSize: "1.1rem", lineHeight: 1.7 }}>
             A goal-oriented construction, structural and architectural company with a
             passion for satisfying our clients with rich innovation and value creation.
           </p>
@@ -37,24 +49,69 @@ export default function AboutPage() {
       <Team />
 
       {/* CTA */}
-      <section className="py-32 px-6 md:px-16 bg-[#0e0e0e]">
-        <div className="max-w-7xl mx-auto px-8 lg:px-12 w-full">
-          <div className="relative overflow-hidden rounded-[3rem] p-16 md:p-24 border border-white/5 flex flex-col items-center text-center">
-            <div className="absolute inset-0 bg-gradient-to-br from-[#c7f300]/10 via-transparent to-[#00dbe9]/10 opacity-30" />
+      <section style={{ padding: "8rem 0", backgroundColor: "#0e0e0e" }}>
+        <div className="site-container">
+          <div
+            className="relative overflow-hidden"
+            style={{
+              borderRadius: "3rem",
+              padding: "5rem 3rem",
+              border: "1px solid rgba(255,255,255,0.06)",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              textAlign: "center",
+            }}
+          >
             <div className="absolute inset-0 blueprint-grid opacity-20" />
-            <h2 className="text-3xl md:text-5xl font-extrabold relative z-10 max-w-2xl mb-8 uppercase leading-tight">
-              READY TO BUILD YOUR <span className="text-[#c7f300] neon-text-glow">ARCHITECTURAL LEGACY?</span>
+            <div
+              className="absolute inset-0"
+              style={{ background: "linear-gradient(135deg, rgba(199,243,0,0.08), transparent, rgba(0,219,233,0.08))" }}
+            />
+            <h2
+              style={{
+                position: "relative",
+                zIndex: 10,
+                fontSize: "clamp(1.8rem, 4vw, 3rem)",
+                fontWeight: 800,
+                textTransform: "uppercase",
+                lineHeight: 1.2,
+                maxWidth: "36rem",
+                marginBottom: "2rem",
+              }}
+            >
+              READY TO BUILD YOUR{" "}
+              <span className="neon-text-glow" style={{ color: "#c7f300" }}>
+                ARCHITECTURAL LEGACY?
+              </span>
             </h2>
-            <div className="flex flex-wrap justify-center gap-5 relative z-10">
+            <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "1.25rem", position: "relative", zIndex: 10 }}>
               <a
                 href="/contact"
-                className="bg-[#c7f300] text-[#171e00] px-12 py-5 rounded-full font-[var(--font-space-mono)] text-xs tracking-[0.2em] uppercase font-bold hover:shadow-[0_0_20px_rgba(199,243,0,0.3)] transition-all active:scale-95"
+                className="btn-cta"
+                style={{ height: "3.5rem", paddingLeft: "2.5rem", paddingRight: "2.5rem" }}
               >
                 REQUEST A QUOTE
               </a>
               <a
                 href="/contact"
-                className="glass-panel border border-white/10 text-white px-12 py-5 rounded-full font-[var(--font-space-mono)] text-xs tracking-[0.2em] uppercase hover:bg-white/5 transition-all"
+                className="glass-panel"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  height: "3.5rem",
+                  paddingLeft: "2.5rem",
+                  paddingRight: "2.5rem",
+                  borderRadius: 9999,
+                  border: "1px solid rgba(255,255,255,0.15)",
+                  color: "#e5e2e1",
+                  fontSize: "0.7rem",
+                  letterSpacing: "0.2em",
+                  textTransform: "uppercase",
+                  textDecoration: "none",
+                  transition: "background 0.2s",
+                }}
               >
                 BOOK CONSULTATION
               </a>

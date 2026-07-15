@@ -49,7 +49,7 @@ function Counter({ target, suffix }: { target: number; suffix: string }) {
 
 export default function Stats() {
   return (
-    <section className="relative z-30 -mt-20 px-8 lg:px-12 max-w-7xl mx-auto w-full" aria-label="Company statistics">
+    <section className="site-container" style={{ position: "relative", zIndex: 30, marginTop: "-5rem" }} aria-label="Company statistics">
       <ScrollReveal>
         <div className="glass-panel rounded-lg grid grid-cols-2 md:grid-cols-4 gap-8 p-12 cyber-border shadow-2xl">
           {stats.map((stat, i) => (
