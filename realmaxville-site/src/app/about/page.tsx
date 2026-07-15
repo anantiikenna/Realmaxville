@@ -95,31 +95,7 @@ export default function AboutPage() {
               </a>
               <a
                 href="/contact"
-                className="glass-panel"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  height: "3.5rem",
-                  paddingLeft: "2.5rem",
-                  paddingRight: "2.5rem",
-                  borderRadius: 9999,
-                  border: "1px solid rgba(255,255,255,0.15)",
-                  color: "#e5e2e1",
-                  fontSize: "0.7rem",
-                  letterSpacing: "0.2em",
-                  textTransform: "uppercase",
-                  textDecoration: "none",
-                  transition: "background 0.2s, border-color 0.2s",
-                }}
-                onMouseEnter={e => {
-                  (e.currentTarget as HTMLAnchorElement).style.background = "rgba(255,255,255,0.08)";
-                  (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(255,255,255,0.35)";
-                }}
-                onMouseLeave={e => {
-                  (e.currentTarget as HTMLAnchorElement).style.background = "";
-                  (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(255,255,255,0.15)";
-                }}
+                className="glass-panel inline-flex items-center justify-center h-14 px-10 rounded-full border border-[rgba(255,255,255,0.15)] text-[#e5e2e1] text-[0.7rem] tracking-[0.2em] uppercase transition-all duration-200 hover:bg-[rgba(255,255,255,0.08)] hover:border-[rgba(255,255,255,0.35)]"
               >
                 BOOK CONSULTATION
               </a>
