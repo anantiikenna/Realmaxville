@@ -1,0 +1,527 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>ARCHITAS | Engineering Legacies</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "surface": "#131313",
+                "outline": "#8e9192",
+                "on-error": "#690005",
+                "inverse-on-surface": "#313030",
+                "error-container": "#93000a",
+                "tertiary-fixed-dim": "#00dbe9",
+                "surface-container": "#20201f",
+                "surface-bright": "#393939",
+                "inverse-primary": "#5f5e5e",
+                "on-error-container": "#ffdad6",
+                "tertiary-fixed": "#7df4ff",
+                "surface-container-highest": "#353535",
+                "inverse-surface": "#e5e2e1",
+                "on-tertiary-fixed": "#002022",
+                "primary-fixed-dim": "#c9c6c5",
+                "on-surface-variant": "#c4c7c7",
+                "outline-variant": "#444748",
+                "tertiary": "#00dbe9",
+                "on-primary-fixed-variant": "#474646",
+                "secondary-container": "#c7f300",
+                "tertiary-container": "#000607",
+                "surface-tint": "#c9c6c5",
+                "primary-fixed": "#e5e2e1",
+                "error": "#ffb4ab",
+                "secondary-fixed": "#c7f300",
+                "on-tertiary-fixed-variant": "#004f54",
+                "surface-variant": "#353535",
+                "on-primary": "#313030",
+                "on-secondary-fixed": "#171e00",
+                "background": "#131313",
+                "surface-container-high": "#2a2a2a",
+                "primary-container": "#050505",
+                "on-primary-fixed": "#1c1b1b",
+                "surface-container-lowest": "#0e0e0e",
+                "on-background": "#e5e2e1",
+                "on-surface": "#e5e2e1",
+                "surface-dim": "#131313",
+                "on-tertiary-container": "#00848d",
+                "primary": "#c9c6c5",
+                "on-secondary-container": "#576c00",
+                "surface-container-low": "#1c1b1b",
+                "secondary-fixed-dim": "#aed500",
+                "secondary": "#ffffff",
+                "on-secondary-fixed-variant": "#3d4d00",
+                "on-secondary": "#293500",
+                "on-primary-container": "#797777",
+                "on-tertiary": "#00363a"
+            },
+            "borderRadius": {
+                "DEFAULT": "1rem",
+                "lg": "2rem",
+                "xl": "3rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "margin-desktop": "64px",
+                "margin-mobile": "24px",
+                "container-max": "1440px",
+                "unit": "8px",
+                "gutter": "32px"
+            },
+            "fontFamily": {
+                "label-caps": ["Space Mono"],
+                "label-sm": ["Inter"],
+                "headline-lg": ["Inter"],
+                "body-lg": ["Inter"],
+                "headline-sm": ["Inter"],
+                "display-lg": ["Inter"],
+                "body-md": ["Inter"],
+                "display-lg-mobile": ["Inter"],
+                "display-xl": ["Inter"]
+            },
+            "fontSize": {
+                "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.2em", "fontWeight": "700"}],
+                "label-sm": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}],
+                "headline-sm": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.03em", "fontWeight": "800"}],
+                "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}],
+                "display-lg-mobile": ["36px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                "display-xl": ["72px", {"lineHeight": "1.0", "letterSpacing": "-0.04em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #050505;
+            color: #e5e2e1;
+            overflow-x: hidden;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .cyber-border {
+            border: 1px solid rgba(199, 243, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .cyber-border:hover {
+            border-color: rgba(199, 243, 0, 0.6);
+            box-shadow: 0 0 20px rgba(199, 243, 0, 0.1);
+        }
+
+        .blueprint-grid {
+            background-image: 
+                linear-gradient(rgba(199, 243, 0, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(199, 243, 0, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .pulse-active {
+            box-shadow: 0 0 0 0 rgba(199, 243, 0, 0.4);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(199, 243, 0, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(199, 243, 0, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(199, 243, 0, 0); }
+        }
+
+        .scanline {
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(to right, transparent, rgba(199, 243, 0, 0.2), transparent);
+            position: absolute;
+            top: 0;
+            animation: scan 4s linear infinite;
+        }
+
+        @keyframes scan {
+            0% { top: 0%; }
+            100% { top: 100%; }
+        }
+        
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- Top Navigation Header -->
+<header class="fixed top-0 w-full z-50 bg-surface/10 backdrop-blur-xl border-b border-white/5 bg-opacity-30">
+<nav class="flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto transition-all duration-300 ease-in-out">
+<div class="flex items-center gap-2">
+<span class="font-display-lg text-display-lg-mobile font-bold tracking-tight text-primary dark:text-primary-fixed">ARCHITAS</span>
+<span class="w-2 h-2 rounded-full bg-secondary-container pulse-active"></span>
+</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-outline hover:text-secondary transition-colors" href="#">HOME</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-outline hover:text-secondary transition-colors" href="#">ABOUT US</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-outline hover:text-secondary transition-colors" href="#">SERVICES</a>
+<a class="font-label-caps text-label-caps text-secondary-container dark:text-secondary-fixed border-b-2 border-secondary-container pb-1" href="#">BUILDING PLANS</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-outline hover:text-secondary transition-colors" href="#">PROJECTS</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-outline hover:text-secondary transition-colors" href="#">CONTACT</a>
+</div>
+<button class="bg-secondary-container text-on-secondary-container px-6 py-2 rounded-full font-label-caps text-label-caps hover:bg-secondary-fixed-dim transition-all active:scale-95">
+                GET A QUOTE
+            </button>
+</nav>
+</header>
+<main class="pt-32 pb-24">
+<!-- Hero Search Section -->
+<section class="px-margin-desktop max-w-container-max mx-auto mb-16 relative">
+<div class="absolute -top-20 -left-20 w-96 h-96 bg-secondary-container/5 rounded-full blur-[120px]"></div>
+<div class="flex flex-col gap-6 max-w-3xl">
+<h1 class="font-display-xl text-display-xl text-primary leading-tight">PRECISION <span class="text-secondary-fixed">BLUEPRINTS</span> FOR THE BOLD.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                    Access our high-fidelity repository of architectural masterworks. Engineered for performance, designed for legacy.
+                </p>
+<div class="flex items-center gap-4 mt-4">
+<div class="flex-1 glass-panel px-6 py-4 rounded-xl flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary-fixed">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-on-surface w-full font-body-md" placeholder="Search by type, square footage, or architectural style..." type="text">
+</div>
+<button class="bg-primary text-on-primary p-4 rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined">tune</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Marketplace Container -->
+<section class="px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Sidebar Filters -->
+<aside class="md:col-span-3 flex flex-col gap-8">
+<div class="glass-panel p-8 rounded-2xl cyber-border">
+<h3 class="font-label-caps text-label-caps text-secondary-container mb-6">SYSTEM FILTERS</h3>
+<div class="flex flex-col gap-6">
+<!-- Category -->
+<div class="flex flex-col gap-3">
+<label class="font-label-caps text-[10px] text-outline">PROPERTY TYPE</label>
+<div class="space-y-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="rounded border-outline-variant bg-surface-container text-secondary-container focus:ring-secondary-container/50 transition-all" type="checkbox">
+<span class="text-body-md text-on-surface group-hover:text-secondary-fixed">Luxury Villa</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-outline-variant bg-surface-container text-secondary-container focus:ring-secondary-container/50 transition-all" type="checkbox">
+<span class="text-body-md text-on-surface group-hover:text-secondary-fixed">Modern Duplex</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-outline-variant bg-surface-container text-secondary-container focus:ring-secondary-container/50 transition-all" type="checkbox">
+<span class="text-body-md text-on-surface group-hover:text-secondary-fixed">Commercial Space</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-outline-variant bg-surface-container text-secondary-container focus:ring-secondary-container/50 transition-all" type="checkbox">
+<span class="text-body-md text-on-surface group-hover:text-secondary-fixed">Urban Penthouse</span>
+</label>
+</div>
+</div>
+<!-- Budget Range -->
+<div class="flex flex-col gap-3">
+<label class="font-label-caps text-[10px] text-outline">ESTIMATED COST (USD)</label>
+<input class="w-full h-1.5 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-secondary-container" max="5000000" min="100000" step="50000" type="range">
+<div class="flex justify-between text-[10px] font-label-caps text-outline">
+<span>$100K</span>
+<span>$5M+</span>
+</div>
+</div>
+<!-- Technical Specs -->
+<div class="flex flex-col gap-3">
+<label class="font-label-caps text-[10px] text-outline">SQUARE FOOTAGE</label>
+<div class="grid grid-cols-2 gap-2">
+<button class="px-2 py-2 glass-panel text-[11px] font-label-caps text-on-surface-variant hover:text-secondary-fixed transition-colors">MIN 1500</button>
+<button class="px-2 py-2 glass-panel text-[11px] font-label-caps text-on-surface-variant hover:text-secondary-fixed transition-colors">MAX 8000</button>
+</div>
+</div>
+</div>
+</div>
+<div class="glass-panel p-8 rounded-2xl relative overflow-hidden">
+<div class="scanline"></div>
+<span class="material-symbols-outlined text-secondary-fixed mb-2" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<h4 class="font-headline-sm text-headline-sm mb-2">Live Support</h4>
+<p class="text-[12px] text-on-surface-variant mb-4">Engineering experts online for technical consulting.</p>
+<button class="w-full border border-secondary-container/30 py-2 rounded-lg font-label-caps text-[10px] text-secondary-container hover:bg-secondary-container/10 transition-colors">CONNECT NOW</button>
+</div>
+</aside>
+<!-- Product Grid -->
+<div class="md:col-span-9 grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- Product Card 1 -->
+<div class="glass-panel group flex flex-col rounded-2xl overflow-hidden cyber-border">
+<div class="relative h-64 overflow-hidden blueprint-grid">
+<div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-500"></div>
+<img class="w-full h-full object-cover mix-blend-screen opacity-80 group-hover:opacity-100 transition-opacity" data-alt="A futuristic 3D wireframe visualization of a contemporary minimalist villa at dusk. The structural lines are glowing in a subtle cyan and cyber lime against a dark background, showing internal rooms, staircases, and reinforced glass walls. The image has a high-tech engineering aesthetic with technical data callouts floating in the margins." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgrKZ1x7sluujZMQxej_ZRjlMnMAKEGmp9TPBsYaEeyPdnXUmFgCVLEh4z2ujyHMG08S9Fnk42tadTVTwRZU9BIGTjMJLlS0dKYXyjElz-OINHJv1sluwTZ8hlze3SLJRO-LgkvBQoy8Y0G7AUlRQ_yl-OcB4UbJmUYWFhvLEkakUGMRyypOsSwbqtv7ioa8M1eAX2vNtzHEQnRAo8LOBjWGP0Uj6nQatLtWMi_nRNRnX3gPogWmavv-QeKFMAM99GnkDQUWstaz-Q">
+<div class="absolute top-4 left-4 bg-secondary-container/10 backdrop-blur-md px-3 py-1 rounded-full border border-secondary-container/20">
+<span class="font-label-caps text-[10px] text-secondary-container">PREMIUM ACCESS</span>
+</div>
+<div class="absolute bottom-4 right-4 flex gap-2">
+<span class="bg-black/60 backdrop-blur-md p-2 rounded-lg material-symbols-outlined text-white text-sm">3d_rotation</span>
+<span class="bg-black/60 backdrop-blur-md p-2 rounded-lg material-symbols-outlined text-white text-sm">download</span>
+</div>
+</div>
+<div class="p-8 flex flex-col gap-6">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-secondary mb-1">ZENITH RESIDENCE</h3>
+<p class="font-label-caps text-[10px] text-outline">SKU: ARCH-2024-VR</p>
+</div>
+<div class="text-right">
+<span class="font-headline-sm text-headline-sm text-secondary-fixed">$1,250</span>
+<p class="text-[10px] font-label-caps text-outline">BLUEPRINT ONLY</p>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-4 border-y border-white/5 py-4">
+<div class="flex flex-col gap-1 items-center border-r border-white/5">
+<span class="material-symbols-outlined text-secondary-fixed text-lg">bed</span>
+<span class="font-label-caps text-sm text-on-surface">5 BED</span>
+</div>
+<div class="flex flex-col gap-1 items-center border-r border-white/5">
+<span class="material-symbols-outlined text-secondary-fixed text-lg">bathtub</span>
+<span class="font-label-caps text-sm text-on-surface">4.5 BATH</span>
+</div>
+<div class="flex flex-col gap-1 items-center">
+<span class="material-symbols-outlined text-secondary-fixed text-lg">square_foot</span>
+<span class="font-label-caps text-sm text-on-surface">4,200 SQFT</span>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-[10px] font-label-caps text-outline">EST. BUILD COST</span>
+<span class="text-sm font-bold text-secondary-fixed">$580,000+</span>
+</div>
+<button class="bg-white text-black px-6 py-3 rounded-xl font-label-caps text-[12px] hover:bg-secondary-container hover:text-black transition-colors active:scale-95 flex items-center gap-2">
+                                VIEW DETAILS
+                                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="glass-panel group flex flex-col rounded-2xl overflow-hidden cyber-border">
+<div class="relative h-64 overflow-hidden blueprint-grid">
+<div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-500"></div>
+<img class="w-full h-full object-cover mix-blend-screen opacity-80 group-hover:opacity-100 transition-opacity" data-alt="An architectural floor plan with technical precision, presented on a digital obsidian background with neon cyan grid lines. The blueprint features detailed CAD drawings of a luxury penthouse including outdoor terraces, infinity pools, and open-plan living areas. White and cyber lime annotations indicate dimensions and material specifications in a minimalist font." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0zxLisPhgX4zrnTqxGBIh5himuigJbhqjMjiANUdK9effaY56u5CIKWYrJHSWxKSp2hbeUG_C0Rnkh5E3CTdWoqzvGV1ypWuoZIyWTEJvhGsaJ67oeJX9jTsuwYRXys8GoYcQtAWXJpFQTtUKNPz9HVjN0L-jrxCRcki-jFQKfXqtjKAanaInalPJuVu_ag6zE6vjt6cA4MKg2aIC5icc9u0iuB7ftVvxGQqVvj4Kjg93XtLRs63aU1gTPPK9dVGHgMepEnRehqhZ">
+<div class="absolute top-4 left-4 bg-tertiary/10 backdrop-blur-md px-3 py-1 rounded-full border border-tertiary/20">
+<span class="font-label-caps text-[10px] text-tertiary">CORE SERIES</span>
+</div>
+<div class="absolute bottom-4 right-4 flex gap-2">
+<span class="bg-black/60 backdrop-blur-md p-2 rounded-lg material-symbols-outlined text-white text-sm">photo_library</span>
+<span class="bg-black/60 backdrop-blur-md p-2 rounded-lg material-symbols-outlined text-white text-sm">download</span>
+</div>
+</div>
+<div class="p-8 flex flex-col gap-6">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-secondary mb-1">COBALT DUPLEX</h3>
+<p class="font-label-caps text-[10px] text-outline">SKU: ARCH-2024-CD</p>
+</div>
+<div class="text-right">
+<span class="font-headline-sm text-headline-sm text-secondary-fixed">$890</span>
+<p class="text-[10px] font-label-caps text-outline">BLUEPRINT ONLY</p>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-4 border-y border-white/5 py-4">
+<div class="flex flex-col gap-1 items-center border-r border-white/5">
+<span class="material-symbols-outlined text-secondary-fixed text-lg">bed</span>
+<span class="font-label-caps text-sm text-on-surface">3 BED</span>
+</div>
+<div class="flex flex-col gap-1 items-center border-r border-white/5">
+<span class="material-symbols-outlined text-secondary-fixed text-lg">bathtub</span>
+<span class="font-label-caps text-sm text-on-surface">3 BATH</span>
+</div>
+<div class="flex flex-col gap-1 items-center">
+<span class="material-symbols-outlined text-secondary-fixed text-lg">square_foot</span>
+<span class="font-label-caps text-sm text-on-surface">2,850 SQFT</span>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-[10px] font-label-caps text-outline">EST. BUILD COST</span>
+<span class="text-sm font-bold text-secondary-fixed">$320,000+</span>
+</div>
+<button class="bg-white text-black px-6 py-3 rounded-xl font-label-caps text-[12px] hover:bg-secondary-container hover:text-black transition-colors active:scale-95 flex items-center gap-2">
+                                VIEW DETAILS
+                                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="glass-panel group flex flex-col rounded-2xl overflow-hidden cyber-border">
+<div class="relative h-64 overflow-hidden blueprint-grid">
+<div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-500"></div>
+<img class="w-full h-full object-cover mix-blend-screen opacity-80 group-hover:opacity-100 transition-opacity" data-alt="A hyper-realistic 3D rendering of a brutalist concrete office building with large glass panels, set in a rainy urban environment at night. The lighting is cold and moody with cyber lime interior glows. The architecture is sharp and angular. The image captures the textures of wet concrete and reflective glass under artificial city lights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBu45kVKDmSIoCp3soavUizte4gSji9JpIjkOsgTGv-twFzWGzWmOKd7jRFr167E7fpgto6u0V68B3cVTWduv2qNXNiI74K7eOYTXVu_KucmY3nop-WS9uYDT2Q6gY6_gZhcJCWPW3rAOdzfLjIPTugfMobZIYRfrMAQd1JpqHwnzSTn08u8euAlPk0rHvS8hdl1YJo6xoCh6DA4pmLCwH3mxTNg7SV1FC23ZiR-02VS6C4u2u8bFIPWEGRTkBWfYABd2snlfDdDWGP">
+<div class="absolute top-4 left-4 bg-secondary-container/10 backdrop-blur-md px-3 py-1 rounded-full border border-secondary-container/20">
+<span class="font-label-caps text-[10px] text-secondary-container">COMMERCIAL</span>
+</div>
+<div class="absolute bottom-4 right-4 flex gap-2">
+<span class="bg-black/60 backdrop-blur-md p-2 rounded-lg material-symbols-outlined text-white text-sm">view_in_ar</span>
+<span class="bg-black/60 backdrop-blur-md p-2 rounded-lg material-symbols-outlined text-white text-sm">download</span>
+</div>
+</div>
+<div class="p-8 flex flex-col gap-6">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-secondary mb-1">NEXUS TOWER</h3>
+<p class="font-label-caps text-[10px] text-outline">SKU: ARCH-COM-01</p>
+</div>
+<div class="text-right">
+<span class="font-headline-sm text-headline-sm text-secondary-fixed">$4,500</span>
+<p class="text-[10px] font-label-caps text-outline">FULL SPEC PKG</p>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-4 border-y border-white/5 py-4">
+<div class="flex flex-col gap-1 items-center border-r border-white/5">
+<span class="material-symbols-outlined text-secondary-fixed text-lg">corporate_fare</span>
+<span class="font-label-caps text-sm text-on-surface">12 UNITS</span>
+</div>
+<div class="flex flex-col gap-1 items-center border-r border-white/5">
+<span class="material-symbols-outlined text-secondary-fixed text-lg">elevator</span>
+<span class="font-label-caps text-sm text-on-surface">3 CORE</span>
+</div>
+<div class="flex flex-col gap-1 items-center">
+<span class="material-symbols-outlined text-secondary-fixed text-lg">square_foot</span>
+<span class="font-label-caps text-sm text-on-surface">15,000 SQFT</span>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-[10px] font-label-caps text-outline">EST. BUILD COST</span>
+<span class="text-sm font-bold text-secondary-fixed">$2.4M+</span>
+</div>
+<button class="bg-white text-black px-6 py-3 rounded-xl font-label-caps text-[12px] hover:bg-secondary-container hover:text-black transition-colors active:scale-95 flex items-center gap-2">
+                                VIEW DETAILS
+                                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="glass-panel group flex flex-col rounded-2xl overflow-hidden cyber-border">
+<div class="relative h-64 overflow-hidden blueprint-grid">
+<div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-500"></div>
+<img class="w-full h-full object-cover mix-blend-screen opacity-80 group-hover:opacity-100 transition-opacity" data-alt="A minimalist architectural cross-section of a high-tech smart home. The image displays a multi-level structure with layered insulation, solar panel integration, and hidden smart home wiring. The aesthetic is clean and surgical with a dark background and precise thin white lines, illuminated by soft blue and neon green technical highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIThJcwosk8XV05bEvRJyCgsfLc04UZtqoxhaHn8b3iBDi-a405DG0nHIBgHAtca0rUdY7uHsYocltGwYXknpc6msQW-NYl-EsPvXhBKXkHNIpUTwIKnLR4TT0Y8ONe6NtKubhdhMCWjVCiKEDWYdRVzG_5szYq14EHD4wVEDeZNuonfYwBOihGCGRC6q0YMUJYaNKOtMSYL1wI-sMR2yRdYx945Oww9E0uDxwJ2B-eHsX50mnkzymxU5kgA52O7WW17Z48LlZWrzh">
+<div class="absolute top-4 left-4 bg-secondary-container/10 backdrop-blur-md px-3 py-1 rounded-full border border-secondary-container/20">
+<span class="font-label-caps text-[10px] text-secondary-container">SMART HOME</span>
+</div>
+<div class="absolute bottom-4 right-4 flex gap-2">
+<span class="bg-black/60 backdrop-blur-md p-2 rounded-lg material-symbols-outlined text-white text-sm">layers</span>
+<span class="bg-black/60 backdrop-blur-md p-2 rounded-lg material-symbols-outlined text-white text-sm">download</span>
+</div>
+</div>
+<div class="p-8 flex flex-col gap-6">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-secondary mb-1">ION COTTAGE</h3>
+<p class="font-label-caps text-[10px] text-outline">SKU: ARCH-2024-ION</p>
+</div>
+<div class="text-right">
+<span class="font-headline-sm text-headline-sm text-secondary-fixed">$550</span>
+<p class="text-[10px] font-label-caps text-outline">BLUEPRINT ONLY</p>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-4 border-y border-white/5 py-4">
+<div class="flex flex-col gap-1 items-center border-r border-white/5">
+<span class="material-symbols-outlined text-secondary-fixed text-lg">bed</span>
+<span class="font-label-caps text-sm text-on-surface">2 BED</span>
+</div>
+<div class="flex flex-col gap-1 items-center border-r border-white/5">
+<span class="material-symbols-outlined text-secondary-fixed text-lg">bathtub</span>
+<span class="font-label-caps text-sm text-on-surface">2 BATH</span>
+</div>
+<div class="flex flex-col gap-1 items-center">
+<span class="material-symbols-outlined text-secondary-fixed text-lg">square_foot</span>
+<span class="font-label-caps text-sm text-on-surface">1,200 SQFT</span>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-[10px] font-label-caps text-outline">EST. BUILD COST</span>
+<span class="text-sm font-bold text-secondary-fixed">$185,000+</span>
+</div>
+<button class="bg-white text-black px-6 py-3 rounded-xl font-label-caps text-[12px] hover:bg-secondary-container hover:text-black transition-colors active:scale-95 flex items-center gap-2">
+                                VIEW DETAILS
+                                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="mt-24 px-margin-desktop max-w-container-max mx-auto">
+<div class="relative overflow-hidden rounded-[3rem] p-16 md:p-24 border border-white/5 flex flex-col items-center text-center">
+<div class="absolute inset-0 bg-gradient-to-br from-secondary-container/10 via-transparent to-tertiary/10 opacity-30"></div>
+
+<h2 class="font-display-lg text-display-lg text-secondary relative z-10 max-w-2xl mb-8">Ready to Build Your <span class="text-secondary-fixed">Architectural Legacy?</span></h2>
+<div class="flex flex-wrap justify-center gap-4 relative z-10">
+<button class="bg-secondary-container text-black px-10 py-5 rounded-full font-label-caps text-label-caps hover:bg-secondary-fixed-dim transition-all scale-105 shadow-2xl shadow-secondary-container/20">
+                        REQUEST A QUOTE
+                    </button>
+<button class="glass-panel border border-white/10 text-white px-10 py-5 rounded-full font-label-caps text-label-caps hover:bg-white/5 transition-all">
+                        BOOK CONSULTATION
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-background border-t border-white/5 w-full py-16">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col gap-4">
+<span class="font-headline-sm text-headline-sm text-secondary">ARCHITAS</span>
+<p class="text-on-surface-variant opacity-70 font-body-md text-body-md">
+                    Engineering the future by building upon the legacies of the past. Precision architectural solutions for global innovators.
+                </p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-caps text-[10px] text-outline">RESOURCES</h4>
+<ul class="flex flex-col gap-2">
+<li><a class="text-on-surface-variant opacity-70 hover:text-secondary-container hover:opacity-100 transition-all font-body-md text-body-md" href="#">Blueprint Licensing</a></li>
+<li><a class="text-on-surface-variant opacity-70 hover:text-secondary-container hover:opacity-100 transition-all font-body-md text-body-md" href="#">Global Offices</a></li>
+<li><a class="text-on-surface-variant opacity-70 hover:text-secondary-container hover:opacity-100 transition-all font-body-md text-body-md" href="#">Careers</a></li>
+</ul>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-caps text-[10px] text-outline">LEGAL</h4>
+<ul class="flex flex-col gap-2">
+<li><a class="text-on-surface-variant opacity-70 hover:text-secondary-container hover:opacity-100 transition-all font-body-md text-body-md" href="#">Privacy Policy</a></li>
+<li><a class="text-on-surface-variant opacity-70 hover:text-secondary-container hover:opacity-100 transition-all font-body-md text-body-md" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-caps text-[10px] text-outline">CONNECT</h4>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-secondary-fixed cursor-pointer transition-colors">hub</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-secondary-fixed cursor-pointer transition-colors">terminal</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-secondary-fixed cursor-pointer transition-colors">grid_view</span>
+</div>
+<p class="text-[11px] text-outline mt-4">© 2024 Architas Building Legacies. Engineering the Future.</p>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction for hover effects on glass panels
+        document.querySelectorAll('.glass-panel').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+    </script>
+</body></html>

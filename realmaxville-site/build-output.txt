@@ -1,0 +1,26 @@
+﻿node : ΓÜá Attempted to load @next/swc-win32-x64-msvc, but an error occurred: \\?\C:\Users\Ikenna\Codesss\Realmaxville\
+realmaxville-site\node_modules\@next\swc-win32-x64-msvc\next-swc.win32-x64-msvc.node is not a valid Win32 application.
+At line:1 char:1
++ node node_modules\next\dist\bin\next build --webpack 2>&1 | Out-File  ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (ΓÜá Attempted t...32 application.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+\\?\C:\Users\Ikenna\Codesss\Realmaxville\realmaxville-site\node_modules\@next\swc-win32-x64-msvc\next-swc.win32-x64-msv
+c.node
+  Skipping creating a lockfile at C:\Users\Ikenna\Codesss\Realmaxville\realmaxville-site\.next\lock because we're using WASM bindings
+Γû▓ Next.js 16.2.10 (webpack)
+
+  Creating an optimized production build ...
+ΓÜá Attempted to load @next/swc-win32-x64-msvc, but an error occurred: \\?\C:\Users\Ikenna\Codesss\Realmaxville\realmax
+ville-site\node_modules\@next\swc-win32-x64-msvc\next-swc.win32-x64-msvc.node is not a valid Win32 application.
+\\?\C:\Users\Ikenna\Codesss\Realmaxville\realmaxville-site\node_modules\@next\swc-win32-x64-msvc\next-swc.win32-x64-msv
+c.node
+ΓÜá Attempted to load @next/swc-win32-x64-msvc, but an error occurred: \\?\C:\Users\Ikenna\Codesss\Realmaxville\realmax
+ville-site\node_modules\@next\swc-win32-x64-msvc\next-swc.win32-x64-msvc.node is not a valid Win32 application.
+\\?\C:\Users\Ikenna\Codesss\Realmaxville\realmaxville-site\node_modules\@next\swc-win32-x64-msvc\next-swc.win32-x64-msv
+c.node
+ΓÜá Attempted to load @next/swc-win32-x64-msvc, but an error occurred: \\?\C:\Users\Ikenna\Codesss\Realmaxville\realmax
+ville-site\node_modules\@next\swc-win32-x64-msvc\next-swc.win32-x64-msvc.node is not a valid Win32 application.
+\\?\C:\Users\Ikenna\Codesss\Realmaxville\realmaxville-site\node_modules\@next\swc-win32-x64-msvc\next-swc.win32-x64-msv
+c.node

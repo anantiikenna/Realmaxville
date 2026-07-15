@@ -1,0 +1,431 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>ARCHITAS | SKYLINE TOWER CASE STUDY</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Space+Mono:wght@400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#050505",
+                        "surface-dim": "#131313",
+                        "on-secondary": "#293500",
+                        "tertiary-fixed-dim": "#00dbe9",
+                        "error": "#ffb4ab",
+                        "surface-tint": "#c9c6c5",
+                        "outline": "#8e9192",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-container": "#20201f",
+                        "on-primary": "#313030",
+                        "on-primary-fixed": "#1c1b1b",
+                        "secondary": "#ffffff",
+                        "tertiary": "#00dbe9",
+                        "on-surface": "#e5e2e1",
+                        "tertiary-container": "#000607",
+                        "secondary-fixed-dim": "#aed500",
+                        "inverse-primary": "#5f5e5e",
+                        "tertiary-fixed": "#7df4ff",
+                        "on-secondary-container": "#576c00",
+                        "error-container": "#93000a",
+                        "on-error": "#690005",
+                        "on-tertiary-container": "#00848d",
+                        "on-primary-fixed-variant": "#474646",
+                        "on-tertiary-fixed": "#002022",
+                        "surface-bright": "#393939",
+                        "primary-fixed": "#e5e2e1",
+                        "surface": "#131313",
+                        "secondary-container": "#c7f300",
+                        "surface-container-low": "#1c1b1b",
+                        "surface-container-lowest": "#0e0e0e",
+                        "primary-fixed-dim": "#c9c6c5",
+                        "on-error-container": "#ffdad6",
+                        "background": "#131313",
+                        "on-surface-variant": "#c4c7c7",
+                        "surface-variant": "#353535",
+                        "secondary-fixed": "#c7f300",
+                        "outline-variant": "#444748",
+                        "inverse-on-surface": "#313030",
+                        "surface-container-highest": "#353535",
+                        "on-secondary-fixed-variant": "#3d4d00",
+                        "on-primary-container": "#797777",
+                        "on-tertiary-fixed-variant": "#004f54",
+                        "on-background": "#e5e2e1",
+                        "inverse-surface": "#e5e2e1",
+                        "on-tertiary": "#00363a",
+                        "on-secondary-fixed": "#171e00",
+                        "primary": "#c9c6c5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "32px",
+                        "container-max": "1440px",
+                        "margin-mobile": "24px",
+                        "unit": "8px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Inter"],
+                        "label-caps": ["Space Mono"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "display-xl": ["Inter"],
+                        "display-lg-mobile": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.03em", "fontWeight": "800"}],
+                        "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.2em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "headline-sm": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "display-xl": ["72px", {"lineHeight": "1.0", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                        "display-lg-mobile": ["36px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .cyber-glow-border {
+            position: relative;
+        }
+        .cyber-glow-border::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 1px solid rgba(199, 243, 0, 0.1);
+            pointer-events: none;
+            border-radius: inherit;
+        }
+        .pulse-active {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { opacity: 0.4; }
+            50% { opacity: 1; }
+            100% { opacity: 0.4; }
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-primary-container text-on-surface font-body-md selection:bg-secondary-container selection:text-on-secondary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface-container-lowest/80 backdrop-blur-xl border-b border-secondary/10">
+<div class="flex justify-between items-center px-margin-desktop py-4 w-full max-w-container-max mx-auto">
+<div class="flex items-center gap-4">
+<span class="font-display-lg text-display-lg tracking-tighter text-secondary">ARCHITAS</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors" href="#">Marketplace</a>
+<a class="font-label-caps text-label-caps text-secondary border-b-2 border-secondary pb-1" href="#">Portfolio</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors" href="#">Services</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors" href="#">Inquiry</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="font-label-caps text-label-caps text-secondary hover:bg-secondary/5 px-6 py-2 border border-secondary/20 rounded-full transition-all">Connect</button>
+<span class="material-symbols-outlined text-secondary cursor-pointer">grid_view</span>
+</div>
+</div>
+</nav>
+<!-- SideNavBar (Expanded on Hover) -->
+<aside class="fixed left-0 top-0 h-full w-20 hover:w-64 z-[60] transition-all duration-500 bg-surface-container-low/90 backdrop-blur-2xl border-r border-secondary/10 group overflow-hidden">
+<div class="flex flex-col h-full py-8">
+<div class="px-6 mb-12">
+<div class="w-8 h-8 bg-secondary-container rounded flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-on-secondary">architecture</span>
+</div>
+<div class="opacity-0 group-hover:opacity-100 transition-all duration-300">
+<h2 class="font-headline-sm text-headline-sm font-bold text-secondary whitespace-nowrap">ARCHITAS LAB</h2>
+<p class="font-label-caps text-[10px] text-on-surface-variant">Technical Operations</p>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-4">
+<a class="flex items-center gap-4 p-2 rounded bg-secondary/10 text-secondary border-l-4 border-secondary" href="#">
+<span class="material-symbols-outlined shrink-0">architecture</span>
+<span class="font-label-caps text-label-caps opacity-0 group-hover:opacity-100 transition-all">Blueprint</span>
+</a>
+<a class="flex items-center gap-4 p-2 rounded text-on-surface-variant hover:text-secondary hover:bg-secondary/5 transition-all" href="#">
+<span class="material-symbols-outlined shrink-0">account_tree</span>
+<span class="font-label-caps text-label-caps opacity-0 group-hover:opacity-100 transition-all">Portfolio</span>
+</a>
+<a class="flex items-center gap-4 p-2 rounded text-on-surface-variant hover:text-secondary hover:bg-secondary/5 transition-all" href="#">
+<span class="material-symbols-outlined shrink-0">biotech</span>
+<span class="font-label-caps text-label-caps opacity-0 group-hover:opacity-100 transition-all">Services</span>
+</a>
+<a class="flex items-center gap-4 p-2 rounded text-on-surface-variant hover:text-secondary hover:bg-secondary/5 transition-all" href="#">
+<span class="material-symbols-outlined shrink-0">description</span>
+<span class="font-label-caps text-label-caps opacity-0 group-hover:opacity-100 transition-all">Case Studies</span>
+</a>
+<a class="flex items-center gap-4 p-2 rounded text-on-surface-variant hover:text-secondary hover:bg-secondary/5 transition-all" href="#">
+<span class="material-symbols-outlined shrink-0">contact_page</span>
+<span class="font-label-caps text-label-caps opacity-0 group-hover:opacity-100 transition-all">Contact</span>
+</a>
+</nav>
+<div class="px-6 mt-auto">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-secondary-container pulse-active"></div>
+<span class="font-label-caps text-[10px] text-on-surface-variant opacity-0 group-hover:opacity-100 whitespace-nowrap">System Status: Active</span>
+</div>
+</div>
+</div>
+</aside>
+<main class="ml-20 pt-20">
+<!-- Full-Screen Cinematic Header -->
+<header class="relative h-[921px] w-full overflow-hidden flex items-end px-margin-desktop pb-24">
+
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full" data-alt="A cinematic, ultra-high-definition photograph of a futuristic skyscraper, the Skyline Tower, at dusk. The building is a marvel of architectural glass and steel, reflecting a deep indigo sky with streaks of orange sunset. The ground level is illuminated by clean, cyber-lime accent lights that emphasize its complex structural geometry. The image is framed with wide-angle perspective to convey immense scale and engineering precision, maintaining the high-end obsidian tech aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB2QIWDkK2FkxWuxLjpG6z5dx2V1bmcCAwtq_GjnKzuYyrPPo-aB2towfUKYW17pSCPEMWMt-ZViCjFxNifhm4_uS-zGMO4asxyQv9G22gwTphgVUzzvVHMzkWtJNMvInd76buo-njipYwo3pvxOpTYh7jpeaP3TeYILYatP7JHz81WUy9XscVyw09o6PJom0OJZ7vUioKLtq01U64SlD9OETFDwz9ipJ7TL0rgR6z6CdSDn7tDa8GQdBML8ob6e352jf-EVEPCodMD')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary-container via-primary-container/40 to-transparent"></div>
+</div>
+<div class="relative z-10 w-full max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-end gap-12">
+<div class="max-w-2xl">
+<div class="flex items-center gap-3 mb-6">
+<span class="px-3 py-1 bg-secondary-container/10 border border-secondary-container/30 text-secondary-container font-label-caps text-[10px] rounded-full">PROJECT CASE 082</span>
+<div class="w-12 h-px bg-secondary-container/40"></div>
+<span class="text-on-surface-variant font-label-caps text-[10px]">FLAGSHIP VENTURE</span>
+</div>
+<h1 class="font-display-xl text-display-xl text-secondary mb-4">SKYLINE TOWER</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 leading-relaxed">A vertical ecosystem redefining the urban horizon through parametric engineering and bio-integrated materials. This $1.2B operation represents the pinnacle of Architas Cyber Lab's technical delivery.</p>
+<div class="flex gap-4">
+<button class="bg-secondary-container text-on-secondary px-8 py-4 rounded-full font-label-caps text-label-caps hover:shadow-[0_0_20px_rgba(199,243,0,0.4)] transition-all flex items-center gap-2">
+                            VIEW FULL PLAN <span class="material-symbols-outlined text-sm">open_in_new</span>
+</button>
+<button class="border border-secondary/20 text-secondary px-8 py-4 rounded-full font-label-caps text-label-caps hover:bg-secondary/5 transition-all">DOWNLOAD BIM DATA</button>
+</div>
+</div>
+<!-- Metadata Glass Panel -->
+<div class="glass-panel p-8 rounded-lg min-w-[320px] cyber-glow-border">
+<div class="space-y-6">
+<div class="flex justify-between items-center border-b border-secondary/5 pb-4">
+<span class="font-label-caps text-[10px] text-on-surface-variant">LOCATION</span>
+<span class="text-secondary font-medium" data-location="Dubai, UAE">DUBAI, UAE</span>
+</div>
+<div class="flex justify-between items-center border-b border-secondary/5 pb-4">
+<span class="font-label-caps text-[10px] text-on-surface-variant">BUDGET</span>
+<span class="text-secondary font-medium">$1.24 BILLION</span>
+</div>
+<div class="flex justify-between items-center border-b border-secondary/5 pb-4">
+<span class="font-label-caps text-[10px] text-on-surface-variant">DURATION</span>
+<span class="text-secondary font-medium">38 MONTHS</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-label-caps text-[10px] text-on-surface-variant">BIM STATUS</span>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-secondary-container pulse-active"></div>
+<span class="text-secondary-container font-medium">LIVE REPLICATION</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Technical Overview: Bento Grid -->
+<section class="py-32 px-margin-desktop bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto">
+<div class="mb-20">
+<h2 class="font-label-caps text-label-caps text-secondary-container mb-4">01. TECHNICAL OVERVIEW</h2>
+<p class="font-display-lg text-display-lg text-secondary">DECONSTRUCTING THE MONOLITH</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 h-auto lg:h-[700px]">
+<!-- Main Image Block -->
+<div class="md:col-span-8 relative rounded-lg overflow-hidden glass-panel group">
+<div class="absolute inset-0 transition-transform duration-700 group-hover:scale-105" data-alt="A detailed architectural visualization of a high-tech building section. The image shows the internal structural beams glowing with a soft blue light, revealing the 'skeleton' of the tower. Surrounding this are layers of glass and steel, with technical annotations and grid lines overlayed to give a sense of digital design precision. The color palette is dominated by dark obsidian tones and electric cyan accents." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBVWchedlMQExmuOpwfKkneQKgfwsYvsLeDPoPSAHlBR5zhG7wIWhwGsgjw5ebX1we13tCdp5HKPdbhagsFgAe7nvj3uLLEKGPZU4ZjgvE19M7olMHOkhZxB8GC-coN9IULhZGYSldoBqoj-90bd-K34BLsQAxO4tbscyXeBb1OFIIOr_QdNwsWz8TA6LGrU7us0lVWIt6jkZ1Xd4c6TQwjVxRjbx9hOxVnJy8h4lEjIeoI6N7BN1_oo0JIdxMKdKk8z8pkfQy2nPV-')"></div>
+<div class="absolute bottom-0 left-0 p-12 bg-gradient-to-t from-primary-container/80 to-transparent w-full">
+<h3 class="font-headline-lg text-headline-lg text-secondary mb-2">Adaptive Façade System</h3>
+<p class="text-on-surface-variant max-w-lg">Utilizing 12,000 individual crystalline panels that pivot based on real-time thermal analysis to optimize internal cooling and solar harvest.</p>
+</div>
+</div>
+<!-- Side Stats -->
+<div class="md:col-span-4 flex flex-col gap-8">
+<div class="glass-panel p-8 flex-1 rounded-lg flex flex-col justify-center border-l-4 border-secondary-container">
+<span class="font-label-caps text-[10px] text-on-surface-variant mb-2">STRUCTURAL EFFICIENCY</span>
+<div class="text-5xl font-extrabold text-secondary mb-2">94.2%</div>
+<p class="text-sm text-on-surface-variant">Carbon-neutral material integration across the primary core and secondary support matrix.</p>
+</div>
+<div class="glass-panel p-8 flex-1 rounded-lg flex flex-col justify-center">
+<span class="font-label-caps text-[10px] text-on-surface-variant mb-2">FLOOR AREA RATIO</span>
+<div class="text-5xl font-extrabold text-secondary mb-2">1:18</div>
+<p class="text-sm text-on-surface-variant">Optimized spatial allocation for maximum luxury residential and enterprise density.</p>
+</div>
+<div class="glass-panel p-8 flex-1 rounded-lg flex flex-col justify-center">
+<span class="font-label-caps text-[10px] text-on-surface-variant mb-2">ELEVATION HEIGHT</span>
+<div class="text-5xl font-extrabold text-secondary mb-2">482m</div>
+<p class="text-sm text-on-surface-variant">A new landmark defining the regional tech hub skyline through sheer vertical ambition.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Gallery with Blueprint Overlays -->
+<section class="py-32 px-margin-desktop">
+<div class="max-w-container-max mx-auto">
+<div class="flex justify-between items-end mb-16">
+<div>
+<h2 class="font-label-caps text-label-caps text-secondary-container mb-4">02. VISUAL ARTIFACTS</h2>
+<p class="font-display-lg text-display-lg text-secondary">BLUEPRINT SYNCHRONIZATION</p>
+</div>
+<div class="flex gap-4">
+<button class="w-12 h-12 rounded-full border border-secondary/20 flex items-center justify-center hover:bg-secondary/10 transition-all text-secondary">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-12 h-12 rounded-full border border-secondary/20 flex items-center justify-center hover:bg-secondary/10 transition-all text-secondary">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="flex gap-8 overflow-x-auto hide-scrollbar pb-12">
+<!-- Gallery Item 1 -->
+<div class="min-w-[400px] lg:min-w-[600px] h-[400px] relative rounded-lg overflow-hidden group cursor-crosshair">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A high-fidelity interior render of a penthouse living room in the Skyline Tower. The room features floor-to-ceiling glass walls overlooking a futuristic cityscape at night. The lighting is low and moody, with accent strips of warm amber light. The furniture is minimalist and sculptural, emphasizing luxury and high-tech elegance. The image has a subtle digital blueprint overlay of the electrical layout." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB1ZB5WDDJYwU2h8OSgWUJbJoDhb-cVLAxDNAaA27Z6Cp5Bqkeesr_Vouu6D0IimybC4z8qgQDn6hhkLELGtNL7kUfBnWZ1RT4kDSkK9TSJWgY6HkRqEpc6FfIKpqB5Qftpg7_Zf539qD0HmSvtQMMUYkED7UeVZ63HIuT_mrruoW7Q2RIujO41EwELb31CWSU3YaqdNT6zGj-ASL88H9wrFltc6Bc9BuiXgOCzUCE7rcgw4x-S67pvHFxb2JDTyaMyoUUzxmOz5vWR')"></div>
+<div class="absolute inset-0 bg-secondary-container/20 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="absolute top-6 left-6 flex gap-2">
+<span class="bg-primary-container/80 backdrop-blur text-[10px] px-3 py-1 font-label-caps border border-secondary/10 rounded">LVL 82 RECEPTACLES</span>
+</div>
+<div class="absolute bottom-0 inset-x-0 p-6 glass-panel translate-y-full group-hover:translate-y-0 transition-transform">
+<p class="text-sm font-label-caps text-secondary">VIEW ARCHITECTURAL DRAWING</p>
+</div>
+</div>
+<!-- Gallery Item 2 -->
+<div class="min-w-[400px] lg:min-w-[600px] h-[400px] relative rounded-lg overflow-hidden group cursor-crosshair">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A technical cross-section diagram of the Skyline Tower's HVAC system, rendered in a sophisticated glassmorphic style. Blue and red lines represent cold and hot airflow paths through the building's central core. The diagram is overlayed on a semi-transparent view of the tower's structure, creating a sense of deep engineering complexity and clarity. Dark obsidian background with vibrant neon highlights." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBTueGa0wcUORxuP9MUqpsybWn69JnSxw8_vROmL-xL84lURRMWXQucg6CCUBWUtKEht7PvQTApY9jc8O0UKfL0mQMhae36IfScb2mPe73MyxMOPn2Cn6mp1gofx3Q4sbpPGSPXyiw_mj4GZcwEACMqXPNsDaA4YusHY3WVa5fsHLjNubHQ0INAmULa5lPevmO45xbNegV_f64N2tQa92ODohzqRGej-2x6dmBtHPahVVOEs6W34NGEImTEr4VS0YImDLSRZ-cpKCz8')"></div>
+<div class="absolute top-6 left-6 flex gap-2">
+<span class="bg-primary-container/80 backdrop-blur text-[10px] px-3 py-1 font-label-caps border border-secondary/10 rounded">THERMAL EXCHANGE NODE</span>
+</div>
+<div class="absolute bottom-0 inset-x-0 p-6 glass-panel translate-y-full group-hover:translate-y-0 transition-transform">
+<p class="text-sm font-label-caps text-secondary">VIEW MEP SPECIFICATIONS</p>
+</div>
+</div>
+<!-- Gallery Item 3 -->
+<div class="min-w-[400px] lg:min-w-[600px] h-[400px] relative rounded-lg overflow-hidden group cursor-crosshair">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A wide-angle aerial shot of the construction site of the Skyline Tower foundation. The image is captured in black and white with high contrast, focusing on the intricate rebar patterns and heavy machinery. Glowing cyan digital overlays mark the intended placement of primary structural columns, blending raw construction with futuristic planning. The lighting is dramatic, casting long shadows across the site." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDQWSs0XD7F-kFn2AutdAgaMl_lDTRXjB1JyA3D-qhuGserIwaPuNMuTp9DhK7h_GgHfTwGhpAXljdhN1ptH4l4tjOBKQ4Zbr0ljIsw3cXKFBc1CrTExpR1Kw2AgmYRysc3lBC_8izD4QXjm1R1eUvUXa6VXSGMJVKNQcXd9rCNGFEhaSjvIK57Izo_FO12Qb9khx13a3h7wS5fs-Lj4NmqfS6m1cdNPrCU06wfLqbAyS00itdtNmUEwKHfMDgOoMZvpOyXyqr7GeOg')"></div>
+<div class="absolute top-6 left-6 flex gap-2">
+<span class="bg-primary-container/80 backdrop-blur text-[10px] px-3 py-1 font-label-caps border border-secondary/10 rounded">FOUNDATION PIERS X-9</span>
+</div>
+<div class="absolute bottom-0 inset-x-0 p-6 glass-panel translate-y-full group-hover:translate-y-0 transition-transform">
+<p class="text-sm font-label-caps text-secondary">VIEW GEOTECHNICAL DATA</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Engineering Challenges Section -->
+<section class="py-32 bg-surface-dim">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+<div>
+<h2 class="font-label-caps text-label-caps text-secondary-container mb-4">03. ENGINEERING LOGISTICS</h2>
+<p class="font-display-lg text-display-lg text-secondary mb-8 leading-tight">SOLVING THE IMPOSSIBLE</p>
+<div class="space-y-12">
+<div class="flex gap-6">
+<div class="w-12 h-12 rounded-lg bg-secondary/5 flex items-center justify-center shrink-0 border border-secondary/10">
+<span class="material-symbols-outlined text-secondary-container">storm</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-secondary mb-2">Wind Load Mitigation</h4>
+<p class="text-on-surface-variant">The tower's aerodynamic taper was tested in virtual wind tunnels to reduce drag by 40%, ensuring structural integrity during high-velocity desert storms.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="w-12 h-12 rounded-lg bg-secondary/5 flex items-center justify-center shrink-0 border border-secondary/10">
+<span class="material-symbols-outlined text-secondary-container">eco</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-secondary mb-2">Bio-Active Filtration</h4>
+<p class="text-on-surface-variant">Integrating vertical gardens that act as natural carbon scrubbers, processing over 12 tons of CO2 annually per residential level.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="w-12 h-12 rounded-lg bg-secondary/5 flex items-center justify-center shrink-0 border border-secondary/10">
+<span class="material-symbols-outlined text-secondary-container">precision_manufacturing</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-secondary mb-2">Automated Prefabrication</h4>
+<p class="text-on-surface-variant">90% of the interior modules were robotically assembled off-site to ensure micron-level precision and 0% waste production.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="aspect-square rounded-lg overflow-hidden border border-secondary/10 relative">
+
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="glass-panel p-6 rounded text-center">
+<span class="font-label-caps text-[10px] text-secondary-container block mb-2">SYSTEM VISUALIZER</span>
+<p class="text-xs text-on-surface-variant">Rotating 3D Matrix Rendering...</p>
+</div>
+</div>
+</div>
+<div class="absolute -bottom-12 -right-12 glass-panel p-8 rounded-lg cyber-glow-border hidden xl:block">
+<div class="text-4xl font-bold text-secondary mb-1">0.02mm</div>
+<div class="text-[10px] font-label-caps text-on-surface-variant">CORE TOLERANCE</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Marketplace CTA -->
+<section class="py-40 px-margin-desktop relative overflow-hidden">
+
+<div class="max-w-container-max mx-auto text-center relative z-10">
+<h2 class="font-display-xl text-display-xl text-secondary mb-8">ACQUIRE THE BLUEPRINT</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-12">The full technical data pack for the Skyline Tower infrastructure is now available for enterprise licensing in the Architas Marketplace.</p>
+<div class="flex flex-col md:flex-row gap-6 justify-center">
+<button class="bg-secondary text-primary-container px-12 py-5 rounded-full font-label-caps text-label-caps font-bold hover:scale-105 transition-all flex items-center justify-center gap-3">
+                        VIEW IN MARKETPLACE <span class="material-symbols-outlined">shopping_cart</span>
+</button>
+<button class="border border-secondary/40 text-secondary px-12 py-5 rounded-full font-label-caps text-label-caps hover:bg-secondary/10 transition-all flex items-center justify-center gap-3">
+                        REQUEST CONSULTATION <span class="material-symbols-outlined">calendar_today</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="relative w-full bottom-0 bg-primary-container border-t border-secondary/5">
+<div class="flex flex-col items-center justify-center py-16 px-margin-desktop gap-8 max-w-container-max mx-auto">
+<div class="font-display-lg text-display-lg text-secondary opacity-20 select-none">ARCHITAS</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors" href="#">Privacy Protocol</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors" href="#">Terms of Service</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors" href="#">API Documentation</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors" href="#">System Status</a>
+</div>
+<p class="font-label-caps text-[10px] text-on-surface-variant opacity-50">© 2024 ARCHITAS CYBER LAB. ALL RIGHTS RESERVED.</p>
+</div>
+</footer>
+<script>
+        // Micro-interactions for hover effects
+        document.querySelectorAll('.glass-panel').forEach(panel => {
+            panel.addEventListener('mousemove', (e) => {
+                const rect = panel.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                panel.style.setProperty('--mouse-x', `${x}px`);
+                panel.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+    </script>
+</body></html>

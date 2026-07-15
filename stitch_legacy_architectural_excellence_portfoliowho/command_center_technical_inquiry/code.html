@@ -1,0 +1,329 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Command Center - Technical Inquiry | ARCHITAS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Space+Mono:wght@400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #050505;
+            color: #e5e2e1;
+            overflow-x: hidden;
+        }
+        .digital-grid {
+            background-image: 
+                linear-gradient(to right, rgba(199, 243, 0, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(199, 243, 0, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(199, 243, 0, 0.1);
+        }
+        .glow-border:focus-within {
+            border-color: #c7f300;
+            box-shadow: 0 0 15px rgba(199, 243, 0, 0.2);
+        }
+        .scanline {
+            width: 100%;
+            height: 2px;
+            background: rgba(199, 243, 0, 0.1);
+            position: absolute;
+            animation: scan 4s linear infinite;
+            z-index: 10;
+        }
+        @keyframes scan {
+            0% { top: 0%; }
+            100% { top: 100%; }
+        }
+        .pulse-active {
+            animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse-ring {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .4; }
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#7df4ff",
+                    "surface-dim": "#131313",
+                    "primary-container": "#050505",
+                    "primary-fixed": "#e5e2e1",
+                    "on-error-container": "#ffdad6",
+                    "surface-bright": "#393939",
+                    "on-error": "#690005",
+                    "secondary-fixed": "#c7f300",
+                    "outline": "#8e9192",
+                    "surface-container-highest": "#353535",
+                    "on-background": "#e5e2e1",
+                    "surface-container-low": "#1c1b1b",
+                    "error-container": "#93000a",
+                    "secondary": "#ffffff",
+                    "on-surface-variant": "#c4c7c7",
+                    "surface": "#131313",
+                    "inverse-primary": "#5f5e5e",
+                    "secondary-container": "#c7f300",
+                    "on-secondary": "#293500",
+                    "on-tertiary": "#00363a",
+                    "inverse-on-surface": "#313030",
+                    "primary-fixed-dim": "#c9c6c5",
+                    "primary": "#c9c6c5",
+                    "on-primary-fixed": "#1c1b1b",
+                    "tertiary-container": "#000607",
+                    "surface-container-high": "#2a2a2a",
+                    "surface-container-lowest": "#0e0e0e",
+                    "surface-container": "#20201f",
+                    "surface-variant": "#353535",
+                    "outline-variant": "#444748",
+                    "on-tertiary-fixed": "#002022",
+                    "on-secondary-fixed-variant": "#3d4d00",
+                    "on-primary-container": "#797777",
+                    "tertiary": "#00dbe9",
+                    "on-surface": "#e5e2e1",
+                    "on-tertiary-fixed-variant": "#004f54",
+                    "on-secondary-container": "#576c00",
+                    "on-primary": "#313030",
+                    "secondary-fixed-dim": "#aed500",
+                    "on-primary-fixed-variant": "#474646",
+                    "error": "#ffb4ab",
+                    "on-tertiary-container": "#00848d",
+                    "inverse-surface": "#e5e2e1",
+                    "surface-tint": "#c9c6c5",
+                    "background": "#131313",
+                    "tertiary-fixed-dim": "#00dbe9",
+                    "on-secondary-fixed": "#171e00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1440px",
+                    "unit": "8px",
+                    "margin-mobile": "24px",
+                    "gutter": "32px",
+                    "margin-desktop": "64px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Inter"],
+                    "display-lg-mobile": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "label-caps": ["Space Mono"],
+                    "headline-sm": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "display-xl": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "display-lg-mobile": ["36px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.03em", "fontWeight": "800"}],
+                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.2em", "fontWeight": "700"}],
+                    "headline-sm": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "display-xl": ["72px", {"lineHeight": "1.0", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="digital-grid min-h-screen font-body-md text-on-background">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/10 backdrop-blur-xl border-b border-secondary-fixed/20">
+<div class="flex justify-between items-center px-margin-desktop py-unit max-w-container-max mx-auto h-20">
+<div class="font-display-lg text-display-lg font-extrabold tracking-tighter text-on-background">
+                ARCHITAS
+            </div>
+<div class="hidden md:flex items-center gap-gutter">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary-fixed transition-colors duration-300" href="#">Marketplace</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary-fixed transition-colors duration-300" href="#">Portfolio</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary-fixed transition-colors duration-300" href="#">Services</a>
+<a class="font-label-caps text-label-caps text-secondary-fixed border-b-2 border-secondary-fixed pb-1" href="#">Inquiry</a>
+</div>
+<button class="bg-secondary-fixed text-on-secondary px-8 py-3 rounded-full font-label-caps text-label-caps font-bold hover:scale-105 active:scale-95 transition-all">
+                Connect
+            </button>
+</div>
+</nav>
+<main class="pt-32 pb-margin-desktop px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Header Section -->
+<header class="mb-gutter">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-secondary-fixed/10 border border-secondary-fixed/30 rounded-full mb-unit">
+<span class="w-2 h-2 bg-secondary-fixed rounded-full pulse-active"></span>
+<span class="font-label-caps text-label-caps text-secondary-fixed">System Link Active</span>
+</div>
+<h1 class="font-display-xl text-display-xl mb-4 leading-none">COMMAND CENTER</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                Submit architectural requirements for technical evaluation. Our systems and lead architects are standing by for intake processing.
+            </p>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Global Operations Map (LHS) -->
+<section class="lg:col-span-7 space-y-gutter">
+<div class="glass-panel rounded-lg overflow-hidden relative h-[500px]">
+<div class="scanline"></div>
+<div class="absolute inset-0 z-0 grayscale contrast-125 opacity-40">
+<img class="w-full h-full object-cover" data-alt="A high-tech digital world map rendered in a minimalist schematic style with glowing nodes in Cyber Lime and Electric Cyan. The map is set against an obsidian black background with a subtle digital grid overlay. Thin neon lines connect various global cities, representing active data streams and project nodes in a futuristic laboratory aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbEFD8X1q3JEwyHCqvtxP1WkVvTwxoPQ1zsYuM_k76I9Mnqseberh9UNBny3kqLHbyUerCFI21MVQqCyPU_MVkbjMPYxo-AK8KXXx-6VggEbRmkDCERno9a-1jIfGvhITjUclmEA5vemvzvHyxHO4RCHQ6UBqiHTrJ_WWM1mL_s_UzgFSD85Jo6cHAR24HTW4jKD1q6Q3mcyw7Zd8v18S3BGKq6yj9rKYOJML6M-WQxMP6K0c2nqT6t3SazAv_2Yv1frGMaQofqkCO">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<!-- Interactive Nodes Over Map -->
+<div class="absolute top-1/4 left-1/3 group cursor-pointer">
+<div class="w-4 h-4 bg-secondary-fixed rounded-full pulse-active relative">
+<div class="absolute -top-12 -left-1/2 bg-surface-container-highest px-3 py-1 rounded text-label-sm font-label-sm opacity-0 group-hover:opacity-100 transition-opacity border border-secondary-fixed/50 whitespace-nowrap">
+                                NODE_01: TOKYO_CORE
+                            </div>
+</div>
+</div>
+<div class="absolute bottom-1/3 right-1/4 group cursor-pointer">
+<div class="w-4 h-4 bg-tertiary rounded-full pulse-active relative">
+<div class="absolute -top-12 -left-1/2 bg-surface-container-highest px-3 py-1 rounded text-label-sm font-label-sm opacity-0 group-hover:opacity-100 transition-opacity border border-tertiary/50 whitespace-nowrap">
+                                NODE_07: LONDON_HUB
+                            </div>
+</div>
+</div>
+<!-- Map Overlay Stats -->
+<div class="absolute bottom-gutter left-gutter right-gutter flex justify-between items-end">
+<div class="space-y-unit">
+<div class="font-label-caps text-label-caps text-on-surface-variant">Active Operations</div>
+<div class="font-headline-sm text-headline-sm text-secondary-fixed">124_NODES</div>
+</div>
+<div class="text-right">
+<div class="font-label-caps text-label-caps text-on-surface-variant">Network Status</div>
+<div class="font-headline-sm text-headline-sm text-tertiary">ENCRYPTED</div>
+</div>
+</div>
+</div>
+<!-- Expert Uplink Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-unit">
+<div class="glass-panel p-gutter rounded-lg hover:border-secondary-fixed/40 transition-colors group">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 rounded bg-surface-variant flex items-center justify-center text-secondary-fixed">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">terminal</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm">Lead Architect</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant">D. VARGAS</p>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-gutter">Specializing in high-concurrency protocols and obsidian-tier security frameworks.</p>
+<button class="w-full py-3 border border-secondary-fixed/20 font-label-caps text-label-caps hover:bg-secondary-fixed/5 transition-all text-secondary-fixed">Direct Connect</button>
+</div>
+<div class="glass-panel p-gutter rounded-lg hover:border-tertiary/40 transition-colors group">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 rounded bg-surface-variant flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">hub</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm">Systems Lead</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant">X. CHEN</p>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-gutter">Expert in global infrastructure scaling and sub-millisecond latency optimization.</p>
+<button class="w-full py-3 border border-tertiary/20 font-label-caps text-label-caps hover:bg-tertiary/5 transition-all text-tertiary">Direct Connect</button>
+</div>
+</div>
+</section>
+<!-- Project Architecting Form (RHS) -->
+<section class="lg:col-span-5">
+<div class="glass-panel p-gutter rounded-lg sticky top-32">
+<div class="mb-gutter">
+<h2 class="font-headline-lg text-headline-lg mb-2">PROJECT INTAKE</h2>
+<div class="h-1 w-16 bg-secondary-fixed"></div>
+</div>
+<form class="space-y-gutter">
+<!-- Identity Inputs -->
+<div class="space-y-unit">
+<label class="font-label-caps text-label-caps text-on-surface-variant block">OPERATOR_IDENTITY</label>
+<input class="w-full bg-surface-container-lowest border-outline-variant/30 rounded px-4 py-4 focus:ring-1 focus:ring-secondary-fixed focus:border-secondary-fixed outline-none text-on-background placeholder:text-on-surface-variant/30 transition-all glow-border" placeholder="FULL_NAME" type="text">
+</div>
+<div class="space-y-unit">
+<label class="font-label-caps text-label-caps text-on-surface-variant block">UPLINK_PROTOCOL</label>
+<input class="w-full bg-surface-container-lowest border-outline-variant/30 rounded px-4 py-4 focus:ring-1 focus:ring-secondary-fixed focus:border-secondary-fixed outline-none text-on-background placeholder:text-on-surface-variant/30 transition-all glow-border" placeholder="EMAIL_ADDRESS" type="email">
+</div>
+<!-- Scale Selection -->
+<div class="space-y-unit">
+<label class="font-label-caps text-label-caps text-on-surface-variant block">PROJECT_SCALE</label>
+<div class="grid grid-cols-3 gap-unit">
+<button class="py-3 border border-outline-variant/30 rounded font-label-caps text-label-sm hover:border-secondary-fixed transition-colors" type="button">STARTUP</button>
+<button class="py-3 border border-secondary-fixed bg-secondary-fixed/10 rounded font-label-caps text-label-sm text-secondary-fixed" type="button">ENTERPRISE</button>
+<button class="py-3 border border-outline-variant/30 rounded font-label-caps text-label-sm hover:border-secondary-fixed transition-colors" type="button">GOV_GRADE</button>
+</div>
+</div>
+<!-- Budget/Investment -->
+<div class="space-y-unit">
+<label class="font-label-caps text-label-caps text-on-surface-variant block">CAPITAL_ALLOCATION</label>
+<select class="w-full bg-surface-container-lowest border-outline-variant/30 rounded px-4 py-4 focus:ring-1 focus:ring-secondary-fixed focus:border-secondary-fixed outline-none text-on-background transition-all">
+<option>$50k - $150k</option>
+<option>$150k - $500k</option>
+<option selected="">$500k - $2M+</option>
+</select>
+</div>
+<!-- Briefing -->
+<div class="space-y-unit">
+<label class="font-label-caps text-label-caps text-on-surface-variant block">TECHNICAL_BRIEFING</label>
+<textarea class="w-full bg-surface-container-lowest border-outline-variant/30 rounded px-4 py-4 focus:ring-1 focus:ring-secondary-fixed focus:border-secondary-fixed outline-none text-on-background placeholder:text-on-surface-variant/30 transition-all glow-border" placeholder="DESCRIBE_ARCHITECTURE_NEEDS" rows="4"></textarea>
+</div>
+<button class="w-full bg-secondary-fixed text-on-secondary py-5 rounded-full font-label-caps text-label-caps font-extrabold flex items-center justify-center gap-unit hover:shadow-[0_0_20px_rgba(199,243,0,0.4)] transition-all" type="submit">
+                            INITIALIZE TRANSMISSION
+                            <span class="material-symbols-outlined">send</span>
+</button>
+</form>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-gutter px-margin-desktop border-t border-outline-variant/10 bg-surface-container-lowest mt-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-unit items-center w-full max-w-container-max mx-auto">
+<div class="space-y-unit">
+<div class="font-label-caps text-label-caps text-on-surface">ARCHITAS PROTOCOL</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">© 2024 ARCHITAS PROTOCOL. ALL RIGHTS RESERVED.</div>
+</div>
+<div class="flex flex-wrap md:justify-end gap-gutter">
+<span class="font-label-sm text-label-sm text-secondary-fixed flex items-center gap-1">
+<span class="w-1.5 h-1.5 bg-secondary-fixed rounded-full"></span>
+                    System Status: Online
+                </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Latency: 24ms</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Encryption: AES-256</span>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction: Update cursor or glow effect on grid
+        document.addEventListener('mousemove', (e) => {
+            const grid = document.querySelector('.digital-grid');
+            const x = (e.clientX / window.innerWidth) * 100;
+            const y = (e.clientY / window.innerHeight) * 100;
+            // grid.style.backgroundPosition = `${x}% ${y}%`; // Optional subtle grid parallax
+        });
+
+        // Toggle scales
+        const scaleButtons = document.querySelectorAll('[type="button"]');
+        scaleButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                scaleButtons.forEach(b => {
+                    b.classList.remove('border-secondary-fixed', 'bg-secondary-fixed/10', 'text-secondary-fixed');
+                    b.classList.add('border-outline-variant/30');
+                });
+                btn.classList.add('border-secondary-fixed', 'bg-secondary-fixed/10', 'text-secondary-fixed');
+                btn.classList.remove('border-outline-variant/30');
+            });
+        });
+    </script>
+</body></html>

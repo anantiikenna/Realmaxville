@@ -1,0 +1,340 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Our Visionary Lab | ARCHITAS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#7df4ff",
+                    "surface-dim": "#131313",
+                    "primary-container": "#050505",
+                    "primary-fixed": "#e5e2e1",
+                    "on-error-container": "#ffdad6",
+                    "surface-bright": "#393939",
+                    "on-error": "#690005",
+                    "secondary-fixed": "#c7f300",
+                    "outline": "#8e9192",
+                    "surface-container-highest": "#353535",
+                    "on-background": "#e5e2e1",
+                    "surface-container-low": "#1c1b1b",
+                    "error-container": "#93000a",
+                    "secondary": "#ffffff",
+                    "on-surface-variant": "#c4c7c7",
+                    "surface": "#131313",
+                    "inverse-primary": "#5f5e5e",
+                    "secondary-container": "#c7f300",
+                    "on-secondary": "#293500",
+                    "on-tertiary": "#00363a",
+                    "inverse-on-surface": "#313030",
+                    "primary-fixed-dim": "#c9c6c5",
+                    "primary": "#c9c6c5",
+                    "on-primary-fixed": "#1c1b1b",
+                    "tertiary-container": "#000607",
+                    "surface-container-high": "#2a2a2a",
+                    "surface-container-lowest": "#0e0e0e",
+                    "surface-container": "#20201f",
+                    "surface-variant": "#353535",
+                    "outline-variant": "#444748",
+                    "on-tertiary-fixed": "#002022",
+                    "on-secondary-fixed-variant": "#3d4d00",
+                    "on-primary-container": "#797777",
+                    "tertiary": "#00dbe9",
+                    "on-surface": "#e5e2e1",
+                    "on-tertiary-fixed-variant": "#004f54",
+                    "on-secondary-container": "#576c00",
+                    "on-primary": "#313030",
+                    "secondary-fixed-dim": "#aed500",
+                    "on-primary-fixed-variant": "#474646",
+                    "error": "#ffb4ab",
+                    "on-tertiary-container": "#00848d",
+                    "inverse-surface": "#e5e2e1",
+                    "surface-tint": "#c9c6c5",
+                    "background": "#131313",
+                    "tertiary-fixed-dim": "#00dbe9",
+                    "on-secondary-fixed": "#171e00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1440px",
+                    "unit": "8px",
+                    "margin-mobile": "24px",
+                    "gutter": "32px",
+                    "margin-desktop": "64px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Inter"],
+                    "display-lg-mobile": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "label-caps": ["Space Mono"],
+                    "headline-sm": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "display-xl": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "display-lg-mobile": ["36px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.03em", "fontWeight": "800"}],
+                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.2em", "fontWeight": "700"}],
+                    "headline-sm": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "display-xl": ["72px", {"lineHeight": "1.0", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #050505;
+            color: #e5e2e1;
+            overflow-x: hidden;
+        }
+
+        .blueprint-grid {
+            background-image: 
+                linear-gradient(to right, rgba(199, 243, 0, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(199, 243, 0, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(199, 243, 0, 0.1);
+        }
+
+        .cyber-glow {
+            box-shadow: 0 0 20px rgba(199, 243, 0, 0.2);
+        }
+
+        .pulse-active {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: .5; transform: scale(1.1); }
+        }
+
+        .text-glow {
+            text-shadow: 0 0 10px rgba(199, 243, 0, 0.4);
+        }
+
+        .mask-gradient {
+            mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+        }
+    </style>
+</head>
+<body class="font-body-md">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/10 backdrop-blur-xl border-b border-secondary-fixed/20">
+<div class="flex justify-between items-center px-margin-desktop py-unit max-w-container-max mx-auto h-20">
+<div class="font-display-lg text-display-lg font-extrabold tracking-tighter text-on-background">ARCHITAS</div>
+<div class="hidden md:flex gap-gutter items-center">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary-fixed transition-colors duration-300 cursor-pointer active:scale-95" href="#">Marketplace</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary-fixed transition-colors duration-300 cursor-pointer active:scale-95" href="#">Portfolio</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary-fixed transition-colors duration-300 cursor-pointer active:scale-95" href="#">Services</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary-fixed transition-colors duration-300 cursor-pointer active:scale-95" href="#">Inquiry</a>
+<button class="ml-4 px-6 py-2 bg-secondary-fixed text-on-secondary font-label-caps text-label-caps rounded-full hover:shadow-[0_0_15px_rgba(199,243,0,0.5)] transition-all duration-300 active:scale-95">Connect</button>
+</div>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-secondary-fixed">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu</span>
+</button>
+</div>
+</nav>
+<main class="relative pt-20">
+<!-- Hero Section: Our Visionary Lab -->
+<section class="relative min-h-[90vh] flex flex-col items-center justify-center px-margin-mobile md:px-margin-desktop overflow-hidden">
+<div class="absolute inset-0 blueprint-grid opacity-30 z-0"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-secondary-fixed/5 blur-[120px] rounded-full z-0"></div>
+<div class="relative z-10 text-center max-w-4xl">
+<div class="flex items-center justify-center gap-2 mb-gutter">
+<div class="h-px w-12 bg-secondary-fixed"></div>
+<span class="font-label-caps text-label-caps text-secondary-fixed tracking-[0.3em]">EST. 2024 ARCHITAS PROTOCOL</span>
+<div class="h-px w-12 bg-secondary-fixed"></div>
+</div>
+<h1 class="font-display-xl text-display-xl-mobile md:text-display-xl text-white mb-gutter leading-none">OUR VISIONARY LAB</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto opacity-80">
+                    Evolving from the foundations of traditional architecture to the frontiers of Cyber Labs. We synthesize brute-force structural integrity with fluid, kinetic intelligence.
+                </p>
+<div class="mt-margin-desktop flex gap-unit">
+<button class="px-8 py-4 bg-secondary-fixed text-on-secondary font-label-caps text-label-caps rounded-full cyber-glow hover:scale-105 transition-transform active:scale-95">Initialize Protocol</button>
+<button class="px-8 py-4 border border-secondary-fixed/30 text-secondary-fixed font-label-caps text-label-caps rounded-full hover:bg-secondary-fixed/10 transition-colors active:scale-95">Data Archives</button>
+</div>
+</div>
+<!-- Abstract Visual Element -->
+<div class="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-background to-transparent z-10"></div>
+</section>
+<!-- The Mission: Precision Engineering -->
+<section class="py-64 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-margin-desktop items-center">
+<div class="relative order-2 md:order-1">
+<div class="glass-card aspect-square rounded-xl overflow-hidden relative group">
+<img class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-700" data-alt="A high-tech architectural rendering of a Cyber Lab interior, featuring floating holographic blueprints and structural beams highlighted in neon cyber lime. The atmosphere is dark and clinical, with obsidian-like surfaces and sharp, refractive light leaks cutting through the space. Detailed structural components like nanotech joints are visible." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlffWY-FMVqxGbbqoNHEC5bMSWsQ4d-bHyqctL939ix-Ej9tvH890WopdNpt-LWnpsTZvgYl_J2Tky9SYB-pbL-ARTEsgmwKa7aVElGfRchLX3gUkGvFFn3lTZnwNRO3Axkp62FEWf124HAchG0qnRl_8NjqGBQshZwtl8_DxBywa22N2dgSEOwUYrU_jDRjet1_SYve9pQ4kjD-LRnGPLAv0sQfgtbmNc2jYTLFWSArj5SnVG5XJIWlkrxIwq94z1mN403waNshAV">
+<div class="absolute inset-0 bg-gradient-to-tr from-background/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-gutter left-gutter">
+<span class="font-label-caps text-label-sm text-secondary-fixed bg-secondary-fixed/10 px-3 py-1 rounded-full border border-secondary-fixed/20 backdrop-blur-md">PHASE 01: STRUCTURE</span>
+</div>
+</div>
+<!-- Decorative floating element -->
+<div class="absolute -top-12 -right-12 w-48 h-48 border border-secondary-fixed/10 rounded-full animate-pulse"></div>
+</div>
+<div class="order-1 md:order-2">
+<h2 class="font-label-caps text-label-caps text-secondary-fixed mb-unit">THE MISSION</h2>
+<h3 class="font-headline-lg text-headline-lg text-white mb-gutter">PRECISION ENGINEERING AS ART</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-gutter">
+                        We don't just build spaces; we engineer environments that respond to human presence. Our 'Cyber Labs' are living blueprints, where every millimetre is calculated for performance and every surface reflects our commitment to technical luxury.
+                    </p>
+<ul class="space-y-4">
+<li class="flex items-center gap-4 text-on-surface">
+<span class="material-symbols-outlined text-secondary-fixed text-glow">architecture</span>
+<span class="font-body-md text-body-md">Algorithmic Load Balancing</span>
+</li>
+<li class="flex items-center gap-4 text-on-surface">
+<span class="material-symbols-outlined text-secondary-fixed text-glow">memory</span>
+<span class="font-body-md text-body-md">Reactive Nanotech Surfaces</span>
+</li>
+<li class="flex items-center gap-4 text-on-surface">
+<span class="material-symbols-outlined text-secondary-fixed text-glow">precision_manufacturing</span>
+<span class="font-body-md text-body-md">Zero-Tolerance Fabrication</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- The Vision: Bento Layout -->
+<section class="py-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="mb-margin-desktop text-center">
+<h2 class="font-label-caps text-label-caps text-secondary-fixed mb-unit">THE VISION</h2>
+<h3 class="font-headline-lg text-headline-lg text-white">SUSTAINABLE LEGACIES</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter auto-rows-[300px]">
+<!-- Large Vision Card -->
+<div class="md:col-span-2 md:row-span-2 glass-card rounded-lg relative overflow-hidden group">
+<div class="absolute inset-0 bg-[url('placeholder')] bg-cover bg-center opacity-40 grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A futuristic cityscape at night where buildings are designed as glowing, green-veined ecosystems. The architecture is sharp, geometric, and utilizes transparent glass sections that reveal internal plant life and complex mechanical cooling systems. The sky is a deep obsidian purple."></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
+<div class="absolute bottom-margin-mobile left-margin-mobile p-unit">
+<h4 class="font-headline-sm text-headline-sm text-white mb-unit">Bio-Integrated Logic</h4>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">Our structures are carbon-negative, utilizing synthetic photosynthesis to power the logic of the laboratory.</p>
+</div>
+</div>
+<!-- Vertical Card -->
+<div class="md:row-span-2 glass-card rounded-lg flex flex-col justify-end p-margin-mobile border-l-4 border-secondary-fixed group relative overflow-hidden"><div class="absolute inset-0 bg-cover bg-center opacity-40 grayscale group-hover:grayscale-0 transition-all duration-500" style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuAxpNyTynTZN2F2tq8Cjf893i7wTX89aaBp7doFDQu48QL30GqlWHVE1jZwtf_5WAnHfw42ZaKceqAWI3cmI27D_hoK1ddBVzMRIBMeo0Hf89x6W_NMaw_pz8WKW8ch4rvmCIPteYQ0BLSYiUlgI2cQVHIUY5FS6zNKw1yVmZnYBUtZvykxjZfihYWAU78gsN5NvCz3JtVouN6x6BnydaCuOhTCfx7MeNwut6BbCWtuf7tXp_76VZs6fVFXlEwI8ABlO92o90RhdTPQ&quot;);"></div><div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div><div class="relative z-10 mt-auto"><span class="material-symbols-outlined text-secondary-fixed text-4xl mb-gutter block" style="font-variation-settings: 'FILL' 1;" data-original-icon="incognito">circle</span><h4 class="font-headline-sm text-headline-sm text-white mb-unit">Perpetual Refinement</h4><p class="font-body-md text-body-md text-on-surface-variant">Architas labs are never 'finished'. They are software-driven entities that update their physical constraints over time.</p></div></div>
+<!-- Horizontal Card -->
+<div class="md:col-span-2 glass-card rounded-lg p-margin-mobile flex items-center justify-between group overflow-hidden">
+<div>
+<h4 class="font-headline-sm text-headline-sm text-white mb-unit">Global Mesh Network</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Real-time telemetry from every Architas structure feeds our central intelligence core.</p>
+</div>
+<div class="hidden lg:block w-32 h-32 relative">
+<div class="absolute inset-0 border-2 border-secondary-fixed/20 rounded-full animate-spin-slow"></div>
+<div class="absolute inset-4 border border-secondary-fixed rounded-full flex items-center justify-center">
+<div class="w-2 h-2 bg-secondary-fixed rounded-full pulse-active"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Leadership: The Architects of the Lab -->
+<section class="py-64 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-margin-desktop gap-gutter">
+<div class="max-w-xl">
+<h2 class="font-label-caps text-label-caps text-secondary-fixed mb-unit">OUR CORE</h2>
+<h3 class="font-headline-lg text-headline-lg text-white">THE ARCHITECTS OF THE LAB</h3>
+</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant tracking-widest uppercase">
+                    Status: <span class="text-secondary-fixed">ACTIVE // SYNCHRONIZED</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Julian Thorne -->
+<div class="group">
+<div class="relative aspect-[3/4] rounded-lg overflow-hidden glass-card mb-gutter border-t border-secondary-fixed/30">
+<img class="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" data-alt="Portrait of Julian Thorne, a middle-aged man with sharp features and grey hair, wearing technical obsidian-black apparel. He is standing against a background of high-contrast blueprint lines and floating digital data streams in cyber lime. The lighting is dramatic, side-lit with cyan highlights. Professional and intense." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-hkMFW5s9imfx_Xpm2VXNhCwXu_GNzw46TPdzO9JYqtAK_warj7cE5WtYBCC6sTFFnzYR_fwJs9ZGEiP_eEPu0IXOVhOn3By4MOrIYQD40B7x2RrX7aRvPNj4sEfsT3RceJOLB-ajIBVMtj3C_qR_DpEFEyOYVv-EDHB3Q0J44J83Zu65UhSFMdoAnfMlBwhtGa4lKRT-V1qHXOHUOs2SJkHbFUn-JQzNayN9K_En6eE_LqKEBRmpaFf5skSWo8PUffv3upJq59Xz">
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="absolute top-4 right-4 h-2 w-2 rounded-full bg-secondary-fixed shadow-[0_0_10px_#c7f300]"></div>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-white">Julian Thorne</h4>
+<p class="font-label-caps text-label-sm text-secondary-fixed mb-unit">Chief Structural Engineer</p>
+<p class="font-body-md text-body-md text-on-surface-variant opacity-70">Master of obsidian-class load bearing. Julian translates digital physics into physical permanence.</p>
+</div>
+<!-- Elena Vance -->
+<div class="group">
+<div class="relative aspect-[3/4] rounded-lg overflow-hidden glass-card mb-gutter border-t border-secondary-fixed/30">
+<img class="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" data-alt="Portrait of Elena Vance, a woman with a sleek, minimalist aesthetic, wearing a white futuristic coat with subtle cyan accents. She is surrounded by a halo of blurred glass panels that refract a cyber lime glow. Her gaze is visionary and calm. The aesthetic is clean-futurism with high-fidelity detail." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFPeXLjnTZFYpdbLkKYKntEn7rekjKo88NZ3wtcuN4sNkjeSK_qCfkmz0Yup7F4u4Es61k2jQtt7yctCEbPwu7IT3GS2psVZD2VKD1MbEtoVL77oX7p2yGJTs1Er9Pb6Tn9nWMqI42Nr02jbk5NQTpS4My7m_k3R8tjs9D0mRvmxT0ljdDSfnY33YvzPG16Nmwzt-X1zT6dGAmkZjHSyes0Rhzm0kx9vU1P101sypIL55B3IkmGuAS-k8zu1Upz64NS_nJNq7jkA53">
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="absolute top-4 right-4 h-2 w-2 rounded-full bg-secondary-fixed shadow-[0_0_10px_#c7f300]"></div>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-white">Elena Vance</h4>
+<p class="font-label-caps text-label-sm text-secondary-fixed mb-unit">Visionary Lead</p>
+<p class="font-body-md text-body-md text-on-surface-variant opacity-70">The architect of the Architas ethos. Elena defines the intersections of human desire and technical capability.</p>
+</div>
+<!-- Marcus Chen -->
+<div class="group">
+<div class="relative aspect-[3/4] rounded-lg overflow-hidden glass-card mb-gutter border-t border-secondary-fixed/30">
+<img class="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" data-alt="Portrait of Marcus Chen, a young man with a technical, high-fashion look. He wears glasses that reflect a glowing cyan interface. Behind him are kinetic architectural models that appear to be shifting in motion. Dark laboratory setting with intense cyber lime spotlights. Technical mastery and creativity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuChvY3DvwLNdZmU6VC1PMfAp3pABeXAnUBcrzuCFM2j0edYYgWWr8cYACqJvyIm7udZgesT8Qy8oDcIBm4ORvylpuuYuYIKJa1s7j5-4fRuO-PVExodIlgjrVQOpHU5up-ctH5ZTRlGTRBdRNijH7jXS97TikbylpuZ-AU3c9bcK3oZOWpKP-qSPUpSQ23LDCvucNyGSVUkK6fFbTZuKmD7Ks-UxHOo7MhkQvwtvSY_ozSlYJaJABWo4TAA_ln7Z6Ddyy04dgWpE_oY">
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="absolute top-4 right-4 h-2 w-2 rounded-full bg-secondary-fixed shadow-[0_0_10px_#c7f300]"></div>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-white">Marcus Chen</h4>
+<p class="font-label-caps text-label-sm text-secondary-fixed mb-unit">Kinetic Architect</p>
+<p class="font-body-md text-body-md text-on-surface-variant opacity-70">Specialist in adaptive structures. Marcus engineers buildings that move, breathe, and evolve with their inhabitants.</p>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-margin-desktop mb-margin-desktop px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="glass-card rounded-xl p-margin-desktop relative overflow-hidden border border-secondary-fixed/40">
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-10 blueprint-grid rotate-12 -translate-y-1/2 translate-x-1/4"></div>
+<div class="relative z-10 max-w-2xl">
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-gutter">READY TO UPGRADE YOUR ENVIRONMENT?</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-margin-desktop">Contact our inquiry division to begin the transformation of your space into a high-performance Cyber Lab.</p>
+<button class="px-12 py-5 bg-secondary-fixed text-on-secondary font-label-caps text-label-caps rounded-full text-lg cyber-glow hover:scale-105 transition-all active:scale-95">START PROTOCOL</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-gutter px-margin-desktop bg-surface-container-lowest border-t border-outline-variant/10">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-unit items-center w-full max-w-container-max mx-auto">
+<div class="flex flex-col gap-unit">
+<div class="font-label-caps text-label-caps text-on-surface">ARCHITAS PROTOCOL</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">© 2024 ARCHITAS PROTOCOL. ALL RIGHTS RESERVED.</div>
+</div>
+<div class="flex flex-wrap md:justify-end gap-gutter">
+<span class="font-label-sm text-label-sm text-secondary-fixed">System Status: Online</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Latency: 24ms</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Encryption: AES-256</span>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interactions for glass cards
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+    </script>
+
+</body></html>

@@ -1,0 +1,394 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Core Engineering Systems | ARCHITAS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#7df4ff",
+                    "surface-dim": "#131313",
+                    "primary-container": "#050505",
+                    "primary-fixed": "#e5e2e1",
+                    "on-error-container": "#ffdad6",
+                    "surface-bright": "#393939",
+                    "on-error": "#690005",
+                    "secondary-fixed": "#c7f300",
+                    "outline": "#8e9192",
+                    "surface-container-highest": "#353535",
+                    "on-background": "#e5e2e1",
+                    "surface-container-low": "#1c1b1b",
+                    "error-container": "#93000a",
+                    "secondary": "#ffffff",
+                    "on-surface-variant": "#c4c7c7",
+                    "surface": "#131313",
+                    "inverse-primary": "#5f5e5e",
+                    "secondary-container": "#c7f300",
+                    "on-secondary": "#293500",
+                    "on-tertiary": "#00363a",
+                    "inverse-on-surface": "#313030",
+                    "primary-fixed-dim": "#c9c6c5",
+                    "primary": "#c9c6c5",
+                    "on-primary-fixed": "#1c1b1b",
+                    "tertiary-container": "#000607",
+                    "surface-container-high": "#2a2a2a",
+                    "surface-container-lowest": "#0e0e0e",
+                    "surface-container": "#20201f",
+                    "surface-variant": "#353535",
+                    "outline-variant": "#444748",
+                    "on-tertiary-fixed": "#002022",
+                    "on-secondary-fixed-variant": "#3d4d00",
+                    "on-primary-container": "#797777",
+                    "tertiary": "#00dbe9",
+                    "on-surface": "#e5e2e1",
+                    "on-tertiary-fixed-variant": "#004f54",
+                    "on-secondary-container": "#576c00",
+                    "on-primary": "#313030",
+                    "secondary-fixed-dim": "#aed500",
+                    "on-primary-fixed-variant": "#474646",
+                    "error": "#ffb4ab",
+                    "on-tertiary-container": "#00848d",
+                    "inverse-surface": "#e5e2e1",
+                    "surface-tint": "#c9c6c5",
+                    "background": "#131313",
+                    "tertiary-fixed-dim": "#00dbe9",
+                    "on-secondary-fixed": "#171e00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1440px",
+                    "unit": "8px",
+                    "margin-mobile": "24px",
+                    "gutter": "32px",
+                    "margin-desktop": "64px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Inter"],
+                    "display-lg-mobile": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "label-caps": ["Space Mono"],
+                    "headline-sm": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "display-xl": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "display-lg-mobile": ["36px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.03em", "fontWeight": "800"}],
+                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.2em", "fontWeight": "700"}],
+                    "headline-sm": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "display-xl": ["72px", {"lineHeight": "1.0", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #050505;
+            color: #e5e2e1;
+            overflow-x: hidden;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(199, 243, 0, 0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            border-color: rgba(199, 243, 0, 0.4);
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateY(-4px);
+            box-shadow: 0 0 30px rgba(199, 243, 0, 0.05);
+        }
+        .neon-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .5; }
+        }
+        .data-grid-bg {
+            background-image: radial-gradient(rgba(199, 243, 0, 0.1) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/10 backdrop-blur-xl border-b border-secondary-fixed/20">
+<div class="flex justify-between items-center px-margin-desktop py-unit max-w-container-max mx-auto">
+<div class="font-display-lg text-display-lg font-extrabold tracking-tighter text-on-background">ARCHITAS</div>
+<div class="hidden md:flex items-center gap-gutter">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary-fixed transition-colors duration-300 cursor-pointer active:scale-95" href="#">Marketplace</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary-fixed transition-colors duration-300 cursor-pointer active:scale-95" href="#">Portfolio</a>
+<a class="font-label-caps text-label-caps text-secondary-fixed border-b-2 border-secondary-fixed pb-1 cursor-pointer active:scale-95" href="#">Services</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary-fixed transition-colors duration-300 cursor-pointer active:scale-95" href="#">Inquiry</a>
+</div>
+<button class="bg-secondary-fixed text-on-secondary-fixed px-6 py-2 rounded-full font-label-caps text-label-caps font-bold hover:shadow-[0_0_20px_rgba(199,243,0,0.4)] transition-all active:scale-95">
+                Connect
+            </button>
+</div>
+</nav>
+<main class="pt-32 pb-margin-desktop min-h-screen data-grid-bg">
+<!-- Hero Section -->
+<section class="px-margin-desktop max-w-container-max mx-auto mb-20">
+<div class="flex flex-col md:flex-row items-end justify-between gap-gutter border-l-4 border-secondary-fixed pl-gutter">
+<div class="max-w-3xl">
+<span class="font-label-caps text-label-caps text-secondary-fixed mb-4 block">PROTOCOL v4.0.2</span>
+<h1 class="font-display-xl text-display-xl mb-6">CORE ENGINEERING SYSTEMS</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                        A vertically integrated computational framework for the deployment of high-fidelity architectural assets and real-time construction telemetry.
+                    </p>
+</div>
+<div class="hidden md:block text-right">
+<div class="flex items-center gap-2 text-secondary-fixed mb-2">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed neon-pulse"></span>
+<span class="font-label-caps text-label-caps">LIFECYCLE ACTIVE</span>
+</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">NODE: PRIMARY_LAB_01</div>
+</div>
+</div>
+</section>
+<!-- Services Bento Grid -->
+<section class="px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Service 1: Architectural Synthesis -->
+<div class="md:col-span-7 glass-card p-gutter rounded-lg relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-gutter opacity-10 group-hover:opacity-30 transition-opacity">
+<span class="material-symbols-outlined text-8xl" style="font-variation-settings: 'FILL' 0;">architecture</span>
+</div>
+<div class="relative z-10 h-full flex flex-col">
+<div class="flex justify-between items-start mb-12">
+<div>
+<h2 class="font-headline-lg text-headline-lg mb-2">Architectural Synthesis</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">Algorithmic design generation focused on structural optimization and spatial performance metrics.</p>
+</div>
+<div class="bg-secondary-fixed/10 border border-secondary-fixed/30 px-3 py-1 rounded text-secondary-fixed font-label-caps text-label-caps">
+                            MOD_01
+                        </div>
+</div>
+<div class="mt-auto grid grid-cols-2 gap-gutter pt-gutter border-t border-outline-variant/20">
+<div>
+<span class="font-label-caps text-label-caps text-on-surface-variant block mb-2 uppercase">Compliance</span>
+<div class="font-headline-sm text-headline-sm text-secondary-fixed">LOD 400</div>
+</div>
+<div>
+<span class="font-label-caps text-label-caps text-on-surface-variant block mb-2 uppercase">Latency</span>
+<div class="font-headline-sm text-headline-sm text-secondary-fixed">&lt; 140ms</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Service 2: BIM 5D Modeling -->
+<div class="md:col-span-5 glass-card p-gutter rounded-lg group">
+<div class="flex flex-col h-full">
+<div class="mb-8">
+<span class="material-symbols-outlined text-secondary-fixed mb-4" style="font-variation-settings: 'FILL' 1;">view_in_ar</span>
+<h2 class="font-headline-lg text-headline-lg mb-2">BIM 5D Modeling</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">High-dimensional data integration for cost and temporal synchronization.</p>
+</div>
+<div class="space-y-4 mb-8">
+<div class="flex justify-between items-center py-2 border-b border-outline-variant/10">
+<span class="font-label-sm text-label-sm text-on-surface-variant">GEOMETRY RESOLUTION</span>
+<span class="font-label-sm text-label-sm text-secondary-fixed">ULTRA-HIGH</span>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-outline-variant/10">
+<span class="font-label-sm text-label-sm text-on-surface-variant">TEMPORAL SYNC</span>
+<span class="font-label-sm text-label-sm text-secondary-fixed">REAL-TIME</span>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-outline-variant/10">
+<span class="font-label-sm text-label-sm text-on-surface-variant">DATA DENSITY</span>
+<span class="font-label-sm text-label-sm text-secondary-fixed">2.4 TB/KM²</span>
+</div>
+</div>
+<div class="mt-auto overflow-hidden rounded-lg h-32 relative">
+<img class="w-full h-full object-cover grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" data-alt="A futuristic 3D wireframe mesh of a complex architectural structure with cyan and neon green highlights against a pitch black background, technical architectural visualization style, hyper-detailed lines, obsidian dark mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsmC1-yLcSyQ48oMWNRPlA37K8-K75Jg4BvsMft8zAHocOBVVWT-vDBFlw7XJ3CjY_uPLEBCkBdzswGXjz9N-op7KoHW0BnnMcZpIf-AvS-cPp-0d5_0qOXs8hwt46SiVAbliXG9o-6nJS93dqZzU1rSwvmalcH9JB4K23ir2rcpNYmdK6StF2EQhBHyPEr92qD1ThNKw5mrU2J9erRPgSiLjNYa2VXeXmfPfXUGhhBgoW1f2PN7mNwYDdgDAMeJx0GXpixmVSwcDX">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent"></div>
+</div>
+</div>
+</div>
+<!-- Service 3: Smart Construction Management -->
+<div class="md:col-span-5 glass-card p-gutter rounded-lg flex flex-col">
+<div class="mb-12">
+<h2 class="font-headline-lg text-headline-lg mb-2">Smart Construction Management</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Neural-network driven oversight for resource allocation and site logistics.</p>
+</div>
+<div class="bg-surface-container-lowest p-gutter rounded-lg border border-outline-variant/10 mb-8">
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-caps text-label-caps text-on-surface">TELEMETRY FEED</span>
+<span class="font-label-caps text-label-caps text-tertiary">LIVE</span>
+</div>
+<div class="h-24 w-full flex items-end gap-1">
+<!-- Simulated bar chart -->
+<div class="bg-tertiary/20 w-full h-[40%]"></div>
+<div class="bg-tertiary/40 w-full h-[60%]"></div>
+<div class="bg-tertiary/60 w-full h-[90%]"></div>
+<div class="bg-tertiary/40 w-full h-[70%]"></div>
+<div class="bg-tertiary/80 w-full h-[100%]"></div>
+<div class="bg-tertiary/50 w-full h-[65%]"></div>
+</div>
+</div>
+<div class="mt-auto flex gap-4">
+<div class="flex-1">
+<div class="font-label-sm text-label-sm text-on-surface-variant mb-1 uppercase">Efficiency</div>
+<div class="font-headline-sm text-headline-sm text-tertiary">99.2%</div>
+</div>
+<div class="flex-1 text-right">
+<div class="font-label-sm text-label-sm text-on-surface-variant mb-1 uppercase">Resource Cap</div>
+<div class="font-headline-sm text-headline-sm text-tertiary">MAX</div>
+</div>
+</div>
+</div>
+<!-- Service 4: General Contracting -->
+<div class="md:col-span-7 glass-card p-gutter rounded-lg relative group overflow-hidden">
+<div class="flex flex-col md:flex-row gap-gutter relative z-10">
+<div class="flex-1">
+<h2 class="font-headline-lg text-headline-lg mb-4">General Contracting</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">Physical realization of digital assets via advanced robotic fabrication and precise site engineering.</p>
+<ul class="space-y-4">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-fixed text-sm">check_circle</span>
+<span class="font-label-caps text-label-caps">Robotic Formwork Assembly</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-fixed text-sm">check_circle</span>
+<span class="font-label-caps text-label-caps">Material Science Integration</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-fixed text-sm">check_circle</span>
+<span class="font-label-caps text-label-caps">Quantum Precision Surveying</span>
+</li>
+</ul>
+</div>
+<div class="flex-1">
+<div class="aspect-square rounded-lg border border-outline-variant/20 overflow-hidden relative">
+<img class="w-full h-full object-cover opacity-80" data-alt="A cinematic close-up of a high-precision robotic arm working on a structural concrete component in a dark, atmospheric laboratory setting. Neon cyan lasers cross the frame, and micro-particles of dust are caught in the sharp architectural lighting. Intense contrast, high-tech industrial aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0x53-Ct9EbVb7ngFOP5ZOlFC4nS5ju50rX60co0LoxYFuWDaaQahKrfateJDfSFAH0UZsF7VWus8hqm41MILiVUJravLSfFg5q6IpP3DvLIC0KwE9htA_cCX7agGgLENbKiMGIw9Wr7KtWLr-ajABGaK981QXtDedSTbRDDXKPNkgQHTJcJtwVpk2fUrUWV8NJOwtKgQHiabAyWVBlUwstdSlOiHMArZe1JsFnLECVPhIQ2Zh1dVT7ESq6qZqvcZtQmx0tSAVQuQ8">
+<div class="absolute inset-0 border-[1px] border-secondary-fixed/30 m-4 pointer-events-none"></div>
+</div>
+</div>
+</div>
+<!-- Spec Detail Overlay for Hover -->
+<div class="absolute bottom-0 left-0 w-full bg-secondary-fixed translate-y-full group-hover:translate-y-0 transition-transform duration-500 p-2">
+<div class="flex justify-around items-center">
+<span class="text-on-secondary-fixed font-label-caps text-[10px] uppercase font-bold">Execution Speed: Optimized</span>
+<span class="text-on-secondary-fixed font-label-caps text-[10px] uppercase font-bold">Safety Rating: AAA</span>
+<span class="text-on-secondary-fixed font-label-caps text-[10px] uppercase font-bold">Global Reach: Enabled</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Spec Sheet Section -->
+<section class="px-margin-desktop max-w-container-max mx-auto mt-gutter">
+<div class="glass-card rounded-lg overflow-hidden border-cyan-500/20">
+<div class="p-gutter border-b border-outline-variant/10 flex justify-between items-center bg-tertiary-container/30">
+<h3 class="font-label-caps text-label-caps text-tertiary">SYSTEM_SPECIFICATIONS.JSON</h3>
+<span class="material-symbols-outlined text-tertiary">terminal</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left font-label-caps text-label-caps border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant">
+<th class="p-4 border-b border-outline-variant/10">PARAMETER</th>
+<th class="p-4 border-b border-outline-variant/10">SYNTHESIS_V1</th>
+<th class="p-4 border-b border-outline-variant/10">BIM_V5</th>
+<th class="p-4 border-b border-outline-variant/10">SCM_CORE</th>
+<th class="p-4 border-b border-outline-variant/10">GC_ROBOTICS</th>
+</tr>
+</thead>
+<tbody class="text-on-surface">
+<tr class="hover:bg-tertiary/5 transition-colors group">
+<td class="p-4 border-b border-outline-variant/10 group-hover:text-tertiary">PRECISION</td>
+<td class="p-4 border-b border-outline-variant/10">+/- 0.1mm</td>
+<td class="p-4 border-b border-outline-variant/10">+/- 0.5mm</td>
+<td class="p-4 border-b border-outline-variant/10">N/A</td>
+<td class="p-4 border-b border-outline-variant/10">+/- 1.0mm</td>
+</tr>
+<tr class="hover:bg-tertiary/5 transition-colors group">
+<td class="p-4 border-b border-outline-variant/10 group-hover:text-tertiary">SYNC_TYPE</td>
+<td class="p-4 border-b border-outline-variant/10">LOCAL</td>
+<td class="p-4 border-b border-outline-variant/10">CLOUD_HUB</td>
+<td class="p-4 border-b border-outline-variant/10">EDGE_WIFI</td>
+<td class="p-4 border-b border-outline-variant/10">DIRECT</td>
+</tr>
+<tr class="hover:bg-tertiary/5 transition-colors group">
+<td class="p-4 border-b border-outline-variant/10 group-hover:text-tertiary">LOAD_CAP</td>
+<td class="p-4 border-b border-outline-variant/10">UNLIMITED</td>
+<td class="p-4 border-b border-outline-variant/10">10GB/S</td>
+<td class="p-4 border-b border-outline-variant/10">25K NODES</td>
+<td class="p-4 border-b border-outline-variant/10">500 TONS</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-gutter px-margin-desktop bg-surface-container-lowest border-t border-outline-variant/10">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-unit items-center w-full max-w-container-max mx-auto">
+<div class="font-label-caps text-label-caps text-on-surface">
+                ARCHITAS PROTOCOL <span class="text-on-surface-variant ml-4 font-label-sm text-label-sm">v4.0.2-STABLE</span>
+</div>
+<div class="flex flex-col md:flex-row md:justify-end gap-gutter font-label-sm text-label-sm text-on-surface-variant">
+<span class="flex items-center gap-2 hover:text-on-surface cursor-default">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed"></span> SYSTEM STATUS: ONLINE
+                </span>
+<span class="flex items-center gap-2 hover:text-on-surface cursor-default">
+                    LATENCY: 24MS
+                </span>
+<span class="flex items-center gap-2 hover:text-on-surface cursor-default">
+                    ENCRYPTION: AES-256
+                </span>
+</div>
+<div class="md:col-span-2 mt-gutter pt-gutter border-t border-outline-variant/5 text-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant/50">© 2024 ARCHITAS PROTOCOL. ALL RIGHTS RESERVED.</span>
+</div>
+</div>
+</footer>
+<script>
+        // Subtle Mouse Movement for Background Pattern
+        document.addEventListener('mousemove', (e) => {
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            document.querySelector('.data-grid-bg').style.backgroundPosition = `${x * 10}px ${y * 10}px`;
+        });
+
+        // Interactive Number Counter Logic (Simple Placeholder)
+        const counters = document.querySelectorAll('.font-headline-sm');
+        counters.forEach(counter => {
+            counter.addEventListener('mouseenter', () => {
+                const originalText = counter.innerText;
+                let iterations = 0;
+                const interval = setInterval(() => {
+                    counter.innerText = counter.innerText
+                        .split("")
+                        .map((letter, index) => {
+                            if(index < iterations) {
+                                return originalText[index];
+                            }
+                            return String.fromCharCode(65 + Math.floor(Math.random() * 26));
+                        })
+                        .join("");
+                    
+                    if(iterations >= originalText.length) clearInterval(interval);
+                    iterations += 1/3;
+                }, 30);
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,418 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>ARCHITAS | Engineering the Future</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "surface": "#131313",
+                "outline": "#8e9192",
+                "on-error": "#690005",
+                "inverse-on-surface": "#313030",
+                "error-container": "#93000a",
+                "tertiary-fixed-dim": "#00dbe9",
+                "surface-container": "#20201f",
+                "surface-bright": "#393939",
+                "inverse-primary": "#5f5e5e",
+                "on-error-container": "#ffdad6",
+                "tertiary-fixed": "#7df4ff",
+                "surface-container-highest": "#353535",
+                "inverse-surface": "#e5e2e1",
+                "on-tertiary-fixed": "#002022",
+                "primary-fixed-dim": "#c9c6c5",
+                "on-surface-variant": "#c4c7c7",
+                "outline-variant": "#444748",
+                "tertiary": "#00dbe9",
+                "on-primary-fixed-variant": "#474646",
+                "secondary-container": "#c7f300",
+                "tertiary-container": "#000607",
+                "surface-tint": "#c9c6c5",
+                "primary-fixed": "#e5e2e1",
+                "error": "#ffb4ab",
+                "secondary-fixed": "#c7f300",
+                "on-tertiary-fixed-variant": "#004f54",
+                "surface-variant": "#353535",
+                "on-primary": "#313030",
+                "on-secondary-fixed": "#171e00",
+                "background": "#050505",
+                "surface-container-high": "#2a2a2a",
+                "primary-container": "#050505",
+                "on-primary-fixed": "#1c1b1b",
+                "surface-container-lowest": "#0e0e0e",
+                "on-background": "#e5e2e1",
+                "on-surface": "#e5e2e1",
+                "surface-dim": "#131313",
+                "on-tertiary-container": "#00848d",
+                "primary": "#c9c6c5",
+                "on-secondary-container": "#576c00",
+                "surface-container-low": "#1c1b1b",
+                "secondary-fixed-dim": "#aed500",
+                "secondary": "#ffffff",
+                "on-secondary-fixed-variant": "#3d4d00",
+                "on-secondary": "#293500",
+                "on-primary-container": "#797777",
+                "on-tertiary": "#00363a"
+            },
+            "borderRadius": {
+                "DEFAULT": "1rem",
+                "lg": "2rem",
+                "xl": "3rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "margin-desktop": "64px",
+                "margin-mobile": "24px",
+                "container-max": "1440px",
+                "unit": "8px",
+                "gutter": "32px"
+            },
+            "fontFamily": {
+                "label-caps": ["Space Mono"],
+                "label-sm": ["Inter"],
+                "headline-lg": ["Inter"],
+                "body-lg": ["Inter"],
+                "headline-sm": ["Inter"],
+                "display-lg": ["Inter"],
+                "body-md": ["Inter"],
+                "display-lg-mobile": ["Inter"],
+                "display-xl": ["Inter"]
+            },
+            "fontSize": {
+                "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.2em", "fontWeight": "700"}],
+                "label-sm": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}],
+                "headline-sm": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.03em", "fontWeight": "800"}],
+                "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}],
+                "display-lg-mobile": ["36px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                "display-xl": ["72px", {"lineHeight": "1.0", "letterSpacing": "-0.04em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { background-color: #050505; color: #e5e2e1; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(24px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .glow-hover:hover { box-shadow: 0 0 20px rgba(199, 243, 0, 0.3); border-color: #c7f300; }
+        .cyber-border { border: 1px solid rgba(199, 243, 0, 0.1); }
+        .cyber-border:hover { border-color: rgba(199, 243, 0, 0.6); }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #050505; }
+        ::-webkit-scrollbar-thumb { background: #353535; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #c7f300; }
+        @keyframes pulse-lime { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+        .animate-pulse-lime { animation: pulse-lime 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+        .masonry-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 32px; }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/10 backdrop-blur-xl dark:bg-surface-container-lowest/10 border-b border-white/5 transition-all duration-300 ease-in-out">
+<div class="flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-display-lg text-display-lg-mobile font-bold tracking-tight text-primary dark:text-primary-fixed">
+                ARCHITAS
+            </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-label-caps text-label-caps text-secondary-container dark:text-secondary-fixed border-b-2 border-secondary-container pb-1" href="#">Home</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-outline hover:text-secondary transition-colors" href="#">About Us</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-outline hover:text-secondary transition-colors" href="#">Services</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-outline hover:text-secondary transition-colors" href="#">Projects</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-outline hover:text-secondary transition-colors" href="#">Building Plans</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-outline hover:text-secondary transition-colors" href="#">Contact</a>
+</div>
+<button class="bg-secondary-container text-on-secondary-fixed px-6 py-2 rounded-full font-label-caps text-label-caps hover:scale-105 transition-transform glow-hover">
+                Get a Quote
+            </button>
+</div>
+</nav>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative h-[921px] flex items-center px-margin-desktop max-w-container-max mx-auto">
+
+<div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-16 items-center w-full">
+<div>
+<div class="flex items-center gap-2 mb-6">
+<span class="w-12 h-[1px] bg-secondary-fixed"></span>
+<span class="font-label-caps text-label-caps text-secondary-fixed">ESTABLISHED 2024</span>
+</div>
+<h1 class="font-display-xl text-display-xl mb-8 leading-none">
+                        WE DON'T JUST BUILD STRUCTURES, <br>
+<span class="text-secondary-fixed">WE BUILD LEGACIES.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-outline max-w-md mb-12">
+                        From architectural design to complete construction, we create timeless spaces that inspire, endure and elevate the way you live.
+                    </p>
+<div class="flex gap-4">
+<button class="bg-secondary-fixed text-black px-8 py-4 rounded-full font-label-caps text-label-caps glow-hover transition-all">START PROJECT</button>
+<button class="border border-outline hover:border-secondary-fixed px-8 py-4 rounded-full font-label-caps text-label-caps transition-all flex items-center gap-2">
+                            EXPLORE PROJECTS <span class="material-symbols-outlined text-[18px]">play_circle</span>
+</button>
+</div>
+</div>
+<div class="relative h-full hidden md:block">
+<div class="glass p-4 rounded-lg transform rotate-2 hover:rotate-0 transition-transform duration-700 h-[600px] overflow-hidden">
+<img class="w-full h-full object-cover rounded-lg grayscale hover:grayscale-0 transition-all duration-700" data-alt="A hyper-realistic, low-angle architectural photograph of a futuristic obsidian glass villa nestled in a dark, atmospheric pine forest at twilight. The villa glows from within with warm, golden architectural lighting, contrasting against the deep blacks and teals of the surrounding environment. The style is sharp, minimal, and premium, reflecting a high-end luxury laboratory aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5EZiAITKeuCOLR9IOQpFvEf0Cktdn-nveWxK2b3f2DmvyOP7oSi8jnjeZQy4Y7_tGhhomRt-bEvsO48ZSN_DTm2gIaWb_dpd8N1ZI8wOBRxcs5slb0oNOUC9tR4mX9npZ8IezDBMV1GUwDjcip_sw-7gFfXzzBgBBr6_byp7lHBMFHE_HyGaCqietExMCneDL3ancPDJE372iVpWojyWuTm6QqL0Lql1SolDw25dfAaeQO_VHm7TpIG2BplL0uqcMN923Hvb7XuxL">
+</div>
+<!-- Quick Stats Overlay -->
+<div class="absolute -bottom-10 -left-10 glass p-8 rounded-lg cyber-border z-20">
+<div class="grid grid-cols-2 gap-12">
+<div>
+<div class="text-display-lg-mobile font-bold text-secondary-fixed">500+</div>
+<div class="font-label-caps text-[10px] text-outline">PROJECTS COMPLETED</div>
+</div>
+<div>
+<div class="text-display-lg-mobile font-bold text-secondary-fixed">20+</div>
+<div class="font-label-caps text-[10px] text-outline">YEARS EXPERIENCE</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Signature Portfolio Filter -->
+<section class="py-32 px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16">
+<div>
+<h2 class="font-label-caps text-label-caps text-secondary-fixed mb-4">SIGNATURE PORTFOLIO</h2>
+<h3 class="font-display-lg text-display-lg">SELECTED WORKS</h3>
+</div>
+<div class="flex flex-wrap gap-4 mt-8 md:mt-0">
+<button class="font-label-caps text-[11px] px-5 py-2 rounded-full glass border-secondary-fixed/50 text-secondary-fixed">ALL WORKS</button>
+<button class="font-label-caps text-[11px] px-5 py-2 rounded-full glass border-white/5 text-outline hover:text-secondary-fixed hover:border-secondary-fixed/30 transition-all">LUXURY HOMES</button>
+<button class="font-label-caps text-[11px] px-5 py-2 rounded-full glass border-white/5 text-outline hover:text-secondary-fixed hover:border-secondary-fixed/30 transition-all">COMMERCIAL</button>
+<button class="font-label-caps text-[11px] px-5 py-2 rounded-full glass border-white/5 text-outline hover:text-secondary-fixed hover:border-secondary-fixed/30 transition-all">CORPORATE</button>
+<button class="font-label-caps text-[11px] px-5 py-2 rounded-full glass border-white/5 text-outline hover:text-secondary-fixed hover:border-secondary-fixed/30 transition-all">INDUSTRIAL</button>
+</div>
+</div>
+<!-- Masonry-style Grid -->
+<div class="masonry-grid">
+<!-- Large Featured Card -->
+<div class="col-span-12 md:col-span-8 group relative overflow-hidden rounded-lg glass cyber-border aspect-[16/9]">
+<img class="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000 grayscale opacity-80 group-hover:opacity-100 group-hover:grayscale-0" data-alt="A panoramic, high-contrast black and white architectural shot of a massive, brutalist corporate headquarters building in a futuristic city. The structure features sharp angles, metallic surfaces, and deep shadows, illuminated by precise streaks of artificial light. The atmosphere is powerful, professional, and imposing, rendered with extreme clarity and cinematic depth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKoOSoWO5dIFklXbWyiIzHzrtkotQloOgC8scVR1XAvmH7dKQ3dq37x_HzG6E5ZyZrXZsULTke-xnQD_GLgyDZybmdkdK-qfxNtmI8kEPCDIPg23KwtR6sQqg90DJu2Oy7bfUuKJoTPFpHKxSaA4aBqjUpEbX0fQJGAUUoCdZiTD_wp9zGjxkHfG8TdWel0F_n97rFghKqUHbyg0sSFG7DQkMGfHarxPPZMWlGFXoDhBVCOcmWA_SmJinS_C93uBE4UOkQQTu5kRsK">
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-60 group-hover:opacity-100 transition-opacity"></div>
+<div class="absolute bottom-0 left-0 p-10 w-full flex justify-between items-end">
+<div>
+<span class="bg-secondary-fixed/10 text-secondary-fixed font-label-caps text-[10px] px-3 py-1 rounded-full border border-secondary-fixed/20 mb-4 inline-block animate-pulse-lime">COMMERCIAL</span>
+<h4 class="font-headline-lg text-white mb-2">NEO-LITHIC PLAZA</h4>
+<div class="flex gap-6 text-outline font-label-sm text-[11px]">
+<span><span class="text-secondary-fixed/50 mr-1">LOC:</span> TOKYO, JP</span>
+<span><span class="text-secondary-fixed/50 mr-1">SIZE:</span> 42,000 SQFT</span>
+<span><span class="text-secondary-fixed/50 mr-1">YEAR:</span> 2024</span>
+</div>
+</div>
+<button class="glass w-14 h-14 rounded-full flex items-center justify-center group-hover:bg-secondary-fixed group-hover:text-black transition-all">
+<span class="material-symbols-outlined">north_east</span>
+</button>
+</div>
+</div>
+<!-- Vertical Card -->
+<div class="col-span-12 md:col-span-4 group relative overflow-hidden rounded-lg glass cyber-border aspect-[3/4]">
+<img class="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000 grayscale opacity-60 group-hover:opacity-100 group-hover:grayscale-0" data-alt="A vertical, high-fidelity architectural photograph of a luxury glass penthouse overlooking a dark neon cityscape. The interior features minimalist furniture and glowing accent lines. The lighting is low-key with cyan and magenta neon reflections on the polished marble floors. A moody, futuristic urban aesthetic with high precision and luxury finish." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDddWGbo3ouApYJbZH3Dwqfo4KslsCbslxjbMRHzIDdi23TajhrQK3qYNp4O4k4oFB3UQTHybVEhPn2fT--qhBvrQNIJ0weeEPwhfkVtsJWZTz1sNoUwMI2NgDtSPyAd14UOoZKpR9mw_PLI4C5K2U3HmSjPT8GPM8PuSkP-jMGSbBEKP_LHG-OUl4n0CEV5S7NUS9HiWb8RT1WU4wX9eB6AUPCq7XA7jgCBjxn39OHTLbmwjdZNyw5l9uN9oPVrFaXM5V5nhJJrueQ">
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-60"></div>
+<div class="absolute bottom-0 left-0 p-8">
+<span class="text-secondary-fixed font-label-caps text-[10px] mb-2 block">LUXURY RESIDENTIAL</span>
+<h4 class="font-headline-sm text-white">THE OBSIDIAN SUITE</h4>
+<div class="mt-4 flex flex-col gap-2 text-outline font-label-sm text-[10px]">
+<span>LONDON, UK</span>
+<span>3,500 SQFT</span>
+</div>
+</div>
+</div>
+<!-- Small Grid Items -->
+<div class="col-span-12 md:col-span-4 group relative overflow-hidden rounded-lg glass cyber-border aspect-square">
+<img class="w-full h-full object-cover grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" data-alt="A minimalist architectural detail of a concrete and glass stairway with recessed LED lighting in Cyber Lime. The composition is geometric and abstract, emphasizing material texture and light precision in a dark, high-tech interior. Professional architectural photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWm7eZCEMrbvP5oH6cljMy1M0FR5nRnPNbzUqHzarqcuh3Or0_7Sq1tw-AlRsr5l_RkL5ONwK-SOBcNr6L3-UTOxxIxvNoFXAQ0v9OmhcTSs7-q2Vt6kIgU5KU-o32vfxN6nGhqNJ83LPVWnQ7X08iYZHsAPjyPBQ376oFD4QLKjv8xArjbe8AoJzf9xWplCIc_emW7sCzR1PKHe3UoVzCQ2Idi-UEH6fqc_DMx3Jy_Hsnqn_FQsMUeNgxj-Onmeck7SGjEjXCqdO2">
+<div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-all"></div>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<div class="text-center">
+<span class="font-label-caps text-[10px] text-secondary-fixed">VIEW CASE STUDY</span>
+<h5 class="text-white font-headline-sm">KINETIC HUB</h5>
+</div>
+</div>
+</div>
+<div class="col-span-12 md:col-span-4 group relative overflow-hidden rounded-lg glass cyber-border aspect-square">
+<img class="w-full h-full object-cover grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" data-alt="Exterior shot of a modern laboratory building with a mesh metal facade at night. The facade is backlit with cold cyan light, creating a grid-like pattern. The surrounding landscape is minimal with dark reflecting pools. Highly detailed, high-contrast architectural imagery." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-lXEvKqGmRj4hygV3-VlKAKce_ZwDX27x1J7q2I04lOz0Wg5_FBQUk5Tvd4__kscopARJfYhzIpxlKWI-UVn41DbHH-gVacHYkdpqcHavN_XPincqTfJbfZGQr2jMz6MShgsnBjGvFLFQBZHTi0eM5bMg-sp5dLI0qsO3L8rmZfWkZhF7VHVsqynYZN_T8es04dAl2tS_fUIdlwSNfYQNupKRxGD9DDYgHNFS_ozdWYa0t2w14FBfIrk4L7uEFL-RiW4HTM9cpjz2">
+<div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-all"></div>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<div class="text-center">
+<span class="font-label-caps text-[10px] text-secondary-fixed">VIEW CASE STUDY</span>
+<h5 class="text-white font-headline-sm">CYBER LAB-7</h5>
+</div>
+</div>
+</div>
+<div class="col-span-12 md:col-span-4 group relative overflow-hidden rounded-lg glass cyber-border aspect-square">
+<img class="w-full h-full object-cover grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" data-alt="A futuristic airport terminal interior with sweeping white organic curves and massive glass panels. The floor is highly polished black granite reflecting the architecture. The space is filled with soft, diffused daylight and minimal furniture. Pure, clean, minimalist architectural photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtqv2Pozp5YN7M_3f97rgBXPQ-ywV4Szx0b751LRiTnXPtxki7rp3QZG0upv3Uq0bmHI4qreBI6HHe3a6pnjn4HPTqiOrc-o-gbhU3x1Q1hQ7XXdTyKyZN47CM37bLKxwlG-ZnxvW6K52VwwKf4xG_0cevzC2ej6gfLMy4zhn1KAfRpL5COQQlLvBW7PHcooE_yzeFRWRSHnkdnkML_6LGm4f8-5owb3l2BvOB1_7HJjqkftLTzht5RcOwvU7OC9_6YdnzWX6ybV4G">
+<div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-all"></div>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<div class="text-center">
+<span class="font-label-caps text-[10px] text-secondary-fixed">VIEW CASE STUDY</span>
+<h5 class="text-white font-headline-sm">NEXUS TERMINAL</h5>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Construction Process (Timeline) -->
+<section class="py-32 bg-surface-container-lowest">
+<div class="px-margin-desktop max-w-container-max mx-auto">
+<div class="mb-24 text-center">
+<h2 class="font-label-caps text-label-caps text-secondary-fixed mb-4">METHODOLOGY</h2>
+<h3 class="font-display-lg text-display-lg">OUR CONSTRUCTION PROCESS</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-5 gap-0 relative">
+<!-- Progress Line -->
+<div class="absolute top-12 left-0 w-full h-[1px] bg-outline-variant hidden md:block">
+<div class="h-full bg-secondary-fixed w-1/4 transition-all duration-1000" id="scroll-progress"></div>
+</div>
+<!-- Step 01 -->
+<div class="flex flex-col items-center text-center p-8 group">
+<div class="w-24 h-24 rounded-full glass cyber-border flex items-center justify-center mb-8 relative z-10 group-hover:border-secondary-fixed group-hover:bg-secondary-fixed group-hover:text-black transition-all">
+<span class="material-symbols-outlined text-[32px]">architecture</span>
+</div>
+<span class="font-label-caps text-secondary-fixed mb-2">01</span>
+<h4 class="font-headline-sm mb-4">CONSULTATION</h4>
+<p class="font-body-md text-outline">Deep dive into project vision, site analysis, and feasibility.</p>
+</div>
+<!-- Step 02 -->
+<div class="flex flex-col items-center text-center p-8 group">
+<div class="w-24 h-24 rounded-full glass cyber-border flex items-center justify-center mb-8 relative z-10 group-hover:border-secondary-fixed group-hover:bg-secondary-fixed group-hover:text-black transition-all">
+<span class="material-symbols-outlined text-[32px]">draw</span>
+</div>
+<span class="font-label-caps text-secondary-fixed mb-2">02</span>
+<h4 class="font-headline-sm mb-4">DESIGN</h4>
+<p class="font-body-md text-outline">BIM modeling, technical blueprints, and material selection.</p>
+</div>
+<!-- Step 03 -->
+<div class="flex flex-col items-center text-center p-8 group">
+<div class="w-24 h-24 rounded-full glass cyber-border flex items-center justify-center mb-8 relative z-10 group-hover:border-secondary-fixed group-hover:bg-secondary-fixed group-hover:text-black transition-all">
+<span class="material-symbols-outlined text-[32px]">engineering</span>
+</div>
+<span class="font-label-caps text-secondary-fixed mb-2">03</span>
+<h4 class="font-headline-sm mb-4">DEVELOPMENT</h4>
+<p class="font-body-md text-outline">Structural engineering and regulatory approvals.</p>
+</div>
+<!-- Step 04 -->
+<div class="flex flex-col items-center text-center p-8 group">
+<div class="w-24 h-24 rounded-full glass cyber-border flex items-center justify-center mb-8 relative z-10 group-hover:border-secondary-fixed group-hover:bg-secondary-fixed group-hover:text-black transition-all">
+<span class="material-symbols-outlined text-[32px]">precision_manufacturing</span>
+</div>
+<span class="font-label-caps text-secondary-fixed mb-2">04</span>
+<h4 class="font-headline-sm mb-4">CONSTRUCTION</h4>
+<p class="font-body-md text-outline">Precision builds with high-grade equipment and craft.</p>
+</div>
+<!-- Step 05 -->
+<div class="flex flex-col items-center text-center p-8 group">
+<div class="w-24 h-24 rounded-full glass cyber-border flex items-center justify-center mb-8 relative z-10 group-hover:border-secondary-fixed group-hover:bg-secondary-fixed group-hover:text-black transition-all">
+<span class="material-symbols-outlined text-[32px]">key</span>
+</div>
+<span class="font-label-caps text-secondary-fixed mb-2">05</span>
+<h4 class="font-headline-sm mb-4">DELIVERY</h4>
+<p class="font-body-md text-outline">Final inspection, commissioning, and key handover.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-32 px-margin-desktop max-w-container-max mx-auto">
+<div class="relative rounded-lg overflow-hidden h-[500px] flex items-center justify-center text-center">
+<img class="absolute inset-0 w-full h-full object-cover opacity-30 grayscale" data-alt="A dark, moody cinematic aerial view of a futuristic city skyline at night with glowing architecture. The image is silhouetted against a deep indigo and black sky, with tiny pinpoints of white and lime-green light representing urban life. The feeling is one of immense scale, potential, and sophisticated urban engineering." src="https://lh3.googleusercontent.com/aida-public/AB6AXuADL2I2cpTbAmnPmSkPPtP_ox6JDhaDj2MCzKbzFO8Ga90Rm30ketMbv_t_qGTxiASjoW5zsXiPT-EkFAVvN9XQJOVYsb36byrlk_UNlENouBpIm5mT4WnJGWF3VQYSnAcbxpilcf5cWK83jfolqYLibN-bvdMIY22CboCPgts9YkNdLN8EO0emEXJHNCl96FQaM4IN5SszglPVDDguSu9B_UGYzhxmRMSQ_OlGNQZ1fvmrzBUHPv20fWVOcdkV3yr1ziJiqvZ-ioJY">
+<div class="relative z-10 max-w-2xl px-8">
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-8 leading-tight">
+                        Let's Build Something <br>
+<span class="text-secondary-fixed">Extraordinary Together.</span>
+</h2>
+<div class="flex flex-col md:flex-row gap-6 justify-center">
+<button class="bg-secondary-fixed text-black px-10 py-5 rounded-full font-label-caps text-label-caps flex items-center justify-center gap-3 glow-hover">
+                            REQUEST A QUOTE <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="border border-white/20 glass px-10 py-5 rounded-full font-label-caps text-label-caps hover:bg-white/10 transition-all">
+                            BOOK CONSULTATION
+                        </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest py-24 border-t border-white/5">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="font-headline-sm text-headline-sm text-secondary mb-8">ARCHITAS</div>
+<p class="font-body-md text-body-md text-on-surface-variant opacity-70 leading-relaxed">
+                    Engineering the future through architectural excellence and technical precision. Building legacies since 2004.
+                </p>
+<div class="flex gap-4 mt-8">
+<a class="w-10 h-10 rounded-full glass flex items-center justify-center hover:text-secondary-fixed transition-colors" href="#"><span class="material-symbols-outlined text-[18px]">share</span></a>
+<a class="w-10 h-10 rounded-full glass flex items-center justify-center hover:text-secondary-fixed transition-colors" href="#"><span class="material-symbols-outlined text-[18px]">public</span></a>
+<a class="w-10 h-10 rounded-full glass flex items-center justify-center hover:text-secondary-fixed transition-colors" href="#"><span class="material-symbols-outlined text-[18px]">alternate_email</span></a>
+</div>
+</div>
+<div>
+<h5 class="font-label-caps text-label-caps text-secondary-fixed mb-8">SERVICES</h5>
+<ul class="space-y-4">
+<li><a class="font-body-md text-on-surface-variant opacity-70 hover:opacity-100 hover:text-secondary-fixed transition-all" href="#">Architectural Design</a></li>
+<li><a class="font-body-md text-on-surface-variant opacity-70 hover:opacity-100 hover:text-secondary-fixed transition-all" href="#">Construction</a></li>
+<li><a class="font-body-md text-on-surface-variant opacity-70 hover:opacity-100 hover:text-secondary-fixed transition-all" href="#">Interior Design</a></li>
+<li><a class="font-body-md text-on-surface-variant opacity-70 hover:opacity-100 hover:text-secondary-fixed transition-all" href="#">BIM Management</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-caps text-label-caps text-secondary-fixed mb-8">QUICK LINKS</h5>
+<ul class="space-y-4">
+<li><a class="font-body-md text-on-surface-variant opacity-70 hover:opacity-100 hover:text-secondary-fixed transition-all" href="#">Privacy Policy</a></li>
+<li><a class="font-body-md text-on-surface-variant opacity-70 hover:opacity-100 hover:text-secondary-fixed transition-all" href="#">Terms of Service</a></li>
+<li><a class="font-body-md text-on-surface-variant opacity-70 hover:opacity-100 hover:text-secondary-fixed transition-all" href="#">Blueprint Licensing</a></li>
+<li><a class="font-body-md text-on-surface-variant opacity-70 hover:opacity-100 hover:text-secondary-fixed transition-all" href="#">Global Offices</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-caps text-label-caps text-secondary-fixed mb-8">NEWSLETTER</h5>
+<p class="font-body-md text-on-surface-variant opacity-70 mb-6">Stay updated with our latest innovations.</p>
+<div class="relative">
+<input class="w-full bg-[#0A0A0A] border-none rounded-full px-6 py-3 focus:ring-1 focus:ring-tertiary text-on-surface" placeholder="Email Address" type="email">
+<button class="absolute right-2 top-1.5 bg-secondary-fixed text-black w-8 h-8 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="mt-24 px-margin-desktop max-w-container-max mx-auto pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-body-md text-on-surface-variant opacity-50 text-sm">
+                © 2024 Architas Building Legacies. Engineering the Future.
+            </p>
+<div class="flex gap-8">
+<span class="font-label-caps text-[10px] text-outline">PLATFORM STATUS: <span class="text-secondary-fixed animate-pulse">OPTIMIZED</span></span>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction for scroll progress
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            const progress = document.getElementById('scroll-progress');
+            if(progress) progress.style.width = scrolled + "%";
+        });
+
+        // Hover effect for TopNavBar
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('py-2', 'bg-surface/80');
+                nav.classList.remove('py-4', 'bg-surface/10');
+            } else {
+                nav.classList.add('py-4', 'bg-surface/10');
+                nav.classList.remove('py-2', 'bg-surface/80');
+            }
+        });
+    </script>
+</body></html>
