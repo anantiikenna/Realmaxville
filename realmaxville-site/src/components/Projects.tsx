@@ -15,7 +15,7 @@ const projects = [
 export default function Projects() {
   return (
     <section className="py-32 bg-[#0e0e0e] overflow-hidden" aria-labelledby="projects-heading">
-      <div className="px-6 md:px-16 max-w-[1440px] mx-auto space-y-20">
+      <div className="px-8 lg:px-12 max-w-7xl mx-auto w-full space-y-20">
         <ScrollReveal>
           <div className="text-center space-y-4">
             <h2 id="projects-heading" className="text-4xl md:text-[48px] font-extrabold uppercase tracking-tight">

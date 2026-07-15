@@ -11,9 +11,9 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero banner */}
-      <section className="relative pt-32 pb-20 bg-[#050505] overflow-hidden">
+      <section className="relative pt-48 pb-20 bg-[#050505] overflow-hidden">
         <div className="absolute inset-0 data-grid-bg opacity-30" />
-        <div className="relative z-10 max-w-[1440px] mx-auto px-6 md:px-16">
+        <div className="relative z-10 max-w-7xl mx-auto px-8 lg:px-12 w-full">
           <div className="flex flex-col md:flex-row items-end justify-between gap-8 border-l-4 border-[#c7f300] pl-8">
             <div className="max-w-3xl">
               <span className="font-[var(--font-space-mono)] text-xs tracking-[0.2em] text-[#c7f300] mb-4 block">PROTOCOL v4.0.2</span>

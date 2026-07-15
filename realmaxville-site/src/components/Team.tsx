@@ -60,7 +60,7 @@ export default function Team() {
 
   return (
     <section className="py-32 bg-[#0e0e0e]" aria-labelledby="team-heading">
-      <div className="max-w-[1440px] mx-auto">
+      <div className="max-w-7xl mx-auto px-8 lg:px-12 w-full">
         <ScrollReveal>
           <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8 px-6 md:px-16">
             <div className="max-w-xl">

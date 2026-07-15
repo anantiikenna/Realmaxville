@@ -12,7 +12,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="py-32 px-6 md:px-16 max-w-[1440px] mx-auto" id="services" aria-labelledby="services-heading">
+    <section className="py-32 px-8 lg:px-12 max-w-7xl mx-auto w-full" id="services" aria-labelledby="services-heading">
       <div className="flex flex-col md:flex-row gap-16 items-start">
           <div className="md:w-1/3 md:sticky md:top-32 space-y-8 self-start">
           <ScrollReveal>

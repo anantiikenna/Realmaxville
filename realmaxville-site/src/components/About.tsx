@@ -3,7 +3,7 @@ import ScrollReveal from "./ScrollReveal";
 
 export default function About() {
   return (
-    <section className="py-32 px-6 md:px-16 max-w-[1440px] mx-auto" aria-labelledby="about-heading">
+    <section className="py-32 px-8 lg:px-12 max-w-7xl mx-auto w-full" aria-labelledby="about-heading">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
         <ScrollReveal direction="left">
           <div className="relative">

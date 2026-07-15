@@ -23,12 +23,12 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 w-full z-50 backdrop-blur-xl border-b border-white/5 transition-all duration-300 ${
         scrolled
-          ? "bg-surface/80 py-2 border-[#c7f300]/20"
-          : "bg-surface/10 py-4"
+          ? "bg-surface/90 py-3 border-[#c7f300]/20 shadow-lg shadow-black/50"
+          : "bg-surface/20 py-6"
       }`}
       aria-label="Main navigation"
     >
-      <div className="flex justify-between items-center px-6 md:px-16 max-w-[1440px] mx-auto">
+      <div className="flex justify-between items-center px-8 lg:px-12 max-w-7xl mx-auto w-full">
         <Link href="/" className="flex items-center gap-2">
           <span className="text-2xl font-extrabold tracking-tighter text-[#e5e2e1]">
             REALMAXVILLE
@@ -48,7 +48,7 @@ export default function Navbar() {
           ))}
           <Link
             href="/contact"
-            className="bg-[#c7f300] text-[#171e00] px-6 py-2 rounded-full font-[var(--font-space-mono)] text-xs tracking-[0.2em] uppercase font-bold hover:shadow-[0_0_20px_rgba(199,243,0,0.4)] transition-all active:scale-95"
+            className="bg-[#c7f300] text-[#171e00] px-8 py-3 rounded-full font-[var(--font-space-mono)] text-xs tracking-[0.2em] uppercase font-bold hover:shadow-[0_0_20px_rgba(199,243,0,0.4)] transition-all active:scale-95 inline-flex items-center justify-center"
           >
             Get a Quote
           </Link>
@@ -70,8 +70,8 @@ export default function Navbar() {
         </button>
       </div>
 
-      <div className={`md:hidden overflow-hidden transition-all duration-500 ${open ? "max-h-80" : "max-h-0"}`}>
-        <div className="px-6 py-5 bg-[#0e0e0e]/95 backdrop-blur-xl border-t border-[#c7f300]/10 flex flex-col gap-1">
+      <div className={`md:hidden overflow-hidden transition-all duration-500 ${open ? "max-h-[400px]" : "max-h-0"}`}>
+        <div className="px-8 py-6 bg-[#0e0e0e]/95 backdrop-blur-xl border-t border-[#c7f300]/10 flex flex-col gap-2 shadow-2xl">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -85,7 +85,7 @@ export default function Navbar() {
           <Link
             href="/contact"
             onClick={() => setOpen(false)}
-            className="bg-[#c7f300] text-[#171e00] px-6 py-3 rounded-full font-[var(--font-space-mono)] text-xs tracking-[0.2em] uppercase font-bold text-center"
+            className="bg-[#c7f300] text-[#171e00] px-6 py-4 mt-2 rounded-full font-[var(--font-space-mono)] text-xs tracking-[0.2em] uppercase font-bold text-center inline-flex items-center justify-center w-full"
           >
             Get a Quote
           </Link>

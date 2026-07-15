@@ -22,10 +22,10 @@ export default async function PlansPage() {
   return (
     <>
       {/* Hero banner */}
-      <section className="relative pt-32 pb-20 bg-[#050505] overflow-hidden">
+      <section className="relative pt-48 pb-20 bg-[#050505] overflow-hidden">
         <div className="absolute inset-0 data-grid-bg opacity-30" />
         <div className="absolute -top-20 -left-20 w-96 h-96 bg-[#c7f300]/5 rounded-full blur-[120px]" />
-        <div className="relative z-10 max-w-[1440px] mx-auto px-6 md:px-16">
+        <div className="relative z-10 max-w-7xl mx-auto px-8 lg:px-12 w-full">
           <div className="flex flex-col gap-6 max-w-3xl">
             <h1 className="text-5xl md:text-7xl font-extrabold uppercase leading-none">
               PRECISION <span className="text-[#c7f300]">BLUEPRINTS</span> FOR THE BOLD.

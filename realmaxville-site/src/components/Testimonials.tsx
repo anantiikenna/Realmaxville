@@ -21,7 +21,7 @@ const testimonials = [
 export default function Testimonials() {
   return (
     <section className="py-32 px-6 md:px-16 bg-[#050505]" aria-labelledby="testimonials-heading">
-      <div className="max-w-[1440px] mx-auto">
+      <div className="max-w-7xl mx-auto px-8 lg:px-12 w-full">
         <ScrollReveal>
           <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-2 mb-4" aria-hidden="true">

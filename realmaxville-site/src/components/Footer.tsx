@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="w-full py-16 px-6 md:px-16 bg-[#050505] border-t border-[#c7f300]/10" role="contentinfo">
-      <div className="max-w-[1440px] mx-auto">
+      <div className="max-w-7xl mx-auto px-8 lg:px-12 w-full">
         <div className="text-center mb-16">
           <div className="text-[120px] md:text-[180px] font-extrabold text-[#e5e2e1] opacity-5 select-none leading-none" aria-hidden="true">
             REALMAXVILLE
