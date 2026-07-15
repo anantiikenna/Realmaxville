@@ -32,7 +32,7 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="py-32 px-8 lg:px-12 max-w-7xl mx-auto w-full" aria-labelledby="contact-heading">
+    <section className="py-32 px-8 md:px-24 max-w-6xl mx-auto w-full" aria-labelledby="contact-heading">
       <ScrollReveal>
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-2 mb-4" aria-hidden="true">

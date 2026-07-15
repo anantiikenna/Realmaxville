@@ -1,5 +1,5 @@
 @import "tailwindcss";
-
+@source "../";
 @theme {
   --color-surface: #131313;
   --color-surface-container: #20201f;

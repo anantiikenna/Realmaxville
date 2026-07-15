@@ -28,7 +28,7 @@ export default function Navbar() {
       }`}
       aria-label="Main navigation"
     >
-      <div className="flex justify-between items-center px-8 lg:px-12 max-w-7xl mx-auto w-full">
+      <div className="flex justify-between items-center px-8 md:px-24 max-w-6xl mx-auto w-full">
         <Link href="/" className="flex items-center gap-2">
           <span className="text-2xl font-extrabold tracking-tighter text-[#e5e2e1]">
             REALMAXVILLE
@@ -39,19 +39,21 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <Link
-              key={link.href}
+              key={link.label}
               href={link.href}
               className="font-[var(--font-space-mono)] text-xs tracking-[0.2em] uppercase text-[#b0b3b4] hover:text-[#c7f300] transition-colors duration-300"
             >
               {link.label}
             </Link>
           ))}
-          <Link
-            href="/contact"
-            className="bg-[#c7f300] text-[#171e00] px-8 py-3 rounded-full font-[var(--font-space-mono)] text-xs tracking-[0.2em] uppercase font-bold hover:shadow-[0_0_20px_rgba(199,243,0,0.4)] transition-all active:scale-95 inline-flex items-center justify-center"
-          >
-            Get a Quote
-          </Link>
+          <div className="ml-4">
+            <Link
+              href="/contact"
+              className="bg-[#c7f300] text-[#171e00] px-10 h-12 rounded-full font-[var(--font-space-mono)] text-xs tracking-[0.2em] uppercase font-bold hover:shadow-[0_0_20px_rgba(199,243,0,0.4)] transition-all active:scale-95 flex items-center justify-center"
+            >
+              Get a Quote
+            </Link>
+          </div>
         </div>
 
         <button

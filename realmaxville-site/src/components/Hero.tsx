@@ -39,7 +39,7 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-20 px-8 lg:px-12 max-w-7xl mx-auto w-full">
+      <div className="relative z-20 px-8 md:px-24 max-w-6xl mx-auto w-full">
         <div className="max-w-4xl space-y-8">
           <div className="flex items-center gap-2 mb-6" aria-hidden="true">
             <div className="h-px w-12 bg-[#c7f300]" />
