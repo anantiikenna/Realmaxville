@@ -118,7 +118,7 @@ export default function ProjectsPage() {
           <ScrollReveal>
             <div className="flex items-center gap-3 mb-6">
               <div className="w-2 h-2 rounded-full bg-[#c7f300] pulse-active" aria-hidden="true" />
-              <span className="font-[var(--font-space-mono)] text-[10px] tracking-[0.2em] text-[#c7f300] uppercase">
+              <span className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#c7f300] uppercase">
                 Portfolio
               </span>
             </div>
@@ -164,7 +164,7 @@ export default function ProjectsPage() {
                     onClick={() => setActiveType(t)}
                     role="radio"
                     aria-checked={activeType === t}
-                    className="h-11 px-5 rounded-full font-[var(--font-space-mono)] text-[10px] tracking-[0.2em] uppercase transition-all duration-200 cursor-pointer"
+                    className="h-11 px-5 rounded-full font-(--font-space-mono) text-[10px] tracking-[0.2em] uppercase transition-all duration-200 cursor-pointer"
                     style={{
                       background: activeType === t ? "#c7f300" : "rgba(255,255,255,0.04)",
                       color: activeType === t ? "#171e00" : "#b0b3b4",
@@ -183,7 +183,7 @@ export default function ProjectsPage() {
             {filtered.map((p, i) => (
               <ScrollReveal key={p.id} className="stagger">
                 <article
-                  className="group relative overflow-hidden rounded-xl aspect-[3/4] cursor-pointer"
+                  className="group relative overflow-hidden rounded-xl aspect-3/4 cursor-pointer"
                   onClick={() => setSelectedProject(p)}
                   onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setSelectedProject(p); } }}
                   tabIndex={0}
@@ -199,7 +199,7 @@ export default function ProjectsPage() {
                   <div className="absolute inset-0 bg-linear-to-t from-black via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
                   <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
                     <div className="flex items-center gap-2 mb-2">
-                      <span className="font-[var(--font-space-mono)] text-[9px] tracking-[0.2em] text-[#c7f300] bg-[#c7f300]/10 border border-[#c7f300]/25 px-2.5 py-0.5 rounded-full">
+                      <span className="font-(--font-space-mono) text-[9px] tracking-[0.2em] text-[#c7f300] bg-[#c7f300]/10 border border-[#c7f300]/25 px-2.5 py-0.5 rounded-full">
                         {p.type}
                       </span>
                       <span className="text-[10px] text-[#b0b3b4]">{p.year}</span>
@@ -254,7 +254,7 @@ export default function ProjectsPage() {
       {/* Detail Modal */}
       {selectedProject && (
         <div
-          className="fixed inset-0 z-[200] flex items-center justify-center p-4 md:p-8"
+          className="fixed inset-0 z-200 flex items-center justify-center p-4 md:p-8"
           role="dialog"
           aria-modal="true"
           aria-label={`Project details: ${selectedProject.name}`}
@@ -268,7 +268,7 @@ export default function ProjectsPage() {
             {/* Close button */}
             <button
               onClick={() => setSelectedProject(null)}
-              className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-[#e5e2e1] hover:bg-[#c7f300] hover:text-[#171e00] hover:border-[#c7f300] transition-all cursor-pointer"
+              className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-[#e5e2e1] hover:bg-[#c7f300] hover:text-on-accent hover:border-[#c7f300] transition-all cursor-pointer"
               aria-label="Close project details"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -283,13 +283,13 @@ export default function ProjectsPage() {
                 alt={`${selectedProject.name} — full view`}
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-linear-to-t from-[#0e0e0e] via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-surface-container-lowest via-transparent to-transparent" />
             </div>
 
             {/* Info */}
             <div className="p-8 md:p-10 space-y-6">
               <div className="flex flex-wrap items-center gap-3">
-                <span className="font-[var(--font-space-mono)] text-[10px] tracking-[0.2em] text-[#c7f300] bg-[#c7f300]/10 border border-[#c7f300]/25 px-3 py-1 rounded-full">
+                <span className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#c7f300] bg-[#c7f300]/10 border border-[#c7f300]/25 px-3 py-1 rounded-full">
                   {selectedProject.type}
                 </span>
                 <span className="text-sm text-[#b0b3b4]">{selectedProject.year}</span>
@@ -321,7 +321,7 @@ export default function ProjectsPage() {
                 </a>
                 <button
                   onClick={() => setSelectedProject(null)}
-                  className="h-11 px-6 rounded-full border border-white/15 text-[#b0b3b4] font-[var(--font-space-mono)] text-[10px] tracking-[0.2em] uppercase hover:border-[#c7f300]/40 hover:text-[#c7f300] transition-all cursor-pointer"
+                  className="h-11 px-6 rounded-full border border-white/15 text-[#b0b3b4] font-(--font-space-mono) text-[10px] tracking-[0.2em] uppercase hover:border-[#c7f300]/40 hover:text-[#c7f300] transition-all cursor-pointer"
                 >
                   CLOSE
                 </button>
