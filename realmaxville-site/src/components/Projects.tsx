@@ -3,14 +3,14 @@ import Link from "next/link";
 import ScrollReveal from "./ScrollReveal";
 
 const projects = [
-  { name: "Mrs Margaret", location: "Lagos, Nigeria", type: "RESIDENTIAL", year: "2023", img: "/images/projects/mrs-margaret.jpg" },
-  { name: "Blocks of Flat", location: "Lagos, Nigeria", type: "MULTI-FAMILY", year: "2024", img: "/images/projects/blocks-of-flat.jpg" },
-  { name: "Double Face Home", location: "Lagos, Nigeria", type: "RESIDENTIAL", year: "2023", img: "/images/projects/double-face-home.jpg" },
-  { name: "Transient Hospital", location: "Enugu, Nigeria", type: "HEALTHCARE", year: "2022", img: "/images/projects/transient-hospital.jpg" },
-  { name: "Kaduna Conference Center", location: "Kaduna, Nigeria", type: "COMMERCIAL", year: "2024", img: "/images/projects/kaduna-conference-center.jpg" },
-  { name: "Mabushi Villa", location: "Abuja, Nigeria", type: "RESIDENTIAL", year: "2023", img: "/images/projects/mabushi-villa.jpg" },
-  { name: "Danke Gott Project Jade", location: "Lagos, Nigeria", type: "RESIDENTIAL", year: "2024", img: "/images/projects/danke-gott-jade.jpg" },
-  { name: "Residential Apartment", location: "Lagos, Nigeria", type: "RESIDENTIAL", year: "2023", img: "/images/projects/residential-apartment.jpg" },
+  { slug: "mrs-margaret", name: "Mrs Margaret", location: "Lagos, Nigeria", type: "RESIDENTIAL", year: "2023", img: "/images/projects/mrs-margaret.jpg" },
+  { slug: "blocks-of-flat", name: "Blocks of Flat", location: "Lagos, Nigeria", type: "MULTI-FAMILY", year: "2024", img: "/images/projects/blocks-of-flat.jpg" },
+  { slug: "double-face-home", name: "Double Face Home", location: "Lagos, Nigeria", type: "RESIDENTIAL", year: "2023", img: "/images/projects/double-face-home.jpg" },
+  { slug: "transient-hospital", name: "Transient Hospital", location: "Enugu, Nigeria", type: "HEALTHCARE", year: "2022", img: "/images/projects/transient-hospital.jpg" },
+  { slug: "kaduna-conference-center", name: "Kaduna Conference Center", location: "Kaduna, Nigeria", type: "COMMERCIAL", year: "2024", img: "/images/projects/kaduna-conference-center.jpg" },
+  { slug: "mabushi-villa", name: "Mabushi Villa", location: "Abuja, Nigeria", type: "RESIDENTIAL", year: "2023", img: "/images/projects/mabushi-villa.jpg" },
+  { slug: "danke-gott-project-jade", name: "Danke Gott Project Jade", location: "Lagos, Nigeria", type: "RESIDENTIAL", year: "2024", img: "/images/projects/danke-gott-jade.jpg" },
+  { slug: "residential-apartment", name: "Residential Apartment", location: "Lagos, Nigeria", type: "RESIDENTIAL", year: "2023", img: "/images/projects/residential-apartment.jpg" },
 ];
 
 export default function Projects() {
@@ -29,7 +29,11 @@ export default function Projects() {
         <ScrollReveal className="stagger">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {projects.map((p) => (
-              <article key={p.name} className="group relative overflow-hidden rounded-lg aspect-3/4 cursor-pointer">
+              <Link
+                key={p.name}
+                href={`/projects/${p.slug}`}
+                className="group relative overflow-hidden rounded-lg aspect-3/4 cursor-pointer block"
+              >
                 <img
                   src={p.img}
                   alt={`${p.name} - ${p.type} project in ${p.location}`}
@@ -47,7 +51,7 @@ export default function Projects() {
                     </svg>
                   </div>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
         </ScrollReveal>
