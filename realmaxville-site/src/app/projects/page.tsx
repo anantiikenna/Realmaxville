@@ -11,7 +11,7 @@ const projects = [
     year: "2023",
     area: "450 m²",
     description: "A stunning contemporary residence featuring clean geometric lines, floor-to-ceiling glazing, and a seamless indoor-outdoor living experience. The design maximizes natural light while maintaining privacy through strategic screening elements.",
-    img: "https://lh3.googleusercontent.com/aida-public/AB6AXuD2jGqUpwp8Fc-JKm0Z5fx1sgnzc3bld7-QNdh9beRC-_khhAJUKoFuQlRVTMmLr4kXjFeYoEHrzeMhRAOjiAJhOHdYPMua0Uc5k4BzLE1Bi1iuUZDtNgkIPJ5-KejMkPaVjxFq3hiRgHSP_N4oBViBoC8LC4doVEwrFRnei-5GoG99ouaHvzKeLm4WAEqpEz2vhq9pt1Ch52ERh2rwubtzGgPzW7TT9o3QbD_JJDSmxLNovgT0Wz3A-hLD716AT9o-FqkNaxAx4hkR",
+    img: "/images/projects/mrs-margaret.jpg",
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ const projects = [
     year: "2024",
     area: "3,200 m²",
     description: "A modern multi-family residential development designed to optimize density without compromising on livability. Features shared amenity spaces, sustainable systems, and a facade that creates visual rhythm across the streetscape.",
-    img: "https://lh3.googleusercontent.com/aida-public/AB6AXuCMlNWB6n0dn55bKNUO8roQf2S5tYfW7skX9qtfI1LcsLUZ0umBtZBEOd_DflnG3rvbvVRzznyS23NZPf_oveeI-8CN8smd-5Jfj3U84IALaeXDcx9TpW-joHuGNTJXJfRH484b1m6xQZcf6mUUmcVTTVcKc5pm9GTfQvzQuFB-ZN1XP9iq3c60QARPSsk5q8buK4YKkc22ylEKHgJltvQ0A3jkYu6wLYlQ-B-6Z8PcfhYBL8wxDEbv9KKCugnd1h3bwsLYCkIpbDMp",
+    img: "/images/projects/blocks-of-flat.jpg",
   },
   {
     id: 3,
@@ -31,7 +31,7 @@ const projects = [
     year: "2023",
     area: "380 m²",
     description: "An innovative dual-frontage residence that presents distinct architectural expressions on each street. The concept plays with the idea of a building having two personalities — formal and private — connected by a central courtyard.",
-    img: "https://lh3.googleusercontent.com/aida-public/AB6AXuArrGgkgVhORjf9ZzeA50T-QPy1GFNoPNUI3j7lHqtRWsTlu7R6z7Z3_uHGuExD9lwHnT4SbsKY_jR76TU57Y-1K3Wxp4WsbDzE8xYXiWmGFaZNmr5wNz4pIAeEP4dvIGZ3fYDas0xqGeweDzkUgnU6BQmbaY8ARfioi-n2pCa12e_uHHN-b_94rAZ3EJDz_VNVOPrv0koiw9715PggWOUqSn4KXTsx6-kvfMKu6oZmmXIqO3_zx8cqYc7DYBm5me2A45lVg0ek5FGD",
+    img: "/images/projects/double-face-home.jpg",
   },
   {
     id: 4,
@@ -41,7 +41,7 @@ const projects = [
     year: "2022",
     area: "1,800 m²",
     description: "A purpose-built healthcare facility designed for rapid deployment and efficient patient flow. The modular design allows for future expansion while maintaining operational efficiency and a healing environment for patients.",
-    img: "https://lh3.googleusercontent.com/aida-public/AB6AXuBAoE4FIjdI8KBv9_VEiP9tPpRPvttSBFdOQinZv7SzdXzu-0K15cQwI-bAbQUqgLeT1BV3rPMExLn47LX7pgAqRpDOG_cFRHsPqa0RBIJhN-uuvbUeDEszvKMSpasp9s-S8jtOHtEFKAgRr6eLbIjKdNUvwVRkhosssOobELo6USsLDnc7sMP40SVyWtX22EyVuuAnd6avnBWdwOev_hBHMxsg7kE4PicKL8-GTP8S6cwbtrOC6SB6JIXzLqiCXAA1alkcNYMTeD8r",
+    img: "/images/projects/transient-hospital.jpg",
   },
   {
     id: 5,
@@ -51,7 +51,7 @@ const projects = [
     year: "2024",
     area: "2,500 m²",
     description: "A landmark commercial conference center featuring a dramatic cantilevered roof structure and expansive column-free interior spaces. The design incorporates local materials and passive cooling strategies suited to the regional climate.",
-    img: "https://lh3.googleusercontent.com/aida-public/AB6AXuBu45kVKDmSIoCp3soavUizte4gSji9JpIjkOsgTGv-twFzWGzWmOKd7jRFr167E7fpgto6u0V68B3cVTWduv2qNXNiI74K7eOYTXVu_KucmY3nop-WS9uYDT2Q6gY6_gZhcJCWPW3rAOdzfLjIPTugfMobZIYRfrMAQd1JpqHwnzSTn08u8euAlPk0rHvS8hdl1YJo6xoCh6DA4pmLCwH3mxTNg7SV1FC23ZiR-02VS6C4u2u8bFIPWEGRTkBWfYABd2snlfDdDWGP",
+    img: "/images/projects/kaduna-conference-center.jpg",
   },
   {
     id: 6,
@@ -61,7 +61,7 @@ const projects = [
     year: "2023",
     area: "620 m²",
     description: "A luxurious villa nestled in Abuja's upscale Mabushi district. The design draws from traditional Nigerian compound living while embracing contemporary minimalism, featuring expansive gardens, a private pool, and smart home integration.",
-    img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDIThJcwosk8XV05bEvRJyCgsfLc04UZtqoxhaHn8b3iBDi-a405DG0nHIBgHAtca0rUdY7uHsYocltGwYXknpc6msQW-NYl-EsPvXhBKXkHNIpUTwIKnLR4TT0Y8ONe6NtKubhdhMCWjVCiKEDWYdRVzG_5szYq14EHD4wVEDeZNuonfYwBOihGCGRC6q0YMUJYaNKOtMSYL1wI-sMR2yRdYx945Oww9E0uDxwJ2B-eHsX50mnkzymxU5kgA52O7WW17Z48LlZWrzh",
+    img: "/images/projects/mabushi-villa.jpg",
   },
   {
     id: 7,
@@ -71,7 +71,7 @@ const projects = [
     year: "2024",
     area: "520 m²",
     description: "A premium residential development characterized by its jade-green tinted glass facade and organic architectural form. The building stands as a beacon of modern luxury with panoramic views and state-of-the-art finishes throughout.",
-    img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAxpNyTynTZN2F2tq8Cjf893i7wTX89aaBp7doFDQu48QL30GqlWHVE1jZwtf_5WAnHfw42ZaKceqAWI3cmI27D_hoK1ddBVzMRIBMeo0Hf89x6W_NMaw_pz8WKW8ch4rvmCIPteYQ0BLSYiUlgI2cQVHIUY5FS6zNKw1yVmZnYBUtZvykxjZfihYWAU78gsN5NvCz3JtVouN6x6BnydaCuOhTCfx7MeNwut6BbCWtuf7tXp_76VZs6fVFXlEwI8ABlO92o90RhdTPQ",
+    img: "/images/projects/danke-gott-jade.jpg",
   },
   {
     id: 8,
@@ -81,7 +81,7 @@ const projects = [
     year: "2023",
     area: "280 m²",
     description: "A thoughtfully designed apartment building that maximizes limited urban space. Each unit features open-plan living, private balconies, and cross-ventilation. The facade uses a dynamic pattern of screens that filter light and provide privacy.",
-    img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAgrKZ1x7sluujZMQxej_ZRjlMnMAKEGmp9TPBsYaEeyPdnXUmFgCVLEh4z2ujyHMG08S9Fnk42tadTVTwRZU9BIGTjMJLlS0dKYXyjElz-OINHJv1sluwTZ8hlze3SLJRO-LgkvBQoy8Y0G7AUlRQ_yl-OcB4UbJmUYWFhvLEkakUGMRyypOsSwbqtv7ioa8M1eAX2vNtzHEQnRAo8LOBjWGP0Uj6nQatLtWMi_nRNRnX3gPogWmavv-QeKFMAM99GnkDQUWstaz-Q",
+    img: "/images/projects/residential-apartment.jpg",
   },
 ];
 
