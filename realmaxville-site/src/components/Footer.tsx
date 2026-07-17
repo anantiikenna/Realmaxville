@@ -39,8 +39,8 @@ export default function Footer() {
               <span className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#c7f300] uppercase">
                 Company
               </span>
+              <Link href="/projects" className="text-on-surface-variant/70 hover:text-[#c7f300] transition-colors text-sm">Projects</Link>
               <Link href="/about" className="text-on-surface-variant/70 hover:text-[#c7f300] transition-colors text-sm">About Us</Link>
-              <Link href="/plans" className="text-on-surface-variant/70 hover:text-[#c7f300] transition-colors text-sm">Building Plans</Link>
               <Link href="/contact" className="text-on-surface-variant/70 hover:text-[#c7f300] transition-colors text-sm">Contact</Link>
             </div>
 

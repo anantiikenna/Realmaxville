@@ -205,7 +205,7 @@ export default function ContactPage() {
           <div className="flex flex-wrap gap-6 font-(--font-space-mono) text-[10px] tracking-widest text-outline">
             <Link href="/" className="hover:text-[#c7f300] transition-colors uppercase">Home</Link>
             <Link href="/about" className="hover:text-[#c7f300] transition-colors uppercase">About</Link>
-            <Link href="/plans" className="hover:text-[#c7f300] transition-colors uppercase">Plans</Link>
+            <Link href="/contact" className="hover:text-[#c7f300] transition-colors uppercase">Contact</Link>
           </div>
         </div>
       </div>

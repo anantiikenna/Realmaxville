@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import ScrollReveal from "./ScrollReveal";
 
 const projects = [
@@ -52,13 +53,14 @@ export default function Projects() {
         </ScrollReveal>
 
         <div style={{ textAlign: "center" }}>
-          <button
-            style={{ border: "1px solid #c7f300", color: "#c7f300", padding: "1rem 3rem", borderRadius: 9999, fontFamily: "var(--font-space-mono)", fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", background: "transparent", cursor: "pointer", transition: "all 0.2s" }}
-            onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.background = "#c7f300"; (e.currentTarget as HTMLButtonElement).style.color = "#171e00"; }}
-            onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.background = "transparent"; (e.currentTarget as HTMLButtonElement).style.color = "#c7f300"; }}
+          <Link
+            href="/projects"
+            style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", border: "1px solid #c7f300", color: "#c7f300", padding: "1rem 3rem", borderRadius: 9999, fontFamily: "var(--font-space-mono)", fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", background: "transparent", cursor: "pointer", transition: "all 0.2s", textDecoration: "none" }}
+            onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.background = "#c7f300"; (e.currentTarget as HTMLAnchorElement).style.color = "#171e00"; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.background = "transparent"; (e.currentTarget as HTMLAnchorElement).style.color = "#c7f300"; }}
           >
             VIEW ALL PROJECTS
-          </button>
+          </Link>
         </div>
       </div>
     </section>

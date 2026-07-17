@@ -67,7 +67,7 @@ export default function Hero() {
 
           <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "1.5rem" }}>
             <Link
-              href="/plans"
+              href="/contact"
               className="btn-cta glow-hover"
               style={{ gap: "0.5rem", height: "3rem", paddingLeft: "2.2rem", paddingRight: "2.2rem" }}
             >
@@ -77,7 +77,7 @@ export default function Hero() {
               </svg>
             </Link>
             <Link
-              href="/plans"
+              href="/about"
               style={{
                 display: "inline-flex",
                 alignItems: "center",
@@ -97,7 +97,7 @@ export default function Hero() {
               onMouseEnter={e => (e.currentTarget.style.background = "rgba(199,243,0,0.1)")}
               onMouseLeave={e => (e.currentTarget.style.background = "transparent")}
             >
-              EXPLORE PLANS
+              EXPLORE PROJECTS
             </Link>
           </div>
         </div>

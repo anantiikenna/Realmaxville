@@ -20,10 +20,6 @@ export default function NotFound() {
           RETURN HOME
         </Link>
         <div className="flex items-center justify-center gap-6 pt-2">
-          <Link href="/plans" className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#c7f300]/70 hover:text-[#c7f300] transition-colors uppercase">
-            Building Plans
-          </Link>
-          <span className="text-outline-variant" aria-hidden="true">·</span>
           <Link href="/contact" className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#c7f300]/70 hover:text-[#c7f300] transition-colors uppercase">
             Contact Us
           </Link>
