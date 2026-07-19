@@ -103,7 +103,7 @@ export default function ContactPage() {
                 key={s.label}
                 className="flex flex-col items-center justify-center text-center"
                 style={{
-                  padding: "2rem 1.5rem",
+                  padding: "2.5rem 1.5rem",
                   borderRight: i < 3 ? "1px solid rgba(255,255,255,0.05)" : undefined,
                 }}
               >
@@ -116,10 +116,12 @@ export default function ContactPage() {
       </div>
 
       {/* Main contact section — form + info */}
-      <ContactForm />
+      <div style={{ backgroundColor: "#0a0a0a" }}>
+        <ContactForm />
+      </div>
 
       {/* WhatsApp CTA */}
-      <section style={{ padding: "6rem 0", backgroundColor: "#0a0a0a" }} aria-labelledby="whatsapp-heading">
+      <section style={{ padding: "8rem 0", backgroundColor: "#0a0a0a" }} aria-labelledby="whatsapp-heading">
         <div className="section-inner">
           <div
             className="relative overflow-hidden"

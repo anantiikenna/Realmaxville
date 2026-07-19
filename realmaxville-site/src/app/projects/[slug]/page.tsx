@@ -32,49 +32,82 @@ export default async function ProjectDetailPage({ params }: Props) {
 
   return (
     <>
-      {/* Hero */}
-      <section className="page-hero" aria-labelledby="project-heading">
-        <div className="section-inner relative z-10">
+      {/* Cinematic Hero */}
+      <section className="relative min-h-[80vh] flex items-end overflow-hidden" aria-labelledby="project-heading">
+        {/* Background image */}
+        <div className="absolute inset-0">
+          <img
+            src={project.cover}
+            alt=""
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-linear-to-t from-[#050505] via-[#050505]/60 to-[#050505]/30" />
+          <div className="absolute inset-0 bg-linear-to-r from-[#050505]/80 via-transparent to-transparent" />
+        </div>
+
+        {/* Content */}
+        <div className="section-inner relative z-10 pb-16 md:pb-24 pt-32">
           <Link
             href="/projects"
-            className="inline-flex items-center gap-2 font-[var(--font-space-mono)] text-[10px] tracking-[0.2em] text-[#c7f300]/70 hover:text-[#c7f300] transition-colors uppercase mb-8"
+            className="inline-flex items-center gap-2 font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#c7f300]/70 hover:text-[#c7f300] transition-colors uppercase mb-8"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
             ALL PROJECTS
           </Link>
-          <div className="flex flex-wrap items-center gap-3 mb-4">
-            <span className="font-[var(--font-space-mono)] text-[10px] tracking-[0.2em] text-[#c7f300] bg-[#c7f300]/10 border border-[#c7f300]/25 px-3 py-1 rounded-full">
-              {project.type}
-            </span>
-            <span className="text-sm text-[#b0b3b4]">{project.year}</span>
+
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
+            <div className="max-w-2xl">
+              <div className="flex flex-wrap items-center gap-3 mb-4">
+                <span className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#c7f300] bg-[#c7f300]/10 border border-[#c7f300]/25 px-3 py-1 rounded-full">
+                  {project.type}
+                </span>
+                <span className="text-sm text-[#b0b3b4]">{project.year}</span>
+              </div>
+              <h1
+                id="project-heading"
+                className="font-extrabold uppercase leading-[0.9] tracking-[-0.04em] mb-4"
+                style={{ fontSize: "clamp(2rem, 6vw, 4rem)" }}
+              >
+                {project.name}
+              </h1>
+              <p className="text-[#b0b3b4] text-base md:text-lg max-w-xl">
+                {project.description}
+              </p>
+            </div>
+
+            {/* Metadata glass panel */}
+            <div className="glass-panel cyber-border rounded-2xl p-6 md:p-8 w-full lg:w-80 shrink-0">
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { label: "LOCATION", value: project.location },
+                  { label: "AREA", value: project.area },
+                  { label: "CLIENT", value: project.client },
+                  { label: "STATUS", value: project.status },
+                ].map((item) => (
+                  <div key={item.label}>
+                    <span className="font-(--font-space-mono) text-[9px] tracking-[0.2em] text-[#c7f300]/60 block mb-1">
+                      {item.label}
+                    </span>
+                    <span className="text-[#e5e2e1] text-sm font-medium">{item.value}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-6 pt-4 border-t border-white/5">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-[#c7f300] pulse-active" aria-hidden="true" />
+                  <span className="font-(--font-space-mono) text-[9px] tracking-[0.2em] text-[#c7f300]">
+                    PROJECT COMPLETE
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
-          <h1
-            id="project-heading"
-            className="font-extrabold uppercase leading-[0.9] tracking-[-0.04em]"
-            style={{ fontSize: "clamp(2rem, 6vw, 4rem)" }}
-          >
-            {project.name}
-          </h1>
         </div>
       </section>
 
-      {/* Cover image */}
-      <section aria-label="Project cover image">
-        <div className="max-w-[1440px] mx-auto px-4 md:px-12 -mt-4">
-          <div className="relative rounded-2xl overflow-hidden aspect-[16/9]">
-            <img
-              src={project.cover}
-              alt={`${project.name} cover`}
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-linear-to-t from-[#050505] via-transparent to-transparent" />
-          </div>
-        </div>
-      </section>
-
-      {/* Info + Details */}
+      {/* Project Details */}
       <section className="py-16 md:py-24" aria-labelledby="details-heading">
         <div className="section-inner">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
@@ -94,8 +127,8 @@ export default async function ProjectDetailPage({ params }: Props) {
             {/* Sidebar */}
             <aside className="space-y-6">
               <div className="glass-panel rounded-2xl cyber-border p-8 space-y-6">
-                <h3 className="font-[var(--font-space-mono)] text-[10px] tracking-[0.2em] text-[#c7f300] uppercase">
-                  Project Info
+                <h3 className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#c7f300] uppercase">
+                  Project Specs
                 </h3>
                 {[
                   { label: "Location", value: project.location },
@@ -127,7 +160,7 @@ export default async function ProjectDetailPage({ params }: Props) {
       {/* Next project */}
       <section className="py-16 md:py-24 data-grid-bg" aria-label="Next project">
         <div className="section-inner text-center space-y-6">
-          <span className="font-[var(--font-space-mono)] text-[10px] tracking-[0.2em] text-[#c7f300]/60 uppercase">
+          <span className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#c7f300]/60 uppercase">
             Next Project
           </span>
           <Link

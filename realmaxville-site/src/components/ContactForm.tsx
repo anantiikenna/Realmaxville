@@ -106,11 +106,11 @@ export default function ContactForm() {
     <section
       id="contact-form"
       className="section-inner"
-      style={{ paddingTop: "7rem", paddingBottom: "7rem" }}
+      style={{ paddingTop: "8rem", paddingBottom: "8rem" }}
       aria-labelledby="contact-heading"
     >
       <ScrollReveal>
-        <div className="text-center mb-20">
+        <div className="text-center mb-24">
           <div className="flex items-center justify-center gap-3 mb-5" aria-hidden="true">
             <div className="h-px w-12 bg-[#c7f300]" />
             <span className="font-(--font-space-mono) text-[10px] tracking-[0.3em] text-[#c7f300] uppercase">
@@ -133,7 +133,7 @@ export default function ContactForm() {
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 xl:gap-16">
         {/* Contact info sidebar */}
         <ScrollReveal className="lg:col-span-2" direction="left">
-          <div className="space-y-4">
+          <div className="space-y-5">
             {contactItems.map((item) => {
               const Card = (
                 <div
@@ -172,7 +172,7 @@ export default function ContactForm() {
           </div>
 
           {/* Map embed */}
-          <div className="mt-6 rounded-2xl overflow-hidden border border-[#c7f300]/10 relative" style={{ aspectRatio: "16/9" }}>
+          <div className="mt-8 rounded-2xl overflow-hidden border border-[#c7f300]/10 relative" style={{ aspectRatio: "16/9" }}>
             {/* Map label overlay */}
             <div className="absolute top-3 left-3 z-10 flex items-center gap-2 bg-surface-container-lowest/80 backdrop-blur-sm px-3 py-1.5 rounded-full border border-[#c7f300]/20">
               <span className="w-1.5 h-1.5 rounded-full bg-[#c7f300] pulse-active" aria-hidden="true" />
@@ -211,9 +211,12 @@ export default function ContactForm() {
               <div>
                 <label
                   htmlFor="contact-name"
-                  className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-outline uppercase mb-2.5 block"
+                  className="flex items-center gap-2 font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#b0b3b4] uppercase mb-2.5"
                 >
-                  Full Name <span className="text-[#c7f300]" aria-hidden="true">*</span>
+                  <span className="text-[#c7f300]/50 text-[8px]" aria-hidden="true">[</span>
+                  OPERATOR_IDENTITY
+                  <span className="text-[#c7f300]/50 text-[8px]" aria-hidden="true">]</span>
+                  <span className="text-[#c7f300]" aria-hidden="true">*</span>
                 </label>
                 <input
                   id="contact-name"
@@ -225,16 +228,19 @@ export default function ContactForm() {
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
                   className={`${inputBase} ${errors.name ? inputError : inputValid}`}
-                  placeholder="John Doe"
+                  placeholder="Enter full name"
                 />
                 {errors.name && <FieldError id="contact-name-error" message={errors.name} />}
               </div>
               <div>
                 <label
                   htmlFor="contact-email"
-                  className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-outline uppercase mb-2.5 block"
+                  className="flex items-center gap-2 font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#b0b3b4] uppercase mb-2.5"
                 >
-                  Email Address <span className="text-[#c7f300]" aria-hidden="true">*</span>
+                  <span className="text-[#c7f300]/50 text-[8px]" aria-hidden="true">[</span>
+                  UPLINK_ADDRESS
+                  <span className="text-[#c7f300]/50 text-[8px]" aria-hidden="true">]</span>
+                  <span className="text-[#c7f300]" aria-hidden="true">*</span>
                 </label>
                 <input
                   id="contact-email"
@@ -255,9 +261,11 @@ export default function ContactForm() {
             <div>
               <label
                 htmlFor="contact-phone"
-                className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-outline uppercase mb-2.5 block"
+                className="flex items-center gap-2 font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#b0b3b4] uppercase mb-2.5"
               >
-                Phone Number
+                <span className="text-[#c7f300]/50 text-[8px]" aria-hidden="true">[</span>
+                  COMM_CHANNEL
+                <span className="text-[#c7f300]/50 text-[8px]" aria-hidden="true">]</span>
               </label>
               <input
                 id="contact-phone"
@@ -270,9 +278,11 @@ export default function ContactForm() {
             <div>
               <label
                 htmlFor="contact-subject"
-                className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-outline uppercase mb-2.5 block"
+                className="flex items-center gap-2 font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#b0b3b4] uppercase mb-2.5"
               >
-                Project Type
+                <span className="text-[#c7f300]/50 text-[8px]" aria-hidden="true">[</span>
+                  PROJECT_CLASS
+                <span className="text-[#c7f300]/50 text-[8px]" aria-hidden="true">]</span>
               </label>
               <select
                 id="contact-subject"
@@ -295,9 +305,12 @@ export default function ContactForm() {
             <div>
               <label
                 htmlFor="contact-message"
-                className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-outline uppercase mb-2.5 block"
+                className="flex items-center gap-2 font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#b0b3b4] uppercase mb-2.5"
               >
-                Your Message <span className="text-[#c7f300]" aria-hidden="true">*</span>
+                <span className="text-[#c7f300]/50 text-[8px]" aria-hidden="true">[</span>
+                  TRANSMISSION_BODY
+                <span className="text-[#c7f300]/50 text-[8px]" aria-hidden="true">]</span>
+                <span className="text-[#c7f300]" aria-hidden="true">*</span>
               </label>
               <textarea
                 id="contact-message"
@@ -309,7 +322,7 @@ export default function ContactForm() {
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
                 className={`${inputBase} resize-none ${errors.message ? inputError : inputValid}`}
-                placeholder="Tell us about your project — location, size, budget, timeline..."
+                placeholder="Describe your project — location, size, budget, timeline..."
               />
               {errors.message && <FieldError id="contact-message-error" message={errors.message} />}
             </div>

@@ -109,6 +109,29 @@ export default function Hero() {
           <div className="pulse-active" style={{ width: 4, height: 8, borderRadius: 9999, backgroundColor: "#c7f300" }} />
         </div>
       </div>
+
+      {/* Overlapping stats bar */}
+      <div
+        className="absolute bottom-0 left-0 right-0 z-30 glass-panel border-t border-white/8 backdrop-blur-md"
+        style={{ backgroundColor: "rgba(5,5,5,0.85)" }}
+        aria-label="Company statistics"
+      >
+        <div className="section-inner">
+          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/5">
+            {[
+              { num: "6+", label: "YEARS" },
+              { num: "200+", label: "PROJECTS" },
+              { num: "50+", label: "CLIENTS" },
+              { num: "100%", label: "SATISFACTION" },
+            ].map((s) => (
+              <div key={s.label} className="flex flex-col items-center justify-center py-5 md:py-6">
+                <span className="text-xl md:text-2xl font-extrabold text-[#c7f300] neon-text-glow">{s.num}</span>
+                <span className="font-(--font-space-mono) text-[9px] tracking-[0.2em] text-[#b0b3b4] mt-1">{s.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </section>
   );
 }

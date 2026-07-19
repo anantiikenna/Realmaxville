@@ -102,10 +102,10 @@ export default function ProjectsPage() {
                   <img
                     src={p.img}
                     alt={`${p.name} — ${p.type.toLowerCase()} project in ${p.location}`}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="absolute inset-0 w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-linear-to-t from-black via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
+                  <div className="absolute inset-0 bg-linear-to-t from-black via-black/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity" />
                   <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
                     <div className="flex items-center gap-2 mb-2">
                       <span className="font-(--font-space-mono) text-[9px] tracking-[0.2em] text-[#c7f300] bg-[#c7f300]/10 border border-[#c7f300]/25 px-2.5 py-0.5 rounded-full">
@@ -118,12 +118,9 @@ export default function ProjectsPage() {
                     </h3>
                     <div className="flex items-center justify-between mt-3 pt-3 border-t border-white/10">
                       <span className="text-xs text-[#b0b3b4]">{p.location}</span>
-                      <svg
-                        className="w-4 h-4 text-[#c7f300] opacity-0 group-hover:opacity-100 transition-opacity"
-                        fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7v10" />
-                      </svg>
+                      <span className="font-(--font-space-mono) text-[9px] tracking-[0.2em] text-[#c7f300] opacity-0 group-hover:opacity-100 transition-opacity">
+                        VIEW CASE STUDY →
+                      </span>
                     </div>
                   </div>
                 </Link>
