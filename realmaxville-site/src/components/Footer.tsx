@@ -3,18 +3,23 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer style={{ width: "100%", backgroundColor: "#050505", borderTop: "1px solid rgba(199,243,0,0.1)" }} role="contentinfo">
-      {/* Watermark — decorative, overlaps naturally */}
-      <div className="relative overflow-hidden select-none pointer-events-none" aria-hidden="true">
-        <div
-          className="text-[clamp(60px,15vw,160px)] font-extrabold leading-none text-center"
-          style={{ color: "rgba(199,243,0,0.04)", letterSpacing: "-0.02em", marginBottom: "-0.25em" }}
+    <footer className="relative overflow-hidden" style={{ width: "100%", backgroundColor: "#050505", borderTop: "1px solid rgba(199,243,0,0.1)" }} role="contentinfo">
+      {/* Watermark — background text behind all footer content */}
+      <div
+        className="absolute inset-0 flex items-center justify-center pointer-events-none select-none"
+        aria-hidden="true"
+        style={{ zIndex: 0 }}
+      >
+        <span
+          className="font-extrabold text-center whitespace-nowrap"
+          style={{ fontSize: "clamp(60px, 15vw, 180px)", color: "rgba(199,243,0,0.04)", letterSpacing: "-0.02em" }}
         >
           REALMAXVILLE
-        </div>
+        </span>
       </div>
 
-      <div className="section-inner pb-12">
+      {/* Footer content — above watermark */}
+      <div className="relative section-inner pb-12" style={{ zIndex: 10 }}>
         {/* Brand block */}
         <div className="flex flex-col md:flex-row md:items-start justify-between gap-10 mb-14">
           <div className="max-w-xs">
