@@ -11,7 +11,7 @@ const team = [
 
 function TeamCard({ m }: { m: typeof team[0] }) {
   return (
-    <article className="group shrink-0 w-75 md:w-85">
+    <article className="group shrink-0 w-[300px] md:w-[340px]">
       <div className="relative aspect-3/4 rounded-lg overflow-hidden glass-card mb-6 border-t border-[#c7f300]/30">
         <img
           src={m.img}

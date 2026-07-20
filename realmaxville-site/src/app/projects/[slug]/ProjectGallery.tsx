@@ -77,7 +77,7 @@ export default function ProjectGallery({ images, name }: Props) {
             <button
               key={i}
               onClick={() => setActiveIndex(i)}
-              className="group relative overflow-hidden rounded-xl shrink-0 w-[300px] md:w-[400px] aspect-[4/3] cursor-pointer snap-start bg-white/2"
+              className="group relative overflow-hidden rounded-lg shrink-0 w-[300px] md:w-[400px] aspect-[4/3] cursor-pointer snap-start bg-white/2"
               aria-label={`View image ${i + 1} of ${images.length}`}
             >
               <img

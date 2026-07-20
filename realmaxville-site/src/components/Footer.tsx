@@ -82,7 +82,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 pt-8">
           <p className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-on-surface-variant/40">
-            © 2026 REALMAXVILLE. ALL RIGHTS RESERVED.
+            (C) 2026 REALMAXVILLE. ALL RIGHTS RESERVED.
           </p>
 
           {/* Social icons */}

@@ -96,7 +96,7 @@ export default function ContactForm() {
   };
 
   const inputBase =
-    "w-full px-4 py-3.5 rounded-xl bg-white/4 border text-[#e5e2e1] text-sm focus:outline-none transition-all duration-200 placeholder:text-[#555]";
+    "w-full px-4 py-3.5 rounded-lg bg-white/4 border text-[#e5e2e1] text-sm focus:outline-none transition-all duration-200 placeholder:text-[#555]";
   const inputValid =
     "border-white/8 focus:border-[#c7f300] focus:bg-white/6 focus:shadow-[0_0_0_3px_rgba(199,243,0,0.08)]";
   const inputError =
@@ -138,10 +138,10 @@ export default function ContactForm() {
               const Card = (
                 <div
                   key={item.label}
-                  className="group flex gap-5 items-start p-5 rounded-2xl border border-white/5 bg-white/2 hover:border-[#c7f300]/25 hover:bg-[#c7f300]/3 transition-all duration-300 cursor-default"
+                  className="group flex gap-5 items-start p-5 rounded-lg border border-white/5 bg-white/2 hover:border-[#c7f300]/25 hover:bg-[#c7f300]/3 transition-all duration-300 cursor-default"
                 >
                   {/* Icon badge */}
-                  <div className="w-11 h-11 rounded-xl bg-[#c7f300]/10 border border-[#c7f300]/20 flex items-center justify-center text-[#c7f300] shrink-0 group-hover:bg-[#c7f300]/20 group-hover:border-[#c7f300]/40 group-hover:shadow-[0_0_12px_rgba(199,243,0,0.12)] transition-all duration-300">
+                  <div className="w-11 h-11 rounded-lg bg-[#c7f300]/10 border border-[#c7f300]/20 flex items-center justify-center text-[#c7f300] shrink-0 group-hover:bg-[#c7f300]/20 group-hover:border-[#c7f300]/40 group-hover:shadow-[0_0_12px_rgba(199,243,0,0.12)] transition-all duration-300">
                     {item.icon}
                   </div>
                   <div className="min-w-0">
@@ -172,7 +172,7 @@ export default function ContactForm() {
           </div>
 
           {/* Map embed */}
-          <div className="mt-8 rounded-2xl overflow-hidden border border-[#c7f300]/10 relative" style={{ aspectRatio: "16/9" }}>
+          <div className="mt-8 rounded-lg overflow-hidden border border-[#c7f300]/10 relative" style={{ aspectRatio: "16/9" }}>
             {/* Map label overlay */}
             <div className="absolute top-3 left-3 z-10 flex items-center gap-2 bg-surface-container-lowest/80 backdrop-blur-sm px-3 py-1.5 rounded-full border border-[#c7f300]/20">
               <span className="w-1.5 h-1.5 rounded-full bg-[#c7f300] pulse-active" aria-hidden="true" />
@@ -193,7 +193,7 @@ export default function ContactForm() {
             ref={formRef}
             onSubmit={handleSubmit}
             noValidate
-            className="glass-panel p-8 md:p-10 rounded-2xl cyber-border space-y-7 relative overflow-hidden"
+            className="glass-panel p-8 md:p-10 rounded-lg cyber-border space-y-7 relative overflow-hidden"
           >
             {/* Top accent bar */}
             <div className="absolute top-0 left-8 right-8 h-px bg-linear-to-r from-transparent via-[#c7f300]/40 to-transparent" aria-hidden="true" />
@@ -214,7 +214,7 @@ export default function ContactForm() {
                   className="flex items-center gap-2 font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#b0b3b4] uppercase mb-2.5"
                 >
                   <span className="text-[#c7f300]/50 text-[8px]" aria-hidden="true">[</span>
-                  OPERATOR_IDENTITY
+                  FULL NAME
                   <span className="text-[#c7f300]/50 text-[8px]" aria-hidden="true">]</span>
                   <span className="text-[#c7f300]" aria-hidden="true">*</span>
                 </label>
@@ -238,7 +238,7 @@ export default function ContactForm() {
                   className="flex items-center gap-2 font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#b0b3b4] uppercase mb-2.5"
                 >
                   <span className="text-[#c7f300]/50 text-[8px]" aria-hidden="true">[</span>
-                  UPLINK_ADDRESS
+                  EMAIL ADDRESS
                   <span className="text-[#c7f300]/50 text-[8px]" aria-hidden="true">]</span>
                   <span className="text-[#c7f300]" aria-hidden="true">*</span>
                 </label>
@@ -264,7 +264,7 @@ export default function ContactForm() {
                 className="flex items-center gap-2 font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#b0b3b4] uppercase mb-2.5"
               >
                 <span className="text-[#c7f300]/50 text-[8px]" aria-hidden="true">[</span>
-                  COMM_CHANNEL
+                  PHONE NUMBER
                 <span className="text-[#c7f300]/50 text-[8px]" aria-hidden="true">]</span>
               </label>
               <input
@@ -281,7 +281,7 @@ export default function ContactForm() {
                 className="flex items-center gap-2 font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#b0b3b4] uppercase mb-2.5"
               >
                 <span className="text-[#c7f300]/50 text-[8px]" aria-hidden="true">[</span>
-                  PROJECT_CLASS
+                  PROJECT TYPE
                 <span className="text-[#c7f300]/50 text-[8px]" aria-hidden="true">]</span>
               </label>
               <select
@@ -308,7 +308,7 @@ export default function ContactForm() {
                 className="flex items-center gap-2 font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#b0b3b4] uppercase mb-2.5"
               >
                 <span className="text-[#c7f300]/50 text-[8px]" aria-hidden="true">[</span>
-                  TRANSMISSION_BODY
+                  PROJECT DETAILS
                 <span className="text-[#c7f300]/50 text-[8px]" aria-hidden="true">]</span>
                 <span className="text-[#c7f300]" aria-hidden="true">*</span>
               </label>
@@ -322,7 +322,7 @@ export default function ContactForm() {
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
                 className={`${inputBase} resize-none ${errors.message ? inputError : inputValid}`}
-                placeholder="Describe your project — location, size, budget, timeline..."
+                placeholder="Describe your project - location, size, budget, timeline..."
               />
               {errors.message && <FieldError id="contact-message-error" message={errors.message} />}
             </div>
@@ -330,7 +330,7 @@ export default function ContactForm() {
             <button
               type="submit"
               disabled={submitting || sent}
-              className="w-full py-4 rounded-xl font-(--font-space-mono) text-sm tracking-widest transition-all active:scale-[0.98] disabled:cursor-not-allowed relative overflow-hidden"
+              className="w-full py-4 rounded-lg font-(--font-space-mono) text-sm tracking-widest transition-all active:scale-[0.98] disabled:cursor-not-allowed relative overflow-hidden"
               style={{
                 backgroundColor: sent ? "rgba(199,243,0,0.15)" : "#c7f300",
                 color: sent ? "#c7f300" : "#171e00",

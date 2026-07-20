@@ -97,7 +97,7 @@ export default function ProjectsPage() {
               <ScrollReveal key={p.slug} className="stagger">
                 <Link
                   href={`/projects/${p.slug}`}
-                  className="group relative overflow-hidden rounded-xl aspect-3/4 cursor-pointer block"
+                  className="group relative overflow-hidden rounded-lg aspect-3/4 cursor-pointer block"
                 >
                   <img
                     src={p.img}

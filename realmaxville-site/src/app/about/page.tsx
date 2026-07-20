@@ -63,11 +63,11 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {/* Mission — tall card */}
-            <div className="glass-panel cyber-border rounded-2xl p-8 md:row-span-2 relative overflow-hidden group">
+            <div className="glass-panel cyber-border rounded-lg p-8 md:row-span-2 relative overflow-hidden group">
               <div className="absolute inset-0 bg-linear-to-br from-[#c7f300]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
               <div className="relative z-10 h-full flex flex-col">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-xl bg-[#c7f300]/10 border border-[#c7f300]/20 flex items-center justify-center" aria-hidden="true">
+                  <div className="w-10 h-10 rounded-lg bg-[#c7f300]/10 border border-[#c7f300]/20 flex items-center justify-center" aria-hidden="true">
                     <svg className="w-5 h-5 text-[#c7f300]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
@@ -87,9 +87,9 @@ export default function AboutPage() {
             </div>
 
             {/* Vision */}
-            <div className="glass-panel cyber-border rounded-2xl p-8 relative overflow-hidden group">
+            <div className="glass-panel cyber-border rounded-lg p-8 relative overflow-hidden group">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-xl bg-[#00dbe9]/10 border border-[#00dbe9]/20 flex items-center justify-center" aria-hidden="true">
+                <div className="w-10 h-10 rounded-lg bg-[#00dbe9]/10 border border-[#00dbe9]/20 flex items-center justify-center" aria-hidden="true">
                   <svg className="w-5 h-5 text-[#00dbe9]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
@@ -103,9 +103,9 @@ export default function AboutPage() {
             </div>
 
             {/* Values */}
-            <div className="glass-panel cyber-border rounded-2xl p-8 relative overflow-hidden group">
+            <div className="glass-panel cyber-border rounded-lg p-8 relative overflow-hidden group">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-xl bg-[#ff6b35]/10 border border-[#ff6b35]/20 flex items-center justify-center" aria-hidden="true">
+                <div className="w-10 h-10 rounded-lg bg-[#ff6b35]/10 border border-[#ff6b35]/20 flex items-center justify-center" aria-hidden="true">
                   <svg className="w-5 h-5 text-[#ff6b35]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
@@ -118,7 +118,7 @@ export default function AboutPage() {
             </div>
 
             {/* Stats mini grid — spans 2 cols */}
-            <div className="md:col-span-2 glass-panel cyber-border rounded-2xl p-8">
+            <div className="md:col-span-2 glass-panel cyber-border rounded-lg p-8">
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
                 {[
                   { num: "6+", label: "Years" },

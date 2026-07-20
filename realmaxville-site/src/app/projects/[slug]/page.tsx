@@ -78,7 +78,7 @@ export default async function ProjectDetailPage({ params }: Props) {
             </div>
 
             {/* Metadata glass panel */}
-            <div className="glass-panel cyber-border rounded-2xl p-6 md:p-8 w-full lg:w-80 shrink-0">
+            <div className="glass-panel cyber-border rounded-lg p-6 md:p-8 w-full lg:w-80 shrink-0">
               <div className="grid grid-cols-2 gap-4">
                 {[
                   { label: "LOCATION", value: project.location },
@@ -126,7 +126,7 @@ export default async function ProjectDetailPage({ params }: Props) {
 
             {/* Sidebar */}
             <aside className="space-y-6">
-              <div className="glass-panel rounded-2xl cyber-border p-8 space-y-6">
+              <div className="glass-panel rounded-lg cyber-border p-8 space-y-6">
                 <h3 className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#c7f300] uppercase">
                   Project Specs
                 </h3>

@@ -96,7 +96,7 @@ export default function Services() {
 
                 <div className="flex justify-between items-start">
                   <span
-                    className="w-12 h-12 rounded-xl bg-[#c7f300]/8 border border-[#c7f300]/20 flex items-center justify-center text-[#c7f300] group-hover:bg-[#c7f300]/15 group-hover:border-[#c7f300]/40 group-hover:shadow-[0_0_12px_rgba(199,243,0,0.15)] transition-all duration-300"
+                    className="w-12 h-12 rounded-lg bg-[#c7f300]/8 border border-[#c7f300]/20 flex items-center justify-center text-[#c7f300] group-hover:bg-[#c7f300]/15 group-hover:border-[#c7f300]/40 group-hover:shadow-[0_0_12px_rgba(199,243,0,0.15)] transition-all duration-300"
                     aria-hidden="true"
                   >
                     <ServiceIcon id={s.id} />

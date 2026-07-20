@@ -12,7 +12,7 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Realmaxville — Architectural Designs & Construction Engineering",
+  title: "Realmaxville - Architectural Designs & Construction Engineering",
   description:
     "WE DON'T JUST BUILD STRUCTURES, WE BUILD LEGACIES. Professional architectural design, construction, renovation and building plan services in Lagos, Nigeria.",
   keywords: [
