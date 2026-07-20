@@ -19,11 +19,12 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row md:items-start justify-between gap-10 mb-14">
           <div className="max-w-xs">
             <Link href="/" className="inline-flex items-center gap-2 group mb-4">
-              <span className="w-8 h-8 rounded-lg bg-[#c7f300] flex items-center justify-center shrink-0">
-                <svg viewBox="0 0 24 24" fill="none" className="w-4 h-4" aria-hidden="true">
-                  <path d="M3 21l9-18 9 18M6.5 14.5h11" stroke="#171e00" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </span>
+              <img
+                src="/images/logo1.png"
+                alt=""
+                className="w-8 h-8 rounded-lg object-cover"
+                aria-hidden="true"
+              />
               <span className="font-extrabold text-[#e5e2e1] tracking-tight text-lg group-hover:text-[#c7f300] transition-colors">
                 REALMAXVILLE
               </span>

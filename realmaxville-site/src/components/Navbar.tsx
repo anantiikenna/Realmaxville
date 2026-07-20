@@ -67,6 +67,12 @@ export default function Navbar() {
             textDecoration: "none",
           }}
         >
+          <img
+            src="/images/logo1.png"
+            alt=""
+            style={{ width: 32, height: 32, borderRadius: "50%", objectFit: "cover" }}
+            aria-hidden="true"
+          />
           <span style={{ fontSize: "1.25rem", fontWeight: 800, letterSpacing: "-0.04em", color: "#e5e2e1" }}>
             REALMAXVILLE
           </span>

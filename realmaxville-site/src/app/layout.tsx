@@ -23,6 +23,9 @@ export const metadata: Metadata = {
     "Lagos",
     "Nigeria",
   ],
+  icons: {
+    icon: "/images/logo1.png",
+  },
 };
 
 export default function RootLayout({
