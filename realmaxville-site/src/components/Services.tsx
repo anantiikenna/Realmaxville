@@ -61,15 +61,15 @@ const services = [
 export default function Services() {
   return (
     <section className="section-inner" style={{ paddingTop: "8rem", paddingBottom: "8rem" }} id="services" aria-labelledby="services-heading">
-      <div className="flex flex-col md:flex-row gap-16 items-start">
-          <div className="md:w-1/3 md:sticky md:top-32 space-y-8 self-start">
+      <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.8fr] gap-14 lg:gap-20 items-start">
+        <div className="lg:sticky lg:top-32 space-y-8 self-start">
           <ScrollReveal>
             <div className="flex items-center gap-2">
               <div className="w-12 h-px bg-[#c7f300]" aria-hidden="true" />
               <span className="font-(--font-space-mono) text-xs tracking-[0.2em] text-[#c7f300]">OUR SERVICES</span>
             </div>
             <h2 id="services-heading" className="text-4xl md:text-[48px] font-extrabold leading-tight mt-4">
-              ARCHITECTURE &<br />CONSTRUCTION
+              <span className="lg:whitespace-nowrap">ARCHITECTURE &</span><br />CONSTRUCTION
             </h2>
             <p className="text-[#b0b3b4] mt-4 leading-relaxed">
               We are a full-service architecture and construction company delivering innovative designs, superior construction and exceptional project management solutions.
@@ -81,38 +81,36 @@ export default function Services() {
           </ScrollReveal>
         </div>
 
-        <div className="md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-6">
-          <ScrollReveal className="stagger">
-            {services.map((s) => (
-              <div
-                key={s.title}
-                className="relative glass-panel p-8 md:p-10 space-y-5 transition-all duration-300 group cursor-pointer overflow-hidden
-                  hover:bg-white/5 hover:border-[#c7f300]/30 hover:shadow-[0_0_24px_rgba(199,243,0,0.06)]"
-              >
-                {/* left accent bar */}
-                <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-[#c7f300]/0 group-hover:bg-[#c7f300]/60 transition-all duration-300 rounded-r" aria-hidden="true" />
-                {/* bottom shimmer line */}
-                <div className="absolute bottom-0 left-8 right-8 h-px bg-linear-to-r from-transparent via-[#c7f300]/0 group-hover:via-[#c7f300]/30 to-transparent transition-all duration-500" aria-hidden="true" />
+        <ScrollReveal className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8 stagger">
+          {services.map((s) => (
+            <div
+              key={s.title}
+              className="relative glass-panel p-7 sm:p-8 lg:p-10 space-y-6 min-h-64 transition-all duration-300 group cursor-pointer overflow-hidden
+                hover:bg-white/5 hover:border-[#c7f300]/30 hover:shadow-[0_0_24px_rgba(199,243,0,0.06)]"
+            >
+              {/* left accent bar */}
+              <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-[#c7f300]/0 group-hover:bg-[#c7f300]/60 transition-all duration-300 rounded-r" aria-hidden="true" />
+              {/* bottom shimmer line */}
+              <div className="absolute bottom-0 left-8 right-8 h-px bg-linear-to-r from-transparent via-[#c7f300]/0 group-hover:via-[#c7f300]/30 to-transparent transition-all duration-500" aria-hidden="true" />
 
-                <div className="flex justify-between items-start">
-                  <span
-                    className="w-12 h-12 rounded-lg bg-[#c7f300]/8 border border-[#c7f300]/20 flex items-center justify-center text-[#c7f300] group-hover:bg-[#c7f300]/15 group-hover:border-[#c7f300]/40 group-hover:shadow-[0_0_12px_rgba(199,243,0,0.15)] transition-all duration-300"
-                    aria-hidden="true"
-                  >
-                    <ServiceIcon id={s.id} />
-                  </span>
-                  <span className="bg-[#c7f300]/10 border border-[#c7f300]/30 px-3 py-1 rounded text-[#c7f300] font-(--font-space-mono) text-[10px] tracking-[0.2em]">
-                    {s.mod}
-                  </span>
-                </div>
-                <h3 className="font-(--font-space-mono) text-sm tracking-[0.15em] uppercase group-hover:text-[#c7f300] transition-colors">
-                  {s.title}
-                </h3>
-                <p className="text-[#b0b3b4] text-sm leading-relaxed">{s.desc}</p>
+              <div className="flex justify-between items-start gap-4">
+                <span
+                  className="w-12 h-12 rounded-lg bg-[#c7f300]/8 border border-[#c7f300]/20 flex items-center justify-center text-[#c7f300] group-hover:bg-[#c7f300]/15 group-hover:border-[#c7f300]/40 group-hover:shadow-[0_0_12px_rgba(199,243,0,0.15)] transition-all duration-300 shrink-0"
+                  aria-hidden="true"
+                >
+                  <ServiceIcon id={s.id} />
+                </span>
+                <span className="bg-[#c7f300]/10 border border-[#c7f300]/30 px-3.5 py-1.5 rounded-full text-[#c7f300] font-(--font-space-mono) text-[10px] tracking-[0.16em] leading-none shrink-0">
+                  {s.mod}
+                </span>
               </div>
-            ))}
-          </ScrollReveal>
-        </div>
+              <h3 className="font-(--font-space-mono) text-sm tracking-[0.12em] uppercase leading-relaxed group-hover:text-[#c7f300] transition-colors">
+                {s.title}
+              </h3>
+              <p className="text-[#b0b3b4] text-sm leading-7">{s.desc}</p>
+            </div>
+          ))}
+        </ScrollReveal>
       </div>
     </section>
   );

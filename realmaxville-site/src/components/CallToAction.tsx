@@ -6,7 +6,7 @@ export default function CallToAction() {
   return (
     <section className="section-inner" style={{ paddingTop: "4rem", paddingBottom: "8rem" }} aria-labelledby="cta-heading">
       <ScrollReveal>
-        <div className="relative overflow-hidden rounded-lg glass-panel cyber-border px-8 py-16 md:px-20 md:py-24 text-center">
+        <div className="relative overflow-hidden rounded-lg glass-panel cyber-border px-7 py-14 sm:px-10 md:px-20 md:py-24 text-center">
           <img
             src="/images/projects/kaduna-conference-center.jpg"
             alt=""
@@ -16,14 +16,14 @@ export default function CallToAction() {
           />
           <div className="absolute inset-0 bg-black/70" aria-hidden="true" />
           <div className="relative z-10 mx-auto max-w-4xl">
-            <h2 id="cta-heading" className="text-4xl md:text-[64px] font-extrabold leading-tight uppercase">
+            <h2 id="cta-heading" className="text-4xl md:text-[64px] font-extrabold leading-tight uppercase max-w-4xl mx-auto">
               LET&apos;S BUILD SOMETHING <br />
               <span className="text-[#c7f300] neon-text-glow">EXTRAORDINARY TOGETHER.</span>
             </h2>
             <p className="mx-auto mt-6 max-w-2xl text-[#b0b3b4] leading-relaxed">
               Ready to turn your vision into a legacy? Connect with our team of designers, builders and project leads today.
             </p>
-            <div className="mt-10 flex flex-col sm:flex-row justify-center gap-5">
+            <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4 sm:gap-5">
               <Link href="/contact" className="btn-cta glow-hover" style={{ height: "3.25rem", paddingLeft: "2.5rem", paddingRight: "2.5rem" }}>
                 REQUEST A QUOTE
                 <svg style={{ width: 16, height: 16, marginLeft: 8 }} fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">

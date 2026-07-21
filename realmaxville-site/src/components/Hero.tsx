@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Hero() {
   return (
     <section
-      style={{ position: "relative", height: "100vh", minHeight: 700, display: "flex", alignItems: "center", overflow: "hidden" }}
+      style={{ position: "relative", minHeight: "clamp(720px, 100vh, 920px)", display: "flex", alignItems: "center", overflow: "hidden", paddingTop: "5rem", paddingBottom: "6rem" }}
       aria-label="Hero"
     >
       <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
@@ -18,26 +18,26 @@ export default function Hero() {
       </div>
 
       <div className="section-inner" style={{ position: "relative", zIndex: 20, width: "100%" }}>
-        <div style={{ maxWidth: "56rem" }}>
-          <div className="flex items-center gap-2" style={{ marginBottom: "1.5rem" }} aria-hidden="true">
+        <div style={{ maxWidth: "58rem" }}>
+          <div className="flex items-center gap-2" style={{ marginBottom: "1.75rem" }} aria-hidden="true">
             <div style={{ height: 1, width: 48, backgroundColor: "#c7f300" }} />
             <span className="font-(--font-space-mono)" style={{ fontSize: "0.7rem", letterSpacing: "0.3em", color: "#c7f300" }}>
               EST. 2017 - LAGOS, NIGERIA
             </span>
           </div>
 
-          <h1 style={{ fontSize: "clamp(2.8rem, 7vw, 4.5rem)", fontWeight: 800, lineHeight: 0.9, letterSpacing: "-0.02em", textTransform: "uppercase", marginBottom: "1.5rem" }}>
+          <h1 style={{ fontSize: "clamp(2.7rem, 6.5vw, 4.4rem)", fontWeight: 800, lineHeight: 0.96, letterSpacing: "-0.02em", textTransform: "uppercase", marginBottom: "1.75rem" }}>
             WE DON&apos;T JUST <br />
             BUILD STRUCTURES, <br />
             <span className="neon-text-glow" style={{ color: "#c7f300" }}>WE BUILD LEGACIES.</span>
           </h1>
 
-          <p style={{ color: "#c4c7c7", fontSize: "1.1rem", maxWidth: "40rem", lineHeight: 1.7, marginBottom: "2rem" }}>
+          <p style={{ color: "#c4c7c7", fontSize: "1.1rem", maxWidth: "42rem", lineHeight: 1.75, marginBottom: "2.25rem" }}>
             From architectural design to complete construction, we create timeless spaces that inspire,
             endure and elevate the way you live.
           </p>
 
-          <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "1.5rem" }}>
+          <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "1rem 1.5rem" }}>
             <Link
               href="/contact"
               className="btn-cta glow-hover"

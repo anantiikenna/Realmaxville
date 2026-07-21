@@ -37,11 +37,11 @@ export default function Projects() {
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-black via-black/30 to-transparent opacity-85 group-hover:opacity-70 transition-opacity" />
-                <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
-                  <p className="text-[#c7f300] font-(--font-space-mono) text-[9px] tracking-[0.2em] uppercase">{p.type}</p>
-                  <h4 className="text-lg md:text-xl font-bold mt-1 uppercase leading-tight group-hover:text-[#c7f300] transition-colors">{p.name}</h4>
+                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-7">
+                  <p className="inline-flex text-[#c7f300] font-(--font-space-mono) text-[9px] tracking-[0.16em] uppercase bg-black/35 border border-[#c7f300]/15 rounded-full px-3 py-1">{p.type}</p>
+                  <h4 className="text-lg md:text-xl font-bold mt-3 uppercase leading-snug group-hover:text-[#c7f300] transition-colors">{p.name}</h4>
                   <div className="flex justify-between items-center mt-3 border-t border-white/10 pt-3">
-                    <span className="text-[11px] text-[#b0b3b4]">{p.location} - {p.year}</span>
+                    <span className="text-[11px] leading-relaxed text-[#b0b3b4] pr-3">{p.location} - {p.year}</span>
                     <svg className="w-4 h-4 text-[#c7f300] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7v10" />
                     </svg>

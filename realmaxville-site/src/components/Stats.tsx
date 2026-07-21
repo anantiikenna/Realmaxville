@@ -11,25 +11,25 @@ const stats = [
 
 export default function Stats() {
   return (
-    <section className="section-inner" style={{ position: "relative", zIndex: 40, marginTop: "-5rem", paddingBottom: "5rem" }} aria-label="Company statistics">
+    <section className="section-inner" style={{ position: "relative", zIndex: 40, marginTop: "-4rem", paddingBottom: "5.5rem" }} aria-label="Company statistics">
       <ScrollReveal>
-        <div className="glass-panel rounded-lg grid grid-cols-2 md:grid-cols-5 gap-0 p-6 md:p-10 cyber-border shadow-2xl">
+        <div className="glass-panel rounded-lg grid grid-cols-2 md:grid-cols-5 gap-0 p-4 sm:p-6 md:p-8 cyber-border shadow-2xl">
           {stats.map((stat, i) => (
             <div
               key={stat.label}
-              className={`text-center space-y-2 px-4 py-5
+              className={`text-center space-y-3 px-5 py-7 md:px-6 md:py-8 min-h-40 flex flex-col items-center justify-center
                 ${i > 0 ? "md:border-l md:border-white/5" : ""}
                 ${i % 2 === 1 ? "border-l border-white/5 md:border-l" : ""}
                 ${i >= 2 ? "border-t border-white/5 md:border-t-0" : ""}
               `}
             >
-              <svg className="mx-auto h-8 w-8 text-[#c7f300]" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24" aria-hidden="true">
+              <svg className="mx-auto h-8 w-8 text-[#c7f300] shrink-0" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" d={stat.icon} />
               </svg>
-              <div className="text-4xl md:text-5xl font-extrabold text-white">
+              <div className="text-4xl md:text-5xl font-extrabold text-white leading-none">
                 {stat.value}
               </div>
-              <div className="font-(--font-space-mono) text-[10px] tracking-[0.2em] uppercase text-[#b0b3b4]">
+              <div className="font-(--font-space-mono) text-[10px] tracking-[0.16em] uppercase text-[#b0b3b4] leading-relaxed max-w-28 mx-auto">
                 {stat.label}
               </div>
             </div>

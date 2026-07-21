@@ -247,16 +247,22 @@ body.modal-open {
 
 /* Global page container with guaranteed margins */
 .site-container {
-  max-width: 1152px;
+  max-width: var(--container-max);
   margin-left: auto;
   margin-right: auto;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 @media (min-width: 768px) {
   .site-container {
-    padding-left: 5rem;
-    padding-right: 5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+@media (min-width: 1200px) {
+  .site-container {
+    padding-left: 4rem;
+    padding-right: 4rem;
   }
 }
 
@@ -265,13 +271,19 @@ body.modal-open {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1152px;
+  max-width: var(--container-max);
   margin-left: auto;
   margin-right: auto;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
 @media (min-width: 768px) {
+  .nav-inner {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+@media (min-width: 1200px) {
   .nav-inner {
     padding-left: 4rem;
     padding-right: 4rem;
@@ -326,16 +338,22 @@ body.modal-open {
 
 /* Section containers — full-bleed sections with inner padding */
 .section-inner {
-  max-width: 1152px;
+  max-width: var(--container-max);
   margin-left: auto;
   margin-right: auto;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 @media (min-width: 768px) {
   .section-inner {
-    padding-left: 5rem;
-    padding-right: 5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+@media (min-width: 1200px) {
+  .section-inner {
+    padding-left: 4rem;
+    padding-right: 4rem;
   }
 }
 

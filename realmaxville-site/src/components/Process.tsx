@@ -51,10 +51,10 @@ export default function Process() {
       </ScrollReveal>
 
       <ScrollReveal className="stagger">
-        <div className="relative grid grid-cols-1 md:grid-cols-5 gap-10">
+        <div className="relative grid grid-cols-1 md:grid-cols-5 gap-6 lg:gap-8">
           <div className="hidden md:block absolute top-12 left-0 right-0 h-px bg-[#c7f300]/45" aria-hidden="true" />
           {steps.map((step) => (
-            <article key={step.id} className="relative z-10 text-center md:text-left space-y-5">
+            <article key={step.id} className="relative z-10 text-center md:text-left space-y-5 rounded-lg border border-white/6 bg-white/[0.025] px-5 py-7 lg:px-6 lg:py-8">
               <div className="mx-auto md:mx-0 w-24 h-24 rounded-full glass-panel border border-[#c7f300]/30 flex items-center justify-center glow-hover transition-all">
                 <svg className="w-9 h-9 text-[#c7f300]" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" d={step.icon} />
@@ -62,8 +62,8 @@ export default function Process() {
               </div>
               <div>
                 <span className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#c7f300]">{step.id}</span>
-                <h3 className="mt-2 text-lg font-bold uppercase">{step.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-[#b0b3b4]">{step.desc}</p>
+                <h3 className="mt-2 text-lg font-bold uppercase leading-snug">{step.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-[#b0b3b4]">{step.desc}</p>
               </div>
             </article>
           ))}
