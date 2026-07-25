@@ -4,52 +4,39 @@ import ScrollReveal from "./ScrollReveal";
 
 export default function CallToAction() {
   return (
-    <section className="section-inner" style={{ paddingTop: "4rem", paddingBottom: "8rem" }} aria-labelledby="cta-heading">
+    <section className="py-24 site-container" aria-labelledby="cta-heading">
       <ScrollReveal>
-        <div className="relative overflow-hidden rounded-lg glass-panel cyber-border px-7 py-14 sm:px-10 md:px-20 md:py-24 text-center">
-          <img
-            src="/images/projects/kaduna-conference-center.jpg"
-            alt=""
-            className="absolute inset-0 h-full w-full object-cover grayscale opacity-25"
-            loading="lazy"
-            aria-hidden="true"
-          />
-          <div className="absolute inset-0 bg-black/70" aria-hidden="true" />
-          <div className="relative z-10 mx-auto max-w-4xl">
-            <h2 id="cta-heading" className="text-4xl md:text-[64px] font-extrabold leading-tight uppercase max-w-4xl mx-auto">
-              LET&apos;S BUILD SOMETHING <br />
-              <span className="text-[#c7f300] neon-text-glow">EXTRAORDINARY TOGETHER.</span>
-            </h2>
-            <p className="mx-auto mt-6 max-w-2xl text-[#b0b3b4] leading-relaxed">
-              Ready to turn your vision into a legacy? Connect with our team of designers, builders and project leads today.
-            </p>
-            <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4 sm:gap-5">
-              <Link href="/contact" className="btn-cta glow-hover" style={{ height: "3.25rem", paddingLeft: "2.5rem", paddingRight: "2.5rem" }}>
-                REQUEST A QUOTE
-                <svg style={{ width: 16, height: 16, marginLeft: 8 }} fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </Link>
-              <Link
-                href="/projects"
-                className="inline-flex items-center justify-center"
-                style={{
-                  height: "3.25rem",
-                  paddingLeft: "2.5rem",
-                  paddingRight: "2.5rem",
-                  borderRadius: 9999,
-                  border: "1px solid rgba(255,255,255,0.25)",
-                  color: "#e5e2e1",
-                  fontFamily: "var(--font-space-mono)",
-                  fontSize: "0.7rem",
-                  letterSpacing: "0.2em",
-                  textTransform: "uppercase",
-                  textDecoration: "none",
-                }}
-              >
-                VIEW PROJECTS
-              </Link>
-            </div>
+        <div className="relative rounded-lg glass p-12 md:p-24 text-center space-y-10 cyber-border overflow-hidden">
+          {/* Large background icon */}
+          <div className="absolute top-8 right-8 opacity-10" aria-hidden="true">
+            <svg className="w-[200px] h-[200px] text-[#c7f300]" fill="none" stroke="currentColor" strokeWidth={1} viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3 21l9-18 9 18M6.5 14.5h11" />
+            </svg>
+          </div>
+
+          <h2 id="cta-heading" className="relative z-10 font-extrabold leading-tight uppercase max-w-4xl mx-auto" style={{ fontSize: "clamp(2.8rem, 7vw, 4.5rem)" }}>
+            LET&apos;S BUILD SOMETHING <br />
+            <span className="text-[#c7f300]">EXTRAORDINARY TOGETHER.</span>
+          </h2>
+          <p className="relative z-10 text-[#b0b3b4] text-lg max-w-2xl mx-auto leading-relaxed">
+            Ready to turn your vision into a legacy? Connect with our team of innovators and engineers today.
+          </p>
+          <div className="relative z-10 flex flex-col sm:flex-row justify-center gap-6 pt-8">
+            <Link
+              href="/contact"
+              className="btn-cta glow-hover h-13 px-12 flex items-center justify-center gap-2"
+            >
+              REQUEST A QUOTE
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+            <Link
+              href="/projects"
+              className="border border-white/20 text-white h-13 px-12 rounded-full font-(--font-space-mono) text-[11px] tracking-[0.2em] uppercase hover:bg-white/10 transition-all flex items-center justify-center"
+            >
+              BOOK CONSULTATION
+            </Link>
           </div>
         </div>
       </ScrollReveal>

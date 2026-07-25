@@ -11,38 +11,38 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section style={{ padding: "8rem 0", backgroundColor: "#0e0e0e", overflow: "hidden" }} aria-labelledby="projects-heading">
-      <div className="section-inner" style={{ display: "flex", flexDirection: "column", gap: "5rem" }}>
+    <section className="py-32 bg-[#0e0e0e] overflow-hidden" aria-labelledby="projects-heading">
+      <div className="site-container space-y-16">
         <ScrollReveal>
-          <div style={{ textAlign: "center" }}>
-            <h2 id="projects-heading" style={{ fontSize: "clamp(2rem, 5vw, 3rem)", fontWeight: 800, textTransform: "uppercase", letterSpacing: "-0.02em", marginBottom: "1rem" }}>
+          <div className="text-center space-y-4">
+            <h2 id="projects-heading" className="text-3xl md:text-[32px] font-bold uppercase tracking-tight">
               OUR FEATURED PROJECTS
             </h2>
-            <div style={{ width: 96, height: 4, backgroundColor: "#c7f300", margin: "0 auto" }} aria-hidden="true" />
+            <div className="w-24 h-1 bg-[#c7f300] mx-auto" aria-hidden="true" />
           </div>
         </ScrollReveal>
 
         <ScrollReveal className="stagger">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {projects.map((p) => (
               <Link
                 key={p.name}
                 href={`/projects/${p.slug}`}
-                className="group relative overflow-hidden rounded-lg aspect-[3/4] cursor-pointer block border border-white/5"
+                className="group relative overflow-hidden rounded-lg aspect-[3/4] cursor-pointer block"
               >
                 <img
                   src={p.img}
-                  alt={`${p.name} - ${p.type} project in ${p.location}`}
-                  className="absolute inset-0 w-full h-full object-cover grayscale opacity-80 transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0 group-hover:opacity-100"
+                  alt={`${p.name} — ${p.type.toLowerCase()} project in ${p.location}`}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-linear-to-t from-black via-black/30 to-transparent opacity-85 group-hover:opacity-70 transition-opacity" />
-                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-7">
-                  <p className="inline-flex text-[#c7f300] font-(--font-space-mono) text-[9px] tracking-[0.16em] uppercase bg-black/35 border border-[#c7f300]/15 rounded-full px-3 py-1">{p.type}</p>
-                  <h4 className="text-lg md:text-xl font-bold mt-3 uppercase leading-snug group-hover:text-[#c7f300] transition-colors">{p.name}</h4>
-                  <div className="flex justify-between items-center mt-3 border-t border-white/10 pt-3">
-                    <span className="text-[11px] leading-relaxed text-[#b0b3b4] pr-3">{p.location} - {p.year}</span>
-                    <svg className="w-4 h-4 text-[#c7f300] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <div className="absolute inset-0 bg-linear-to-t from-black via-transparent to-transparent opacity-80" />
+                <div className="absolute bottom-0 left-0 p-8 w-full">
+                  <p className="text-[#c7f300] font-(--font-space-mono) text-[10px] tracking-[0.2em]">{p.type}</p>
+                  <h4 className="text-lg font-bold mt-2 group-hover:text-[#c7f300] transition-colors">{p.name}</h4>
+                  <div className="flex justify-between items-center mt-4 border-t border-white/10 pt-4">
+                    <span className="text-xs text-[#b0b3b4]">{p.location} &bull; {p.year}</span>
+                    <svg className="w-4 h-4 text-[#c7f300] opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7v10" />
                     </svg>
                   </div>
@@ -52,12 +52,10 @@ export default function Projects() {
           </div>
         </ScrollReveal>
 
-        <div style={{ textAlign: "center" }}>
+        <div className="text-center pt-8">
           <Link
             href="/projects"
-            style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", border: "1px solid #c7f300", color: "#c7f300", padding: "1rem 3rem", borderRadius: 9999, fontFamily: "var(--font-space-mono)", fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", background: "transparent", cursor: "pointer", transition: "all 0.2s", textDecoration: "none" }}
-            onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.background = "#c7f300"; (e.currentTarget as HTMLAnchorElement).style.color = "#171e00"; }}
-            onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.background = "transparent"; (e.currentTarget as HTMLAnchorElement).style.color = "#c7f300"; }}
+            className="border border-[#c7f300] text-[#c7f300] px-12 py-4 rounded-full font-(--font-space-mono) text-[11px] tracking-[0.2em] uppercase hover:bg-[#c7f300] hover:text-[#171e00] transition-all inline-block"
           >
             VIEW ALL PROJECTS
           </Link>

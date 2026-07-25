@@ -62,7 +62,7 @@ export default function Team() {
     <section style={{ padding: "8rem 0", backgroundColor: "#0e0e0e" }} aria-labelledby="team-heading">
       <div className="section-inner">
         <ScrollReveal>
-          <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "5rem", gap: "2rem" }}>
+          <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "4rem", gap: "2rem" }}>
             <div style={{ maxWidth: "36rem" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "1rem" }}>
                 <div style={{ width: 48, height: 1, backgroundColor: "#c7f300" }} aria-hidden="true" />

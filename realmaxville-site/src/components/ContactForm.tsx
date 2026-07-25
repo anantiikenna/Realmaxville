@@ -110,7 +110,7 @@ export default function ContactForm() {
       aria-labelledby="contact-heading"
     >
       <ScrollReveal>
-        <div className="text-center mb-24">
+        <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-5" aria-hidden="true">
             <div className="h-px w-12 bg-[#c7f300]" />
             <span className="font-(--font-space-mono) text-[10px] tracking-[0.3em] text-[#c7f300] uppercase">
@@ -130,7 +130,7 @@ export default function ContactForm() {
         </div>
       </ScrollReveal>
 
-      <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 xl:gap-16">
+      <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 xl:gap-20">
         {/* Contact info sidebar */}
         <ScrollReveal className="lg:col-span-2" direction="left">
           <div className="space-y-5">

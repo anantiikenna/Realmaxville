@@ -77,13 +77,13 @@ export default function About() {
             ].map((item) => (
               <div
                 key={item.num}
-                className="group relative pl-4 py-3 pr-3 rounded-lg bg-white/2 border border-white/5 hover:border-[#c7f300]/25 hover:bg-[#c7f300]/3 transition-all duration-300"
+                className="group relative pl-4 py-4 pr-4 rounded-lg bg-white/2 border border-white/5 hover:border-[#c7f300]/25 hover:bg-[#c7f300]/3 transition-all duration-300"
               >
                 {/* left accent bar */}
                 <div className="absolute left-0 top-3 bottom-3 w-0.5 rounded-full bg-[#c7f300]/40 group-hover:bg-[#c7f300] transition-colors" aria-hidden="true" />
                 <span className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#c7f300]/60 group-hover:text-[#c7f300] transition-colors">{item.num}</span>
-                <div className="text-[#e5e2e1] text-sm font-semibold mt-0.5">{item.title}</div>
-                <div className="text-outline text-xs mt-0.5 leading-relaxed">{item.desc}</div>
+                <div className="text-[#e5e2e1] text-sm font-semibold mt-1.5">{item.title}</div>
+                <div className="text-outline text-xs mt-1 leading-relaxed">{item.desc}</div>
               </div>
             ))}
           </div>

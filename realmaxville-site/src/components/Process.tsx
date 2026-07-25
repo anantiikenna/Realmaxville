@@ -36,15 +36,14 @@ const steps = [
 
 export default function Process() {
   return (
-    <section className="section-inner" style={{ paddingTop: "8rem", paddingBottom: "8rem", overflow: "hidden" }} aria-labelledby="process-heading">
+    <section className="py-32 site-container overflow-hidden" aria-labelledby="process-heading">
       <ScrollReveal>
-        <div className="text-center mb-16">
-          <div className="flex items-center justify-center gap-2 mb-4" aria-hidden="true">
-            <div className="h-px w-12 bg-[#c7f300]" />
-            <span className="font-(--font-space-mono) text-[10px] tracking-[0.3em] text-[#c7f300] uppercase">Methodology</span>
-            <div className="h-px w-12 bg-[#c7f300]" />
+        <div className="space-y-4 mb-20">
+          <div className="flex items-center gap-2" aria-hidden="true">
+            <div className="w-12 h-px bg-[#c7f300]" />
+            <span className="font-(--font-space-mono) text-[11px] tracking-[0.2em] text-[#c7f300] uppercase">How We Work</span>
           </div>
-          <h2 id="process-heading" className="text-4xl md:text-[48px] font-extrabold uppercase">
+          <h2 id="process-heading" className="text-3xl md:text-[32px] font-bold uppercase tracking-tight">
             OUR CONSTRUCTION PROCESS
           </h2>
         </div>
@@ -54,16 +53,16 @@ export default function Process() {
         <div className="relative grid grid-cols-1 md:grid-cols-5 gap-6 lg:gap-8">
           <div className="hidden md:block absolute top-12 left-0 right-0 h-px bg-[#c7f300]/45" aria-hidden="true" />
           {steps.map((step) => (
-            <article key={step.id} className="relative z-10 text-center md:text-left space-y-5 rounded-lg border border-white/6 bg-white/[0.025] px-5 py-7 lg:px-6 lg:py-8">
-              <div className="mx-auto md:mx-0 w-24 h-24 rounded-full glass-panel border border-[#c7f300]/30 flex items-center justify-center glow-hover transition-all">
+            <article key={step.id} className="relative z-10 text-center md:text-left space-y-6">
+              <div className="mx-auto md:mx-0 w-24 h-24 rounded-full bg-[#0a0a0a] border border-[#c7f300]/30 flex items-center justify-center glow-hover transition-all">
                 <svg className="w-9 h-9 text-[#c7f300]" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" d={step.icon} />
                 </svg>
               </div>
-              <div>
+              <div className="space-y-3">
                 <span className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#c7f300]">{step.id}</span>
                 <h3 className="mt-2 text-lg font-bold uppercase leading-snug">{step.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-[#b0b3b4]">{step.desc}</p>
+                <p className="mt-2 text-sm leading-7 text-[#b0b3b4]">{step.desc}</p>
               </div>
             </article>
           ))}
