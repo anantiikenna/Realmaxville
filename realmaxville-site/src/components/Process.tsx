@@ -5,40 +5,40 @@ const steps = [
   {
     id: "01",
     title: "Consultation",
-    desc: "Deep dive into your vision, site constraints and feasibility.",
-    icon: "M12 18h.01M9.5 15h5M8 11a4 4 0 118 0c0 1.7-1 2.6-2.2 3.4-.7.5-.8.9-.8 1.6h-2c0-1.4.5-2.3 1.7-3.1.9-.6 1.3-1 1.3-1.9a2 2 0 10-4 0H8z",
+    desc: "Understanding your needs, vision and budget constraints.",
+    icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />,
   },
   {
     id: "02",
     title: "Design",
-    desc: "Architectural planning, drawings and material selections.",
-    icon: "M4 20l4-1 10-10-3-3L5 16l-1 4zM14 6l3 3",
+    desc: "Conceptualizing and planning with architectural precision.",
+    icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />,
   },
   {
     id: "03",
     title: "Development",
-    desc: "Structural engineering, costing and regulatory approvals.",
-    icon: "M4 7h16M4 12h16M4 17h10",
+    desc: "Engineering and approvals for a seamless workflow.",
+    icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />,
   },
   {
     id: "04",
     title: "Construction",
-    desc: "Precision builds with reliable site supervision and craft.",
-    icon: "M3 21h18M6 21V10l6-5 6 5v11M9 21v-6h6v6",
+    desc: "Building with extreme quality and high-end materials.",
+    icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />,
   },
   {
     id: "05",
     title: "Delivery",
-    desc: "Final inspection, commissioning and handover.",
-    icon: "M15 7h3a3 3 0 110 6h-3M9 13H6a3 3 0 110-6h3M8 12l8-4",
+    desc: "On-time handover and client satisfaction guaranteed.",
+    icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />,
   },
 ];
 
 export default function Process() {
   return (
-    <section className="py-32 site-container overflow-hidden" aria-labelledby="process-heading">
+    <section className="py-32 px-6 md:px-16 max-w-[1440px] mx-auto overflow-hidden" aria-labelledby="process-heading">
       <ScrollReveal>
-        <div className="space-y-4 mb-20">
+        <div className="space-y-4 mb-16">
           <div className="flex items-center gap-2" aria-hidden="true">
             <div className="w-12 h-px bg-[#c7f300]" />
             <span className="font-(--font-space-mono) text-[11px] tracking-[0.2em] text-[#c7f300] uppercase">How We Work</span>
@@ -50,19 +50,21 @@ export default function Process() {
       </ScrollReveal>
 
       <ScrollReveal className="stagger">
-        <div className="relative grid grid-cols-1 md:grid-cols-5 gap-6 lg:gap-8">
-          <div className="hidden md:block absolute top-12 left-0 right-0 h-px bg-[#c7f300]/45" aria-hidden="true" />
+        <div className="relative grid grid-cols-1 md:grid-cols-5 gap-8">
+          {/* Timeline line */}
+          <div className="absolute top-12 left-0 right-0 h-px bg-white/10 hidden md:block z-0" aria-hidden="true" />
+          {/* Steps */}
           {steps.map((step) => (
-            <article key={step.id} className="relative z-10 text-center md:text-left space-y-6">
-              <div className="mx-auto md:mx-0 w-24 h-24 rounded-full bg-[#0a0a0a] border border-[#c7f300]/30 flex items-center justify-center glow-hover transition-all">
-                <svg className="w-9 h-9 text-[#c7f300]" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" d={step.icon} />
+            <article key={step.id} className="relative z-10 space-y-6">
+              <div className="glass w-24 h-24 rounded-full border border-[#c7f300]/30 flex items-center justify-center mx-auto md:mx-0 glow-hover transition-all">
+                <svg className="w-10 h-10 text-[#c7f300]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  {step.icon}
                 </svg>
               </div>
-              <div className="space-y-3">
-                <span className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#c7f300]">{step.id}</span>
-                <h3 className="mt-2 text-lg font-bold uppercase leading-snug">{step.title}</h3>
-                <p className="mt-2 text-sm leading-7 text-[#b0b3b4]">{step.desc}</p>
+              <div className="text-center md:text-left space-y-2">
+                <span className="font-(--font-space-mono) text-[11px] tracking-[0.2em] text-[#c7f300]">{step.id}</span>
+                <h4 className="text-[20px] font-semibold uppercase">{step.title}</h4>
+                <p className="text-[#b0b3b4] text-sm">{step.desc}</p>
               </div>
             </article>
           ))}
