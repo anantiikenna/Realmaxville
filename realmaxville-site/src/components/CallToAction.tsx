@@ -4,9 +4,9 @@ import ScrollReveal from "./ScrollReveal";
 
 export default function CallToAction() {
   return (
-    <section className="py-24 site-container" aria-labelledby="cta-heading">
+    <section className="py-28 md:py-36 site-container" aria-labelledby="cta-heading">
       <ScrollReveal>
-        <div className="relative rounded-lg glass p-12 md:p-24 text-center space-y-8 cyber-border overflow-hidden">
+        <div className="relative rounded-lg glass p-14 md:p-24 text-center space-y-8 cyber-border overflow-hidden">
           {/* Large background icon — Draftsman compass */}
           <div className="absolute top-4 right-4 md:top-8 md:right-8 opacity-10" aria-hidden="true">
             <svg className="w-[180px] h-[180px] md:w-[220px] md:h-[220px] text-[#c7f300]" fill="none" stroke="currentColor" strokeWidth={1} viewBox="0 0 24 24">

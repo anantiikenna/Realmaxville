@@ -36,7 +36,7 @@ const steps = [
 
 export default function Process() {
   return (
-    <section className="py-32 site-container overflow-hidden" aria-labelledby="process-heading">
+    <section className="py-36 md:py-40 site-container overflow-hidden" aria-labelledby="process-heading">
       <div className="flex flex-col gap-16">
         <ScrollReveal>
           <div className="space-y-4">

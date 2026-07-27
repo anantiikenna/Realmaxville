@@ -21,7 +21,7 @@ const icons = [
 
 export default function Services() {
   return (
-    <section className="py-32 site-container" id="services" aria-labelledby="services-heading">
+    <section className="py-36 md:py-40 site-container" id="services" aria-labelledby="services-heading">
       <div className="flex flex-col md:flex-row gap-16 items-start">
         {/* Sidebar */}
         <div className="md:w-1/3 sticky top-32 space-y-6">
@@ -57,7 +57,7 @@ export default function Services() {
           {services.map((s, i) => (
             <div
               key={s.title}
-              className={`glass p-8 space-y-4 hover:bg-white/5 transition-all group cursor-pointer ${
+              className={`glass p-8 md:p-10 space-y-4 hover:bg-white/5 transition-all group cursor-pointer ${
                 i === 2 ? "!border-[#c7f300]" : ""
               }`}
             >

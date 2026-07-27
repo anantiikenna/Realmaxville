@@ -11,7 +11,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section className="py-32 bg-[#0e0e0e] overflow-hidden" aria-labelledby="projects-heading">
+    <section className="py-36 md:py-40 bg-[#0e0e0e] overflow-hidden" aria-labelledby="projects-heading">
       <div className="site-container space-y-16">
         <ScrollReveal>
           <div className="text-center space-y-4">
@@ -56,7 +56,7 @@ export default function Projects() {
           </div>
         </ScrollReveal>
 
-        <div className="text-center pt-8">
+        <div className="text-center pt-12">
           <Link
             href="/projects"
             className="border border-[#c7f300] text-[#c7f300] px-12 py-4 rounded-full font-(--font-space-mono) text-[11px] tracking-[0.2em] uppercase hover:bg-[#c7f300] hover:text-[#171e00] transition-all inline-block"

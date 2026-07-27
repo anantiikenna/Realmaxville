@@ -16,7 +16,7 @@ export default function Stats() {
       aria-label="Company statistics"
     >
       <ScrollReveal>
-        <div className="glass rounded-lg grid grid-cols-2 md:grid-cols-5 gap-8 p-8 md:p-12 cyber-border shadow-2xl">
+        <div className="glass rounded-lg grid grid-cols-2 md:grid-cols-5 gap-8 p-10 md:p-14 cyber-border shadow-2xl">
           {stats.map((stat, i) => (
             <div
               key={stat.label}

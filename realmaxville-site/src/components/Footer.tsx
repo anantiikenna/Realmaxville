@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-[#0e0e0e] py-16 border-t border-white/5" role="contentinfo">
+    <footer className="relative overflow-hidden bg-[#0e0e0e] py-20 md:py-24 border-t border-white/5" role="contentinfo">
       {/* Watermark — background text */}
       <div
         className="absolute inset-0 flex items-center justify-center pointer-events-none select-none"
