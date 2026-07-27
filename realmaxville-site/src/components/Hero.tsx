@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Hero() {
   return (
     <section
-      className="relative flex items-center overflow-hidden pt-28 md:pt-36 pb-16"
+      className="relative flex items-center overflow-hidden pt-24 md:pt-28 pb-12 md:pb-16"
       style={{ minHeight: "100vh" }}
       aria-label="Hero"
     >

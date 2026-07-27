@@ -11,10 +11,10 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section className="py-36 md:py-40 bg-surface-container-lowest overflow-hidden" aria-labelledby="projects-heading">
+    <section className="py-32 bg-surface-container-lowest overflow-hidden" aria-labelledby="projects-heading">
       <div className="site-container space-y-16">
         <ScrollReveal>
-          <div className="text-center space-y-6">
+          <div className="text-center space-y-4">
             <h2 id="projects-heading" className="text-3xl md:text-[32px] font-bold uppercase tracking-tight leading-[1.2]">
               OUR FEATURED PROJECTS
             </h2>
@@ -41,10 +41,10 @@ export default function Projects() {
                   }}
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-black via-black/30 to-transparent opacity-85" />
-                <div className="absolute bottom-0 left-0 p-8 md:p-10 w-full">
+                <div className="absolute bottom-0 left-0 p-8 w-full">
                   <p className="text-[#c7f300] font-(--font-space-mono) text-[11px] tracking-[0.2em] uppercase">{p.type}</p>
-                  <h4 className="text-lg font-bold mt-3 leading-snug text-white group-hover:text-[#c7f300] transition-colors">{p.name}</h4>
-                  <div className="flex justify-between items-center mt-5 border-t border-white/10 pt-5">
+                  <h4 className="text-lg font-bold mt-2 leading-snug text-white group-hover:text-[#c7f300] transition-colors">{p.name}</h4>
+                  <div className="flex justify-between items-center mt-4 border-t border-white/10 pt-4">
                     <span className="text-xs text-[#b0b3b4]">{p.location} &bull; {p.year}</span>
                     <svg className="w-4 h-4 text-[#c7f300] opacity-80 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7v10" />
@@ -56,7 +56,7 @@ export default function Projects() {
           </div>
         </ScrollReveal>
 
-        <div className="text-center pt-16">
+        <div className="text-center pt-8">
           <Link
             href="/projects"
             className="border border-[#c7f300] text-[#c7f300] px-12 py-4 rounded-full font-(--font-space-mono) text-[11px] tracking-[0.2em] uppercase hover:bg-[#c7f300] hover:text-on-accent transition-all inline-block"
