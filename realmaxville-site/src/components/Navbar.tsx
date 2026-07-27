@@ -77,7 +77,6 @@ export default function Navbar() {
           <span style={{ fontSize: "1.25rem", fontWeight: 800, letterSpacing: "-0.04em", color: "#e5e2e1" }}>
             REALMAXVILLE
           </span>
-          <span className="pulse-active" style={{ width: 8, height: 8, borderRadius: "50%", backgroundColor: "#c7f300", display: "inline-block" }} aria-hidden="true" />
         </Link>
 
         {/* Desktop nav links — uses .nav-desktop CSS class for responsive show/hide */}

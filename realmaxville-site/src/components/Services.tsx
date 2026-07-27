@@ -21,7 +21,7 @@ const icons = [
 
 export default function Services() {
   return (
-    <section className="py-32 px-6 md:px-16 max-w-[1440px] mx-auto" id="services" aria-labelledby="services-heading">
+    <section className="py-32 site-container" id="services" aria-labelledby="services-heading">
       <div className="flex flex-col md:flex-row gap-16 items-start">
         {/* Sidebar */}
         <div className="md:w-1/3 sticky top-32 space-y-6">
@@ -61,7 +61,7 @@ export default function Services() {
                 i === 2 ? "!border-[#c7f300]" : ""
               }`}
             >
-              <svg className="w-8 h-8 text-[#c7f300]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <svg className="w-7 h-7 text-[#c7f300]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 {icons[i]}
               </svg>
               <h3 className="text-[20px] font-semibold uppercase tracking-wider">{s.title}</h3>

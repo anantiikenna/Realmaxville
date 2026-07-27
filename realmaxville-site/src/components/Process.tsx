@@ -36,40 +36,42 @@ const steps = [
 
 export default function Process() {
   return (
-    <section className="py-32 px-6 md:px-16 max-w-[1440px] mx-auto overflow-hidden" aria-labelledby="process-heading">
-      <ScrollReveal>
-        <div className="space-y-4 mb-16">
-          <div className="flex items-center gap-2" aria-hidden="true">
-            <div className="w-12 h-px bg-[#c7f300]" />
-            <span className="font-(--font-space-mono) text-[11px] tracking-[0.2em] text-[#c7f300] uppercase">How We Work</span>
+    <section className="py-32 site-container overflow-hidden" aria-labelledby="process-heading">
+      <div className="flex flex-col gap-16">
+        <ScrollReveal>
+          <div className="space-y-4">
+            <div className="flex items-center gap-2" aria-hidden="true">
+              <div className="w-12 h-px bg-[#c7f300]" />
+              <span className="font-(--font-space-mono) text-[11px] tracking-[0.2em] text-[#c7f300] uppercase">How We Work</span>
+            </div>
+            <h2 id="process-heading" className="text-3xl md:text-[32px] font-bold uppercase tracking-tight">
+              OUR CONSTRUCTION PROCESS
+            </h2>
           </div>
-          <h2 id="process-heading" className="text-3xl md:text-[32px] font-bold uppercase tracking-tight">
-            OUR CONSTRUCTION PROCESS
-          </h2>
-        </div>
-      </ScrollReveal>
+        </ScrollReveal>
 
-      <ScrollReveal className="stagger">
-        <div className="relative grid grid-cols-1 md:grid-cols-5 gap-8">
-          {/* Timeline line */}
-          <div className="absolute top-12 left-0 right-0 h-px bg-white/10 hidden md:block z-0" aria-hidden="true" />
-          {/* Steps */}
-          {steps.map((step) => (
-            <article key={step.id} className="relative z-10 space-y-6">
-              <div className="glass w-24 h-24 rounded-full border border-[#c7f300]/30 flex items-center justify-center mx-auto md:mx-0 glow-hover transition-all">
-                <svg className="w-10 h-10 text-[#c7f300]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  {step.icon}
-                </svg>
-              </div>
-              <div className="text-center md:text-left space-y-2">
-                <span className="font-(--font-space-mono) text-[11px] tracking-[0.2em] text-[#c7f300]">{step.id}</span>
-                <h4 className="text-[20px] font-semibold uppercase">{step.title}</h4>
-                <p className="text-[#b0b3b4] text-sm">{step.desc}</p>
-              </div>
-            </article>
-          ))}
-        </div>
-      </ScrollReveal>
+        <ScrollReveal className="stagger">
+          <div className="relative grid grid-cols-1 md:grid-cols-5 gap-8">
+            {/* Timeline line — exactly 48px from top (midpoint of 96px circle) */}
+            <div className="absolute top-[48px] left-0 right-0 h-px bg-white/10 hidden md:block z-0" aria-hidden="true" />
+            {/* Steps */}
+            {steps.map((step) => (
+              <article key={step.id} className="relative z-10 space-y-6">
+                <div className="glass w-24 h-24 rounded-full border border-[#c7f300]/30 flex items-center justify-center mx-auto md:mx-0 glow-hover transition-all">
+                  <svg className="w-10 h-10 text-[#c7f300]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    {step.icon}
+                  </svg>
+                </div>
+                <div className="text-center md:text-left space-y-2">
+                  <span className="font-(--font-space-mono) text-[11px] tracking-[0.2em] text-[#c7f300]">{step.id}</span>
+                  <h4 className="text-[20px] font-semibold uppercase">{step.title}</h4>
+                  <p className="text-[#b0b3b4] text-sm">{step.desc}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </ScrollReveal>
+      </div>
     </section>
   );
 }

@@ -23,7 +23,7 @@ export default function Projects() {
         </ScrollReveal>
 
         <ScrollReveal className="stagger">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {projects.map((p) => (
               <Link
                 key={p.name}
@@ -35,6 +35,10 @@ export default function Projects() {
                   alt={`${p.name} — ${p.type.toLowerCase()} project in ${p.location}`}
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   loading="lazy"
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src =
+                      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80";
+                  }}
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-black via-transparent to-transparent opacity-80" />
                 <div className="absolute bottom-0 left-0 p-8 w-full">
@@ -42,7 +46,7 @@ export default function Projects() {
                   <h4 className="text-lg font-bold mt-2 group-hover:text-[#c7f300] transition-colors">{p.name}</h4>
                   <div className="flex justify-between items-center mt-4 border-t border-white/10 pt-4">
                     <span className="text-xs text-[#b0b3b4]">{p.location} &bull; {p.year}</span>
-                    <svg className="w-4 h-4 text-[#c7f300] opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <svg className="w-4 h-4 text-[#c7f300] opacity-70 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7v10" />
                     </svg>
                   </div>

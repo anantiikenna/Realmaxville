@@ -52,8 +52,7 @@ export default function Hero() {
             >
               EXPLORE PROJECTS
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-4.197-2.42A1 1 0 009 9.616v4.768a1 1 0 001.555.832l4.197-2.348a1 1 0 000-1.7z" />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </Link>
           </div>
@@ -61,7 +60,7 @@ export default function Hero() {
       </div>
 
       {/* Floating social / info bar — right side */}
-      <div className="absolute right-6 md:right-12 bottom-24 z-30 hidden md:flex flex-col gap-6">
+      <div className="absolute right-6 md:right-16 bottom-16 z-30 hidden md:flex flex-col gap-6">
         <div className="glass p-4 rounded-full flex flex-col gap-4 items-center">
           <a href="mailto:admin@realmaxville.com" className="text-[#c7f300] hover:scale-110 transition-transform" aria-label="Email us">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -74,9 +73,6 @@ export default function Hero() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
           </Link>
-          <div className="w-8 h-8 rounded-full border border-[#c7f300] flex items-center justify-center text-xs text-[#c7f300] font-(--font-space-mono)">
-            0
-          </div>
         </div>
       </div>
 

@@ -19,7 +19,7 @@ export default function Footer() {
       </div>
 
       {/* Footer content */}
-      <div className="relative grid grid-cols-1 md:grid-cols-4 gap-12 site-container" style={{ zIndex: 10 }}>
+      <div className="relative grid grid-cols-1 md:grid-cols-4 gap-8 site-container" style={{ zIndex: 10 }}>
         {/* Brand */}
         <div className="space-y-6">
           <Link href="/" className="inline-flex items-center gap-2 group">
@@ -50,7 +50,7 @@ export default function Footer() {
         {/* Quick Links */}
         <div className="space-y-4">
           <h5 className="font-(--font-space-mono) text-[11px] tracking-[0.2em] text-[#c7f300] uppercase">Quick Links</h5>
-          <ul className="space-y-3">
+          <ul className="space-y-2">
             <li><Link href="/about" className="text-[#b0b3b4] opacity-70 hover:text-[#c7f300] transition-all text-sm">About Us</Link></li>
             <li><Link href="/projects" className="text-[#b0b3b4] opacity-70 hover:text-[#c7f300] transition-all text-sm">Featured Projects</Link></li>
             <li><Link href="/#services" className="text-[#b0b3b4] opacity-70 hover:text-[#c7f300] transition-all text-sm">Service Catalog</Link></li>
@@ -61,9 +61,10 @@ export default function Footer() {
         {/* Legal */}
         <div className="space-y-4">
           <h5 className="font-(--font-space-mono) text-[11px] tracking-[0.2em] text-[#c7f300] uppercase">Legal</h5>
-          <ul className="space-y-3">
+          <ul className="space-y-2">
             <li><a href="#" className="text-[#b0b3b4] opacity-70 hover:text-[#c7f300] transition-all text-sm">Privacy Policy</a></li>
             <li><a href="#" className="text-[#b0b3b4] opacity-70 hover:text-[#c7f300] transition-all text-sm">Terms of Service</a></li>
+            <li><a href="#" className="text-[#b0b3b4] opacity-70 hover:text-[#c7f300] transition-all text-sm">Blueprint Licensing</a></li>
           </ul>
         </div>
 
@@ -81,7 +82,7 @@ export default function Footer() {
       </div>
 
       <div className="mt-16 pt-8 border-t border-white/5 text-center site-container" style={{ zIndex: 10, position: "relative" }}>
-        <p className="text-sm text-[#b0b3b4] opacity-50">&copy; 2026 Realmaxville. All Rights Reserved.</p>
+        <p className="text-sm text-[#b0b3b4] opacity-50">&copy; {new Date().getFullYear()} Realmaxville. All Rights Reserved.</p>
       </div>
     </footer>
   );

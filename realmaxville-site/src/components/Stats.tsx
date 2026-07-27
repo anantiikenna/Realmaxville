@@ -12,20 +12,19 @@ const stats = [
 export default function Stats() {
   return (
     <section
-      className="section-inner relative z-30"
-      style={{ marginTop: "-5rem", paddingBottom: "4rem" }}
+      className="section-inner relative z-30 -mt-16 md:-mt-20"
       aria-label="Company statistics"
     >
       <ScrollReveal>
-        <div className="glass rounded-lg grid grid-cols-2 md:grid-cols-5 gap-10 p-10 md:p-12 cyber-border shadow-2xl">
+        <div className="glass rounded-lg grid grid-cols-2 md:grid-cols-5 gap-8 p-8 md:p-12 cyber-border shadow-2xl">
           {stats.map((stat, i) => (
             <div
               key={stat.label}
-              className={`text-center space-y-3 flex flex-col items-center justify-center
+              className={`text-center space-y-2 flex flex-col items-center justify-center
                 ${i > 0 ? "md:border-l md:border-white/5" : ""}
               `}
             >
-              <svg className="mx-auto h-10 w-10 text-[#c7f300] shrink-0" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24" aria-hidden="true">
+              <svg className="mx-auto h-8 w-8 text-[#c7f300] shrink-0" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" d={stat.icon} />
               </svg>
               <div className="text-4xl md:text-5xl font-extrabold text-white leading-none">
