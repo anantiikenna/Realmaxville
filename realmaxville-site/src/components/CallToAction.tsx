@@ -9,12 +9,12 @@ export default function CallToAction() {
         <div className="relative rounded-lg glass p-14 md:p-24 text-center space-y-8 cyber-border overflow-hidden">
           {/* Large background icon — Draftsman compass */}
           <div className="absolute top-4 right-4 md:top-8 md:right-8 opacity-10" aria-hidden="true">
-            <svg className="w-[180px] h-[180px] md:w-[220px] md:h-[220px] text-[#c7f300]" fill="none" stroke="currentColor" strokeWidth={1} viewBox="0 0 24 24">
+            <svg className="w-45 h-45 md:w-55 md:h-55 text-[#c7f300]" fill="none" stroke="currentColor" strokeWidth={1} viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" d="M12 2v4m0 0l-5 16m5-16l5 16M7 16h10M12 6a2 2 0 100-4 2 2 0 000 4z" />
             </svg>
           </div>
 
-          <h2 id="cta-heading" className="relative z-10 font-extrabold leading-tight uppercase max-w-4xl mx-auto" style={{ fontSize: "clamp(2.8rem, 7vw, 4.5rem)" }}>
+          <h2 id="cta-heading" className="relative z-10 font-extrabold leading-[1.05] uppercase max-w-4xl mx-auto" style={{ fontSize: "clamp(2.8rem, 7vw, 4.5rem)" }}>
             LET&apos;S BUILD SOMETHING <br />
             <span className="text-[#c7f300]">EXTRAORDINARY TOGETHER.</span>
           </h2>

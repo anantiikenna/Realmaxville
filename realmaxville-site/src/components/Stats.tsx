@@ -16,11 +16,11 @@ export default function Stats() {
       aria-label="Company statistics"
     >
       <ScrollReveal>
-        <div className="glass rounded-lg grid grid-cols-2 md:grid-cols-5 gap-8 p-10 md:p-14 cyber-border shadow-2xl">
+        <div className="glass rounded-lg grid grid-cols-2 md:grid-cols-5 gap-8 p-12 md:p-16 cyber-border shadow-2xl">
           {stats.map((stat, i) => (
             <div
               key={stat.label}
-              className={`text-center space-y-2 flex flex-col items-center justify-center
+              className={`text-center space-y-4 flex flex-col items-center justify-center
                 ${i > 0 ? "md:border-l md:border-white/5" : ""}
               `}
             >
@@ -30,7 +30,7 @@ export default function Stats() {
               <div className="text-4xl md:text-5xl font-extrabold text-white leading-none">
                 {stat.value}
               </div>
-              <div className="font-(--font-space-mono) text-[10px] tracking-[0.16em] uppercase text-[#b0b3b4] leading-relaxed max-w-28 mx-auto">
+              <div className="font-(--font-space-mono) text-[10px] tracking-[0.2em] uppercase text-[#b0b3b4] leading-relaxed max-w-28 mx-auto">
                 {stat.label}
               </div>
             </div>

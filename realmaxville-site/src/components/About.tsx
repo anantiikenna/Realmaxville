@@ -30,11 +30,11 @@ export default function About() {
         </ScrollReveal>
 
         <ScrollReveal direction="right">
-          <div className="flex items-center gap-2 mb-4">
+          <div className="flex items-center gap-2 mb-6">
             <div className="w-12 h-px bg-[#c7f300]" aria-hidden="true" />
-            <span className="font-(--font-space-mono) text-xs tracking-[0.2em] text-[#c7f300]">ABOUT US</span>
+            <span className="font-(--font-space-mono) text-[12px] tracking-[0.2em] text-[#c7f300]">ABOUT US</span>
           </div>
-          <h2 id="about-heading" className="text-4xl md:text-[48px] font-extrabold leading-tight mt-2">
+          <h2 id="about-heading" className="text-4xl md:text-[48px] font-extrabold leading-[1.1] mt-2">
             WHERE WE BUILD <br />
             <span className="text-[#c7f300] neon-text-glow">YOUR VISIONS</span>
           </h2>
@@ -68,7 +68,7 @@ export default function About() {
           <div className="mt-8 h-px bg-linear-to-r from-[#c7f300]/20 via-[#c7f300]/5 to-transparent" aria-hidden="true" />
 
           {/* Value props */}
-          <div className="mt-8 grid grid-cols-2 gap-4">
+          <div className="mt-8 grid grid-cols-2 gap-5">
             {[
               { num: "01", title: "Meticulous Planning", desc: "Best schedules to keep you on track" },
               { num: "02", title: "Completion On Time", desc: "Timely delivery is our priority" },
@@ -82,8 +82,8 @@ export default function About() {
                 {/* left accent bar */}
                 <div className="absolute left-0 top-3 bottom-3 w-0.5 rounded-full bg-[#c7f300]/40 group-hover:bg-[#c7f300] transition-colors" aria-hidden="true" />
                 <span className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#c7f300]/60 group-hover:text-[#c7f300] transition-colors">{item.num}</span>
-                <div className="text-[#e5e2e1] text-sm font-semibold mt-1.5">{item.title}</div>
-                <div className="text-outline text-xs mt-1 leading-relaxed">{item.desc}</div>
+                <div className="text-[#e5e2e1] text-sm font-semibold mt-2">{item.title}</div>
+                <div className="text-outline text-xs mt-2 leading-relaxed">{item.desc}</div>
               </div>
             ))}
           </div>

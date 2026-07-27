@@ -37,14 +37,14 @@ const steps = [
 export default function Process() {
   return (
     <section className="py-36 md:py-40 site-container overflow-hidden" aria-labelledby="process-heading">
-      <div className="flex flex-col gap-16">
+      <div className="flex flex-col gap-20">
         <ScrollReveal>
           <div className="space-y-4">
             <div className="flex items-center gap-2" aria-hidden="true">
               <div className="w-12 h-px bg-[#c7f300]" />
               <span className="font-(--font-space-mono) text-[11px] tracking-[0.2em] text-[#c7f300] uppercase">How We Work</span>
             </div>
-            <h2 id="process-heading" className="text-3xl md:text-[32px] font-bold uppercase tracking-tight">
+            <h2 id="process-heading" className="text-3xl md:text-[32px] font-bold uppercase tracking-tight leading-[1.2]">
               OUR CONSTRUCTION PROCESS
             </h2>
           </div>
@@ -53,7 +53,7 @@ export default function Process() {
         <ScrollReveal className="stagger">
           <div className="relative grid grid-cols-1 md:grid-cols-5 gap-8">
             {/* Timeline line — exactly 48px from top (midpoint of 96px circle) */}
-            <div className="absolute top-[48px] left-0 right-0 h-px bg-white/10 hidden md:block z-0" aria-hidden="true" />
+            <div className="absolute top-12 left-0 right-0 h-px bg-white/10 hidden md:block z-0" aria-hidden="true" />
             {/* Steps */}
             {steps.map((step) => (
               <article key={step.id} className="relative z-10 space-y-6">
@@ -62,10 +62,10 @@ export default function Process() {
                     {step.icon}
                   </svg>
                 </div>
-                <div className="text-center md:text-left space-y-2">
-                  <span className="font-(--font-space-mono) text-[11px] tracking-[0.2em] text-[#c7f300]">{step.id}</span>
-                  <h4 className="text-[20px] font-semibold uppercase">{step.title}</h4>
-                  <p className="text-[#b0b3b4] text-sm">{step.desc}</p>
+                <div className="text-center md:text-left space-y-3">
+                  <span className="font-(--font-space-mono) text-xs tracking-[0.2em] text-[#c7f300]">{step.id}</span>
+                  <h4 className="text-2xl font-semibold uppercase leading-[1.3] tracking-[-0.01em]">{step.title}</h4>
+                  <p className="text-[#b0b3b4] text-sm leading-relaxed">{step.desc}</p>
                 </div>
               </article>
             ))}

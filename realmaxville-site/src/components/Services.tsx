@@ -30,7 +30,7 @@ export default function Services() {
               <div className="w-12 h-px bg-[#c7f300]" aria-hidden="true" />
               <span className="font-(--font-space-mono) text-[11px] tracking-[0.2em] text-[#c7f300] uppercase">Our Services</span>
             </div>
-            <h2 id="services-heading" className="text-3xl md:text-[32px] font-bold leading-tight mt-4 tracking-tight">
+            <h2 id="services-heading" className="text-3xl md:text-[32px] font-bold leading-[1.2] tracking-tight mt-4">
               ARCHITECTURE &amp; CONSTRUCTION
             </h2>
             <p className="text-[#b0b3b4] mt-4 leading-relaxed">
@@ -41,7 +41,7 @@ export default function Services() {
               <p className="font-(--font-space-mono) text-[11px] tracking-[0.2em] text-[#b0b3b4]">FOUNDER &amp; CEO</p>
               <div className="flex items-center gap-4 cursor-pointer group">
                 <div className="w-12 h-12 rounded-full border border-[#c7f300] flex items-center justify-center group-hover:bg-[#c7f300] transition-all">
-                  <svg className="w-5 h-5 text-[#c7f300] group-hover:text-[#171e00]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <svg className="w-5 h-5 text-[#c7f300] group-hover:text-on-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14.752 11.168l-4.197-2.42A1 1 0 009 9.616v4.768a1 1 0 001.555.832l4.197-2.348a1 1 0 000-1.7z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
@@ -53,19 +53,19 @@ export default function Services() {
         </div>
 
         {/* Service cards — 2-col grid */}
-        <div className="md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-6">
           {services.map((s, i) => (
             <div
               key={s.title}
-              className={`glass p-8 md:p-10 space-y-4 hover:bg-white/5 transition-all group cursor-pointer ${
-                i === 2 ? "!border-[#c7f300]" : ""
+              className={`glass p-10 md:p-12 space-y-5 hover:bg-white/5 transition-all group cursor-pointer ${
+                i === 2 ? "border-[#c7f300]!" : ""
               }`}
             >
               <svg className="w-7 h-7 text-[#c7f300]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 {icons[i]}
               </svg>
-              <h3 className="text-[20px] font-semibold uppercase tracking-wider">{s.title}</h3>
-              <p className="text-[#b0b3b4] text-sm">{s.desc}</p>
+              <h3 className="text-[20px] font-semibold uppercase tracking-wider leading-snug">{s.title}</h3>
+              <p className="text-[#b0b3b4] text-sm leading-relaxed">{s.desc}</p>
             </div>
           ))}
         </div>
