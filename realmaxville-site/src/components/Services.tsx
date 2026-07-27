@@ -58,7 +58,7 @@ export default function Services() {
             <div
               key={s.title}
               className={`glass p-8 space-y-4 hover:bg-white/5 transition-all group cursor-pointer ${
-                i === 2 ? "border-b-2 border-[#c7f300]" : ""
+                i === 2 ? "!border-[#c7f300]" : ""
               }`}
             >
               <svg className="w-8 h-8 text-[#c7f300]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
