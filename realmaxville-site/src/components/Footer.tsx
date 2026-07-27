@@ -12,7 +12,7 @@ export default function Footer() {
       >
         <span
           className="font-extrabold text-center whitespace-nowrap"
-          style={{ fontSize: "clamp(60px, 15vw, 180px)", color: "rgba(199,243,0,0.04)", letterSpacing: "-0.02em" }}
+          style={{ fontSize: "clamp(40px, 10vw, 120px)", color: "rgba(199,243,0,0.025)", letterSpacing: "-0.02em" }}
         >
           REALMAXVILLE
         </span>

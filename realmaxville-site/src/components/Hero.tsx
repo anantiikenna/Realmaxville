@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Hero() {
   return (
     <section
-      className="relative flex items-center overflow-hidden"
+      className="relative flex items-center overflow-hidden pt-28 md:pt-36 pb-16"
       style={{ minHeight: "100vh" }}
       aria-label="Hero"
     >
@@ -36,7 +36,7 @@ export default function Hero() {
             endure and elevate the way you live. Our engineering precision meets futuristic luxury.
           </p>
 
-          <div className="flex items-center gap-6 pt-4">
+          <div className="flex flex-wrap items-center gap-4 sm:gap-6 pt-4">
             <Link
               href="/contact"
               className="btn-cta glow-hover flex items-center gap-2 h-12 px-10"
