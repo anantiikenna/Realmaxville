@@ -61,9 +61,9 @@ export default function ContactForm() {
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-mono text-[#E6C687] uppercase">Direct VIP Hotline</h4>
-                  <p className="text-white font-semibold mt-0.5">+234 800 REALMAX / +44 20 7946 0912</p>
-                  <p className="text-[11px] text-gray-400">24/7 Dedicated Client Relations</p>
+                  <h4 className="text-xs font-mono text-[#E6C687] uppercase">Direct Phone / WhatsApp</h4>
+                  <p className="text-white font-semibold mt-0.5">0808 041 9259 / +234 808 041 9259</p>
+                  <p className="text-[11px] text-gray-400">Available on WhatsApp & Voice Calls</p>
                 </div>
               </div>
 
@@ -73,15 +73,15 @@ export default function ContactForm() {
                 </div>
                 <div>
                   <h4 className="text-xs font-mono text-[#00F5A0] uppercase">Direct Email Desk</h4>
-                  <p className="text-white font-semibold mt-0.5">consult@realmaxville.com</p>
-                  <p className="text-[11px] text-gray-400">Response within 2 business hours</p>
+                  <p className="text-white font-semibold mt-0.5">admin@realmaxville.com</p>
+                  <p className="text-[11px] text-gray-400">Response within 24 hours</p>
                 </div>
               </div>
             </div>
 
             <div className="p-4 rounded-2xl bg-white/[0.02] border border-white/10 text-xs font-mono text-gray-400 flex items-center gap-3">
               <ShieldCheck className="w-5 h-5 text-[#00F5A0] shrink-0" />
-              <span>Strict non-disclosure agreement (NDA) option available upon request for high-profile clients.</span>
+              <span>Headquarters: 4a, Ogombo Rd, Opp Abraham Adesanya Estate, Eti-Osa, Lagos, Nigeria</span>
             </div>
           </div>
 
@@ -96,7 +96,7 @@ export default function ContactForm() {
                   Consultation Request Received
                 </h3>
                 <p className="text-gray-300 text-sm max-w-md mx-auto leading-relaxed">
-                  Thank you, <strong className="text-[#E6C687]">{formData.name}</strong>. Senior Partner Arc. Maxmillian V. has been notified of your project request for <strong className="text-white">{formData.projectType}</strong>. Our executive office will contact you shortly via <strong className="text-white">{formData.email}</strong>.
+                  Thank you, <strong className="text-[#E6C687]">{formData.name}</strong>. The Realmaxville architectural team has received your request for <strong className="text-white">{formData.projectType}</strong>. Our team will contact you shortly via <strong className="text-white">{formData.email}</strong>.
                 </p>
                 <button
                   onClick={() => setSubmitted(false)}

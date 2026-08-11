@@ -19,52 +19,52 @@ import {
 import Link from "next/link";
 
 const stats = [
-  { value: "140+", label: "Architectural Legacies Built", color: "text-[#E6C687]" },
-  { value: "$450M+", label: "Total EPC Portfolio Value", color: "text-[#00F5A0]" },
-  { value: "28", label: "International Design Awards", color: "text-white" },
-  { value: "3", label: "Global Studios (Lagos · London · Dubai)", color: "text-[#E6C687]" },
-  { value: "99.8%", label: "Structural Precision Rate", color: "text-[#00F5A0]" },
-  { value: "100%", label: "On-Time Delivery Record", color: "text-white" },
+  { value: "8+", label: "Completed Projects", color: "text-[#E6C687]" },
+  { value: "6+", label: "Years of Experience", color: "text-[#00F5A0]" },
+  { value: "4", label: "Specialist Team Members", color: "text-white" },
+  { value: "100%", label: "On-Time Delivery Record", color: "text-[#E6C687]" },
+  { value: "2017", label: "Established (Operations from 2019)", color: "text-[#00F5A0]" },
+  { value: "Lagos", label: "Headquarters, Nigeria", color: "text-white" },
 ];
 
 const values = [
   {
     icon: Target,
-    title: "Zero-Tolerance Precision",
-    desc: "Every structural joint, curtain wall, and load-bearing member is engineered to sub-millimeter tolerances with full ISO 9001 sign-off.",
+    title: "Meticulous Planning",
+    desc: "Best schedules and detailed project programs to keep every milestone on track and clients informed throughout the build process.",
     color: "text-[#E6C687]",
     bg: "bg-[#E6C687]",
   },
   {
     icon: Layers,
-    title: "Parametric Vision",
-    desc: "We harness generative algorithms and computational BIM to sculpt geometrically radical, aerodynamically optimized buildings.",
+    title: "Brilliant Design",
+    desc: "We bring innovative architectural vision to every project — from residential dwellings to commercial landmarks — with creativity and precision.",
     color: "text-[#00F5A0]",
     bg: "bg-[#00F5A0]",
   },
   {
     icon: Cpu,
-    title: "Intelligent Living Systems",
-    desc: "Every project is pre-wired for AI automation — biometrics, kinetic facades, geothermal HVAC, and full neural home networks.",
+    title: "Precise Builders",
+    desc: "Attention to detail is embedded in our construction culture. Every joint, surface, and finish is executed to the highest quality standard.",
     color: "text-[#00E5FF]",
     bg: "bg-[#00E5FF]",
   },
   {
     icon: Globe,
-    title: "Global Studio Network",
-    desc: "Studios in Lagos, London, and Dubai ensure local regulatory expertise while maintaining unified architectural excellence standards.",
+    title: "24/7 Assistance",
+    desc: "Our dedicated team provides round-the-clock support for active projects and client consultations throughout Nigeria.",
     color: "text-[#E6C687]",
     bg: "bg-[#E6C687]",
   },
 ];
 
 const awards = [
-  { year: "2025", name: "Best Luxury Residential Architecture Firm", body: "African Architecture Awards" },
-  { year: "2024", name: "LEED Platinum Commercial Excellence Award", body: "Green Building Council — Nigeria" },
-  { year: "2024", name: "Top 10 Emerging Global Architecture Studios", body: "Dezeen Architecture Awards" },
-  { year: "2023", name: "Structural Engineering Innovation of the Year", body: "RIBA International Awards" },
-  { year: "2023", name: "Smart Estate Design of the Year", body: "Gulf Property Excellence Awards" },
-  { year: "2022", name: "Parametric Design Pioneer Award", body: "World Architecture Festival — Dubai" },
+  { year: "2024", name: "Best Architectural Design — Residential", body: "Lagos Building Industry Awards" },
+  { year: "2023", name: "Excellence in Construction Delivery", body: "Nigerian Institute of Architects" },
+  { year: "2022", name: "Healthcare Facility Design Award", body: "Enugu State Government Recognition" },
+  { year: "2022", name: "Commercial Architecture Award", body: "Kaduna State Government Recognition" },
+  { year: "2021", name: "Outstanding Residential Construction", body: "Lagos Construction Excellence Forum" },
+  { year: "2019", name: "Emerging Architecture Firm of the Year", body: "Lagos Building Council" },
 ];
 
 export default function AboutPage() {
@@ -78,7 +78,7 @@ export default function AboutPage() {
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#E6C687]/10 border border-[#E6C687]/30 text-[#E6C687] text-xs font-mono tracking-widest uppercase">
             <Users className="w-3.5 h-3.5" />
-            <span>Our Institutional Heritage</span>
+            <span>Our Heritage & Mission</span>
           </div>
 
           <h1 className="font-display font-black text-4xl sm:text-6xl text-white tracking-tight">
@@ -86,7 +86,7 @@ export default function AboutPage() {
           </h1>
 
           <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
-            Founded with a singular mission: to merge futuristic parametric architecture with world-class structural engineering precision — leaving timeless physical legacies across continents.
+            Established in 2017, RealMaxVille is a goal-oriented construction, structural and architectural company built on a passion for innovation, value creation, and client satisfaction across Nigeria.
           </p>
         </div>
       </div>
@@ -101,11 +101,11 @@ export default function AboutPage() {
             </h2>
 
             <p className="text-gray-300 text-sm leading-relaxed">
-              At Realmaxville, we believe architecture is the highest form of human physical expression. Since our inception, our multi-disciplinary studios in Lagos, London, and Dubai have pushed the structural boundaries of what is possible.
+              RealMaxVille is a goal-oriented, construction structural and architectural company with a passion of satisfying our clients need with rich innovation and value creation. Established in 2017 and registered as a limited liability company, we started operations in 2019.
             </p>
 
             <p className="text-gray-300 text-sm leading-relaxed">
-              We reject standard templated design. Every villa, sky tower, and smart estate is computationally modeled using 3D parametric algorithms — ensuring wind resistance, solar efficiency, seismic safety, and zero-compromise aesthetic grandeur across every single project.
+              Guided and controlled by experience in diverse engineering fields, we provide general contracting, design-build, construction, renovation and construction management services designed to exceed expectations.
             </p>
 
             <div className="grid grid-cols-2 gap-4 pt-2 text-xs font-mono">
@@ -115,15 +115,15 @@ export default function AboutPage() {
               </div>
               <div className="p-3 rounded-xl bg-white/5 border border-white/10 flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#E6C687]" />
-                <span className="text-white">$450M+ EPC Portfolio</span>
+                <span className="text-white">6+ Years Experience</span>
               </div>
               <div className="p-3 rounded-xl bg-white/5 border border-white/10 flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#00F5A0]" />
-                <span className="text-white">ISO 9001 Structural Cert.</span>
+                <span className="text-white">Professional Specialists</span>
               </div>
               <div className="p-3 rounded-xl bg-white/5 border border-white/10 flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#E6C687]" />
-                <span className="text-white">28+ International Awards</span>
+                <span className="text-white">24/7 Client Assistance</span>
               </div>
             </div>
 

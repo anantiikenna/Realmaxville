@@ -7,33 +7,33 @@ import { PhoneCall, MapPin, Mail, Clock, Globe } from "lucide-react";
 const offices = [
   {
     city: "Lagos",
-    flag: "🇳🇬",
-    address: "Suite 402, Realmaxville Tower, Victoria Island, Lagos",
-    phone: "+234 800 REALMAX",
-    email: "lagos@realmaxville.com",
+    flag: "🏙️",
+    address: "4a, Ogombo Rd, Opp Abraham Adesanya Estate, Eti-Osa, Lagos, Nigeria",
+    phone: "0808 041 9259",
+    email: "admin@realmaxville.com",
     hours: "Mon – Fri: 8:00 AM – 6:00 PM WAT",
     mapSrc:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.711!2d3.4063!3d6.4281!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMjUnNDEuMiJOIDPCsDI0JzIyLjciRQ!5e0!3m2!1sen!2sng!4v1",
   },
   {
-    city: "London",
-    flag: "🇬🇧",
-    address: "12 Mayfair Park Lane, Westminster, London W1K 1AB",
-    phone: "+44 20 7946 0912",
-    email: "uk@realmaxville.com",
-    hours: "Mon – Fri: 9:00 AM – 5:30 PM GMT",
+    city: "Abuja",
+    flag: "🏛️",
+    address: "Mabushi District, Federal Capital Territory, Abuja, Nigeria",
+    phone: "0808 041 9259",
+    email: "admin@realmaxville.com",
+    hours: "Mon – Fri: 8:00 AM – 6:00 PM WAT",
     mapSrc:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.05!2d-0.1540!3d51.5074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDMwJzI2LjYiTiAwwrAwOScxNC40Ilc!5e0!3m2!1sen!2suk!4v1",
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.74!2d7.3986!3d9.0579!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOcKwMDMnMjguNSJOIDfCsDIzJzU1LjAiRQ!5e0!3m2!1sen!2sng!4v1",
   },
   {
-    city: "Dubai",
-    flag: "🇦🇪",
-    address: "Level 48, Boulevard Plaza Tower 1, Downtown Dubai",
-    phone: "+971 4 392 8810",
-    email: "dubai@realmaxville.com",
-    hours: "Mon – Fri: 9:00 AM – 6:00 PM GST",
+    city: "Enugu",
+    flag: "🏗️",
+    address: "Enugu Regional Project Hub, Enugu State, Nigeria",
+    phone: "0808 041 9259",
+    email: "admin@realmaxville.com",
+    hours: "Mon – Fri: 8:00 AM – 6:00 PM WAT",
     mapSrc:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.22!2d55.2796!3d25.1972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDExJzUwLjAiTiA1NcKwMTYnNDYuNiJF!5e0!3m2!1sen!2sae!4v1",
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.91!2d7.4953!3d6.4584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMjcnMzAuNiJOIDfCsDI5JzQzLjEiRQ!5e0!3m2!1sen!2sng!4v1",
   },
 ];
 
@@ -54,7 +54,7 @@ export default function ContactPage() {
           </h1>
 
           <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
-            Our principal architectural directors are ready to discuss your vision, site parameters, and structural engineering scope. Offices in Lagos, London &amp; Dubai.
+            Our principal architectural directors are ready to discuss your vision, site parameters, and structural engineering scope. Headquartered in Lagos with project hubs across Nigeria.
           </p>
         </div>
       </div>

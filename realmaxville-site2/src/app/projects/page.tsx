@@ -1,15 +1,14 @@
 "use client";
 
 import React, { useState } from "react";
-import ProjectModal, { ProjectData } from "@/components/ProjectModal";
-import { SAMPLE_PROJECTS } from "@/components/FeaturedProjects";
+import Link from "next/link";
+import { projects } from "@/lib/projects-data";
 import {
   Search,
   Compass,
   MapPin,
   ArrowUpRight,
   Maximize2,
-  DollarSign,
   SlidersHorizontal,
   X
 } from "lucide-react";
@@ -20,24 +19,23 @@ export default function ProjectsPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCat, setSelectedCat] = useState("All");
   const [sortBy, setSortBy] = useState<SortOption>("newest");
-  const [activeModalProject, setActiveModalProject] = useState<ProjectData | null>(null);
 
-  const categories = ["All", "Residential Luxury", "Commercial Towers", "Smart Estates", "Waterfront Mansions"];
+  const categories = ["All", "RESIDENTIAL", "COMMERCIAL", "HEALTHCARE", "MULTI-FAMILY"];
 
-  const filtered = SAMPLE_PROJECTS.filter((item) => {
-    const matchesCat = selectedCat === "All" || item.category === selectedCat;
+  const filtered = projects.filter((item) => {
+    const matchesCat = selectedCat === "All" || item.type === selectedCat;
     const term = searchTerm.toLowerCase();
     const matchesSearch =
       !term ||
-      item.title.toLowerCase().includes(term) ||
+      item.name.toLowerCase().includes(term) ||
       item.location.toLowerCase().includes(term) ||
       item.description.toLowerCase().includes(term) ||
-      item.category.toLowerCase().includes(term);
+      item.type.toLowerCase().includes(term);
     return matchesCat && matchesSearch;
   }).sort((a, b) => {
     if (sortBy === "newest") return Number(b.year) - Number(a.year);
-    if (sortBy === "area")   return parseInt(b.area.replace(/\D/g, "")) - parseInt(a.area.replace(/\D/g, ""));
-    if (sortBy === "category") return a.category.localeCompare(b.category);
+    if (sortBy === "area") return parseInt(b.area.replace(/\D/g, "")) - parseInt(a.area.replace(/\D/g, ""));
+    if (sortBy === "category") return a.type.localeCompare(b.type);
     return 0;
   });
 
@@ -160,23 +158,23 @@ export default function ProjectsPage() {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {filtered.map((project) => (
-              <div
+              <Link
                 key={project.id}
-                onClick={() => setActiveModalProject(project)}
+                href={`/projects/${project.slug}`}
                 className="glass-card rounded-3xl overflow-hidden group cursor-pointer border border-white/10 flex flex-col"
               >
                 {/* Card image */}
                 <div className="relative h-80 w-full overflow-hidden">
                   <img
                     src={project.image}
-                    alt={project.title}
+                    alt={project.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0E1015] via-transparent to-transparent" />
 
                   <div className="absolute top-4 left-4">
                     <span className="px-3 py-1 rounded-full text-[10px] font-mono uppercase tracking-wider bg-black/70 backdrop-blur-md text-[#E6C687] border border-[#E6C687]/30 font-semibold">
-                      {project.category}
+                      {project.type}
                     </span>
                   </div>
 
@@ -197,7 +195,7 @@ export default function ProjectsPage() {
                     </div>
 
                     <h3 className="font-display font-extrabold text-xl text-white group-hover:text-[#E6C687] transition-colors">
-                      {project.title}
+                      {project.name}
                     </h3>
 
                     <p className="text-gray-400 text-xs line-clamp-2 leading-relaxed">
@@ -209,21 +207,16 @@ export default function ProjectsPage() {
                     <span className="text-gray-300 flex items-center gap-1">
                       <Maximize2 className="w-3 h-3 text-[#E6C687]" /> {project.area}
                     </span>
-                    <span className="text-[#00F5A0] font-bold flex items-center gap-1">
-                      <DollarSign className="w-3 h-3" /> {project.budget}
+                    <span className="text-[#00F5A0] font-bold uppercase tracking-wider">
+                      {project.status}
                     </span>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         )}
       </div>
-
-      <ProjectModal
-        project={activeModalProject}
-        onClose={() => setActiveModalProject(null)}
-      />
     </div>
   );
 }

@@ -71,7 +71,7 @@ export default function Hero({ onOpenEstimator }: HeroProps) {
 
           {/* Subtext */}
           <p className="text-gray-300 text-base sm:text-xl max-w-2xl font-light leading-relaxed">
-            Where futuristic parametric design meets structural engineering perfection. From high-tech waterfront mansions to ultra-luxury commercial towers across Lagos, London & Dubai.
+            From architectural design to complete construction, we create timeless spaces that inspire, endure and elevate the way you live. Our engineering precision meets futuristic luxury.
           </p>
 
           {/* Action CTAs */}
@@ -101,7 +101,7 @@ export default function Hero({ onOpenEstimator }: HeroProps) {
               <span className="text-xs font-mono text-[#E6C687] uppercase tracking-wider flex items-center gap-2">
                 <Search className="w-4 h-4" /> Quick Project Lookup Engine
               </span>
-              <span className="text-[11px] font-mono text-gray-400">140+ Projects Built</span>
+              <span className="text-[11px] font-mono text-gray-400">Featured Projects</span>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -112,9 +112,9 @@ export default function Hero({ onOpenEstimator }: HeroProps) {
                 className="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-[#E6C687] cursor-pointer"
               >
                 <option value="all" className="bg-[#0E1015]">All Project Types</option>
-                <option value="residential" className="bg-[#0E1015]">Luxury Residential Villas</option>
-                <option value="commercial" className="bg-[#0E1015]">Commercial Sky Towers</option>
-                <option value="smart" className="bg-[#0E1015]">Smart Automated Estates</option>
+                <option value="residential" className="bg-[#0E1015]">Residential Luxury</option>
+                <option value="commercial" className="bg-[#0E1015]">Commercial Towers</option>
+                <option value="healthcare" className="bg-[#0E1015]">Healthcare & Public</option>
               </select>
 
               {/* Location selector */}
@@ -124,9 +124,10 @@ export default function Hero({ onOpenEstimator }: HeroProps) {
                 className="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-[#E6C687] cursor-pointer"
               >
                 <option value="all" className="bg-[#0E1015]">All Locations</option>
-                <option value="lagos" className="bg-[#0E1015]">Lagos (VI & Ikoyi)</option>
-                <option value="london" className="bg-[#0E1015]">London (Mayfair & Kensington)</option>
-                <option value="dubai" className="bg-[#0E1015]">Dubai (Downtown & Marina)</option>
+                <option value="lagos" className="bg-[#0E1015]">Lagos, Nigeria</option>
+                <option value="abuja" className="bg-[#0E1015]">Abuja, Nigeria</option>
+                <option value="enugu" className="bg-[#0E1015]">Enugu, Nigeria</option>
+                <option value="kaduna" className="bg-[#0E1015]">Kaduna, Nigeria</option>
               </select>
 
               {/* Quick Submit */}

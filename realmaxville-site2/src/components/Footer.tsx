@@ -15,28 +15,28 @@ import {
 } from "lucide-react";
 
 export default function Footer() {
-  const [activeCity, setActiveCity] = useState<"lagos" | "london" | "dubai">("lagos");
+  const [activeCity, setActiveCity] = useState<"lagos" | "abuja" | "enugu">("lagos");
   const [newsletterEmail, setNewsletterEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
 
   const offices = {
     lagos: {
-      address: "Suite 402, Realmaxville Tower, Victoria Island, Lagos, Nigeria",
-      phone: "+234 800 REALMAX",
-      email: "lagos@realmaxville.com",
+      address: "4a, Ogombo Rd, Opp Abraham Adesanya Estate, Eti-Osa, Lagos, Nigeria",
+      phone: "0808 041 9259 / +234 808 041 9259",
+      email: "admin@realmaxville.com",
       hours: "Mon - Fri: 8:00 AM - 6:00 PM WAT"
     },
-    london: {
-      address: "12 Mayfair Park Lane, Westminster, London W1K 1AB, UK",
-      phone: "+44 20 7946 0912",
-      email: "uk@realmaxville.com",
-      hours: "Mon - Fri: 9:00 AM - 5:30 PM GMT"
+    abuja: {
+      address: "Mabushi District Project Studio, Abuja, Nigeria",
+      phone: "0808 041 9259 / +234 808 041 9259",
+      email: "admin@realmaxville.com",
+      hours: "Mon - Fri: 8:00 AM - 6:00 PM WAT"
     },
-    dubai: {
-      address: "Level 48, Boulevard Plaza Tower 1, Downtown Dubai, UAE",
-      phone: "+971 4 392 8810",
-      email: "dubai@realmaxville.com",
-      hours: "Mon - Fri: 9:00 AM - 6:00 PM GST"
+    enugu: {
+      address: "Enugu Regional Operations Hub, Enugu, Nigeria",
+      phone: "0808 041 9259 / +234 808 041 9259",
+      email: "admin@realmaxville.com",
+      hours: "Mon - Fri: 8:00 AM - 6:00 PM WAT"
     }
   };
 
@@ -162,7 +162,7 @@ export default function Footer() {
 
             {/* City Selector Buttons */}
             <div className="flex items-center gap-2 bg-white/5 p-1 rounded-xl border border-white/10 w-fit">
-              {(["lagos", "london", "dubai"] as const).map((city) => (
+              {(["lagos", "abuja", "enugu"] as const).map((city) => (
                 <button
                   key={city}
                   onClick={() => setActiveCity(city)}

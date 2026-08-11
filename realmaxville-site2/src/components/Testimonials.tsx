@@ -8,30 +8,21 @@ export default function Testimonials() {
 
   const reviews = [
     {
-      quote: "Realmaxville's parametric design for our Banana Island waterfront mansion completely redefined luxury living for my family. The cantilevered glass infinity pool feels like floating over the lagoon.",
-      author: "Chief Olusegun A.",
-      role: "Chairman, Zenith Capital Holdings",
+      quote: "Those drawings are crazy bad. I mean you delivered. Love love the drawings!",
+      author: "Isioma F. Uzu Sherrill",
+      role: "Nurse",
       location: "Lagos, Nigeria",
-      project: "The Obsidian Zenith Sky Villa",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+      project: "Architectural Design & Blueprint Project",
+      avatar: "/images/team/olamilekan.jpg",
       rating: 5
     },
     {
-      quote: "Their structural engineering team completed our 28-storey Mayfair estate project 2 months ahead of schedule without a single tolerance error. The thermal acoustic glass curtain walling is superb.",
-      author: "Sir Richard P. Sterling",
-      role: "Managing Director, Sovereign Real Estate Trust",
-      location: "London, UK",
-      project: "Celestial Heights Smart Estate",
-      avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
-      rating: 5
-    },
-    {
-      quote: "The automated kinetic solar shading and biometric security infrastructure Realmaxville integrated into our Palm Jumeirah estate is nothing short of futuristic. Pure architectural mastery.",
-      author: "Tariq Al-Mansoor",
-      role: "Founder, Gulf Innovation Fund",
-      location: "Dubai, UAE",
-      project: "Palais de Crystal Waterfront",
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80",
+      quote: "Great work to RealmaxVille. After our lengthy discussion, I came to check progress and found they took into details all we discussed.",
+      author: "Dr. Olajide Olalekan Olasiyan",
+      role: "Developer",
+      location: "Lagos, Nigeria",
+      project: "Turnkey Residential Construction",
+      avatar: "/images/team/uche.jpg",
       rating: 5
     }
   ];

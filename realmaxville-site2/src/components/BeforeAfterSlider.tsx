@@ -105,7 +105,7 @@ export default function BeforeAfterSlider() {
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 p-4 rounded-2xl bg-white/[0.02] border border-white/10 text-xs font-mono text-gray-400">
           <div className="flex items-center gap-2">
             <span className="w-2.5 h-2.5 rounded-full bg-[#00F5A0] animate-ping" />
-            <span>Project Featured: The Grand Solstice Villa (Ikoyi, Lagos)</span>
+            <span>Project Featured: Mrs Margaret Residence (Lagos, Nigeria)</span>
           </div>
           <div>
             <span>Tolerance Margin: <strong className="text-white">&lt; 0.5mm structural variance</strong></span>
