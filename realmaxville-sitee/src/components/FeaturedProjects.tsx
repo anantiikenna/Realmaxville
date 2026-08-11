@@ -1,28 +1,23 @@
 "use client";
 
 import React, { useState } from "react";
-import ProjectModal, { ProjectData } from "./ProjectModal";
 import Link from "next/link";
 import { projects } from "@/lib/projects-data";
 import { 
   Building, 
   MapPin, 
   ArrowUpRight, 
-  Maximize2, 
-  DollarSign
+  Maximize2
 } from "lucide-react";
-
-export const SAMPLE_PROJECTS: ProjectData[] = projects;
 
 export default function FeaturedProjects() {
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const [activeModalProject, setActiveModalProject] = useState<ProjectData | null>(null);
 
-  const categories = ["All", "Residential Luxury", "Commercial Towers", "Smart Estates", "Waterfront Mansions", "Renovations"];
+  const categories = ["All", "RESIDENTIAL", "COMMERCIAL", "HEALTHCARE", "MULTI-FAMILY"];
 
   const filteredProjects = (selectedCategory === "All"
-    ? SAMPLE_PROJECTS
-    : SAMPLE_PROJECTS.filter(p => p.category === selectedCategory)).slice(0, 6);
+    ? projects
+    : projects.filter(p => p.type === selectedCategory)).slice(0, 6);
 
   return (
     <section className="py-24 bg-[#07080A] relative overflow-hidden">
@@ -48,7 +43,7 @@ export default function FeaturedProjects() {
 
           {/* Filter Category Tabs */}
           <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
-            {["All", "Residential Luxury", "Commercial Towers", "Smart Estates"].map((cat) => (
+            {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
@@ -67,16 +62,16 @@ export default function FeaturedProjects() {
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {filteredProjects.map((project) => (
-            <div
+            <Link
               key={project.id}
-              onClick={() => setActiveModalProject(project)}
+              href={`/projects/${project.slug}`}
               className="glass-card rounded-3xl overflow-hidden group cursor-pointer border border-white/10 flex flex-col justify-between"
             >
               {/* Image Container */}
               <div className="relative h-80 w-full overflow-hidden">
                 <img
                   src={project.image}
-                  alt={project.title}
+                  alt={project.name}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0E1015] via-transparent to-transparent" />
@@ -84,7 +79,7 @@ export default function FeaturedProjects() {
                 {/* Category Pill Top Left */}
                 <div className="absolute top-4 left-4">
                   <span className="px-3 py-1 rounded-full text-[10px] font-mono uppercase tracking-wider bg-black/70 backdrop-blur-md text-[#E6C687] border border-[#E6C687]/30 font-semibold">
-                    {project.category}
+                    {project.type}
                   </span>
                 </div>
 
@@ -105,7 +100,7 @@ export default function FeaturedProjects() {
                 </div>
 
                 <h3 className="font-display font-extrabold text-xl text-white group-hover:text-[#E6C687] transition-colors">
-                  {project.title}
+                  {project.name}
                 </h3>
 
                 <p className="text-gray-400 text-xs line-clamp-2 leading-relaxed">
@@ -117,12 +112,12 @@ export default function FeaturedProjects() {
                   <span className="text-gray-300 flex items-center gap-1">
                     <Maximize2 className="w-3 h-3 text-[#E6C687]" /> {project.area}
                   </span>
-                  <span className="text-[#00F5A0] font-bold flex items-center gap-1">
-                    <DollarSign className="w-3 h-3" /> {project.budget}
+                  <span className="text-[#00F5A0] font-bold uppercase tracking-wider">
+                    {project.status}
                   </span>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
@@ -138,12 +133,6 @@ export default function FeaturedProjects() {
         </div>
 
       </div>
-
-      {/* Project Modal */}
-      <ProjectModal
-        project={activeModalProject}
-        onClose={() => setActiveModalProject(null)}
-      />
 
     </section>
   );
