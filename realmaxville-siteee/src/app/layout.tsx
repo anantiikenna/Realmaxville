@@ -3,13 +3,13 @@ import "./globals.css";
 import AppWrapper from "@/components/AppWrapper";
 
 export const metadata: Metadata = {
-  title: "Realmaxville | Futuristic Luxury Architecture & Structural Engineering",
-  description: "Pioneering architectural legacies, luxury residential villas, parametric sky towers, and smart estate master planning across Lagos, London & Dubai.",
-  keywords: ["Luxury Architecture", "Realmaxville", "Structural Engineering", "Parametric Design", "Lagos Mansions", "Smart Estates", "Sky Towers"],
+  title: "Realmaxville 3D | Architecture, Engineering & Construction",
+  description: "A 3D-forward Realmaxville studio experience for luxury residences, smart estates, public projects, and structural engineering across Nigeria.",
+  keywords: ["Realmaxville", "3D Architecture", "Structural Engineering", "Luxury Residential Design", "Smart Estates", "Nigeria Construction"],
   openGraph: {
-    title: "Realmaxville | Architectural Legacies",
-    description: "Where futuristic parametric design meets structural engineering perfection.",
-    images: ["https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"]
+    title: "Realmaxville 3D | Architectural Legacies",
+    description: "A cinematic architecture and construction portfolio powered by real Realmaxville project imagery.",
+    images: ["/images/projects/mrs-margaret.jpg"]
   }
 };
 
@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark scroll-smooth">
-      <body className="bg-[#07080A] text-slate-100 antialiased selection:bg-[#E6C687] selection:text-black">
+      <body className="antialiased">
         <AppWrapper>
           {children}
         </AppWrapper>
