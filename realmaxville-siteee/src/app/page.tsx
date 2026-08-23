@@ -46,7 +46,7 @@ const stats = [
 export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden bg-[#10120f] text-white">
-      <header className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-[#10120f]/76 backdrop-blur-xl">
+      <header className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-[#10120f]/75 backdrop-blur-xl">
         <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           <Link href="/" className="flex items-center gap-3" aria-label="Realmaxville home">
             <Image
@@ -84,7 +84,7 @@ export default function Home() {
 
         <div className="relative z-10 mx-auto flex min-h-[calc(92vh-5rem)] max-w-7xl items-center px-4 py-16 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <div className="mb-6 inline-flex items-center gap-2 border border-white/15 bg-white/8 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#99f0df]">
+            <div className="mb-6 inline-flex items-center gap-2 border border-white/15 bg-white/[0.08] px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#99f0df]">
               <Sparkles className="h-4 w-4" />
               Futuristic architecture and construction
             </div>
@@ -162,7 +162,7 @@ export default function Home() {
                     sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
                     className="object-cover transition duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#10120f]/76 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#10120f]/75 via-transparent to-transparent" />
                   <span className="absolute left-4 top-4 bg-[#f2c46d] px-3 py-1 text-[11px] font-black uppercase tracking-[0.16em] text-[#10120f]">
                     {project.type}
                   </span>

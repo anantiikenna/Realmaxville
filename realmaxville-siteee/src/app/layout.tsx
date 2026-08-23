@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import AppWrapper from "@/components/AppWrapper";
 
 export const metadata: Metadata = {
   title: "Realmaxville 3D | Architecture, Engineering & Construction",
@@ -21,9 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark scroll-smooth">
       <body className="antialiased">
-        <AppWrapper>
-          {children}
-        </AppWrapper>
+        {children}
       </body>
     </html>
   );
