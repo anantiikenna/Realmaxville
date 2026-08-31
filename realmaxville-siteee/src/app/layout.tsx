@@ -2,14 +2,16 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Realmaxville 3D | Architecture, Engineering & Construction",
-  description: "A 3D-forward Realmaxville studio experience for luxury residences, smart estates, public projects, and structural engineering across Nigeria.",
-  keywords: ["Realmaxville", "3D Architecture", "Structural Engineering", "Luxury Residential Design", "Smart Estates", "Nigeria Construction"],
+  title: "Realmaxville — Architecture & Construction",
+  description:
+    "Building legacies across Lagos, Nigeria — luxury residences, smart estates, and landmark public projects by Realmaxville.",
+  icons: { icon: "/images/logo1.png" },
   openGraph: {
-    title: "Realmaxville 3D | Architectural Legacies",
-    description: "A cinematic architecture and construction portfolio powered by real Realmaxville project imagery.",
-    images: ["/images/projects/mrs-margaret.jpg"]
-  }
+    title: "Realmaxville — Architecture & Construction",
+    description:
+      "Building legacies across Lagos, Nigeria — luxury residences, smart estates, and landmark public projects.",
+    images: ["/images/projects/mrs-margaret.jpg"],
+  },
 };
 
 export default function RootLayout({
@@ -18,8 +20,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark scroll-smooth">
-      <body className="antialiased">
+    <html lang="en">
+      <body className="bg-[#10120f] text-white font-sans antialiased">
         {children}
       </body>
     </html>

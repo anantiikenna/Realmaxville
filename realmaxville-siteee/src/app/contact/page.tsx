@@ -1,116 +1,248 @@
 "use client";
 
-import React from "react";
-import ContactForm from "@/components/ContactForm";
-import { PhoneCall, MapPin, Mail, Clock, Globe } from "lucide-react";
+import React, { useState } from "react";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import {
+  PhoneCall,
+  MapPin,
+  Mail,
+  Clock,
+  Send,
+  CheckCircle2,
+  User,
+  Phone,
+} from "lucide-react";
 
-const offices = [
+const infoCards = [
   {
-    city: "Lagos",
-    flag: "🏙️",
-    address: "4a, Ogombo Rd, Opp Abraham Adesanya Estate, Eti-Osa, Lagos, Nigeria",
-    phone: "0808 041 9259",
-    email: "admin@realmaxville.com",
-    hours: "Mon – Fri: 8:00 AM – 6:00 PM WAT",
-    mapSrc:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.711!2d3.4063!3d6.4281!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMjUnNDEuMiJOIDPCsDI0JzIyLjciRQ!5e0!3m2!1sen!2sng!4v1",
+    label: "Call Us",
+    icon: PhoneCall,
+    lines: ["0808 041 9259", "0703 719 0399"],
+    color: "text-[#E6C687]",
+    bg: "bg-[#E6C687]",
   },
   {
-    city: "Abuja",
-    flag: "🏛️",
-    address: "Mabushi District, Federal Capital Territory, Abuja, Nigeria",
-    phone: "0808 041 9259",
-    email: "admin@realmaxville.com",
-    hours: "Mon – Fri: 8:00 AM – 6:00 PM WAT",
-    mapSrc:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.74!2d7.3986!3d9.0579!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOcKwMDMnMjguNSJOIDfCsDIzJzU1LjAiRQ!5e0!3m2!1sen!2sng!4v1",
+    label: "Email",
+    icon: Mail,
+    lines: ["admin@realmaxville.com", "realmaxville@gmail.com"],
+    color: "text-[#00F5A0]",
+    bg: "bg-[#00F5A0]",
   },
   {
-    city: "Enugu",
-    flag: "🏗️",
-    address: "Enugu Regional Project Hub, Enugu State, Nigeria",
-    phone: "0808 041 9259",
-    email: "admin@realmaxville.com",
-    hours: "Mon – Fri: 8:00 AM – 6:00 PM WAT",
-    mapSrc:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.91!2d7.4953!3d6.4584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMjcnMzAuNiJOIDfCsDI5JzQzLjEiRQ!5e0!3m2!1sen!2sng!4v1",
+    label: "Location",
+    icon: MapPin,
+    lines: ["4a, Ogombo Rd, Opp Abraham Adesanya Estate, Lagos"],
+    color: "text-[#E6C687]",
+    bg: "bg-[#E6C687]",
+  },
+  {
+    label: "Working Hours",
+    icon: Clock,
+    lines: ["Mon - Fri: 10AM - 5PM", "Sat - Sun: By Appointment"],
+    color: "text-[#00F5A0]",
+    bg: "bg-[#00F5A0]",
   },
 ];
 
+const projectTypes = [
+  "Architectural Design",
+  "Construction",
+  "Interior Design",
+  "Renovation",
+  "Site Planning",
+  "Other",
+];
+
 export default function ContactPage() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    projectType: "",
+    message: "",
+  });
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitted(true);
+  };
+
   return (
-    <div className="pt-32 pb-24 bg-[#07080A] min-h-screen">
+    <>
+      <Navbar />
+      <div className="pt-32 pb-24 bg-[#07080A] min-h-screen">
 
-      {/* ── Page Header ── */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
-        <div className="text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#E6C687]/10 border border-[#E6C687]/30 text-[#E6C687] text-xs font-mono tracking-widest uppercase">
-            <PhoneCall className="w-3.5 h-3.5" />
-            <span>Direct VIP Desk</span>
-          </div>
-
-          <h1 className="font-display font-black text-4xl sm:text-6xl text-white tracking-tight">
-            START YOUR <span className="text-gold-gradient">LEGACY PROJECT</span>
-          </h1>
-
-          <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
-            Our principal architectural directors are ready to discuss your vision, site parameters, and structural engineering scope. Headquartered in Lagos with project hubs across Nigeria.
-          </p>
-        </div>
-      </div>
-
-      {/* ── Global Offices Grid ── */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
-        <div className="flex items-center gap-2 mb-8">
-          <Globe className="w-5 h-5 text-[#E6C687]" />
-          <h2 className="font-display font-semibold text-xl text-white">Global Headquarters &amp; Studios</h2>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {offices.map((office) => (
-            <div
-              key={office.city}
-              className="glass-panel p-6 rounded-3xl border border-white/10 hover:border-[#E6C687]/40 transition-all space-y-5 group"
-            >
-              {/* City badge */}
-              <div className="flex items-center gap-3">
-                <span className="text-2xl">{office.flag}</span>
-                <div>
-                  <h3 className="font-display font-bold text-lg text-white group-hover:text-[#E6C687] transition-colors">
-                    {office.city}
-                  </h3>
-                  <span className="text-[10px] font-mono text-[#E6C687]/70 uppercase tracking-wider">
-                    Regional Studio
-                  </span>
-                </div>
-              </div>
-
-              {/* Details */}
-              <div className="space-y-3 text-xs font-mono">
-                <div className="flex items-start gap-2.5">
-                  <MapPin className="w-4 h-4 text-[#E6C687] shrink-0 mt-0.5" />
-                  <span className="text-gray-300 leading-relaxed">{office.address}</span>
-                </div>
-                <div className="flex items-center gap-2.5">
-                  <PhoneCall className="w-4 h-4 text-[#E6C687] shrink-0" />
-                  <span className="text-white font-semibold">{office.phone}</span>
-                </div>
-                <div className="flex items-center gap-2.5">
-                  <Mail className="w-4 h-4 text-[#E6C687] shrink-0" />
-                  <span className="text-[#E6C687]">{office.email}</span>
-                </div>
-                <div className="flex items-center gap-2.5">
-                  <Clock className="w-4 h-4 text-gray-500 shrink-0" />
-                  <span className="text-gray-400">{office.hours}</span>
-                </div>
-              </div>
+        {/* ── Page Header ── */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+          <div className="text-center max-w-3xl mx-auto space-y-4">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#E6C687]/10 border border-[#E6C687]/30 text-[#E6C687] text-xs font-mono tracking-widest uppercase">
+              <PhoneCall className="w-3.5 h-3.5" />
+              <span>Contact</span>
             </div>
-          ))}
-        </div>
-      </div>
 
-      {/* ── Consultation Form ── */}
-      <ContactForm />
-    </div>
+            <h1 className="font-display font-black text-4xl sm:text-6xl text-white tracking-tight">
+              REACH OUT TO <span className="text-gold-gradient">OUR TEAM</span>
+            </h1>
+          </div>
+        </div>
+
+        {/* ── Grid ── */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
+
+            {/* Left — Info Cards */}
+            <div className="lg:col-span-2 space-y-4">
+              {infoCards.map((card, i) => {
+                const Icon = card.icon;
+                return (
+                  <div key={i} className="glass-card p-5 rounded-2xl border border-white/10 flex items-start gap-4">
+                    <div className={`p-3 rounded-xl ${card.bg} text-black shrink-0 shadow-lg`}>
+                      <Icon className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="text-[10px] font-mono text-gray-400 uppercase tracking-wider block mb-1">
+                        {card.label}
+                      </span>
+                      {card.lines.map((line, j) => (
+                        <p key={j} className={`text-sm font-medium ${j === 0 ? "text-white" : "text-gray-300"}`}>
+                          {line}
+                        </p>
+                      ))}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Right — Form */}
+            <div className="lg:col-span-3 glass-panel p-6 sm:p-10 rounded-3xl border border-[#E6C687]/30">
+              {submitted ? (
+                <div className="text-center py-12 space-y-6 animate-in fade-in duration-500">
+                  <div className="w-20 h-20 rounded-full bg-[#00F5A0]/20 border-2 border-[#00F5A0] text-[#00F5A0] flex items-center justify-center mx-auto shadow-[0_0_30px_rgba(0,245,160,0.4)]">
+                    <CheckCircle2 className="w-10 h-10" />
+                  </div>
+                  <h3 className="font-display font-extrabold text-2xl text-white">
+                    Message Sent Successfully
+                  </h3>
+                  <p className="text-gray-300 text-sm max-w-md mx-auto leading-relaxed">
+                    Thank you, <strong className="text-[#E6C687]">{formData.name}</strong>. Our team will get back to you within 24 hours.
+                  </p>
+                  <button
+                    onClick={() => {
+                      setSubmitted(false);
+                      setFormData({ name: "", email: "", phone: "", projectType: "", message: "" });
+                    }}
+                    className="px-6 py-3 rounded-full bg-[#E6C687] text-black font-semibold text-xs uppercase tracking-wider shadow-gold-glow"
+                  >
+                    Send Another Message
+                  </button>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-5">
+                  <h3 className="font-display font-bold text-xl text-white border-b border-white/10 pb-4">
+                    Send Us a Message
+                  </h3>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="text-xs font-mono text-gray-300 uppercase tracking-wider block mb-1.5">
+                        Name *
+                      </label>
+                      <div className="relative">
+                        <input
+                          type="text"
+                          required
+                          value={formData.name}
+                          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                          placeholder="Your full name"
+                          className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-[#E6C687] pl-10 transition-colors"
+                        />
+                        <User className="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
+                      </div>
+                    </div>
+                    <div>
+                      <label className="text-xs font-mono text-gray-300 uppercase tracking-wider block mb-1.5">
+                        Email *
+                      </label>
+                      <div className="relative">
+                        <input
+                          type="email"
+                          required
+                          value={formData.email}
+                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                          placeholder="you@example.com"
+                          className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-[#E6C687] pl-10 transition-colors"
+                        />
+                        <Mail className="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="text-xs font-mono text-gray-300 uppercase tracking-wider block mb-1.5">
+                        Phone
+                      </label>
+                      <div className="relative">
+                        <input
+                          type="tel"
+                          value={formData.phone}
+                          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                          placeholder="+234 803 000 0000"
+                          className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-[#E6C687] pl-10 transition-colors"
+                        />
+                        <Phone className="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
+                      </div>
+                    </div>
+                    <div>
+                      <label className="text-xs font-mono text-gray-300 uppercase tracking-wider block mb-1.5">
+                        Project Type
+                      </label>
+                      <select
+                        value={formData.projectType}
+                        onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
+                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#E6C687] transition-colors"
+                      >
+                        <option value="" className="bg-[#0E1015]">Select a project type</option>
+                        {projectTypes.map((type) => (
+                          <option key={type} value={type} className="bg-[#0E1015]">{type}</option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="text-xs font-mono text-gray-300 uppercase tracking-wider block mb-1.5">
+                      Message *
+                    </label>
+                    <textarea
+                      rows={5}
+                      required
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      placeholder="Tell us about your project vision..."
+                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-[#E6C687] resize-none transition-colors"
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="w-full py-4 rounded-full bg-[#E6C687] text-black font-extrabold text-xs uppercase tracking-widest flex items-center justify-center gap-2 hover:scale-[1.02] transition-all shadow-gold-glow cursor-pointer"
+                  >
+                    Submit
+                    <Send className="w-4 h-4" />
+                  </button>
+                </form>
+              )}
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+      <Footer />
+    </>
   );
 }
