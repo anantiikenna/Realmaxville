@@ -1,0 +1,31 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap");
+
+:root {
+  --font-outfit: "Outfit", sans-serif;
+  --font-cinzel: "Cinzel", serif;
+}
+
+* { box-sizing: border-box; scroll-behavior: smooth; }
+html { background: #10120f; }
+body { margin: 0; background: #10120f; color: #ffffff; font-family: var(--font-outfit); overflow-x: hidden; }
+button, input, textarea { font: inherit; }
+::selection { background: #f2c46d; color: #10120f; }
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #10120f; }
+::-webkit-scrollbar-thumb { background: #476a62; border-radius: 5px; }
+
+.glass { background: rgba(255,255,255,0.04); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.08); }
+.glass-gold { background: rgba(230,198,135,0.06); backdrop-filter: blur(20px); border: 1px solid rgba(230,198,135,0.15); }
+.glow-gold { box-shadow: 0 0 30px rgba(230,198,135,0.15); }
+
+@layer utilities {
+  .text-gold-gradient {
+    background: linear-gradient(135deg, #f2c46d, #E6C687, #D4AF37);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
