@@ -2,16 +2,14 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap");
-
 :root {
-  --font-outfit: "Outfit", sans-serif;
-  --font-cinzel: "Cinzel", serif;
+  --font-inter: "Inter", sans-serif;
+  --font-space-mono: "Space Mono", monospace;
 }
 
 * { box-sizing: border-box; scroll-behavior: smooth; }
 html { background: #10120f; }
-body { margin: 0; background: #10120f; color: #ffffff; font-family: var(--font-outfit); overflow-x: hidden; }
+body { margin: 0; background: #10120f; color: #ffffff; font-family: var(--font-inter); overflow-x: hidden; }
 button, input, textarea { font: inherit; }
 ::selection { background: #f2c46d; color: #10120f; }
 ::-webkit-scrollbar { width: 10px; }

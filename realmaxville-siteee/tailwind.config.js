@@ -29,9 +29,9 @@ module.exports = {
         }
       },
       fontFamily: {
-        sans: ['var(--font-outfit)', 'Plus Jakarta Sans', 'sans-serif'],
-        display: ['var(--font-cinzel)', 'serif'],
-        mono: ['var(--font-space-grotesk)', 'monospace'],
+        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        display: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        mono: ['var(--font-space-mono)', 'monospace'],
       },
       backgroundImage: {
         'gold-gradient': 'linear-gradient(135deg, #F4E4C1 0%, #E6C687 50%, #B89428 100%)',
