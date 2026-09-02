@@ -65,6 +65,13 @@ export default function Footer() {
           {/* Brand Vision Column */}
           <div className="lg:col-span-5 space-y-6">
             <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#F4E4C1] to-[#B89428] p-[1.5px] overflow-hidden shrink-0 border border-[#E6C687]/40">
+                <img
+                  src="/images/logo1.png"
+                  alt="Realmaxville Logo"
+                  className="w-full h-full object-cover rounded-full"
+                />
+              </div>
               <span className="font-sans font-extrabold tracking-[-0.04em] text-xl text-[#e5e2e1]">
                 REALMAXVILLE
               </span>

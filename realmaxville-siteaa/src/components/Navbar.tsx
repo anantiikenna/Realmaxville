@@ -49,11 +49,13 @@ export default function Navbar({ onOpenEstimator }: NavbarProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           
-          {/* Clean Brand Vector Icon + Text */}
+          {/* Logo Image + Text */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#E6C687] to-[#B89428] text-black flex items-center justify-center font-display font-black text-base shadow-gold-glow shrink-0 group-hover:scale-105 transition-transform">
-              R
-            </div>
+            <img
+              src="/images/logo1.png"
+              alt="Realmaxville Logo"
+              className="w-9 h-9 rounded-full object-cover group-hover:scale-105 transition-transform shrink-0 border border-[#E6C687]/40"
+            />
             <div className="flex flex-col">
               <span className="font-sans font-extrabold tracking-[-0.04em] text-xl text-[#e5e2e1] group-hover:text-[#E6C687] transition-colors">
                 REALMAXVILLE
