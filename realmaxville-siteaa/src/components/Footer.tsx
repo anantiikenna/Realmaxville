@@ -65,13 +65,6 @@ export default function Footer() {
           {/* Brand Vision Column */}
           <div className="lg:col-span-5 space-y-6">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#F4E4C1] to-[#B89428] p-[1.5px] overflow-hidden shrink-0">
-                <img
-                  src="/images/logo1.png"
-                  alt="Realmaxville Logo"
-                  className="w-full h-full object-cover rounded-full"
-                />
-              </div>
               <span className="font-sans font-extrabold tracking-[-0.04em] text-xl text-[#e5e2e1]">
                 REALMAXVILLE
               </span>
@@ -102,7 +95,7 @@ export default function Footer() {
                 <li><Link href="/projects" className="hover:text-white transition-colors flex items-center gap-1 group"><span>Projects</span> <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-[#E6C687]" /></Link></li>
                 <li><Link href="/services" className="hover:text-white transition-colors flex items-center gap-1 group"><span>Services</span> <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-[#E6C687]" /></Link></li>
                 <li><Link href="/about" className="hover:text-white transition-colors flex items-center gap-1 group"><span>About Us</span> <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-[#E6C687]" /></Link></li>
-                <li><Link href="/contact" className="hover:text-white transition-colors flex items-center gap-1 group"><span>Contact</span> <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-[#E6C687]" /></Link></li>
+                <li><Link href="/contact" className="hover:text-[#E6C687] transition-colors flex items-center gap-1 group"><span>Contact</span> <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-[#E6C687]" /></Link></li>
               </ul>
             </div>
 

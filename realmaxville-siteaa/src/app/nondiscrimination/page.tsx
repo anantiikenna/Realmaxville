@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Nondiscrimination & Equity Notice | Realmaxville",
@@ -10,9 +8,7 @@ export const metadata: Metadata = {
 
 export default function NondiscriminationPage() {
   return (
-    <div className="min-h-screen bg-[#10120f] text-white flex flex-col justify-between">
-      <Navbar />
-
+    <div className="min-h-screen bg-[#07080A] text-white flex flex-col justify-between">
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-32 flex-grow">
         <div className="space-y-8">
           <div className="border-b border-white/10 pb-6">
@@ -42,8 +38,6 @@ export default function NondiscriminationPage() {
           </div>
         </div>
       </main>
-
-      <Footer />
     </div>
   );
 }

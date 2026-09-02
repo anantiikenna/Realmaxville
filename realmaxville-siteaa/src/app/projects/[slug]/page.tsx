@@ -1,7 +1,9 @@
-import { projects, getProjectBySlug } from "@/lib/projects-data";
-import { notFound } from "next/navigation";
-import Image from "next/image";
+"use client";
+
+import React, { useState } from "react";
+import { useParams } from "next/navigation";
 import Link from "next/link";
+import { projects, getProjectBySlug } from "@/lib/projects-data";
 import {
   MapPin,
   Calendar,
@@ -9,53 +11,65 @@ import {
   CheckCircle2,
   ArrowLeft,
   ArrowRight,
+  ChevronLeft,
+  ChevronRight,
   Sparkles,
   Building2,
-  User,
   Phone
 } from "lucide-react";
 
-export function generateStaticParams() {
-  return projects.map((p) => ({ slug: p.slug }));
-}
-
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
+export default function ProjectDetailPage() {
+  const params = useParams();
+  const slug = params?.slug as string;
   const project = getProjectBySlug(slug);
-  if (!project) return {};
-  return { title: `${project.name} — Realmaxville`, description: project.description };
-}
-
-export default async function ProjectDetailPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
-  const project = getProjectBySlug(slug);
+  const [activeImage, setActiveImage] = useState(0);
 
   if (!project) {
-    notFound();
+    return (
+      <div className="min-h-screen bg-[#07080A] flex items-center justify-center pt-32">
+        <div className="text-center space-y-6">
+          <div className="w-20 h-20 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mx-auto">
+            <Building2 className="w-9 h-9 text-gray-600" />
+          </div>
+          <h1 className="font-display font-bold text-2xl text-white">Project Not Found</h1>
+          <p className="text-gray-400 text-sm">This project does not exist or has been removed.</p>
+          <Link
+            href="/projects"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#E6C687]/10 border border-[#E6C687]/30 text-[#E6C687] text-xs font-mono uppercase tracking-wider hover:bg-[#E6C687]/20 transition-all"
+          >
+            <ArrowLeft className="w-4 h-4" /> Back to Projects
+          </Link>
+        </div>
+      </div>
+    );
   }
 
   const projectIndex = projects.findIndex((p) => p.slug === slug);
   const nextProject = projects[(projectIndex + 1) % projects.length];
   const prevProject = projects[(projectIndex - 1 + projects.length) % projects.length];
 
-  const allImages = [project.image, ...project.gallery.filter((g) => g !== project.image)].filter(Boolean);
+  const allImages = [project.image, ...project.gallery.filter(g => g !== project.image)].filter(Boolean);
 
   return (
     <div className="pt-24 pb-24 bg-[#07080A] min-h-screen">
 
       {/* ── Cinematic Hero ── */}
       <section className="relative min-h-[70vh] flex items-end overflow-hidden">
+        {/* Background Hero Image */}
         <div className="absolute inset-0">
           <img
-            src={allImages[0]}
+            src={allImages[activeImage]}
             alt={project.name}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover transition-opacity duration-700"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#07080A] via-[#07080A]/60 to-[#07080A]/20" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#07080A]/70 via-transparent to-transparent" />
         </div>
 
+        {/* Content */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pb-16 pt-32 w-full">
+
+          {/* Back Navigation */}
           <Link
             href="/projects"
             className="inline-flex items-center gap-2 text-[#E6C687]/70 hover:text-[#E6C687] transition-colors text-xs font-mono uppercase tracking-wider mb-10"
@@ -64,6 +78,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
           </Link>
 
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
+            {/* Title block */}
             <div className="max-w-2xl space-y-4">
               <div className="flex flex-wrap items-center gap-3">
                 <span className="px-3 py-1 rounded-full text-xs font-mono uppercase tracking-wider bg-[#E6C687] text-black font-bold shadow-gold-glow">
@@ -79,6 +94,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
               </p>
             </div>
 
+            {/* Metadata Panel */}
             <div className="glass-panel border border-[#E6C687]/30 rounded-2xl p-6 w-full lg:w-72 shrink-0 space-y-4">
               {[
                 { label: "LOCATION", value: project.location, icon: MapPin },
@@ -109,6 +125,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
 
+          {/* Main Content */}
           <div className="lg:col-span-2 space-y-10">
             <div className="space-y-4">
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#E6C687]/10 border border-[#E6C687]/30 text-[#E6C687] text-xs font-mono tracking-widest uppercase">
@@ -126,6 +143,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
               </p>
             </div>
 
+            {/* Features */}
             <div className="space-y-4">
               <h3 className="font-display font-bold text-xl text-white">Key Engineering Features</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -138,24 +156,58 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
               </div>
             </div>
 
+            {/* Gallery */}
             {allImages.length > 1 && (
               <div className="space-y-4">
                 <h3 className="font-display font-bold text-xl text-white">Project Gallery</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {/* Main image */}
+                <div className="relative h-72 sm:h-96 rounded-2xl overflow-hidden border border-white/10">
+                  <img
+                    src={allImages[activeImage]}
+                    alt={`${project.name} — view ${activeImage + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                  {/* Nav controls */}
+                  <button
+                    onClick={() => setActiveImage((prev) => (prev === 0 ? allImages.length - 1 : prev - 1))}
+                    className="absolute left-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/60 text-white hover:text-[#E6C687] border border-white/10 cursor-pointer"
+                    aria-label="Previous image"
+                  >
+                    <ChevronLeft className="w-5 h-5" />
+                  </button>
+                  <button
+                    onClick={() => setActiveImage((prev) => (prev + 1) % allImages.length)}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/60 text-white hover:text-[#E6C687] border border-white/10 cursor-pointer"
+                    aria-label="Next image"
+                  >
+                    <ChevronRight className="w-5 h-5" />
+                  </button>
+                  <div className="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-black/70 text-xs font-mono text-gray-300">
+                    {activeImage + 1} / {allImages.length}
+                  </div>
+                </div>
+                {/* Thumbnails */}
+                <div className="grid grid-cols-4 gap-2">
                   {allImages.map((img, idx) => (
-                    <div key={idx} className="relative h-64 sm:h-72 rounded-2xl overflow-hidden border border-white/10">
+                    <button
+                      key={idx}
+                      onClick={() => setActiveImage(idx)}
+                      className={`h-20 rounded-xl overflow-hidden border transition-all cursor-pointer ${activeImage === idx ? "border-[#E6C687] shadow-gold-glow" : "border-white/10 hover:border-white/30"}`}
+                      aria-label={`View image ${idx + 1}`}
+                    >
                       <img
                         src={img}
-                        alt={`${project.name} gallery image ${idx + 1}`}
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                        alt={`${project.name} thumbnail ${idx + 1}`}
+                        className="w-full h-full object-cover"
                       />
-                    </div>
+                    </button>
                   ))}
                 </div>
               </div>
             )}
           </div>
 
+          {/* Sidebar */}
           <aside className="space-y-6">
             <div className="glass-panel p-6 rounded-2xl border border-[#E6C687]/30 space-y-4">
               <h3 className="font-mono text-xs text-[#E6C687] uppercase tracking-widest">Project Specs</h3>
@@ -190,7 +242,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
         </div>
       </div>
 
-      {/* ── Navigation ── */}
+      {/* ── Next / Prev Navigation ── */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-white/10">
         <div className="grid grid-cols-2 gap-6">
           <Link

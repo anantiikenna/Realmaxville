@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import Navbar from "./Navbar";
 import Footer from "./Footer";
 import CostEstimator from "./CostEstimator";
 import { X } from "lucide-react";
@@ -11,15 +10,13 @@ export default function AppWrapper({ children }: { children: React.ReactNode }) 
 
   return (
     <div className="min-h-screen flex flex-col justify-between relative bg-[#07080A]">
-      <Navbar onOpenEstimator={() => setIsEstimatorModalOpen(true)} />
-      
       <main className="grow">
         {children}
       </main>
 
       <Footer />
 
-      {/* Global Cost Estimator Modal overlay if triggered via Navbar button */}
+      {/* Global Cost Estimator Modal overlay */}
       {isEstimatorModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-lg animate-in fade-in duration-300">
           <div className="relative w-full max-w-5xl max-h-[90vh] overflow-y-auto bg-[#07080A] rounded-3xl border border-[#E6C687]/40 p-4 sm:p-6 shadow-2xl">

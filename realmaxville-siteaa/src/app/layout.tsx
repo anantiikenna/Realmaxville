@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import AppWrapper from "@/components/AppWrapper";
-import CookieConsent from "@/components/CookieConsent";
+import { CookieConsentProvider } from "@/components/layout/CookieConsent";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://realmaxville.com"),
@@ -27,11 +26,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-[#07080A] text-white font-sans antialiased">
-        <AppWrapper>
-          {children}
-        </AppWrapper>
-        <CookieConsent />
+      <body className="bg-[#10120f] text-white font-sans antialiased">
+        <CookieConsentProvider>{children}</CookieConsentProvider>
       </body>
     </html>
   );
