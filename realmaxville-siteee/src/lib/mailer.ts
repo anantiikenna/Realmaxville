@@ -11,13 +11,14 @@ export async function sendNotificationEmail(payload: SendEmailPayload): Promise<
   const smtpPass = process.env.SMTP_PASS;
 
   if (!smtpHost || !smtpUser || !smtpPass) {
-    console.log("[MAILER_SIMULATION] SMTP credentials not configured. Email logged to console:", payload);
+    console.log("[MAILER_SIMULATION] SMTP credentials not configured. Notification payload:", payload);
     return true;
   }
 
   try {
-    // Dynamic import of nodemailer if available
-    const nodemailer = await import("nodemailer");
+    // Safe dynamic require check to avoid TS missing module errors when nodemailer is optional
+    const requireFunc = typeof __webpack_require__ === "function" ? __non_webpack_require__ : require;
+    const nodemailer = requireFunc("nodemailer");
     const transporter = nodemailer.createTransport({
       host: smtpHost,
       port: Number(process.env.SMTP_PORT) || 587,
@@ -38,7 +39,10 @@ export async function sendNotificationEmail(payload: SendEmailPayload): Promise<
 
     return true;
   } catch (err) {
-    console.error("[Mailer] Failed to send email via SMTP:", err instanceof Error ? err.message : err);
+    console.error("[Mailer] Transporter error or missing dependency:", err instanceof Error ? err.message : err);
     return false;
   }
 }
+
+declare const __webpack_require__: any;
+declare const __non_webpack_require__: any;
