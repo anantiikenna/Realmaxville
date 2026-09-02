@@ -45,17 +45,15 @@ export default function Navbar({ onOpenEstimator }: NavbarProps) {
   ];
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'py-3 bg-[#07080A]/85 backdrop-blur-xl border-b border-white/10 shadow-2xl' : 'py-6 bg-transparent'}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'py-3 bg-[#07080A]/90 backdrop-blur-xl border-b border-white/10 shadow-2xl' : 'py-6 bg-transparent'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           
-          {/* Logo */}
+          {/* Clean Brand Vector Icon + Text */}
           <Link href="/" className="flex items-center gap-3 group">
-            <img
-              src="/images/logo1.png"
-              alt="Realmaxville Logo"
-              className="w-9 h-9 rounded-full object-cover group-hover:scale-105 transition-transform shrink-0"
-            />
+            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#E6C687] to-[#B89428] text-black flex items-center justify-center font-display font-black text-base shadow-gold-glow shrink-0 group-hover:scale-105 transition-transform">
+              R
+            </div>
             <div className="flex flex-col">
               <span className="font-sans font-extrabold tracking-[-0.04em] text-xl text-[#e5e2e1] group-hover:text-[#E6C687] transition-colors">
                 REALMAXVILLE
@@ -115,7 +113,7 @@ export default function Navbar({ onOpenEstimator }: NavbarProps) {
           <div className="flex md:hidden items-center gap-2">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-lg bg-white/5 border border-white/10 text-gray-300 hover:text-white"
+              className="p-2 rounded-lg bg-white/5 border border-white/10 text-gray-300 hover:text-white cursor-pointer"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -157,7 +155,7 @@ export default function Navbar({ onOpenEstimator }: NavbarProps) {
                   setMobileMenuOpen(false);
                   onOpenEstimator();
                 }}
-                className="w-full py-3 rounded-xl text-xs font-bold uppercase tracking-wider text-[#E6C687] bg-[#E6C687]/10 border border-[#E6C687]/30 flex items-center justify-center gap-2"
+                className="w-full py-3 rounded-xl text-xs font-bold uppercase tracking-wider text-[#E6C687] bg-[#E6C687]/10 border border-[#E6C687]/30 flex items-center justify-center gap-2 cursor-pointer"
               >
                 <Calculator className="w-4 h-4" />
                 Live Project Estimator
