@@ -60,11 +60,11 @@ export default function Footer() {
 
         {/* Legal */}
         <div className="space-y-4">
-          <h5 className="font-(--font-space-mono) text-xs tracking-[0.2em] text-[#c7f300] uppercase">Legal</h5>
+          <h5 className="font-(--font-space-mono) text-xs tracking-[0.2em] text-[#c7f300] uppercase">Legal & Compliance</h5>
           <ul className="space-y-2">
-            <li><a href="#" className="text-[#b0b3b4] opacity-70 hover:text-[#c7f300] transition-all text-sm">Privacy Policy</a></li>
-            <li><a href="#" className="text-[#b0b3b4] opacity-70 hover:text-[#c7f300] transition-all text-sm">Terms of Service</a></li>
-            <li><a href="#" className="text-[#b0b3b4] opacity-70 hover:text-[#c7f300] transition-all text-sm">Blueprint Licensing</a></li>
+            <li><Link href="/privacy" className="text-[#b0b3b4] opacity-70 hover:text-[#c7f300] transition-all text-sm">Privacy Policy</Link></li>
+            <li><Link href="/terms" className="text-[#b0b3b4] opacity-70 hover:text-[#c7f300] transition-all text-sm">Terms of Service</Link></li>
+            <li><Link href="/nondiscrimination" className="text-[#b0b3b4] opacity-70 hover:text-[#c7f300] transition-all text-sm">Nondiscrimination</Link></li>
           </ul>
         </div>
 

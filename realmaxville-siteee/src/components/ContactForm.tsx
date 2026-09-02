@@ -1,37 +1,55 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import { 
   Send, 
   CheckCircle2, 
-  Calendar, 
-  Building2, 
   Phone, 
   Mail, 
   Sparkles, 
   ShieldCheck,
   User,
-  MapPin
+  MapPin,
+  AlertCircle,
+  Loader2
 } from "lucide-react";
+import { submitContactForm } from "@/app/actions/contact";
 
 export default function ContactForm() {
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [errorMsg, setErrorMsg] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    projectType: "Luxury Villa",
     location: "Lagos, Nigeria",
+    projectType: "Luxury Villa",
     budget: "$3M - $5M",
-    preferredDate: "",
-    notes: ""
+    message: "",
+    smsConsent: false
   });
 
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSubmitted(true);
-  };
+    setStatus("loading");
+    setErrorMsg("");
+
+    const data = new FormData(e.currentTarget);
+    
+    try {
+      const result = await submitContactForm(data);
+      if (result.success) {
+        setStatus("success");
+      } else {
+        setErrorMsg(result.error || "Failed to submit request. Please try again.");
+        setStatus("error");
+      }
+    } catch {
+      setErrorMsg("An unexpected error occurred. Please try again or call direct phone line.");
+      setStatus("error");
+    }
+  }
 
   return (
     <section id="contact" className="py-24 bg-[#07080A] relative overflow-hidden">
@@ -56,7 +74,7 @@ export default function ContactForm() {
             </p>
 
             <div className="space-y-4 pt-4">
-              <div className="flex items-start gap-4 p-4 rounded-2xl glass-card">
+              <div className="flex items-start gap-4 p-4 rounded-2xl glass-card border border-white/10 bg-white/[0.02]">
                 <div className="p-3 rounded-xl bg-[#E6C687] text-black">
                   <Phone className="w-5 h-5" />
                 </div>
@@ -67,7 +85,7 @@ export default function ContactForm() {
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 p-4 rounded-2xl glass-card">
+              <div className="flex items-start gap-4 p-4 rounded-2xl glass-card border border-white/10 bg-white/[0.02]">
                 <div className="p-3 rounded-xl bg-[#00F5A0] text-black">
                   <Mail className="w-5 h-5" />
                 </div>
@@ -86,8 +104,8 @@ export default function ContactForm() {
           </div>
 
           {/* Form Right */}
-          <div className="lg:col-span-7 glass-panel p-6 sm:p-10 rounded-3xl border border-[#E6C687]/30">
-            {submitted ? (
+          <div className="lg:col-span-7 glass-panel p-6 sm:p-10 rounded-3xl border border-[#E6C687]/30 bg-[#10120f]/90">
+            {status === "success" ? (
               <div className="text-center py-12 space-y-6 animate-in fade-in duration-500">
                 <div className="w-20 h-20 rounded-full bg-[#00F5A0]/20 border-2 border-[#00F5A0] text-[#00F5A0] flex items-center justify-center mx-auto shadow-[0_0_30px_rgba(0,245,160,0.4)]">
                   <CheckCircle2 className="w-10 h-10" />
@@ -99,17 +117,29 @@ export default function ContactForm() {
                   Thank you, <strong className="text-[#E6C687]">{formData.name}</strong>. The Realmaxville architectural team has received your request for <strong className="text-white">{formData.projectType}</strong>. Our team will contact you shortly via <strong className="text-white">{formData.email}</strong>.
                 </p>
                 <button
-                  onClick={() => setSubmitted(false)}
-                  className="px-6 py-3 rounded-full bg-[#E6C687] text-black font-semibold text-xs uppercase tracking-wider shadow-gold-glow"
+                  onClick={() => setStatus("idle")}
+                  className="px-6 py-3 rounded-full bg-[#E6C687] text-black font-semibold text-xs uppercase tracking-wider hover:brightness-110 transition-all cursor-pointer"
                 >
-                  Submit Another Consultation Request
+                  Send Another Consultation Request
                 </button>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Honeypot field (hidden from real users) */}
+                <div className="hidden" aria-hidden="true">
+                  <input type="text" name="hp_field" tabIndex={-1} autoComplete="off" />
+                </div>
+
                 <h3 className="font-display font-bold text-xl text-white border-b border-white/10 pb-4">
                   Schedule Executive Consultation
                 </h3>
+
+                {status === "error" && (
+                  <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/30 text-red-300 text-xs flex items-center gap-3">
+                    <AlertCircle className="w-5 h-5 shrink-0 text-red-400" />
+                    <span>{errorMsg}</span>
+                  </div>
+                )}
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
@@ -119,7 +149,9 @@ export default function ContactForm() {
                     <div className="relative">
                       <input
                         type="text"
+                        name="name"
                         required
+                        maxLength={100}
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="e.g. Chief Olusegun Adeleke"
@@ -136,6 +168,7 @@ export default function ContactForm() {
                     <div className="relative">
                       <input
                         type="email"
+                        name="email"
                         required
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -155,6 +188,7 @@ export default function ContactForm() {
                     <div className="relative">
                       <input
                         type="tel"
+                        name="phone"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         placeholder="+234 803 000 0000"
@@ -171,6 +205,7 @@ export default function ContactForm() {
                     <div className="relative">
                       <input
                         type="text"
+                        name="location"
                         value={formData.location}
                         onChange={(e) => setFormData({ ...formData, location: e.target.value })}
                         placeholder="e.g. Ikoyi, Lagos or Mayfair, London"
@@ -187,6 +222,7 @@ export default function ContactForm() {
                       Project Type
                     </label>
                     <select
+                      name="projectType"
                       value={formData.projectType}
                       onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
                       className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#E6C687]"
@@ -203,6 +239,7 @@ export default function ContactForm() {
                       Target Investment Budget
                     </label>
                     <select
+                      name="budget"
                       value={formData.budget}
                       onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
                       className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#E6C687]"
@@ -217,23 +254,59 @@ export default function ContactForm() {
 
                 <div>
                   <label className="text-xs font-mono text-gray-300 uppercase tracking-wider block mb-2">
-                    Project Vision & Special Requirements
+                    Project Vision & Special Requirements *
                   </label>
                   <textarea
+                    name="message"
+                    required
+                    minLength={10}
                     rows={4}
-                    value={formData.notes}
-                    onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     placeholder="Describe your vision (e.g. cantilevered glass pool, rooftop helipad, smart home automation, 6 car vault...)"
                     className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-[#E6C687]"
                   />
                 </div>
 
+                {/* TCPA SMS Consent Checkbox (Optional) */}
+                <div className="flex items-start gap-3 p-3 rounded-xl bg-white/[0.02] border border-white/5">
+                  <input
+                    type="checkbox"
+                    id="sms_consent"
+                    name="sms_consent"
+                    value="true"
+                    checked={formData.smsConsent}
+                    onChange={(e) => setFormData({ ...formData, smsConsent: e.target.checked })}
+                    className="mt-1 rounded border-gray-700 text-[#E6C687] focus:ring-[#E6C687] bg-black/40 cursor-pointer"
+                  />
+                  <label htmlFor="sms_consent" className="text-[11px] text-gray-400 leading-relaxed cursor-pointer">
+                    <span className="font-semibold text-[#E6C687]">(Optional)</span> I consent to receive SMS text updates and project status notifications from Realmaxville. Message frequency varies based on project progress. Msg & data rates may apply. Reply STOP to opt-out. See our{" "}
+                    <Link href="/privacy" className="text-[#E6C687] underline hover:text-white">
+                      Privacy Policy
+                    </Link>{" "}
+                    and{" "}
+                    <Link href="/terms" className="text-[#E6C687] underline hover:text-white">
+                      Terms of Use
+                    </Link>.
+                  </label>
+                </div>
+
                 <button
                   type="submit"
-                  className="w-full py-4 rounded-full bg-gradient-to-r from-[#E6C687] via-[#D4AF37] to-[#C7F300] text-black font-extrabold text-xs uppercase tracking-widest flex items-center justify-center gap-2 hover:scale-[1.02] transition-all shadow-gold-glow cursor-pointer"
+                  disabled={status === "loading"}
+                  className="w-full py-4 rounded-full bg-gradient-to-r from-[#E6C687] via-[#D4AF37] to-[#C7F300] text-black font-extrabold text-xs uppercase tracking-widest flex items-center justify-center gap-2 hover:scale-[1.01] transition-all shadow-gold-glow cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Confirm Consultation Booking
-                  <Send className="w-4 h-4" />
+                  {status === "loading" ? (
+                    <>
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                      Processing Request...
+                    </>
+                  ) : (
+                    <>
+                      Confirm Consultation Booking
+                      <Send className="w-4 h-4" />
+                    </>
+                  )}
                 </button>
               </form>
             )}

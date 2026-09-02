@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Space_Mono } from "next/font/google";
+import CookieConsent from "@/components/CookieConsent";
 import "./globals.css";
 
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
@@ -31,6 +32,7 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${spaceMono.variable}`}>
       <body className="bg-[#10120f] text-white font-sans antialiased">
         {children}
+        <CookieConsent />
       </body>
     </html>
   );

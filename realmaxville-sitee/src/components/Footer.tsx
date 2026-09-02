@@ -211,9 +211,9 @@ export default function Footer() {
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs font-mono text-gray-500 gap-4">
           <p>© {new Date().getFullYear()} Realmaxville Engineering & Architectural Group. All rights reserved.</p>
           <div className="flex items-center gap-6">
-            <span className="hover:text-gray-300 cursor-pointer">Privacy Policy</span>
-            <span className="hover:text-gray-300 cursor-pointer">Terms of Service</span>
-            <span className="hover:text-gray-300 cursor-pointer">Cookie Settings</span>
+            <Link href="/privacy" className="hover:text-gray-300">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-gray-300">Terms of Service</Link>
+            <Link href="/nondiscrimination" className="hover:text-gray-300">Nondiscrimination</Link>
           </div>
         </div>
 

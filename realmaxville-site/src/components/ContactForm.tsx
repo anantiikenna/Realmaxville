@@ -1,6 +1,8 @@
 "use client";
 import { useState, useRef } from "react";
+import Link from "next/link";
 import ScrollReveal from "./ScrollReveal";
+import { submitContactForm } from "@/app/actions/contact";
 
 function FieldError({ id, message }: { id: string; message: string }) {
   return (
@@ -67,10 +69,11 @@ const contactItems = [
 ];
 
 export default function ContactForm() {
-  const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", phone: "", subject: "", message: "", smsConsent: false });
   const [sent, setSent] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [serverError, setServerError] = useState("");
   const formRef = useRef<HTMLFormElement>(null);
 
   const validate = () => {
@@ -83,16 +86,28 @@ export default function ContactForm() {
     return Object.keys(errs).length === 0;
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!validate()) return;
     setSubmitting(true);
-    await new Promise((r) => setTimeout(r, 1500));
-    setSubmitting(false);
-    setSent(true);
-    formRef.current?.reset();
-    setForm({ name: "", email: "", subject: "", message: "" });
-    setTimeout(() => setSent(false), 5000);
+    setServerError("");
+
+    const data = new FormData(e.currentTarget);
+    try {
+      const result = await submitContactForm(data);
+      if (result.success) {
+        setSent(true);
+        formRef.current?.reset();
+        setForm({ name: "", email: "", phone: "", subject: "", message: "", smsConsent: false });
+        setTimeout(() => setSent(false), 5000);
+      } else {
+        setServerError(result.error || "Submission failed.");
+      }
+    } catch {
+      setServerError("An unexpected error occurred. Please try again or call us.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const inputBase =
@@ -140,7 +155,6 @@ export default function ContactForm() {
                   key={item.label}
                   className="group flex gap-5 items-start p-5 rounded-lg border border-white/5 bg-white/2 hover:border-[#c7f300]/25 hover:bg-[#c7f300]/3 transition-all duration-300 cursor-default"
                 >
-                  {/* Icon badge */}
                   <div className="w-11 h-11 rounded-lg bg-[#c7f300]/10 border border-[#c7f300]/20 flex items-center justify-center text-[#c7f300] shrink-0 group-hover:bg-[#c7f300]/20 group-hover:border-[#c7f300]/40 group-hover:shadow-[0_0_12px_rgba(199,243,0,0.12)] transition-all duration-300">
                     {item.icon}
                   </div>
@@ -171,9 +185,7 @@ export default function ContactForm() {
             })}
           </div>
 
-          {/* Map embed */}
           <div className="mt-8 rounded-lg overflow-hidden border border-[#c7f300]/10 relative" style={{ aspectRatio: "16/9" }}>
-            {/* Map label overlay */}
             <div className="absolute top-3 left-3 z-10 flex items-center gap-2 bg-surface-container-lowest/80 backdrop-blur-sm px-3 py-1.5 rounded-full border border-[#c7f300]/20">
               <span className="w-1.5 h-1.5 rounded-full bg-[#c7f300] pulse-active" aria-hidden="true" />
               <span className="font-(--font-space-mono) text-[9px] tracking-widest text-[#c7f300]">OUR OFFICE</span>
@@ -195,7 +207,11 @@ export default function ContactForm() {
             noValidate
             className="glass-panel p-8 md:p-10 rounded-lg cyber-border space-y-7 relative overflow-hidden"
           >
-            {/* Top accent bar */}
+            {/* Honeypot anti-spam field */}
+            <div className="hidden" aria-hidden="true">
+              <input type="text" name="hp_field" tabIndex={-1} autoComplete="off" />
+            </div>
+
             <div className="absolute top-0 left-8 right-8 h-px bg-linear-to-r from-transparent via-[#c7f300]/40 to-transparent" aria-hidden="true" />
 
             <div>
@@ -207,21 +223,26 @@ export default function ContactForm() {
               </p>
             </div>
 
+            {serverError && (
+              <div className="p-4 rounded-lg bg-red-500/10 border border-red-500/30 text-red-300 text-xs">
+                {serverError}
+              </div>
+            )}
+
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div>
                 <label
                   htmlFor="contact-name"
                   className="flex items-center gap-2 font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#b0b3b4] uppercase mb-2.5"
                 >
-                  <span className="text-[#c7f300]/50 text-[8px]" aria-hidden="true">[</span>
-                  FULL NAME
-                  <span className="text-[#c7f300]/50 text-[8px]" aria-hidden="true">]</span>
-                  <span className="text-[#c7f300]" aria-hidden="true">*</span>
+                  FULL NAME *
                 </label>
                 <input
                   id="contact-name"
+                  name="name"
                   type="text"
                   required
+                  maxLength={100}
                   aria-required="true"
                   aria-invalid={!!errors.name}
                   aria-describedby={errors.name ? "contact-name-error" : undefined}
@@ -237,13 +258,11 @@ export default function ContactForm() {
                   htmlFor="contact-email"
                   className="flex items-center gap-2 font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#b0b3b4] uppercase mb-2.5"
                 >
-                  <span className="text-[#c7f300]/50 text-[8px]" aria-hidden="true">[</span>
-                  EMAIL ADDRESS
-                  <span className="text-[#c7f300]/50 text-[8px]" aria-hidden="true">]</span>
-                  <span className="text-[#c7f300]" aria-hidden="true">*</span>
+                  EMAIL ADDRESS *
                 </label>
                 <input
                   id="contact-email"
+                  name="email"
                   type="email"
                   required
                   aria-required="true"
@@ -263,13 +282,14 @@ export default function ContactForm() {
                 htmlFor="contact-phone"
                 className="flex items-center gap-2 font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#b0b3b4] uppercase mb-2.5"
               >
-                <span className="text-[#c7f300]/50 text-[8px]" aria-hidden="true">[</span>
-                  PHONE NUMBER
-                <span className="text-[#c7f300]/50 text-[8px]" aria-hidden="true">]</span>
+                PHONE NUMBER
               </label>
               <input
                 id="contact-phone"
+                name="phone"
                 type="tel"
+                value={form.phone}
+                onChange={(e) => setForm({ ...form, phone: e.target.value })}
                 className={`${inputBase} ${inputValid}`}
                 placeholder="+234 800 000 0000"
               />
@@ -280,25 +300,24 @@ export default function ContactForm() {
                 htmlFor="contact-subject"
                 className="flex items-center gap-2 font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#b0b3b4] uppercase mb-2.5"
               >
-                <span className="text-[#c7f300]/50 text-[8px]" aria-hidden="true">[</span>
-                  PROJECT TYPE
-                <span className="text-[#c7f300]/50 text-[8px]" aria-hidden="true">]</span>
+                PROJECT TYPE
               </label>
               <select
                 id="contact-subject"
+                name="subject"
                 value={form.subject}
                 onChange={(e) => setForm({ ...form, subject: e.target.value })}
                 className={`${inputBase} ${inputValid}`}
                 style={{ appearance: "none", backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23c7f300'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E\")", backgroundRepeat: "no-repeat", backgroundPosition: "right 1rem center", backgroundSize: "1.25rem" }}
               >
-                <option value="" className="bg-surface">Select a service...</option>
-                <option value="Architectural Design" className="bg-surface">Architectural Design</option>
-                <option value="Construction" className="bg-surface">Construction</option>
-                <option value="Interior Design" className="bg-surface">Interior Design</option>
-                <option value="Renovation" className="bg-surface">Renovation</option>
-                <option value="Site Planning" className="bg-surface">Site Planning</option>
-                <option value="Geophysical Survey" className="bg-surface">Geophysical Survey</option>
-                <option value="Other" className="bg-surface">Other</option>
+                <option value="" className="bg-[#10120f]">Select a service...</option>
+                <option value="Architectural Design" className="bg-[#10120f]">Architectural Design</option>
+                <option value="Construction" className="bg-[#10120f]">Construction</option>
+                <option value="Interior Design" className="bg-[#10120f]">Interior Design</option>
+                <option value="Renovation" className="bg-[#10120f]">Renovation</option>
+                <option value="Site Planning" className="bg-[#10120f]">Site Planning</option>
+                <option value="Geophysical Survey" className="bg-[#10120f]">Geophysical Survey</option>
+                <option value="Other" className="bg-[#10120f]">Other</option>
               </select>
             </div>
 
@@ -307,13 +326,11 @@ export default function ContactForm() {
                 htmlFor="contact-message"
                 className="flex items-center gap-2 font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#b0b3b4] uppercase mb-2.5"
               >
-                <span className="text-[#c7f300]/50 text-[8px]" aria-hidden="true">[</span>
-                  PROJECT DETAILS
-                <span className="text-[#c7f300]/50 text-[8px]" aria-hidden="true">]</span>
-                <span className="text-[#c7f300]" aria-hidden="true">*</span>
+                PROJECT DETAILS *
               </label>
               <textarea
                 id="contact-message"
+                name="message"
                 required
                 rows={5}
                 aria-required="true"
@@ -325,6 +342,29 @@ export default function ContactForm() {
                 placeholder="Describe your project - location, size, budget, timeline..."
               />
               {errors.message && <FieldError id="contact-message-error" message={errors.message} />}
+            </div>
+
+            {/* TCPA SMS Consent Checkbox (Optional) */}
+            <div className="flex items-start gap-3 p-3 rounded-lg bg-white/3 border border-white/5">
+              <input
+                type="checkbox"
+                id="sms_consent"
+                name="sms_consent"
+                value="true"
+                checked={form.smsConsent}
+                onChange={(e) => setForm({ ...form, smsConsent: e.target.checked })}
+                className="mt-1 rounded border-gray-700 text-[#c7f300] focus:ring-[#c7f300] bg-black/40 cursor-pointer"
+              />
+              <label htmlFor="sms_consent" className="text-[11px] text-[#b0b3b4] leading-relaxed cursor-pointer">
+                <span className="font-semibold text-[#c7f300]">(Optional)</span> I consent to receive SMS updates regarding my inquiry from Realmaxville. Msg frequency varies. Msg & data rates may apply. Reply STOP to opt out. See our{" "}
+                <Link href="/privacy" className="text-[#c7f300] underline hover:text-white">
+                  Privacy Policy
+                </Link>{" "}
+                and{" "}
+                <Link href="/terms" className="text-[#c7f300] underline hover:text-white">
+                  Terms of Use
+                </Link>.
+              </label>
             </div>
 
             <button
