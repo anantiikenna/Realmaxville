@@ -1,0 +1,95 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Mono:wght@400;500&display=swap");
+
+/* ─── Root Variables ─────────────────────────────────────────────────── */
+:root {
+  --slate-950: #080C10;
+  --slate-900: #0D1117;
+  --slate-800: #141C25;
+  --slate-700: #1E2A38;
+  --copper:      #C87941;
+  --copper-light: #E8A060;
+  --copper-dim:  #A0602E;
+  --emerald:     #00C896;
+  --ivory:       #F2EDE8;
+  --ivory-dim:   #C8C0B8;
+  --font-serif:  "Cormorant Garamond", Georgia, serif;
+  --font-sans:   "DM Sans", system-ui, sans-serif;
+  --font-mono:   "DM Mono", monospace;
+}
+
+/* ─── Reset & Base ───────────────────────────────────────────────────── */
+*                { box-sizing: border-box; }
+html             { background: var(--slate-950); scroll-behavior: smooth; }
+body             { margin: 0; background: var(--slate-950); color: #F2EDE8; font-family: var(--font-sans); overflow-x: hidden; line-height: 1.6; }
+button, input, textarea, select { font: inherit; }
+
+/* ─── Scrollbar ──────────────────────────────────────────────────────── */
+::-webkit-scrollbar        { width: 8px; }
+::-webkit-scrollbar-track  { background: var(--slate-950); }
+::-webkit-scrollbar-thumb  { background: var(--copper-dim); border-radius: 4px; }
+::selection                { background: var(--copper); color: var(--slate-950); }
+
+/* ─── Glass Utilities ────────────────────────────────────────────────── */
+.glass-slate {
+  background: rgba(13, 17, 23, 0.85);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(242, 237, 232, 0.07);
+}
+.glass-copper {
+  background: rgba(200, 121, 65, 0.07);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(200, 121, 65, 0.2);
+}
+.glass-emerald {
+  background: rgba(0, 200, 150, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 200, 150, 0.15);
+}
+
+/* ─── Gradient Text ──────────────────────────────────────────────────── */
+.text-copper-gradient {
+  background: linear-gradient(135deg, #E8A060 0%, #C87941 50%, #A0602E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.text-emerald-gradient {
+  background: linear-gradient(135deg, #00E8AE 0%, #00C896 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Glow Effects ───────────────────────────────────────────────────── */
+.glow-copper  { box-shadow: 0 0 30px rgba(200, 121, 65, 0.2), 0 0 60px rgba(200, 121, 65, 0.08); }
+.glow-emerald { box-shadow: 0 0 30px rgba(0, 200, 150, 0.2), 0 0 60px rgba(0, 200, 150, 0.08); }
+
+/* ─── Marquee animation ──────────────────────────────────────────────── */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.marquee-track { animation: marquee 40s linear infinite; }
+
+/* ─── Fade-up animation ──────────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 0.8s ease both; }
+
+/* ─── Animated line ──────────────────────────────────────────────────── */
+@keyframes lineExpand {
+  from { transform: scaleX(0); opacity: 0; }
+  to   { transform: scaleX(1); opacity: 1; }
+}
+.animated-line { transform-origin: left; animation: lineExpand 1.2s ease forwards; }
+
+/* ─── Font shorthands ────────────────────────────────────────────────── */
+.font-serif { font-family: var(--font-serif); }
+.font-sans  { font-family: var(--font-sans); }
+.font-mono  { font-family: var(--font-mono); }
