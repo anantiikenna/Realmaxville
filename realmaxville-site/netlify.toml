@@ -1,4 +1,5 @@
 [build]
+  base    = "realmaxville-site"
   command = "npm run build"
   publish = ".next"
 

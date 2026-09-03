@@ -1,5 +1,5 @@
 [build]
-  base    = "realmaxville-sitee"
+  base    = "realmaxville-sitea"
   command = "npm run build"
   publish = ".next"
 
