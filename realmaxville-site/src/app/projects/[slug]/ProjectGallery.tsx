@@ -36,8 +36,8 @@ export default function ProjectGallery({ images, name }: Props) {
   };
 
   return (
-    <section className="py-16 md:py-24" style={{ backgroundColor: "#0e0e0e" }} aria-labelledby="gallery-heading">
-      <div className="section-inner space-y-12">
+    <section className="py-24 md:py-32 bg-surface-container-lowest" aria-labelledby="gallery-heading">
+      <div className="section-inner space-y-8">
         <div className="flex items-end justify-between">
           <div>
             <h2 id="gallery-heading" className="text-2xl md:text-3xl font-extrabold uppercase tracking-tight mb-2">

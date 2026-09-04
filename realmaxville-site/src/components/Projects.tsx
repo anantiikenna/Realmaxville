@@ -12,7 +12,7 @@ const projects = [
 export default function Projects() {
   return (
     <section className="py-32 bg-surface-container-lowest overflow-hidden" aria-labelledby="projects-heading">
-      <div className="site-container space-y-16">
+      <div className="section-inner space-y-16">
         <ScrollReveal>
           <div className="text-center space-y-4">
             <h2 id="projects-heading" className="text-3xl md:text-[32px] font-bold uppercase tracking-tight leading-[1.2]">

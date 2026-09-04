@@ -22,7 +22,7 @@ const icons = [
 
 export default function Services() {
   return (
-    <section className="py-32 site-container" id="services" aria-labelledby="services-heading">
+    <section className="py-32 section-inner" id="services" aria-labelledby="services-heading">
       <div className="flex flex-col md:flex-row gap-16 items-start">
         {/* Sidebar */}
         <div className="md:w-1/3 sticky top-32 space-y-6">

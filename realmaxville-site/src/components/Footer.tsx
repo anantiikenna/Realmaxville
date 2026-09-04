@@ -19,7 +19,7 @@ export default function Footer() {
       </div>
 
       {/* Footer content */}
-      <div className="relative grid grid-cols-1 md:grid-cols-4 gap-8 site-container" style={{ zIndex: 10 }}>
+      <div className="relative grid grid-cols-1 md:grid-cols-4 gap-8 section-inner" style={{ zIndex: 10 }}>
         {/* Brand */}
         <div className="space-y-6">
           <Link href="/" className="inline-flex items-center gap-2 group">
@@ -88,7 +88,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="mt-16 pt-8 border-t border-white/5 text-center site-container" style={{ zIndex: 10, position: "relative" }}>
+      <div className="mt-16 pt-8 border-t border-white/5 text-center section-inner" style={{ zIndex: 10, position: "relative" }}>
         <p className="text-sm text-[#b0b3b4] opacity-50">&copy; {new Date().getFullYear()} Realmaxville. All Rights Reserved.</p>
       </div>
     </footer>

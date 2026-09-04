@@ -120,12 +120,11 @@ export default function ContactForm() {
   return (
     <section
       id="contact-form"
-      className="section-inner"
-      style={{ paddingTop: "8rem", paddingBottom: "8rem" }}
+      className="section-inner py-32"
       aria-labelledby="contact-heading"
     >
       <ScrollReveal>
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <div className="flex items-center justify-center gap-3 mb-5" aria-hidden="true">
             <div className="h-px w-12 bg-[#c7f300]" />
             <span className="font-(--font-space-mono) text-[10px] tracking-[0.3em] text-[#c7f300] uppercase">
@@ -145,7 +144,7 @@ export default function ContactForm() {
         </div>
       </ScrollReveal>
 
-      <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 xl:gap-20">
+      <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 xl:gap-16">
         {/* Contact info sidebar */}
         <ScrollReveal className="lg:col-span-2" direction="left">
           <div className="space-y-5">
@@ -185,7 +184,7 @@ export default function ContactForm() {
             })}
           </div>
 
-          <div className="mt-8 rounded-lg overflow-hidden border border-[#c7f300]/10 relative" style={{ aspectRatio: "16/9" }}>
+          <div className="mt-8 rounded-lg overflow-hidden border border-[#c7f300]/10 relative aspect-video">
             <div className="absolute top-3 left-3 z-10 flex items-center gap-2 bg-surface-container-lowest/80 backdrop-blur-sm px-3 py-1.5 rounded-full border border-[#c7f300]/20">
               <span className="w-1.5 h-1.5 rounded-full bg-[#c7f300] pulse-active" aria-hidden="true" />
               <span className="font-(--font-space-mono) text-[9px] tracking-widest text-[#c7f300]">OUR OFFICE</span>
@@ -370,7 +369,7 @@ export default function ContactForm() {
             <button
               type="submit"
               disabled={submitting || sent}
-              className="w-full py-4 rounded-lg font-(--font-space-mono) text-sm tracking-widest transition-all active:scale-[0.98] disabled:cursor-not-allowed relative overflow-hidden"
+              className="w-full h-11 rounded-lg font-(--font-space-mono) text-sm tracking-widest transition-all active:scale-[0.98] disabled:cursor-not-allowed relative overflow-hidden"
               style={{
                 backgroundColor: sent ? "rgba(199,243,0,0.15)" : "#c7f300",
                 color: sent ? "#c7f300" : "#171e00",

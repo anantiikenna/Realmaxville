@@ -57,7 +57,7 @@ export default async function ProjectDetailPage({ params }: Props) {
         </div>
 
         {/* Content */}
-        <div className="section-inner relative z-10 pb-16 md:pb-24 pt-32">
+        <div className="section-inner relative z-10 pb-12 md:pb-16 pt-32">
           <Link
             href="/projects"
             className="inline-flex items-center gap-2 font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#c7f300]/70 hover:text-[#c7f300] transition-colors uppercase mb-8"
@@ -119,7 +119,7 @@ export default async function ProjectDetailPage({ params }: Props) {
       </section>
 
       {/* Project Details */}
-      <section className="py-16 md:py-24" aria-labelledby="details-heading">
+      <section className="py-24 md:py-32" aria-labelledby="details-heading">
         <div className="section-inner">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
             {/* Main content */}
@@ -169,7 +169,7 @@ export default async function ProjectDetailPage({ params }: Props) {
       )}
 
       {/* Next project */}
-      <section className="py-16 md:py-24 data-grid-bg" aria-label="Next project">
+      <section className="py-24 md:py-32 data-grid-bg" aria-label="Next project">
         <div className="section-inner text-center space-y-6">
           <span className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#c7f300]/60 uppercase">
             Next Project

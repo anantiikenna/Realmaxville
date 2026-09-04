@@ -53,7 +53,7 @@ export default function ProjectsPage() {
       </section>
 
       {/* Filter + Grid */}
-      <section className="py-20 md:py-28" style={{ backgroundColor: "#0e0e0e" }} aria-labelledby="grid-heading">
+      <section className="py-32 bg-surface-container-lowest" aria-labelledby="grid-heading">
         <div className="section-inner space-y-16">
           {/* Filter bar */}
           <ScrollReveal>
@@ -138,7 +138,7 @@ export default function ProjectsPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 md:py-28 data-grid-bg" aria-labelledby="cta-heading">
+      <section className="py-32 data-grid-bg" aria-labelledby="cta-heading">
         <div className="section-inner text-center space-y-8">
           <ScrollReveal>
             <h2 id="cta-heading" className="text-2xl md:text-3xl font-extrabold uppercase tracking-tight">

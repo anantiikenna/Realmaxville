@@ -253,21 +253,6 @@ body.modal-open {
    LAYOUT SYSTEM — Direct CSS (not Tailwind-dependent)
    ============================================= */
 
-/* Global page container with guaranteed margins */
-.site-container {
-  max-width: var(--container-max);
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
-@media (min-width: 768px) {
-  .site-container {
-    padding-left: 4rem;
-    padding-right: 4rem;
-  }
-}
-
 /* Navbar inner row */
 .nav-inner {
   display: flex;

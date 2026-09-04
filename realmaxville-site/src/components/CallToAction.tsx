@@ -4,7 +4,7 @@ import ScrollReveal from "./ScrollReveal";
 
 export default function CallToAction() {
   return (
-    <section className="py-24 site-container" aria-labelledby="cta-heading">
+    <section className="py-32 section-inner" aria-labelledby="cta-heading">
       <ScrollReveal>
         <div className="relative rounded-lg glass p-14 md:p-24 text-center space-y-8 cyber-border overflow-hidden">
           {/* Large background icon — Draftsman compass */}

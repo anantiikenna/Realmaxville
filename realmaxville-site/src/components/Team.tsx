@@ -59,16 +59,16 @@ export default function Team() {
   const doubled = [...team, ...team];
 
   return (
-    <section style={{ padding: "8rem 0", backgroundColor: "#0e0e0e" }} aria-labelledby="team-heading">
+    <section className="py-32 bg-surface-container-lowest" aria-labelledby="team-heading">
       <div className="section-inner">
         <ScrollReveal>
-          <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "4rem", gap: "2rem" }}>
-            <div style={{ maxWidth: "36rem" }}>
-              <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "1rem" }}>
-                <div style={{ width: 48, height: 1, backgroundColor: "#c7f300" }} aria-hidden="true" />
-                <span style={{ fontFamily: "var(--font-space-mono)", fontSize: "0.7rem", letterSpacing: "0.2em", color: "#c7f300", textTransform: "uppercase" }}>OUR CORE</span>
+          <div className="flex flex-col justify-between items-start mb-16 gap-8">
+            <div className="max-w-[36rem]">
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-12 h-px bg-[#c7f300]" aria-hidden="true" />
+                <span className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#c7f300] uppercase">OUR CORE</span>
               </div>
-              <h2 id="team-heading" style={{ fontSize: "clamp(2rem, 5vw, 3rem)", fontWeight: 800, lineHeight: 1.15 }}>
+              <h2 id="team-heading" className="text-3xl md:text-5xl font-extrabold leading-[1.15]">
                 THE ARCHITECTS <br />OF THE LAB
               </h2>
             </div>
@@ -86,8 +86,8 @@ export default function Team() {
         aria-roledescription="carousel"
       >
         {/* Fade edges */}
-        <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-linear-to-r from-surface-container-lowest to-transparent z-10 pointer-events-none" aria-hidden="true" />
-        <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-linear-to-l from-surface-container-lowest to-transparent z-10 pointer-events-none" aria-hidden="true" />
+        <div className="absolute left-0 top-0 bottom-0 w-24 md:w-32 bg-linear-to-r from-surface-container-lowest to-transparent z-10 pointer-events-none" aria-hidden="true" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 md:w-32 bg-linear-to-l from-surface-container-lowest to-transparent z-10 pointer-events-none" aria-hidden="true" />
 
         <div
           className="flex gap-8 px-8 team-scroll-track"
