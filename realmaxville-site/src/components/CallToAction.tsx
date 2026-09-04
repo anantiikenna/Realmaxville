@@ -24,7 +24,7 @@ export default function CallToAction() {
           <div className="relative z-10 flex flex-col md:flex-row justify-center gap-6 pt-8">
             <Link
               href="/contact"
-              className="btn-cta glow-hover h-13 px-12 flex items-center justify-center gap-2"
+              className="btn-cta glow-hover h-12 px-12 flex items-center justify-center gap-2"
             >
               REQUEST A QUOTE
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -33,7 +33,7 @@ export default function CallToAction() {
             </Link>
             <Link
               href="/projects"
-              className="border border-white/30 text-white h-13 px-12 rounded-full font-(--font-space-mono) text-[11px] tracking-[0.2em] uppercase hover:bg-white/10 hover:border-white/60 transition-all flex items-center justify-center"
+              className="border border-white/30 text-white h-12 px-12 rounded-full font-(--font-space-mono) text-[11px] tracking-[0.2em] uppercase hover:bg-white/10 hover:border-white/60 transition-all flex items-center justify-center"
             >
               BOOK CONSULTATION
             </Link>

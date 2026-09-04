@@ -82,7 +82,11 @@ export default function Navbar() {
         {/* Desktop nav links — uses .nav-desktop CSS class for responsive show/hide */}
         <div className="nav-desktop">
           {navLinks.map((link) => {
-            const isActive = pathname === link.href;
+            const isActive = link.href === "/#services"
+              ? pathname === "/"
+              : link.href === "/"
+                ? pathname === "/"
+                : pathname.startsWith(link.href);
             return (
               <Link
                 key={link.label}

@@ -51,7 +51,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${spaceMono.variable} h-full antialiased dark`}>
+    <html lang="en" className={`${inter.variable} ${spaceMono.variable} h-full antialiased dark scroll-smooth`}>
       <body className="min-h-full flex flex-col bg-[#050505] text-[#e5e2e1] overflow-x-hidden font-sans">
         <CookieConsentProvider>
           <a href="#main-content" className="skip-link">

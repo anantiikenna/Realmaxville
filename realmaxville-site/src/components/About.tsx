@@ -22,7 +22,7 @@ export default function About() {
               </div>
             </div>
             <div className="absolute -bottom-6 -right-6 glass-panel p-4 rounded-lg cyber-border">
-              <div className="text-3xl font-extrabold text-[#c7f300]">6+</div>
+              <div className="text-3xl font-extrabold text-[#c7f300]">9+</div>
               <div className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-outline">YEARS</div>
             </div>
             <div className="absolute -top-4 -left-4 w-20 h-20 border border-[#c7f300]/10 rounded-full animate-spin-slow" aria-hidden="true" />

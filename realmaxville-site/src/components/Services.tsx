@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import ScrollReveal from "./ScrollReveal";
 
 const services = [
@@ -39,7 +40,7 @@ export default function Services() {
             <div className="pt-8 space-y-4">
               <p className="italic text-[#b0b3b4] text-sm">&quot;James William&quot;</p>
               <p className="font-(--font-space-mono) text-[11px] tracking-[0.2em] text-[#b0b3b4]">FOUNDER &amp; CEO</p>
-              <div className="flex items-center gap-4 cursor-pointer group">
+              <Link href="/about" className="flex items-center gap-4 cursor-pointer group">
                 <div className="w-12 h-12 rounded-full border border-[#c7f300] flex items-center justify-center group-hover:bg-[#c7f300] transition-all">
                   <svg className="w-5 h-5 text-[#c7f300] group-hover:text-on-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14.752 11.168l-4.197-2.42A1 1 0 009 9.616v4.768a1 1 0 001.555.832l4.197-2.348a1 1 0 000-1.7z" />
@@ -47,7 +48,7 @@ export default function Services() {
                   </svg>
                 </div>
                 <span className="font-(--font-space-mono) text-[11px] tracking-[0.2em] uppercase">Watch Our Story</span>
-              </div>
+              </Link>
             </div>
           </ScrollReveal>
         </div>
@@ -55,18 +56,17 @@ export default function Services() {
         {/* Service cards — 2-col grid */}
         <div className="md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-4">
           {services.map((s, i) => (
-            <div
+            <Link
               key={s.title}
-              className={`glass p-8 space-y-4 hover:bg-white/5 transition-all group cursor-pointer ${
-                i === 2 ? "border-[#c7f300]!" : ""
-              }`}
+              href="/contact"
+              className="glass p-8 space-y-4 hover:bg-white/5 transition-all group"
             >
               <svg className="w-7 h-7 text-[#c7f300]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 {icons[i]}
               </svg>
               <h3 className="text-[20px] font-semibold uppercase tracking-wider leading-snug">{s.title}</h3>
               <p className="text-[#b0b3b4] text-sm leading-relaxed">{s.desc}</p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
