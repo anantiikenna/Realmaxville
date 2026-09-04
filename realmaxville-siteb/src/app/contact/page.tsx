@@ -19,8 +19,6 @@ import {
 } from "lucide-react";
 import { submitContactForm } from "@/app/actions/contact";
 
-export const metadata = undefined; // client component, no metadata export
-
 const contactDetails = [
   {
     icon: PhoneCall,
