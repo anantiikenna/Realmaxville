@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import { CookieConsentProvider } from "@/components/layout/CookieConsent";
 
 export const metadata: Metadata = {
@@ -13,8 +15,7 @@ export const metadata: Metadata = {
   icons: { icon: "/images/logo1.png", apple: "/images/logo1.png" },
   openGraph: {
     title: "Realmaxville — Architecture & Construction",
-    description:
-      "Building legacies across Lagos, Nigeria — luxury residences, smart estates, and landmark public projects.",
+    description: "Building architectural legacies across Nigeria.",
     images: ["/images/projects/mrs-margaret.jpg"],
   },
 };
@@ -27,7 +28,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-[#10120f] text-white font-sans antialiased">
-        <CookieConsentProvider>{children}</CookieConsentProvider>
+        <CookieConsentProvider>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+        </CookieConsentProvider>
       </body>
     </html>
   );
