@@ -16,13 +16,9 @@ export default function ContactPage() {
         <div className="absolute inset-0 blueprint-grid opacity-20" aria-hidden="true" />
         {/* Radial glow */}
         <div
-          className="absolute rounded-full pointer-events-none"
+          className="absolute rounded-full pointer-events-none top-1/2 left-[60%] -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] blur-[80px]"
           style={{
-            top: "50%", left: "60%",
-            transform: "translate(-50%, -50%)",
-            width: 700, height: 700,
             background: "radial-gradient(circle, rgba(199,243,0,0.07), transparent 70%)",
-            filter: "blur(80px)",
           }}
           aria-hidden="true"
         />
@@ -30,38 +26,26 @@ export default function ContactPage() {
         <div className="absolute top-0 left-0 w-24 h-24 border-t-2 border-l-2 border-[#c7f300]/30" aria-hidden="true" />
         <div className="absolute bottom-0 right-0 w-24 h-24 border-b-2 border-r-2 border-[#c7f300]/30" aria-hidden="true" />
 
-        <div className="section-inner" style={{ position: "relative", zIndex: 10 }}>
-          <div style={{ maxWidth: "56rem" }}>
+        <div className="section-inner relative z-10">
+          <div className="max-w-[56rem]">
             {/* Eyebrow */}
             <div className="flex items-center gap-3 mb-6" aria-hidden="true">
-              <div style={{ width: 48, height: 1, backgroundColor: "#c7f300" }} />
-              <span
-                className="font-(--font-space-mono)"
-                style={{ fontSize: "0.7rem", letterSpacing: "0.3em", color: "#c7f300", textTransform: "uppercase" }}
-              >
+              <div className="w-12 h-px bg-[#c7f300]" />
+              <span className="font-(--font-space-mono) text-[11px] tracking-[0.3em] text-[#c7f300] uppercase">
                 Get In Touch
               </span>
             </div>
 
-            <h1
-              style={{
-                fontSize: "clamp(2.8rem, 7vw, 5rem)",
-                fontWeight: 800,
-                lineHeight: 0.9,
-                letterSpacing: "-0.02em",
-                textTransform: "uppercase",
-                marginBottom: "1.75rem",
-              }}
-            >
+            <h1 className="font-extrabold uppercase leading-[0.9] tracking-[-0.02em] mb-7" style={{ fontSize: "clamp(2.8rem, 7vw, 5rem)" }}>
               LET&apos;S BUILD{" "}
-              <span className="neon-text-glow" style={{ color: "#c7f300" }}>
+              <span className="neon-text-glow text-[#c7f300]">
                 SOMETHING
               </span>
               <br />
               GREAT TOGETHER.
             </h1>
 
-            <p style={{ color: "#b0b3b4", fontSize: "1.1rem", maxWidth: "38rem", lineHeight: 1.75, marginBottom: "2.5rem" }}>
+            <p className="text-[#b0b3b4] text-lg max-w-[38rem] leading-relaxed mb-10">
               Whether you have a project in mind or just want to explore what&apos;s possible, our team is ready to listen and deliver beyond expectations.
             </p>
 
@@ -69,15 +53,13 @@ export default function ContactPage() {
             <div className="flex flex-wrap gap-4">
               <a
                 href="#contact-form"
-                className="btn-cta glow-hover"
-                style={{ height: "3rem", paddingLeft: "2rem", paddingRight: "2rem" }}
+                className="btn-cta glow-hover h-12 px-8"
               >
                 SEND A MESSAGE →
               </a>
               <a
                 href="tel:08080419259"
-                className="inline-flex items-center gap-2 font-(--font-space-mono) text-[0.7rem] tracking-widest text-[#c7f300] border border-[#c7f300]/30 hover:border-[#c7f300] hover:bg-[#c7f300]/5 transition-all px-6 rounded-full"
-                style={{ height: "3rem" }}
+                className="inline-flex items-center gap-2 h-12 px-8 rounded-full font-(--font-space-mono) text-[0.7rem] tracking-widest text-[#c7f300] border border-[#c7f300]/30 hover:border-[#c7f300] hover:bg-[#c7f300]/5 transition-all"
               >
                 <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -90,9 +72,9 @@ export default function ContactPage() {
       </section>
 
       {/* Stats bar */}
-      <div style={{ backgroundColor: "#0e0e0e", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
+      <div className="bg-surface-container-lowest border-b border-white/5">
         <div className="section-inner">
-          <div className="grid grid-cols-2 md:grid-cols-4" style={{ gap: 0 }}>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-0">
             {[
               { num: "6+", label: "Years Experience" },
               { num: "200+", label: "Projects Delivered" },
@@ -101,13 +83,11 @@ export default function ContactPage() {
             ].map((s, i) => (
               <div
                 key={s.label}
-                className="flex flex-col items-center justify-center text-center"
-                style={{
-                  padding: "2.5rem 1.5rem",
-                  borderRight: i < 3 ? "1px solid rgba(255,255,255,0.05)" : undefined,
-                }}
+                className={`flex flex-col items-center justify-center text-center py-10 px-6
+                  ${i < 3 ? "border-r border-white/5" : ""}
+                `}
               >
-                <span className="text-3xl font-extrabold text-[#c7f300] neon-text-glow">{s.num}</span>
+                <span className="text-4xl md:text-5xl font-extrabold text-[#c7f300] neon-text-glow">{s.num}</span>
                 <span className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-outline mt-1 uppercase">{s.label}</span>
               </div>
             ))}
@@ -116,71 +96,50 @@ export default function ContactPage() {
       </div>
 
       {/* Main contact section — form + info */}
-      <div style={{ backgroundColor: "#0a0a0a" }}>
+      <div className="bg-[#0a0a0a]">
         <ContactForm />
       </div>
 
       {/* WhatsApp CTA */}
-      <section style={{ padding: "8rem 0", backgroundColor: "#0a0a0a" }} aria-labelledby="whatsapp-heading">
+      <section className="py-32 bg-[#0a0a0a]" aria-labelledby="whatsapp-heading">
         <div className="section-inner">
           <div
-            className="relative overflow-hidden"
+            className="relative overflow-hidden rounded-[2rem] border border-[#22c55e]/20 flex flex-wrap items-center justify-between gap-8 p-12 md:p-16"
             style={{
-              borderRadius: "2rem",
-              border: "1px solid rgba(34,197,94,0.2)",
               background: "linear-gradient(135deg, rgba(34,197,94,0.06), rgba(0,0,0,0), rgba(34,197,94,0.03))",
-              padding: "4rem 3rem",
-              display: "flex",
-              flexWrap: "wrap",
-              alignItems: "center",
-              justifyContent: "space-between",
-              gap: "2rem",
             }}
           >
             {/* Glows */}
             <div
-              className="absolute pointer-events-none"
+              className="absolute pointer-events-none top-1/2 left-0 -translate-y-1/2 w-[400px] h-[400px] blur-[60px]"
               style={{
-                top: "50%", left: "0%",
-                transform: "translateY(-50%)",
-                width: 400, height: 400,
                 background: "radial-gradient(circle, rgba(34,197,94,0.08), transparent 70%)",
-                filter: "blur(60px)",
               }}
               aria-hidden="true"
             />
 
             {/* Left content */}
-            <div style={{ position: "relative", zIndex: 1 }}>
+            <div className="relative z-1">
               <div className="flex items-center gap-3 mb-4" aria-hidden="true">
-                <div style={{ width: 40, height: 1, backgroundColor: "#22c55e" }} />
+                <div className="w-10 h-px bg-[#22c55e]" />
                 <span className="font-(--font-space-mono) text-[10px] tracking-widest text-[#22c55e]">INSTANT SUPPORT</span>
               </div>
-              <h2 id="whatsapp-heading" style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.5rem)", fontWeight: 800, textTransform: "uppercase", lineHeight: 1.15, maxWidth: "28rem" }}>
+              <h2 id="whatsapp-heading" className="text-2xl md:text-[40px] font-extrabold uppercase leading-[1.15] max-w-[28rem]">
                 PREFER TO CHAT?{" "}
-                <span style={{ color: "#22c55e" }}>WHATSAPP US</span>
+                <span className="text-[#22c55e]">WHATSAPP US</span>
               </h2>
-              <p style={{ color: "#8e9192", marginTop: "1rem", maxWidth: "28rem", lineHeight: 1.7 }}>
+              <p className="text-[#8e9192] mt-4 max-w-[28rem] leading-relaxed">
                 Get faster responses on WhatsApp. Our team is always ready to walk you through your project requirements.
               </p>
             </div>
 
             {/* Right CTA */}
-            <div style={{ position: "relative", zIndex: 1, display: "flex", flexDirection: "column", alignItems: "flex-start", gap: "1rem" }}>
+            <div className="relative z-1 flex flex-col items-start gap-4">
               <a
                 href="https://wa.me/2348080419259"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 font-(--font-space-mono) tracking-widest text-sm transition-all duration-200 hover:shadow-[0_0_30px_rgba(34,197,94,0.45)] active:scale-[0.97]"
-                style={{
-                  backgroundColor: "#16a34a",
-                  color: "#fff",
-                  borderRadius: 9999,
-                  paddingLeft: "2.5rem",
-                  paddingRight: "2.5rem",
-                  height: "3.5rem",
-                  textDecoration: "none",
-                }}
+                className="inline-flex items-center gap-3 h-14 px-10 rounded-full bg-[#16a34a] text-white font-(--font-space-mono) tracking-widest text-sm transition-all duration-200 hover:shadow-[0_0_30px_rgba(34,197,94,0.45)] active:scale-[0.97]"
               >
                 {/* WhatsApp icon */}
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -197,7 +156,7 @@ export default function ContactPage() {
       </section>
 
       {/* Bottom nav strip */}
-      <div style={{ padding: "3rem 0", backgroundColor: "#080808", borderTop: "1px solid rgba(255,255,255,0.04)" }}>
+      <div className="py-12 bg-[#080808] border-t border-white/4">
         <div className="section-inner flex flex-wrap items-center justify-between gap-6">
           <div>
             <span className="text-[#e5e2e1] font-bold text-lg">REALMAXVILLE</span>

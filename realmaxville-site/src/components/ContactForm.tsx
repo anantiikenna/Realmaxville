@@ -144,9 +144,9 @@ export default function ContactForm() {
         </div>
       </ScrollReveal>
 
-      <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 xl:gap-16">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 xl:gap-16">
         {/* Contact info sidebar */}
-        <ScrollReveal className="lg:col-span-2" direction="left">
+        <ScrollReveal className="lg:col-span-1" direction="left">
           <div className="space-y-5">
             {contactItems.map((item) => {
               const Card = (
@@ -199,7 +199,7 @@ export default function ContactForm() {
         </ScrollReveal>
 
         {/* Form */}
-        <ScrollReveal className="lg:col-span-3" direction="right">
+        <ScrollReveal className="lg:col-span-2" direction="right">
           <form
             ref={formRef}
             onSubmit={handleSubmit}
