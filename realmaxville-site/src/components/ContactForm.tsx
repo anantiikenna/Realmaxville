@@ -124,7 +124,7 @@ export default function ContactForm() {
       aria-labelledby="contact-heading"
     >
       <ScrollReveal>
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 gap-12">
           <div className="flex items-center justify-center gap-3 mb-5" aria-hidden="true">
             <div className="h-px w-12 bg-[#c7f300]" />
             <span className="font-(--font-space-mono) text-[10px] tracking-[0.3em] text-[#c7f300] uppercase">
