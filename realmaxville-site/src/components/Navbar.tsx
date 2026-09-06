@@ -14,6 +14,7 @@ const navLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
   const pathname = usePathname();
 
   useEffect(() => {
@@ -21,6 +22,29 @@ export default function Navbar() {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Track which section is in view for hash links
+  useEffect(() => {
+    if (pathname !== "/") { setActiveSection(""); return; }
+
+    const sections = ["services", "projects", "process", "cta"];
+    const onScroll = () => {
+      for (const id of sections) {
+        const el = document.getElementById(id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= 120 && rect.bottom > 120) {
+            setActiveSection(id);
+            return;
+          }
+        }
+      }
+      setActiveSection("");
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [pathname]);
 
   // Close mobile menu on resize to desktop
   useEffect(() => {
@@ -82,10 +106,11 @@ export default function Navbar() {
         {/* Desktop nav links — uses .nav-desktop CSS class for responsive show/hide */}
         <div className="nav-desktop">
           {navLinks.map((link) => {
-            const isActive = link.href === "/#services"
-              ? pathname === "/"
+            const hashId = link.href.startsWith("/#") ? link.href.slice(2) : null;
+            const isActive = hashId
+              ? activeSection === hashId
               : link.href === "/"
-                ? pathname === "/"
+                ? pathname === "/" && !activeSection
                 : pathname.startsWith(link.href);
             return (
               <Link
