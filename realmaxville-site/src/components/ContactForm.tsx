@@ -124,8 +124,8 @@ export default function ContactForm() {
       aria-labelledby="contact-heading"
     >
       <ScrollReveal>
-        <div className="text-center mb-16">
-          <div className="flex items-center justify-center gap-3 mb-5" aria-hidden="true">
+        <div className="text-center flex flex-col items-center gap-6">
+          <div className="flex items-center justify-center gap-3" aria-hidden="true">
             <div className="h-px w-12 bg-[#c7f300]" />
             <span className="font-(--font-space-mono) text-[10px] tracking-[0.3em] text-[#c7f300] uppercase">
               Direct Contact
@@ -138,7 +138,7 @@ export default function ContactForm() {
           >
             REACH OUT TO <span className="text-[#c7f300] neon-text-glow">OUR TEAM</span>
           </h2>
-          <p className="text-outline max-w-2xl mx-auto mt-6 leading-relaxed">
+          <p className="text-outline max-w-2xl mx-auto leading-relaxed">
             We&apos;re passionate about bringing your vision to life. Share your project ideas and we&apos;ll get back to you within 24 hours.
           </p>
         </div>
