@@ -138,21 +138,21 @@ export default function ContactForm() {
           >
             REACH OUT TO <span className="text-[#c7f300] neon-text-glow">OUR TEAM</span>
           </h2>
-          <p className="text-outline max-w-xl mx-auto mt-8 leading-relaxed">
+          <p className="text-outline max-w-2xl mx-auto mt-6 leading-relaxed">
             We&apos;re passionate about bringing your vision to life. Share your project ideas and we&apos;ll get back to you within 24 hours.
           </p>
         </div>
       </ScrollReveal>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 xl:gap-16">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 xl:gap-16 items-stretch">
         {/* Contact info sidebar */}
-        <ScrollReveal className="lg:col-span-1" direction="left">
-          <div className="space-y-5">
+        <ScrollReveal className="lg:col-span-1 h-full flex flex-col" direction="left">
+          <div className="space-y-4 shrink-0">
             {contactItems.map((item) => {
               const Card = (
                 <div
                   key={item.label}
-                  className="group flex gap-5 items-start p-5 rounded-lg border border-white/5 bg-white/2 hover:border-[#c7f300]/25 hover:bg-[#c7f300]/3 transition-all duration-300 cursor-default"
+                  className="group flex gap-4.5 items-start p-4.5 sm:p-5 rounded-lg border border-white/5 bg-white/2 hover:border-[#c7f300]/25 hover:bg-[#c7f300]/3 transition-all duration-300 cursor-default"
                 >
                   <div className="w-11 h-11 rounded-lg bg-[#c7f300]/10 border border-[#c7f300]/20 flex items-center justify-center text-[#c7f300] shrink-0 group-hover:bg-[#c7f300]/20 group-hover:border-[#c7f300]/40 group-hover:shadow-[0_0_12px_rgba(199,243,0,0.12)] transition-all duration-300">
                     {item.icon}
@@ -184,7 +184,7 @@ export default function ContactForm() {
             })}
           </div>
 
-          <div className="mt-8 rounded-lg overflow-hidden border border-[#c7f300]/10 relative aspect-video">
+          <div className="mt-5 flex-1 min-h-[220px] rounded-lg overflow-hidden border border-[#c7f300]/10 relative">
             <div className="absolute top-3 left-3 z-10 flex items-center gap-2 bg-surface-container-lowest/80 backdrop-blur-sm px-3 py-1.5 rounded-full border border-[#c7f300]/20">
               <span className="w-1.5 h-1.5 rounded-full bg-[#c7f300] pulse-active" aria-hidden="true" />
               <span className="font-(--font-space-mono) text-[9px] tracking-widest text-[#c7f300]">OUR OFFICE</span>
@@ -199,12 +199,12 @@ export default function ContactForm() {
         </ScrollReveal>
 
         {/* Form */}
-        <ScrollReveal className="lg:col-span-2" direction="right">
+        <ScrollReveal className="lg:col-span-2 h-full" direction="right">
           <form
             ref={formRef}
             onSubmit={handleSubmit}
             noValidate
-            className="glass-panel p-10 md:p-12 rounded-lg cyber-border space-y-7 relative overflow-hidden"
+            className="glass-panel p-8 sm:p-10 md:p-12 rounded-lg cyber-border space-y-6 md:space-y-7 relative overflow-hidden h-full flex flex-col justify-between"
           >
             {/* Honeypot anti-spam field */}
             <div className="hidden" aria-hidden="true">
