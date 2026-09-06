@@ -141,18 +141,20 @@ export default function ProjectsPage() {
       <section className="py-32 data-grid-bg" aria-labelledby="cta-heading">
         <div className="section-inner text-center space-y-8">
           <ScrollReveal>
-            <h2 id="cta-heading" className="text-2xl md:text-3xl font-extrabold uppercase tracking-tight">
-              HAVE A PROJECT IN MIND?
-            </h2>
-            <p className="text-[#b0b3b4] max-w-lg mx-auto">
-              We bring visionary architecture to life. Let&apos;s discuss your next landmark.
-            </p>
-            <a href="/contact" className="btn-cta glow-hover inline-flex items-center gap-2">
-              START A CONVERSATION
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </a>
+            <div className="flex flex-col items-center gap-6">
+              <h2 id="cta-heading" className="text-2xl md:text-3xl font-extrabold uppercase tracking-tight">
+                HAVE A PROJECT IN MIND?
+              </h2>
+              <p className="text-[#b0b3b4] max-w-lg mx-auto">
+                We bring visionary architecture to life. Let&apos;s discuss your next landmark.
+              </p>
+              <a href="/contact" className="btn-cta glow-hover inline-flex items-center gap-2">
+                START A CONVERSATION
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
           </ScrollReveal>
         </div>
       </section>
