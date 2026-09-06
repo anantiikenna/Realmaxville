@@ -20,7 +20,7 @@ function TeamCard({ m }: { m: typeof team[0] }) {
           loading="lazy"
         />
         <div className="absolute inset-0 bg-linear-to-t from-background via-transparent to-transparent" />
-        <div className="absolute top-4 right-4 h-2 w-2 rounded-full bg-[#c7f300] shadow-[0_0_10px_#c7f300]" aria-hidden="true" />
+        <div className="absolute top-4 right-4 h-2 w-2 rounded-full bg-[#c7f300] shadow-[0_0_10px_#c7f300] pulse-active" aria-hidden="true" />
       </div>
       <h4 className="text-xl font-bold text-[#e5e2e1] group-hover:text-[#c7f300] transition-colors">
         {m.name}
