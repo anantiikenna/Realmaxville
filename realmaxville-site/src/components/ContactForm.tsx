@@ -119,7 +119,7 @@ export default function ContactForm() {
 
   return (
     <section
-      id=""
+      id="contact-form"
       className="section-inner py-32"
       aria-labelledby="contact-heading"
     >
