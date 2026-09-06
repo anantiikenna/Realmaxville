@@ -124,7 +124,7 @@ export default function ContactForm() {
       aria-labelledby="contact-heading"
     >
       <ScrollReveal>
-        <div className="text-center mb-16 gap-12">
+        <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-5" aria-hidden="true">
             <div className="h-px w-12 bg-[#c7f300]" />
             <span className="font-(--font-space-mono) text-[10px] tracking-[0.3em] text-[#c7f300] uppercase">
@@ -138,7 +138,7 @@ export default function ContactForm() {
           >
             REACH OUT TO <span className="text-[#c7f300] neon-text-glow">OUR TEAM</span>
           </h2>
-          <p className="text-outline max-w-2xl mx-auto mt-6 leading-relaxed text-center">
+          <p className="text-outline max-w-2xl mx-auto mt-6 leading-relaxed">
             We&apos;re passionate about bringing your vision to life. Share your project ideas and we&apos;ll get back to you within 24 hours.
           </p>
         </div>
@@ -184,7 +184,7 @@ export default function ContactForm() {
             })}
           </div>
 
-          <div className="mt-5 flex-1 min-h-[220px] rounded-lg overflow-hidden border border-[#c7f300]/10 relative">
+          <div className="mt-5 flex-1 min-h-55 rounded-lg overflow-hidden border border-[#c7f300]/10 relative">
             <div className="absolute top-3 left-3 z-10 flex items-center gap-2 bg-surface-container-lowest/80 backdrop-blur-sm px-3 py-1.5 rounded-full border border-[#c7f300]/20">
               <span className="w-1.5 h-1.5 rounded-full bg-[#c7f300] pulse-active" aria-hidden="true" />
               <span className="font-(--font-space-mono) text-[9px] tracking-widest text-[#c7f300]">OUR OFFICE</span>
