@@ -119,7 +119,7 @@ export default function ContactPage() {
             />
 
             {/* Left content */}
-            <div className="relative z-1">
+            <div className="relative z-10">
               <div className="flex items-center gap-3 mb-4" aria-hidden="true">
                 <div className="w-10 h-px bg-[#22c55e]" />
                 <span className="font-(--font-space-mono) text-[10px] tracking-widest text-[#22c55e]">INSTANT SUPPORT</span>
@@ -134,7 +134,7 @@ export default function ContactPage() {
             </div>
 
             {/* Right CTA */}
-            <div className="relative z-1 flex flex-col items-start gap-4">
+            <div className="relative z-10 flex flex-col items-start gap-4">
               <a
                 href="https://wa.me/2348080419259"
                 target="_blank"
