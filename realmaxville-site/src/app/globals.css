@@ -183,22 +183,6 @@ body {
   100% { transform: translateX(-50%); }
 }
 
-/* Team scroll — slow auto-scroll */
-@keyframes team-scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(calc(-50% - 16px)); }
-}
-.team-scroll-track {
-  animation: team-scroll 40s linear infinite;
-  width: max-content;
-}
-.team-scroll-track:hover {
-  animation-play-state: paused;
-}
-.team-scroll-track[data-paused="true"] {
-  animation-play-state: paused;
-}
-
 /* Float animation */
 @keyframes float {
   0%, 100% { transform: translateY(0); }
