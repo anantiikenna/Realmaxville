@@ -12,7 +12,7 @@ const stats = [
 export default function Stats() {
   return (
     <section
-      className="section-inner relative z-30 -mt-16 md:-mt-20"
+      className="section-inner relative z-30 -mt-8 md:-mt-20"
       aria-label="Company statistics"
     >
       <ScrollReveal>

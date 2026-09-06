@@ -31,7 +31,7 @@ export default function Hero() {
             <span className="text-[#c7f300]">WE BUILD LEGACIES.</span>
           </h1>
 
-          <p className="text-[#b0b3b4] text-lg max-w-2xl leading-relaxed mt-8">
+          <p className="text-[#b0b3b4] text-lg max-w-2xl leading-relaxed">
             From architectural design to complete construction, we create timeless spaces that inspire,
             endure and elevate the way you live. Our engineering precision meets futuristic luxury.
           </p>

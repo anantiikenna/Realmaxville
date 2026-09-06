@@ -11,7 +11,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section className="py-32 bg-surface-container-lowest overflow-hidden" aria-labelledby="projects-heading">
+    <section className="py-32 bg-surface-container-lowest" aria-labelledby="projects-heading">
       <div className="section-inner space-y-16">
         <ScrollReveal>
           <div className="text-center space-y-4">
