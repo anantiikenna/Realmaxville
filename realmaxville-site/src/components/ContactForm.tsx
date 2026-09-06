@@ -138,7 +138,7 @@ export default function ContactForm() {
           >
             REACH OUT TO <span className="text-[#c7f300] neon-text-glow">OUR TEAM</span>
           </h2>
-          <p className="text-outline max-w-2xl mx-auto mt-6 leading-relaxed">
+          <p className="text-outline max-w-2xl mx-auto mt-6 leading-relaxed text-center">
             We&apos;re passionate about bringing your vision to life. Share your project ideas and we&apos;ll get back to you within 24 hours.
           </p>
         </div>
