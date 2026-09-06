@@ -120,7 +120,7 @@ export default function ContactForm() {
   return (
     <section
       id="contact-form"
-      className="section-inner py-32"
+      className="section-inner py-32 flex flex-col gap-12"
       aria-labelledby="contact-heading"
     >
       <ScrollReveal>
