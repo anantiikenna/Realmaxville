@@ -25,7 +25,7 @@ export default function Services() {
     <section className="py-32 section-inner" id="services" aria-labelledby="services-heading">
       <div className="flex flex-col md:flex-row gap-16 items-start">
         {/* Sidebar */}
-        <div className="md:w-1/3 sticky top-32 space-y-6">
+        <div className="md:w-1/3 md:sticky md:top-32 space-y-6">
           <ScrollReveal>
             <div className="flex items-center gap-2">
               <div className="w-12 h-px bg-[#c7f300]" aria-hidden="true" />
