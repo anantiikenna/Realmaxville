@@ -27,16 +27,16 @@ export default function ContactPage() {
         <div className="absolute bottom-0 right-0 w-24 h-24 border-b-2 border-r-2 border-[#c7f300]/30" aria-hidden="true" />
 
         <div className="section-inner relative z-10">
-          <div className="max-w-[56rem]">
+          <div className="max-w-[56rem] flex flex-col items-start gap-6">
             {/* Eyebrow */}
-            <div className="flex items-center gap-3 mb-6" aria-hidden="true">
+            <div className="flex items-center gap-3" aria-hidden="true">
               <div className="w-12 h-px bg-[#c7f300]" />
               <span className="font-(--font-space-mono) text-[11px] tracking-[0.3em] text-[#c7f300] uppercase">
                 Get In Touch
               </span>
             </div>
 
-            <h1 className="font-extrabold uppercase leading-[0.9] tracking-[-0.02em] mb-7" style={{ fontSize: "clamp(2.8rem, 7vw, 5rem)" }}>
+            <h1 className="font-extrabold uppercase leading-[0.9] tracking-[-0.02em]" style={{ fontSize: "clamp(2.8rem, 7vw, 5rem)" }}>
               LET&apos;S BUILD{" "}
               <span className="neon-text-glow text-[#c7f300]">
                 SOMETHING
@@ -45,7 +45,7 @@ export default function ContactPage() {
               GREAT TOGETHER.
             </h1>
 
-            <p className="text-[#b0b3b4] text-lg max-w-[38rem] leading-relaxed mb-10">
+            <p className="text-[#b0b3b4] text-lg max-w-[38rem] leading-relaxed">
               Whether you have a project in mind or just want to explore what&apos;s possible, our team is ready to listen and deliver beyond expectations.
             </p>
 
@@ -83,12 +83,12 @@ export default function ContactPage() {
             ].map((s, i) => (
               <div
                 key={s.label}
-                className={`flex flex-col items-center justify-center text-center py-10 px-6
+                className={`flex flex-col items-center justify-center text-center gap-1 py-10 px-6
                   ${i < 3 ? "border-r border-white/5" : ""}
                 `}
               >
                 <span className="text-4xl md:text-5xl font-extrabold text-[#c7f300] neon-text-glow">{s.num}</span>
-                <span className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-outline mt-1 uppercase">{s.label}</span>
+                <span className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-outline uppercase">{s.label}</span>
               </div>
             ))}
           </div>
@@ -119,8 +119,8 @@ export default function ContactPage() {
             />
 
             {/* Left content */}
-            <div className="relative z-10">
-              <div className="flex items-center gap-3 mb-4" aria-hidden="true">
+            <div className="relative z-10 flex flex-col gap-4">
+              <div className="flex items-center gap-3" aria-hidden="true">
                 <div className="w-10 h-px bg-[#22c55e]" />
                 <span className="font-(--font-space-mono) text-[10px] tracking-widest text-[#22c55e]">INSTANT SUPPORT</span>
               </div>
@@ -128,7 +128,7 @@ export default function ContactPage() {
                 PREFER TO CHAT?{" "}
                 <span className="text-[#22c55e]">WHATSAPP US</span>
               </h2>
-              <p className="text-[#8e9192] mt-4 max-w-[28rem] leading-relaxed">
+              <p className="text-[#8e9192] max-w-[28rem] leading-relaxed">
                 Get faster responses on WhatsApp. Our team is always ready to walk you through your project requirements.
               </p>
             </div>
@@ -158,10 +158,12 @@ export default function ContactPage() {
       {/* Bottom nav strip */}
       <div className="py-12 bg-[#080808] border-t border-white/4">
         <div className="section-inner flex flex-wrap items-center justify-between gap-6">
-          <div>
-            <span className="text-[#e5e2e1] font-bold text-lg">REALMAXVILLE</span>
-            <span className="ml-2 w-2 h-2 rounded-full bg-[#c7f300] inline-block pulse-active" aria-hidden="true" />
-            <p className="font-(--font-space-mono) text-[10px] tracking-widest text-outline mt-1">ARCHITECTURE & CONSTRUCTION · LAGOS</p>
+          <div className="flex flex-col gap-1">
+            <div>
+              <span className="text-[#e5e2e1] font-bold text-lg">REALMAXVILLE</span>
+              <span className="ml-2 w-2 h-2 rounded-full bg-[#c7f300] inline-block pulse-active" aria-hidden="true" />
+            </div>
+            <p className="font-(--font-space-mono) text-[10px] tracking-widest text-outline">ARCHITECTURE & CONSTRUCTION · LAGOS</p>
           </div>
           <div className="flex flex-wrap gap-6 font-(--font-space-mono) text-[10px] tracking-widest text-outline">
             <Link href="/" className="hover:text-[#c7f300] transition-colors uppercase">Home</Link>

@@ -157,12 +157,12 @@ export default function ContactForm() {
                   <div className="w-11 h-11 rounded-lg bg-[#c7f300]/10 border border-[#c7f300]/20 flex items-center justify-center text-[#c7f300] shrink-0 group-hover:bg-[#c7f300]/20 group-hover:border-[#c7f300]/40 group-hover:shadow-[0_0_12px_rgba(199,243,0,0.12)] transition-all duration-300">
                     {item.icon}
                   </div>
-                  <div className="min-w-0">
-                    <div className="font-(--font-space-mono) text-[9px] tracking-[0.25em] text-[#c7f300] mb-1.5 uppercase">
+                  <div className="min-w-0 flex flex-col gap-0.5">
+                    <div className="font-(--font-space-mono) text-[9px] tracking-[0.25em] text-[#c7f300] uppercase">
                       {item.label}
                     </div>
                     <div className="text-[#e5e2e1] text-sm font-semibold truncate">{item.value}</div>
-                    <div className="text-outline text-xs mt-0.5 leading-relaxed">{item.sub}</div>
+                    <div className="text-outline text-xs leading-relaxed">{item.sub}</div>
                   </div>
                 </div>
               );
@@ -184,7 +184,7 @@ export default function ContactForm() {
             })}
           </div>
 
-          <div className="mt-5 flex-1 min-h-55 rounded-lg overflow-hidden border border-[#c7f300]/10 relative">
+          <div className="flex flex-col gap-5 flex-1 min-h-55 rounded-lg overflow-hidden border border-[#c7f300]/10 relative">
             <div className="absolute top-3 left-3 z-10 flex items-center gap-2 bg-surface-container-lowest/80 backdrop-blur-sm px-3 py-1.5 rounded-full border border-[#c7f300]/20">
               <span className="w-1.5 h-1.5 rounded-full bg-[#c7f300] pulse-active" aria-hidden="true" />
               <span className="font-(--font-space-mono) text-[9px] tracking-widest text-[#c7f300]">OUR OFFICE</span>
@@ -213,8 +213,8 @@ export default function ContactForm() {
 
             <div className="absolute top-0 left-8 right-8 h-px bg-linear-to-r from-transparent via-[#c7f300]/40 to-transparent" aria-hidden="true" />
 
-            <div>
-              <h3 className="font-(--font-space-mono) text-[10px] tracking-[0.3em] text-[#c7f300] uppercase mb-1">
+            <div className="flex flex-col gap-1">
+              <h3 className="font-(--font-space-mono) text-[10px] tracking-[0.3em] text-[#c7f300] uppercase">
                 Send Us a Message
               </h3>
               <p className="text-outline text-xs leading-relaxed">
@@ -229,10 +229,10 @@ export default function ContactForm() {
             )}
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div>
+              <div className="flex flex-col gap-2.5">
                 <label
                   htmlFor="contact-name"
-                  className="flex items-center gap-2 font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#b0b3b4] uppercase mb-2.5"
+                  className="flex items-center gap-2 font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#b0b3b4] uppercase"
                 >
                   FULL NAME *
                 </label>
@@ -252,10 +252,10 @@ export default function ContactForm() {
                 />
                 {errors.name && <FieldError id="contact-name-error" message={errors.name} />}
               </div>
-              <div>
+              <div className="flex flex-col gap-2.5">
                 <label
                   htmlFor="contact-email"
-                  className="flex items-center gap-2 font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#b0b3b4] uppercase mb-2.5"
+                  className="flex items-center gap-2 font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#b0b3b4] uppercase"
                 >
                   EMAIL ADDRESS *
                 </label>
@@ -276,10 +276,10 @@ export default function ContactForm() {
               </div>
             </div>
 
-            <div>
+            <div className="flex flex-col gap-2.5">
               <label
                 htmlFor="contact-phone"
-                className="flex items-center gap-2 font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#b0b3b4] uppercase mb-2.5"
+                className="flex items-center gap-2 font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#b0b3b4] uppercase"
               >
                 PHONE NUMBER
               </label>
@@ -294,10 +294,10 @@ export default function ContactForm() {
               />
             </div>
 
-            <div>
+            <div className="flex flex-col gap-2.5">
               <label
                 htmlFor="contact-subject"
-                className="flex items-center gap-2 font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#b0b3b4] uppercase mb-2.5"
+                className="flex items-center gap-2 font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#b0b3b4] uppercase"
               >
                 PROJECT TYPE
               </label>
@@ -320,10 +320,10 @@ export default function ContactForm() {
               </select>
             </div>
 
-            <div>
+            <div className="flex flex-col gap-2.5">
               <label
                 htmlFor="contact-message"
-                className="flex items-center gap-2 font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#b0b3b4] uppercase mb-2.5"
+                className="flex items-center gap-2 font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#b0b3b4] uppercase"
               >
                 PROJECT DETAILS *
               </label>
@@ -352,7 +352,7 @@ export default function ContactForm() {
                 value="true"
                 checked={form.smsConsent}
                 onChange={(e) => setForm({ ...form, smsConsent: e.target.checked })}
-                className="mt-1 rounded border-gray-700 text-[#c7f300] focus:ring-[#c7f300] bg-black/40 cursor-pointer"
+                className="mt-0.5 rounded border-gray-700 text-[#c7f300] focus:ring-[#c7f300] bg-black/40 cursor-pointer"
               />
               <label htmlFor="sms_consent" className="text-[11px] text-[#b0b3b4] leading-relaxed cursor-pointer">
                 <span className="font-semibold text-[#c7f300]">(Optional)</span> I consent to receive SMS updates regarding my inquiry from Realmaxville. Msg frequency varies. Msg & data rates may apply. Reply STOP to opt out. See our{" "}
