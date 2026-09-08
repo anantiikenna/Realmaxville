@@ -113,7 +113,7 @@ export default function ContactForm() {
   const inputBase =
     "w-full px-4 py-3.5 rounded-lg bg-white/4 border text-[#e5e2e1] text-sm focus:outline-none transition-all duration-200 placeholder:text-[#555]";
   const inputValid =
-    "border-white/8 focus:border-[#E6C687] focus:bg-white/6 focus:shadow-[0_0_0_3px_rgba(230,198,135,0.08)]";
+    "border-white/8 focus:border-[#FFD700] focus:bg-white/6 focus:shadow-[0_0_0_3px_rgba(255,215,0,0.08)]";
   const inputError =
     "border-red-500/70 bg-red-500/5 shadow-[0_0_0_2px_rgba(239,68,68,0.1)] focus:border-red-400";
 
@@ -126,17 +126,17 @@ export default function ContactForm() {
       <ScrollReveal>
         <div className="text-center flex flex-col items-center gap-6">
           <div className="flex items-center justify-center gap-3" aria-hidden="true">
-            <div className="h-px w-12 bg-[#E6C687]" />
-            <span className="font-(--font-space-mono) text-[10px] tracking-[0.3em] text-[#E6C687] uppercase">
+            <div className="h-px w-12 bg-[#FFD700]" />
+            <span className="font-(--font-space-mono) text-[10px] tracking-[0.3em] text-[#FFD700] uppercase">
               Direct Contact
             </span>
-            <div className="h-px w-12 bg-[#E6C687]" />
+            <div className="h-px w-12 bg-[#FFD700]" />
           </div>
           <h2
             id="contact-heading"
             className="text-4xl md:text-[52px] font-extrabold tracking-tight"
           >
-            REACH OUT TO <span className="text-[#E6C687] neon-text-glow">OUR TEAM</span>
+            REACH OUT TO <span className="text-[#FFD700] neon-text-glow">OUR TEAM</span>
           </h2>
           <p className="text-outline max-w-2xl mx-auto leading-relaxed">
             We&apos;re passionate about bringing your vision to life. Share your project ideas and we&apos;ll get back to you within 24 hours.
@@ -152,13 +152,13 @@ export default function ContactForm() {
               const Card = (
                 <div
                   key={item.label}
-                  className="group flex gap-4.5 items-start p-4.5 sm:p-5 rounded-lg border border-white/5 bg-white/2 hover:border-[#E6C687]/25 hover:bg-[#E6C687]/3 transition-all duration-300 cursor-default"
+                  className="group flex gap-4.5 items-start p-4.5 sm:p-5 rounded-lg border border-white/5 bg-white/2 hover:border-[#FFD700]/25 hover:bg-[#FFD700]/3 transition-all duration-300 cursor-default"
                 >
-                  <div className="w-11 h-11 rounded-lg bg-[#E6C687]/10 border border-[#E6C687]/20 flex items-center justify-center text-[#E6C687] shrink-0 group-hover:bg-[#E6C687]/20 group-hover:border-[#E6C687]/40 group-hover:shadow-[0_0_12px_rgba(230,198,135,0.12)] transition-all duration-300">
+                  <div className="w-11 h-11 rounded-lg bg-[#FFD700]/10 border border-[#FFD700]/20 flex items-center justify-center text-[#FFD700] shrink-0 group-hover:bg-[#FFD700]/20 group-hover:border-[#FFD700]/40 group-hover:shadow-[0_0_12px_rgba(255,215,0,0.12)] transition-all duration-300">
                     {item.icon}
                   </div>
                   <div className="min-w-0 flex flex-col gap-0.5">
-                    <div className="font-(--font-space-mono) text-[9px] tracking-[0.25em] text-[#E6C687] uppercase">
+                    <div className="font-(--font-space-mono) text-[9px] tracking-[0.25em] text-[#FFD700] uppercase">
                       {item.label}
                     </div>
                     <div className="text-[#e5e2e1] text-sm font-semibold truncate">{item.value}</div>
@@ -184,10 +184,10 @@ export default function ContactForm() {
             })}
           </div>
 
-          <div className="flex flex-col gap-5 flex-1 min-h-55 rounded-lg overflow-hidden border border-[#E6C687]/10 relative">
-            <div className="absolute top-3 left-3 z-10 flex items-center gap-2 bg-surface-container-lowest/80 backdrop-blur-sm px-3 py-1.5 rounded-full border border-[#E6C687]/20">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#E6C687] pulse-active" aria-hidden="true" />
-              <span className="font-(--font-space-mono) text-[9px] tracking-widest text-[#E6C687]">OUR OFFICE</span>
+          <div className="flex flex-col gap-5 flex-1 min-h-55 rounded-lg overflow-hidden border border-[#FFD700]/10 relative">
+            <div className="absolute top-3 left-3 z-10 flex items-center gap-2 bg-surface-container-lowest/80 backdrop-blur-sm px-3 py-1.5 rounded-full border border-[#FFD700]/20">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#FFD700] pulse-active" aria-hidden="true" />
+              <span className="font-(--font-space-mono) text-[9px] tracking-widest text-[#FFD700]">OUR OFFICE</span>
             </div>
             <iframe
               src="https://maps.google.com/maps?q=4a%2C%20Ogombo%20Rd%2C%20Opp%20Abraham%20Adesanya%20Estate%2C%20Eti%20-%20Osa%2C%20Lagos&t=m&z=14&output=embed"
@@ -211,10 +211,10 @@ export default function ContactForm() {
               <input type="text" name="hp_field" tabIndex={-1} autoComplete="off" />
             </div>
 
-            <div className="absolute top-0 left-8 right-8 h-px bg-linear-to-r from-transparent via-[#E6C687]/40 to-transparent" aria-hidden="true" />
+            <div className="absolute top-0 left-8 right-8 h-px bg-linear-to-r from-transparent via-[#FFD700]/40 to-transparent" aria-hidden="true" />
 
             <div className="flex flex-col gap-1">
-              <h3 className="font-(--font-space-mono) text-[10px] tracking-[0.3em] text-[#E6C687] uppercase">
+              <h3 className="font-(--font-space-mono) text-[10px] tracking-[0.3em] text-[#FFD700] uppercase">
                 Send Us a Message
               </h3>
               <p className="text-outline text-xs leading-relaxed">
@@ -352,15 +352,15 @@ export default function ContactForm() {
                 value="true"
                 checked={form.smsConsent}
                 onChange={(e) => setForm({ ...form, smsConsent: e.target.checked })}
-                className="mt-0.5 rounded border-gray-700 text-[#E6C687] focus:ring-[#E6C687] bg-black/40 cursor-pointer"
+                className="mt-0.5 rounded border-gray-700 text-[#FFD700] focus:ring-[#FFD700] bg-black/40 cursor-pointer"
               />
               <label htmlFor="sms_consent" className="text-[11px] text-[#b0b3b4] leading-relaxed cursor-pointer">
-                <span className="font-semibold text-[#E6C687]">(Optional)</span> I consent to receive SMS updates regarding my inquiry from Realmaxville. Msg frequency varies. Msg & data rates may apply. Reply STOP to opt out. See our{" "}
-                <Link href="/privacy" className="text-[#E6C687] underline hover:text-white">
+                <span className="font-semibold text-[#FFD700]">(Optional)</span> I consent to receive SMS updates regarding my inquiry from Realmaxville. Msg frequency varies. Msg & data rates may apply. Reply STOP to opt out. See our{" "}
+                <Link href="/privacy" className="text-[#FFD700] underline hover:text-white">
                   Privacy Policy
                 </Link>{" "}
                 and{" "}
-                <Link href="/terms" className="text-[#E6C687] underline hover:text-white">
+                <Link href="/terms" className="text-[#FFD700] underline hover:text-white">
                   Terms of Use
                 </Link>.
               </label>
@@ -371,10 +371,10 @@ export default function ContactForm() {
               disabled={submitting || sent}
               className="w-full h-11 rounded-lg font-(--font-space-mono) text-sm tracking-widest transition-all active:scale-[0.98] disabled:cursor-not-allowed relative overflow-hidden"
               style={{
-                backgroundColor: sent ? "rgba(230,198,135,0.15)" : "#E6C687",
-                color: sent ? "#E6C687" : "#1a1200",
-                border: sent ? "1px solid rgba(230,198,135,0.4)" : "none",
-                boxShadow: submitting ? "0 0 20px rgba(230,198,135,0.2)" : undefined,
+                backgroundColor: sent ? "rgba(255,215,0,0.15)" : "#FFD700",
+                color: sent ? "#FFD700" : "#1a1200",
+                border: sent ? "1px solid rgba(255,215,0,0.4)" : "none",
+                boxShadow: submitting ? "0 0 20px rgba(255,215,0,0.2)" : undefined,
               }}
             >
               {submitting ? (

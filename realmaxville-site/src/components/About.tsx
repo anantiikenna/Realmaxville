@@ -16,27 +16,27 @@ export default function About() {
               />
               <div className="absolute inset-0 bg-linear-to-tr from-background/80 via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6">
-                <span className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#E6C687] bg-[#E6C687]/10 px-3 py-1 rounded-full border border-[#E6C687]/20 backdrop-blur-md">
+                <span className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#FFD700] bg-[#FFD700]/10 px-3 py-1 rounded-full border border-[#FFD700]/20 backdrop-blur-md">
                   PHASE 01: STRUCTURE
                 </span>
               </div>
             </div>
             <div className="absolute -bottom-6 -right-6 glass-panel p-4 rounded-lg cyber-border">
-              <div className="text-3xl font-extrabold text-[#E6C687]">9+</div>
+              <div className="text-3xl font-extrabold text-[#FFD700]">9+</div>
               <div className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-outline">YEARS</div>
             </div>
-            <div className="absolute -top-4 -left-4 w-20 h-20 border border-[#E6C687]/10 rounded-full animate-spin-slow" aria-hidden="true" />
+            <div className="absolute -top-4 -left-4 w-20 h-20 border border-[#FFD700]/10 rounded-full animate-spin-slow" aria-hidden="true" />
           </div>
         </ScrollReveal>
 
         <ScrollReveal direction="right">
           <div className="flex items-center gap-2 mb-6">
-            <div className="w-12 h-px bg-[#E6C687]" aria-hidden="true" />
-            <span className="font-(--font-space-mono) text-[12px] tracking-[0.2em] text-[#E6C687]">ABOUT US</span>
+            <div className="w-12 h-px bg-[#FFD700]" aria-hidden="true" />
+            <span className="font-(--font-space-mono) text-[12px] tracking-[0.2em] text-[#FFD700]">ABOUT US</span>
           </div>
           <h2 id="about-heading" className="text-4xl md:text-[48px] font-extrabold leading-[1.1] mt-2">
             WHERE WE BUILD <br />
-            <span className="text-[#E6C687] neon-text-glow">YOUR VISIONS</span>
+            <span className="text-[#FFD700] neon-text-glow">YOUR VISIONS</span>
           </h2>
           <p className="mt-6 text-[#b0b3b4] leading-relaxed">
             RealMaxVille is a goal-oriented, construction structural and architectural company with a passion of satisfying our clients need with rich innovation and value creation. Established in 2017 and registered as a limited liability company, we started operations in 2019.
@@ -56,16 +56,16 @@ export default function About() {
               <span
                 key={f.label}
                 role="listitem"
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#E6C687]/8 border border-[#E6C687]/25 font-(--font-space-mono) text-[10px] tracking-[0.12em] text-[#E6C687] hover:bg-[#E6C687]/15 hover:border-[#E6C687]/50 transition-all cursor-default"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#FFD700]/8 border border-[#FFD700]/25 font-(--font-space-mono) text-[10px] tracking-[0.12em] text-[#FFD700] hover:bg-[#FFD700]/15 hover:border-[#FFD700]/50 transition-all cursor-default"
               >
-                <span className="w-1 h-1 rounded-full bg-[#E6C687] shrink-0" aria-hidden="true" />
+                <span className="w-1 h-1 rounded-full bg-[#FFD700] shrink-0" aria-hidden="true" />
                 {f.label}
               </span>
             ))}
           </div>
 
           {/* Divider */}
-          <div className="mt-8 h-px bg-linear-to-r from-[#E6C687]/20 via-[#E6C687]/5 to-transparent" aria-hidden="true" />
+          <div className="mt-8 h-px bg-linear-to-r from-[#FFD700]/20 via-[#FFD700]/5 to-transparent" aria-hidden="true" />
 
           {/* Value props */}
           <div className="mt-8 grid grid-cols-2 gap-5">
@@ -77,11 +77,11 @@ export default function About() {
             ].map((item) => (
               <div
                 key={item.num}
-                className="group relative pl-4 py-4 pr-4 rounded-lg bg-white/2 border border-white/5 hover:border-[#E6C687]/25 hover:bg-[#E6C687]/3 transition-all duration-300"
+                className="group relative pl-4 py-4 pr-4 rounded-lg bg-white/2 border border-white/5 hover:border-[#FFD700]/25 hover:bg-[#FFD700]/3 transition-all duration-300"
               >
                 {/* left accent bar */}
-                <div className="absolute left-0 top-3 bottom-3 w-0.5 rounded-full bg-[#E6C687]/40 group-hover:bg-[#E6C687] transition-colors" aria-hidden="true" />
-                <span className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#E6C687]/60 group-hover:text-[#E6C687] transition-colors">{item.num}</span>
+                <div className="absolute left-0 top-3 bottom-3 w-0.5 rounded-full bg-[#FFD700]/40 group-hover:bg-[#FFD700] transition-colors" aria-hidden="true" />
+                <span className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#FFD700]/60 group-hover:text-[#FFD700] transition-colors">{item.num}</span>
                 <div className="text-[#e5e2e1] text-sm font-semibold mt-2">{item.title}</div>
                 <div className="text-outline text-xs mt-2 leading-relaxed">{item.desc}</div>
               </div>

@@ -41,8 +41,8 @@ export default function Process() {
         <ScrollReveal>
           <div className="space-y-4">
             <div className="flex items-center gap-2" aria-hidden="true">
-              <div className="w-12 h-px bg-[#E6C687]" />
-              <span className="font-(--font-space-mono) text-[11px] tracking-[0.2em] text-[#E6C687] uppercase">How We Work</span>
+              <div className="w-12 h-px bg-[#FFD700]" />
+              <span className="font-(--font-space-mono) text-[11px] tracking-[0.2em] text-[#FFD700] uppercase">How We Work</span>
             </div>
             <h2 id="process-heading" className="text-3xl md:text-[32px] font-bold uppercase tracking-tight leading-[1.2]">
               OUR CONSTRUCTION PROCESS
@@ -57,13 +57,13 @@ export default function Process() {
             {/* Steps */}
             {steps.map((step) => (
               <article key={step.id} className="relative z-10 space-y-6">
-                <div className="glass w-24 h-24 rounded-full border border-[#E6C687]/30 flex items-center justify-center mx-auto md:mx-0 glow-hover transition-all">
-                  <svg className="w-10 h-10 text-[#E6C687]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <div className="glass w-24 h-24 rounded-full border border-[#FFD700]/30 flex items-center justify-center mx-auto md:mx-0 glow-hover transition-all">
+                  <svg className="w-10 h-10 text-[#FFD700]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     {step.icon}
                   </svg>
                 </div>
                 <div className="text-center md:text-left space-y-3">
-                  <span className="font-(--font-space-mono) text-xs tracking-[0.2em] text-[#E6C687]">{step.id}</span>
+                  <span className="font-(--font-space-mono) text-xs tracking-[0.2em] text-[#FFD700]">{step.id}</span>
                   <h4 className="text-2xl font-semibold uppercase leading-[1.3] tracking-[-0.01em]">{step.title}</h4>
                   <p className="text-[#b0b3b4] text-sm leading-relaxed">{step.desc}</p>
                 </div>

@@ -24,7 +24,7 @@ export default function Stats() {
                 ${i > 0 ? "md:border-l md:border-white/5" : ""}
               `}
             >
-              <svg className="mx-auto h-8 w-8 text-[#E6C687] shrink-0" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24" aria-hidden="true">
+              <svg className="mx-auto h-8 w-8 text-[#FFD700] shrink-0" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" d={stat.icon} />
               </svg>
               <div className="text-4xl md:text-5xl font-extrabold text-white leading-none">

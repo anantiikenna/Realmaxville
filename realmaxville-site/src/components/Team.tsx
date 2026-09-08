@@ -12,7 +12,7 @@ const team = [
 function TeamCard({ m }: { m: typeof team[0] }) {
   return (
     <article className="group shrink-0 w-[300px] md:w-[340px] select-none">
-      <div className="relative aspect-3/4 rounded-lg overflow-hidden glass-card mb-6 border-t border-[#E6C687]/30">
+      <div className="relative aspect-3/4 rounded-lg overflow-hidden glass-card mb-6 border-t border-[#FFD700]/30">
         <img
           src={m.img}
           alt={`Portrait of ${m.name}, ${m.role} at Realmaxville`}
@@ -21,12 +21,12 @@ function TeamCard({ m }: { m: typeof team[0] }) {
           draggable={false}
         />
         <div className="absolute inset-0 bg-linear-to-t from-background via-transparent to-transparent" />
-        <div className="absolute top-4 right-4 h-2 w-2 rounded-full bg-[#E6C687] shadow-[0_0_10px_#E6C687] pulse-active" aria-hidden="true" />
+        <div className="absolute top-4 right-4 h-2 w-2 rounded-full bg-[#FFD700] shadow-[0_0_10px_#FFD700] pulse-active" aria-hidden="true" />
       </div>
-      <h4 className="text-xl font-bold text-[#e5e2e1] group-hover:text-[#E6C687] transition-colors">
+      <h4 className="text-xl font-bold text-[#e5e2e1] group-hover:text-[#FFD700] transition-colors">
         {m.name}
       </h4>
-      <p className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#E6C687] mt-1.5 mb-3">
+      <p className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#FFD700] mt-1.5 mb-3">
         {m.role}
       </p>
       <p className="text-[#b0b3b4] text-sm leading-relaxed">{m.desc}</p>
@@ -35,7 +35,7 @@ function TeamCard({ m }: { m: typeof team[0] }) {
           href={m.linkedin}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-outline text-xs hover:bg-[#E6C687] hover:text-on-accent transition-all"
+          className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-outline text-xs hover:bg-[#FFD700] hover:text-on-accent transition-all"
           aria-label={`${m.name} on LinkedIn`}
         >
           in
@@ -146,8 +146,8 @@ export default function Team() {
           <div className="flex flex-col justify-between items-start mb-16 gap-8">
             <div className="max-w-[36rem]">
               <div className="flex items-center gap-2 mb-4">
-                <div className="w-12 h-px bg-[#E6C687]" aria-hidden="true" />
-                <span className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#E6C687] uppercase">OUR CORE</span>
+                <div className="w-12 h-px bg-[#FFD700]" aria-hidden="true" />
+                <span className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#FFD700] uppercase">OUR CORE</span>
               </div>
               <h2 id="team-heading" className="text-3xl md:text-5xl font-extrabold leading-[1.15]">
                 THE ARCHITECTS <br />OF THE LAB

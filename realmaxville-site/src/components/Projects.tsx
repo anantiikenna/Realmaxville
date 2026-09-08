@@ -18,7 +18,7 @@ export default function Projects() {
             <h2 id="projects-heading" className="text-3xl md:text-[32px] font-bold uppercase tracking-tight leading-[1.2]">
               OUR FEATURED PROJECTS
             </h2>
-            <div className="w-24 h-1 bg-[#E6C687] mx-auto" aria-hidden="true" />
+            <div className="w-24 h-1 bg-[#FFD700] mx-auto" aria-hidden="true" />
           </div>
         </ScrollReveal>
 
@@ -28,7 +28,7 @@ export default function Projects() {
               <Link
                 key={p.name}
                 href={`/projects/${p.slug}`}
-                className="group relative overflow-hidden rounded-xl border border-white/5 hover:border-[#E6C687]/40 aspect-3/4 cursor-pointer block transition-all"
+                className="group relative overflow-hidden rounded-xl border border-white/5 hover:border-[#FFD700]/40 aspect-3/4 cursor-pointer block transition-all"
               >
                 <img
                   src={p.img}
@@ -42,11 +42,11 @@ export default function Projects() {
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-black via-black/30 to-transparent opacity-85" />
                 <div className="absolute bottom-0 left-0 p-8 w-full">
-                  <p className="text-[#E6C687] font-(--font-space-mono) text-[11px] tracking-[0.2em] uppercase">{p.type}</p>
-                  <h4 className="text-lg font-bold mt-2 leading-snug text-white group-hover:text-[#E6C687] transition-colors">{p.name}</h4>
+                  <p className="text-[#FFD700] font-(--font-space-mono) text-[11px] tracking-[0.2em] uppercase">{p.type}</p>
+                  <h4 className="text-lg font-bold mt-2 leading-snug text-white group-hover:text-[#FFD700] transition-colors">{p.name}</h4>
                   <div className="flex justify-between items-center mt-4 border-t border-white/10 pt-4">
                     <span className="text-xs text-[#b0b3b4]">{p.location} &bull; {p.year}</span>
-                    <svg className="w-4 h-4 text-[#E6C687] opacity-80 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <svg className="w-4 h-4 text-[#FFD700] opacity-80 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7v10" />
                     </svg>
                   </div>
@@ -59,7 +59,7 @@ export default function Projects() {
         <div className="text-center pt-8">
           <Link
             href="/projects"
-            className="border border-[#E6C687] text-[#E6C687] px-12 py-4 rounded-full font-(--font-space-mono) text-[11px] tracking-[0.2em] uppercase hover:bg-[#E6C687] hover:text-on-accent transition-all inline-block"
+            className="border border-[#FFD700] text-[#FFD700] px-12 py-4 rounded-full font-(--font-space-mono) text-[11px] tracking-[0.2em] uppercase hover:bg-[#FFD700] hover:text-on-accent transition-all inline-block"
           >
             VIEW ALL PROJECTS
           </Link>

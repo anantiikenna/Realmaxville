@@ -18,27 +18,27 @@ export default function ContactPage() {
         <div
           className="absolute rounded-full pointer-events-none top-1/2 left-[60%] -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] blur-[80px]"
           style={{
-            background: "radial-gradient(circle, rgba(230,198,135,0.07), transparent 70%)",
+            background: "radial-gradient(circle, rgba(255,215,0,0.07), transparent 70%)",
           }}
           aria-hidden="true"
         />
         {/* Corner accent lines */}
-        <div className="absolute top-0 left-0 w-24 h-24 border-t-2 border-l-2 border-[#E6C687]/30" aria-hidden="true" />
-        <div className="absolute bottom-0 right-0 w-24 h-24 border-b-2 border-r-2 border-[#E6C687]/30" aria-hidden="true" />
+        <div className="absolute top-0 left-0 w-24 h-24 border-t-2 border-l-2 border-[#FFD700]/30" aria-hidden="true" />
+        <div className="absolute bottom-0 right-0 w-24 h-24 border-b-2 border-r-2 border-[#FFD700]/30" aria-hidden="true" />
 
         <div className="section-inner relative z-10">
           <div className="max-w-[56rem] flex flex-col items-start gap-6">
             {/* Eyebrow */}
             <div className="flex items-center gap-3" aria-hidden="true">
-              <div className="w-12 h-px bg-[#E6C687]" />
-              <span className="font-(--font-space-mono) text-[11px] tracking-[0.3em] text-[#E6C687] uppercase">
+              <div className="w-12 h-px bg-[#FFD700]" />
+              <span className="font-(--font-space-mono) text-[11px] tracking-[0.3em] text-[#FFD700] uppercase">
                 Get In Touch
               </span>
             </div>
 
             <h1 className="font-extrabold uppercase leading-[0.9] tracking-[-0.02em]" style={{ fontSize: "clamp(2.8rem, 7vw, 5rem)" }}>
               LET&apos;S BUILD{" "}
-              <span className="neon-text-glow text-[#E6C687]">
+              <span className="neon-text-glow text-[#FFD700]">
                 SOMETHING
               </span>
               <br />
@@ -59,7 +59,7 @@ export default function ContactPage() {
               </a>
               <a
                 href="tel:08080419259"
-                className="inline-flex items-center gap-2 h-12 px-8 rounded-full font-(--font-space-mono) text-[0.7rem] tracking-widest text-[#E6C687] border border-[#E6C687]/30 hover:border-[#E6C687] hover:bg-[#E6C687]/5 transition-all"
+                className="inline-flex items-center gap-2 h-12 px-8 rounded-full font-(--font-space-mono) text-[0.7rem] tracking-widest text-[#FFD700] border border-[#FFD700]/30 hover:border-[#FFD700] hover:bg-[#FFD700]/5 transition-all"
               >
                 <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -87,7 +87,7 @@ export default function ContactPage() {
                   ${i < 3 ? "border-r border-white/5" : ""}
                 `}
               >
-                <span className="text-4xl md:text-5xl font-extrabold text-[#E6C687] neon-text-glow">{s.num}</span>
+                <span className="text-4xl md:text-5xl font-extrabold text-[#FFD700] neon-text-glow">{s.num}</span>
                 <span className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-outline uppercase">{s.label}</span>
               </div>
             ))}
@@ -161,14 +161,14 @@ export default function ContactPage() {
           <div className="flex flex-col gap-1">
             <div>
               <span className="text-[#e5e2e1] font-bold text-lg">REALMAXVILLE</span>
-              <span className="ml-2 w-2 h-2 rounded-full bg-[#E6C687] inline-block pulse-active" aria-hidden="true" />
+              <span className="ml-2 w-2 h-2 rounded-full bg-[#FFD700] inline-block pulse-active" aria-hidden="true" />
             </div>
             <p className="font-(--font-space-mono) text-[10px] tracking-widest text-outline">ARCHITECTURE & CONSTRUCTION · LAGOS</p>
           </div>
           <div className="flex flex-wrap gap-6 font-(--font-space-mono) text-[10px] tracking-widest text-outline">
-            <Link href="/" className="hover:text-[#E6C687] transition-colors uppercase">Home</Link>
-            <Link href="/about" className="hover:text-[#E6C687] transition-colors uppercase">About</Link>
-            <Link href="/contact" className="hover:text-[#E6C687] transition-colors uppercase">Contact</Link>
+            <Link href="/" className="hover:text-[#FFD700] transition-colors uppercase">Home</Link>
+            <Link href="/about" className="hover:text-[#FFD700] transition-colors uppercase">About</Link>
+            <Link href="/contact" className="hover:text-[#FFD700] transition-colors uppercase">Contact</Link>
           </div>
         </div>
       </div>

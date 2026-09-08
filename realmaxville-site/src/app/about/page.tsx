@@ -22,25 +22,25 @@ export default function AboutPage() {
             top: "50%", left: "50%",
             transform: "translate(-50%, -50%)",
             width: 800, height: 800,
-            background: "radial-gradient(circle, rgba(230,198,135,0.06), transparent 70%)",
+            background: "radial-gradient(circle, rgba(255,215,0,0.06), transparent 70%)",
             filter: "blur(80px)",
             pointerEvents: "none",
           }}
         />
         <div className="section-inner relative z-10 text-center">
           <div className="flex items-center justify-center gap-2 mb-6" aria-hidden="true">
-            <div className="h-px w-12 bg-[#E6C687]" />
-            <span className="font-(--font-space-mono) text-[10px] tracking-[0.3em] text-[#E6C687]">
+            <div className="h-px w-12 bg-[#FFD700]" />
+            <span className="font-(--font-space-mono) text-[10px] tracking-[0.3em] text-[#FFD700]">
               WHO WE ARE
             </span>
-            <div className="h-px w-12 bg-[#E6C687]" />
+            <div className="h-px w-12 bg-[#FFD700]" />
           </div>
           <h1
             id="about-heading"
             className="font-extrabold uppercase leading-none tracking-[-0.02em]"
             style={{ fontSize: "clamp(2.5rem, 6vw, 4rem)" }}
           >
-            ABOUT <span className="neon-text-glow text-[#E6C687]">REALMAXVILLE</span>
+            ABOUT <span className="neon-text-glow text-[#FFD700]">REALMAXVILLE</span>
           </h1>
           <p className="mt-6 text-[#b0b3b4] max-w-xl mx-auto text-lg leading-relaxed">
             A goal-oriented construction, structural and architectural company with a
@@ -56,31 +56,31 @@ export default function AboutPage() {
       <section className="py-16 md:py-24" style={{ backgroundColor: "#0e0e0e" }} aria-labelledby="mission-heading">
         <div className="section-inner">
           <div className="flex items-center gap-3 mb-12" aria-hidden="true">
-            <div className="h-px w-12 bg-[#E6C687]" />
-            <span className="font-(--font-space-mono) text-[10px] tracking-[0.3em] text-[#E6C687]">OUR PILLARS</span>
+            <div className="h-px w-12 bg-[#FFD700]" />
+            <span className="font-(--font-space-mono) text-[10px] tracking-[0.3em] text-[#FFD700]">OUR PILLARS</span>
           </div>
           <h2 id="mission-heading" className="sr-only">Mission, Vision &amp; Values</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Mission — tall card */}
             <div className="glass-panel cyber-border rounded-lg p-8 md:row-span-2 relative overflow-hidden group">
-              <div className="absolute inset-0 bg-linear-to-br from-[#E6C687]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
+              <div className="absolute inset-0 bg-linear-to-br from-[#FFD700]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
               <div className="relative z-10 h-full flex flex-col">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-lg bg-[#E6C687]/10 border border-[#E6C687]/20 flex items-center justify-center" aria-hidden="true">
-                    <svg className="w-5 h-5 text-[#E6C687]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-10 h-10 rounded-lg bg-[#FFD700]/10 border border-[#FFD700]/20 flex items-center justify-center" aria-hidden="true">
+                    <svg className="w-5 h-5 text-[#FFD700]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   </div>
-                  <span className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#E6C687] uppercase">Mission</span>
+                  <span className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#FFD700] uppercase">Mission</span>
                 </div>
                 <p className="text-[#b0b3b4] leading-relaxed text-base flex-1">
                   To deliver exceptional architectural and construction solutions that exceed client expectations, combining innovative design with uncompromising quality and sustainability.
                 </p>
                 <div className="mt-8 pt-4 border-t border-white/5">
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-[#E6C687] pulse-active" aria-hidden="true" />
-                    <span className="font-(--font-space-mono) text-[9px] tracking-widest text-[#E6C687]/60">ACTIVE COMMITMENT</span>
+                    <div className="w-2 h-2 rounded-full bg-[#FFD700] pulse-active" aria-hidden="true" />
+                    <span className="font-(--font-space-mono) text-[9px] tracking-widest text-[#FFD700]/60">ACTIVE COMMITMENT</span>
                   </div>
                 </div>
               </div>
@@ -127,7 +127,7 @@ export default function AboutPage() {
                   { num: "100%", label: "Satisfaction" },
                 ].map((s) => (
                   <div key={s.label} className="text-center">
-                    <span className="text-2xl md:text-3xl font-extrabold text-[#E6C687] neon-text-glow">{s.num}</span>
+                    <span className="text-2xl md:text-3xl font-extrabold text-[#FFD700] neon-text-glow">{s.num}</span>
                     <span className="font-(--font-space-mono) text-[9px] tracking-[0.2em] text-[#b0b3b4] block mt-1 uppercase">{s.label}</span>
                   </div>
                 ))}
@@ -144,14 +144,14 @@ export default function AboutPage() {
         <div className="section-inner">
           <div className="relative overflow-hidden rounded-[3rem] p-12 md:p-20 border border-white/6 text-center">
             <div className="absolute inset-0 blueprint-grid opacity-20" aria-hidden="true" />
-            <div className="absolute inset-0 bg-linear-to-br from-[#E6C687]/8 via-transparent to-[#00dbe9]/8" aria-hidden="true" />
+            <div className="absolute inset-0 bg-linear-to-br from-[#FFD700]/8 via-transparent to-[#00dbe9]/8" aria-hidden="true" />
             <h2
               id="cta-heading"
               className="relative z-10 font-extrabold uppercase leading-tight max-w-lg mx-auto mb-8"
               style={{ fontSize: "clamp(1.8rem, 4vw, 3rem)" }}
             >
               READY TO BUILD YOUR{" "}
-              <span className="neon-text-glow text-[#E6C687]">ARCHITECTURAL LEGACY?</span>
+              <span className="neon-text-glow text-[#FFD700]">ARCHITECTURAL LEGACY?</span>
             </h2>
             <div className="relative z-10 flex flex-wrap justify-center gap-5">
               <a href="/contact" className="btn-cta h-14 px-10">
