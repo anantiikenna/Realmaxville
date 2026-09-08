@@ -48,7 +48,7 @@ export default function ProjectGallery({ images, name }: Props) {
           <div className="flex gap-2">
             <button
               onClick={() => scroll("left")}
-              className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-[#b0b3b4] hover:bg-[#c7f300] hover:text-[#171e00] hover:border-[#c7f300] transition-all cursor-pointer"
+              className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-[#b0b3b4] hover:bg-[#E6C687] hover:text-[#1a1200] hover:border-[#E6C687] transition-all cursor-pointer"
               aria-label="Scroll gallery left"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -57,7 +57,7 @@ export default function ProjectGallery({ images, name }: Props) {
             </button>
             <button
               onClick={() => scroll("right")}
-              className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-[#b0b3b4] hover:bg-[#c7f300] hover:text-[#171e00] hover:border-[#c7f300] transition-all cursor-pointer"
+              className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-[#b0b3b4] hover:bg-[#E6C687] hover:text-[#1a1200] hover:border-[#E6C687] transition-all cursor-pointer"
               aria-label="Scroll gallery right"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -113,7 +113,7 @@ export default function ProjectGallery({ images, name }: Props) {
           {/* Close */}
           <button
             onClick={() => setActiveIndex(null)}
-            className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-[#c7f300] hover:text-[#171e00] hover:border-[#c7f300] transition-all cursor-pointer"
+            className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-[#E6C687] hover:text-[#1a1200] hover:border-[#E6C687] transition-all cursor-pointer"
             aria-label="Close lightbox"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -124,7 +124,7 @@ export default function ProjectGallery({ images, name }: Props) {
           {/* Prev */}
           <button
             onClick={() => setActiveIndex((i) => (i! - 1 + images.length) % images.length)}
-            className="absolute left-4 z-10 w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-[#c7f300] hover:text-[#171e00] hover:border-[#c7f300] transition-all cursor-pointer"
+            className="absolute left-4 z-10 w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-[#E6C687] hover:text-[#1a1200] hover:border-[#E6C687] transition-all cursor-pointer"
             aria-label="Previous image"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -135,7 +135,7 @@ export default function ProjectGallery({ images, name }: Props) {
           {/* Next */}
           <button
             onClick={() => setActiveIndex((i) => (i! + 1) % images.length)}
-            className="absolute right-4 z-10 w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-[#c7f300] hover:text-[#171e00] hover:border-[#c7f300] transition-all cursor-pointer"
+            className="absolute right-4 z-10 w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-[#E6C687] hover:text-[#1a1200] hover:border-[#E6C687] transition-all cursor-pointer"
             aria-label="Next image"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">

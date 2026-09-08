@@ -64,7 +64,7 @@ export default function Navbar() {
         backdropFilter: "blur(24px)",
         WebkitBackdropFilter: "blur(24px)",
         borderBottom: scrolled
-          ? "1px solid rgba(199,243,0,0.2)"
+          ? "1px solid rgba(230,198,135,0.2)"
           : "1px solid rgba(255,255,255,0.05)",
         backgroundColor: scrolled
           ? "rgba(19,19,19,0.95)"
@@ -121,14 +121,14 @@ export default function Navbar() {
                   fontSize: "0.7rem",
                   letterSpacing: "0.2em",
                   textTransform: "uppercase",
-                  color: isActive ? "#c7f300" : "#b0b3b4",
+                  color: isActive ? "#E6C687" : "#b0b3b4",
                   textDecoration: "none",
                   transition: "color 0.2s",
-                  borderBottom: isActive ? "1px solid #c7f300" : "1px solid transparent",
+                  borderBottom: isActive ? "1px solid #E6C687" : "1px solid transparent",
                   paddingBottom: "2px",
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "#c7f300")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = isActive ? "#c7f300" : "#b0b3b4")}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#E6C687")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = isActive ? "#E6C687" : "#b0b3b4")}
               >
                 {link.label}
               </Link>
@@ -146,7 +146,7 @@ export default function Navbar() {
           style={{
             alignItems: "center",
             justifyContent: "center",
-            color: "#c7f300",
+            color: "#E6C687",
             padding: "0.5rem",
             minWidth: 44,
             minHeight: 44,
@@ -173,7 +173,7 @@ export default function Navbar() {
         style={{
           padding: "1.5rem 2rem",
           backgroundColor: "rgba(14,14,14,0.97)",
-          borderTop: "1px solid rgba(199,243,0,0.1)",
+          borderTop: "1px solid rgba(230,198,135,0.1)",
           gap: "0.25rem",
           boxShadow: "0 16px 40px rgba(0,0,0,0.6)",
         }}

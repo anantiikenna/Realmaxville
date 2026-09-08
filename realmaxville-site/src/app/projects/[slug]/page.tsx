@@ -60,7 +60,7 @@ export default async function ProjectDetailPage({ params }: Props) {
         <div className="section-inner relative z-10 pb-12 md:pb-16 pt-32">
           <Link
             href="/projects"
-            className="inline-flex items-center gap-2 font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#c7f300]/70 hover:text-[#c7f300] transition-colors uppercase mb-8"
+            className="inline-flex items-center gap-2 font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#E6C687]/70 hover:text-[#E6C687] transition-colors uppercase mb-8"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -71,7 +71,7 @@ export default async function ProjectDetailPage({ params }: Props) {
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
             <div className="max-w-2xl">
               <div className="flex flex-wrap items-center gap-3 mb-4">
-                <span className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#c7f300] bg-[#c7f300]/10 border border-[#c7f300]/25 px-3 py-1 rounded-full">
+                <span className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#E6C687] bg-[#E6C687]/10 border border-[#E6C687]/25 px-3 py-1 rounded-full">
                   {project.type}
                 </span>
                 <span className="text-sm text-[#b0b3b4]">{project.year}</span>
@@ -98,7 +98,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                   { label: "STATUS", value: project.status },
                 ].map((item) => (
                   <div key={item.label}>
-                    <span className="font-(--font-space-mono) text-[9px] tracking-[0.2em] text-[#c7f300]/60 block mb-1">
+                    <span className="font-(--font-space-mono) text-[9px] tracking-[0.2em] text-[#E6C687]/60 block mb-1">
                       {item.label}
                     </span>
                     <span className="text-[#e5e2e1] text-sm font-medium">{item.value}</span>
@@ -107,8 +107,8 @@ export default async function ProjectDetailPage({ params }: Props) {
               </div>
               <div className="mt-6 pt-4 border-t border-white/5">
                 <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-[#c7f300] pulse-active" aria-hidden="true" />
-                  <span className="font-(--font-space-mono) text-[9px] tracking-[0.2em] text-[#c7f300]">
+                  <div className="w-2 h-2 rounded-full bg-[#E6C687] pulse-active" aria-hidden="true" />
+                  <span className="font-(--font-space-mono) text-[9px] tracking-[0.2em] text-[#E6C687]">
                     PROJECT COMPLETE
                   </span>
                 </div>
@@ -138,7 +138,7 @@ export default async function ProjectDetailPage({ params }: Props) {
             {/* Sidebar */}
             <aside className="space-y-6">
               <div className="glass-panel rounded-lg cyber-border p-8 space-y-6">
-                <h3 className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#c7f300] uppercase">
+                <h3 className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#E6C687] uppercase">
                   Project Specs
                 </h3>
                 {[
@@ -171,20 +171,20 @@ export default async function ProjectDetailPage({ params }: Props) {
       {/* Next project */}
       <section className="py-24 md:py-32 data-grid-bg" aria-label="Next project">
         <div className="section-inner text-center space-y-6">
-          <span className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#c7f300]/60 uppercase">
+          <span className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#E6C687]/60 uppercase">
             Next Project
           </span>
           <Link
             href={`/projects/${nextProject.slug}`}
             className="block group"
           >
-            <h2 className="text-3xl md:text-5xl font-extrabold uppercase tracking-tight group-hover:text-[#c7f300] transition-colors">
+            <h2 className="text-3xl md:text-5xl font-extrabold uppercase tracking-tight group-hover:text-[#E6C687] transition-colors">
               {nextProject.name}
             </h2>
           </Link>
           <Link
             href={`/projects/${nextProject.slug}`}
-            className="inline-flex items-center gap-2 text-[#b0b3b4] hover:text-[#c7f300] transition-colors text-sm"
+            className="inline-flex items-center gap-2 text-[#b0b3b4] hover:text-[#E6C687] transition-colors text-sm"
           >
             View Project
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">

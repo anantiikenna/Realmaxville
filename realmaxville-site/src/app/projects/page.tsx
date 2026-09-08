@@ -30,8 +30,8 @@ export default function ProjectsPage() {
         <div className="section-inner relative z-10">
           <ScrollReveal>
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-2 h-2 rounded-full bg-[#c7f300] pulse-active" aria-hidden="true" />
-              <span className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#c7f300] uppercase">
+              <div className="w-2 h-2 rounded-full bg-[#E6C687] pulse-active" aria-hidden="true" />
+              <span className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#E6C687] uppercase">
                 Portfolio
               </span>
             </div>
@@ -79,9 +79,9 @@ export default function ProjectsPage() {
                     aria-checked={activeType === t}
                     className="h-11 px-5 rounded-full font-(--font-space-mono) text-[10px] tracking-[0.2em] uppercase transition-all duration-200 cursor-pointer"
                     style={{
-                      background: activeType === t ? "#c7f300" : "rgba(255,255,255,0.04)",
-                      color: activeType === t ? "#171e00" : "#b0b3b4",
-                      border: activeType === t ? "1px solid #c7f300" : "1px solid rgba(255,255,255,0.08)",
+                      background: activeType === t ? "#E6C687" : "rgba(255,255,255,0.04)",
+                      color: activeType === t ? "#1a1200" : "#b0b3b4",
+                      border: activeType === t ? "1px solid #E6C687" : "1px solid rgba(255,255,255,0.08)",
                     }}
                   >
                     {t}
@@ -108,17 +108,17 @@ export default function ProjectsPage() {
                   <div className="absolute inset-0 bg-linear-to-t from-black via-black/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity" />
                   <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
                     <div className="flex items-center gap-2 mb-2">
-                      <span className="font-(--font-space-mono) text-[9px] tracking-[0.2em] text-[#c7f300] bg-[#c7f300]/10 border border-[#c7f300]/25 px-2.5 py-0.5 rounded-full">
+                      <span className="font-(--font-space-mono) text-[9px] tracking-[0.2em] text-[#E6C687] bg-[#E6C687]/10 border border-[#E6C687]/25 px-2.5 py-0.5 rounded-full">
                         {p.type}
                       </span>
                       <span className="text-[10px] text-[#b0b3b4]">{p.year}</span>
                     </div>
-                    <h3 className="text-xl font-bold group-hover:text-[#c7f300] transition-colors">
+                    <h3 className="text-xl font-bold group-hover:text-[#E6C687] transition-colors">
                       {p.name}
                     </h3>
                     <div className="flex items-center justify-between mt-3 pt-3 border-t border-white/10">
                       <span className="text-xs text-[#b0b3b4]">{p.location}</span>
-                      <span className="font-(--font-space-mono) text-[9px] tracking-[0.2em] text-[#c7f300] opacity-0 group-hover:opacity-100 transition-opacity">
+                      <span className="font-(--font-space-mono) text-[9px] tracking-[0.2em] text-[#E6C687] opacity-0 group-hover:opacity-100 transition-opacity">
                         VIEW CASE STUDY →
                       </span>
                     </div>
