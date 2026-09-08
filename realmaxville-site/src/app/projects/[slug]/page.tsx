@@ -40,6 +40,7 @@ export default async function ProjectDetailPage({ params }: Props) {
 
   const projectIndex = projects.findIndex((p) => p.slug === slug);
   const nextProject = projects[(projectIndex + 1) % projects.length];
+  const otherProjects = projects.filter((p) => p.slug !== slug).slice(0, 6);
 
   return (
     <>
@@ -168,31 +169,82 @@ export default async function ProjectDetailPage({ params }: Props) {
         <ProjectGallery images={project.gallery} name={project.name} />
       )}
 
-      {/* Next project */}
-      <section className="py-24 md:py-32 data-grid-bg" aria-label="Next project">
-        <div className="section-inner text-center space-y-6">
-          <span className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#FFD700]/60 uppercase">
-            Next Project
-          </span>
+      {/* Next project — image card */}
+      <section className="py-24 md:py-32" aria-label="Next project">
+        <div className="section-inner flex flex-col gap-8">
+          <div className="flex flex-col gap-2">
+            <span className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#FFD700]/60 uppercase">
+              Next Project
+            </span>
+            <Link
+              href={`/projects/${nextProject.slug}`}
+              className="block group"
+            >
+              <h2 className="text-2xl md:text-4xl font-extrabold uppercase tracking-tight group-hover:text-[#FFD700] transition-colors">
+                {nextProject.name}
+              </h2>
+            </Link>
+          </div>
           <Link
             href={`/projects/${nextProject.slug}`}
-            className="block group"
+            className="block group relative overflow-hidden rounded-xl border border-white/5 hover:border-[#FFD700]/40 aspect-video md:aspect-[16/7] transition-all"
           >
-            <h2 className="text-3xl md:text-5xl font-extrabold uppercase tracking-tight group-hover:text-[#FFD700] transition-colors">
-              {nextProject.name}
-            </h2>
-          </Link>
-          <Link
-            href={`/projects/${nextProject.slug}`}
-            className="inline-flex items-center gap-2 text-[#b0b3b4] hover:text-[#FFD700] transition-colors text-sm"
-          >
-            View Project
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
+            <img
+              src={nextProject.cover}
+              alt={`${nextProject.name} project preview`}
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              loading="lazy"
+            />
+            <div className="absolute inset-0 bg-linear-to-t from-[#050505] via-[#050505]/30 to-transparent opacity-80" />
+            <div className="absolute bottom-0 left-0 p-6 md:p-10">
+              <p className="text-[#FFD700] font-(--font-space-mono) text-[11px] tracking-[0.2em] uppercase">{nextProject.type}</p>
+              <p className="text-[#b0b3b4] text-sm mt-2">{nextProject.location} &bull; {nextProject.year}</p>
+            </div>
+            <div className="absolute top-4 right-4 md:top-6 md:right-6 w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white group-hover:bg-[#FFD700] group-hover:text-[#1a1200] group-hover:border-[#FFD700] transition-all">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </div>
           </Link>
         </div>
       </section>
+
+      {/* More projects — horizontal scroll */}
+      {otherProjects.length > 0 && (
+        <section className="py-24 md:py-32 bg-surface-container-lowest" aria-label="More projects">
+          <div className="section-inner flex flex-col gap-8">
+            <div className="flex items-center justify-between">
+              <h2 className="text-xl md:text-2xl font-extrabold uppercase tracking-tight">More Projects</h2>
+              <Link href="/projects" className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#FFD700]/70 hover:text-[#FFD700] transition-colors uppercase">
+                View All
+              </Link>
+            </div>
+            <div className="flex gap-6 overflow-x-auto pb-4" style={{ scrollbarWidth: "none", msOverflowStyle: "none", WebkitOverflowScrolling: "touch" }}>
+              {otherProjects.map((p) => (
+                <Link
+                  key={p.slug}
+                  href={`/projects/${p.slug}`}
+                  className="group shrink-0 w-[280px] md:w-[340px] block"
+                >
+                  <div className="relative aspect-[4/3] rounded-lg overflow-hidden border border-white/5 hover:border-[#FFD700]/40 transition-all">
+                    <img
+                      src={p.cover}
+                      alt={`${p.name} project`}
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-linear-to-t from-[#050505] via-transparent to-transparent opacity-80" />
+                    <div className="absolute bottom-0 left-0 p-5">
+                      <p className="text-[#FFD700] font-(--font-space-mono) text-[10px] tracking-[0.2em] uppercase">{p.type}</p>
+                      <h3 className="text-base font-bold text-white group-hover:text-[#FFD700] transition-colors mt-1">{p.name}</h3>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
     </>
   );
 }
