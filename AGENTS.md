@@ -175,7 +175,9 @@ These commands timeout on this machine. Do not run them — verify changes by ch
 ```
 
 ## Design Tokens
-- Accent: `#c7f300` (lime green)
+- Accent: `#E6C687` (gold)
+- Accent dim: `#c9a96e`
+- On accent: `#1a1200` (dark brown text on gold)
 - Background: `#050505`
 - Surface: `#131313`
 - Surface container: `#20201f`
