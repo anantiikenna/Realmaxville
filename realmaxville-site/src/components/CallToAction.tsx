@@ -6,7 +6,7 @@ export default function CallToAction() {
   return (
     <section className="py-32 section-inner" aria-labelledby="cta-heading">
       <ScrollReveal>
-        <div className="relative rounded-lg glass p-14 md:p-24 text-center space-y-8 cyber-border overflow-hidden">
+        <div className="relative rounded-lg glass p-8 md:p-24 text-center flex flex-col items-center gap-6 cyber-border overflow-hidden">
           {/* Large background icon — Draftsman compass */}
           <div className="absolute top-4 right-4 md:top-8 md:right-8 opacity-10" aria-hidden="true">
             <svg className="w-45 h-45 md:w-55 md:h-55 text-[#FFD700]" fill="none" stroke="currentColor" strokeWidth={1} viewBox="0 0 24 24">
@@ -14,8 +14,8 @@ export default function CallToAction() {
             </svg>
           </div>
 
-          <h2 id="cta-heading" className="relative z-10 font-extrabold leading-[1.05] uppercase max-w-4xl mx-auto" style={{ fontSize: "clamp(2.8rem, 7vw, 4.5rem)" }}>
-            LET&apos;S BUILD SOMETHING <br />
+          <h2 id="cta-heading" className="relative z-10 font-extrabold leading-[1.05] uppercase max-w-4xl mx-auto text-[clamp(1.75rem,6vw,4.5rem)]">
+            LET&apos;S BUILD <span className="text-[#FFD700]">SOMETHING</span>{" "}
             <span className="text-[#FFD700]">EXTRAORDINARY TOGETHER.</span>
           </h2>
           <p className="relative z-10 text-[#b0b3b4] text-lg max-w-2xl mx-auto leading-relaxed">
