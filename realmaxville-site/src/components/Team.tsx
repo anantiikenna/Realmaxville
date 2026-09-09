@@ -11,8 +11,8 @@ const team = [
 
 function TeamCard({ m }: { m: typeof team[0] }) {
   return (
-    <article className="group shrink-0 w-[300px] md:w-[340px] select-none">
-      <div className="relative aspect-3/4 rounded-lg overflow-hidden glass-card mb-6 border-t border-[#FFD700]/30">
+    <article className="group shrink-0 w-[280px] md:w-[340px] select-none">
+      <div className="relative aspect-3/4 rounded-lg overflow-hidden glass-card mb-4 border-t border-[#FFD700]/30">
         <img
           src={m.img}
           alt={`Portrait of ${m.name}, ${m.role} at Realmaxville`}
@@ -23,14 +23,14 @@ function TeamCard({ m }: { m: typeof team[0] }) {
         <div className="absolute inset-0 bg-linear-to-t from-background via-transparent to-transparent" />
         <div className="absolute top-4 right-4 h-2 w-2 rounded-full bg-[#FFD700] shadow-[0_0_10px_#FFD700] pulse-active" aria-hidden="true" />
       </div>
-      <h4 className="text-xl font-bold text-[#e5e2e1] group-hover:text-[#FFD700] transition-colors">
+      <h4 className="text-lg font-bold text-[#e5e2e1] group-hover:text-[#FFD700] transition-colors">
         {m.name}
       </h4>
-      <p className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#FFD700] mt-1.5 mb-3">
+      <p className="font-(--font-space-mono) text-[10px] tracking-[0.2em] text-[#FFD700] mt-1 mb-2">
         {m.role}
       </p>
       <p className="text-[#b0b3b4] text-sm leading-relaxed">{m.desc}</p>
-      <div className="mt-4 flex gap-2">
+      <div className="mt-3 flex gap-2">
         <a
           href={m.linkedin}
           target="_blank"
@@ -49,6 +49,7 @@ export default function Team() {
   const trackRef = useRef<HTMLDivElement>(null);
   const [paused, setPaused] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
+  const [direction, setDirection] = useState<"left" | "right">("left");
   const dragRef = useRef({ isDragging: false, startX: 0, scrollLeft: 0, velocity: 0, lastX: 0, lastTime: 0 });
   const autoScrollRef = useRef<number | null>(null);
 
@@ -69,18 +70,18 @@ export default function Team() {
     }
 
     let lastTime = performance.now();
-    const speed = 0.5; // px per frame
+    const speed = 1.5;
 
     const tick = (now: number) => {
       const dt = now - lastTime;
       lastTime = now;
       if (!dragRef.current.isDragging) {
-        el.scrollLeft += speed * (dt / 16);
-        // Loop: reset when scrolled past first set
+        const delta = speed * (dt / 16);
+        el.scrollLeft += direction === "left" ? delta : -delta;
+        // Loop
         const maxScroll = el.scrollWidth / 2;
-        if (el.scrollLeft >= maxScroll) {
-          el.scrollLeft -= maxScroll;
-        }
+        if (el.scrollLeft >= maxScroll) el.scrollLeft -= maxScroll;
+        if (el.scrollLeft < 0) el.scrollLeft += maxScroll;
       }
       autoScrollRef.current = requestAnimationFrame(tick);
     };
@@ -89,7 +90,15 @@ export default function Team() {
     return () => {
       if (autoScrollRef.current) cancelAnimationFrame(autoScrollRef.current);
     };
-  }, [paused, reducedMotion]);
+  }, [paused, reducedMotion, direction]);
+
+  // Arrow navigation
+  const scrollBy = useCallback((dir: "left" | "right") => {
+    const el = trackRef.current;
+    if (!el) return;
+    const cardWidth = 300 + 32; // card width + gap
+    el.scrollBy({ left: dir === "left" ? -cardWidth : cardWidth, behavior: "smooth" });
+  }, []);
 
   // Touch/mouse drag
   const onPointerDown = useCallback((e: React.PointerEvent) => {
@@ -122,12 +131,10 @@ export default function Team() {
     if (el) {
       el.style.cursor = "grab";
       el.releasePointerCapture(e.pointerId);
-      // Inertia scroll
       const inertia = () => {
         if (Math.abs(d.velocity) < 0.01 || d.isDragging) return;
         el.scrollLeft -= d.velocity * 16;
         d.velocity *= 0.95;
-        // Loop
         const maxScroll = el.scrollWidth / 2;
         if (el.scrollLeft >= maxScroll) el.scrollLeft -= maxScroll;
         if (el.scrollLeft < 0) el.scrollLeft += maxScroll;
@@ -157,23 +164,35 @@ export default function Team() {
         </ScrollReveal>
       </div>
 
-      {/* Draggable carousel */}
-      <div
-        className="relative overflow-hidden group/team"
-        onMouseEnter={() => setPaused(true)}
-        onMouseLeave={() => setPaused(false)}
-        aria-label="Team members carousel — drag to scroll"
-        role="region"
-        aria-roledescription="carousel"
-      >
-        {/* Fade edges */}
-        <div className="absolute left-0 top-0 bottom-0 w-24 md:w-32 bg-linear-to-r from-surface-container-lowest to-transparent z-10 pointer-events-none" aria-hidden="true" />
-        <div className="absolute right-0 top-0 bottom-0 w-24 md:w-32 bg-linear-to-l from-surface-container-lowest to-transparent z-10 pointer-events-none" aria-hidden="true" />
+      {/* Carousel with arrows */}
+      <div className="relative group/team">
+        {/* Arrow buttons */}
+        <button
+          onClick={() => { setDirection("left"); scrollBy("left"); }}
+          className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-[#050505]/80 border border-white/10 flex items-center justify-center text-[#FFD700] hover:bg-[#FFD700] hover:text-[#1a1200] transition-all opacity-0 group-hover/team:opacity-100"
+          aria-label="Scroll left"
+        >
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
+        </button>
+        <button
+          onClick={() => { setDirection("right"); scrollBy("right"); }}
+          className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-[#050505]/80 border border-white/10 flex items-center justify-center text-[#FFD700] hover:bg-[#FFD700] hover:text-[#1a1200] transition-all opacity-0 group-hover/team:opacity-100"
+          aria-label="Scroll right"
+        >
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+        </button>
 
+        {/* Fade edges */}
+        <div className="absolute left-0 top-0 bottom-0 w-16 md:w-24 bg-linear-to-r from-surface-container-lowest to-transparent z-10 pointer-events-none" aria-hidden="true" />
+        <div className="absolute right-0 top-0 bottom-0 w-16 md:w-24 bg-linear-to-l from-surface-container-lowest to-transparent z-10 pointer-events-none" aria-hidden="true" />
+
+        {/* Track */}
         <div
           ref={trackRef}
-          className="flex gap-8 px-8 overflow-x-auto scroll-smooth"
+          className="flex gap-6 md:gap-8 px-6 md:px-8 overflow-x-auto"
           style={{ cursor: "grab", scrollbarWidth: "none", msOverflowStyle: "none", WebkitOverflowScrolling: "touch" }}
+          onMouseEnter={() => setPaused(true)}
+          onMouseLeave={() => setPaused(false)}
           onPointerDown={onPointerDown}
           onPointerMove={onPointerMove}
           onPointerUp={onPointerUp}
