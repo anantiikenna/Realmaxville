@@ -34,9 +34,9 @@ const contactItems = [
   },
   {
     label: "EMAIL",
-    value: "admin@realmaxville.com",
-    sub: "realmaxville@gmail.com",
-    href: "mailto:admin@realmaxville.com",
+    value: "realmaxville@gmail.com",
+    sub: "We reply within 24 hours",
+    href: "mailto:realmaxville@gmail.com",
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />

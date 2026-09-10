@@ -54,7 +54,7 @@ export default function PrivacyPage() {
               <div className="p-4 rounded-xl border border-[#FFD700]/20 text-xs space-y-2 text-gray-300 bg-white/5">
                 <p><strong className="text-[#FFD700]">SMS Consent Terms:</strong> Consent to receive text messages is completely voluntary and is NOT required as a condition to purchase or commission any service.</p>
                 <p><strong className="text-[#FFD700]">Frequency & Rates:</strong> Message frequency varies according to your project engagement. Standard message and data rates may apply.</p>
-                <p><strong className="text-[#FFD700]">Opt-Out:</strong> You may opt-out of SMS notifications at any time by replying &quot;STOP&quot; to any text message or emailing admin@realmaxville.com.</p>
+                <p><strong className="text-[#FFD700]">Opt-Out:</strong> You may opt-out of SMS notifications at any time by replying &quot;STOP&quot; to any text message or emailing realmaxville@gmail.com.</p>
                 <p><strong className="text-[#FFD700]">Third-Party Sharing:</strong> We do NOT sell, rent, or trade your SMS consent or phone numbers with third parties for promotional or marketing purposes.</p>
               </div>
             </section>
@@ -79,7 +79,7 @@ export default function PrivacyPage() {
               <div className="p-4 rounded-xl bg-white/5 border border-white/10 text-xs font-mono text-gray-400">
                 <p className="text-white font-bold">Realmaxville Legal & Data Officer</p>
                 <p>Address: 4a, Ogombo Rd, Opp Abraham Adesanya Estate, Eti-Osa, Lagos, Nigeria</p>
-                <p>Email: admin@realmaxville.com | Phone: +234 808 041 9259</p>
+                <p>Email: realmaxville@gmail.com | Phone: +234 808 041 9259</p>
               </div>
             </section>
           </div>

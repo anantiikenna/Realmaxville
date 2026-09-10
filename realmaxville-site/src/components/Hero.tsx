@@ -62,7 +62,7 @@ export default function Hero() {
       {/* Floating social / info bar — right side */}
       <div className="absolute right-6 md:right-16 bottom-16 z-30 hidden md:flex flex-col gap-6">
         <div className="glass p-4 rounded-full flex flex-col gap-4 items-center">
-          <a href="mailto:admin@realmaxville.com" className="text-[#FFD700] hover:scale-110 transition-transform" aria-label="Email us">
+          <a href="mailto:realmaxville@gmail.com" className="text-[#FFD700] hover:scale-110 transition-transform" aria-label="Email us">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
