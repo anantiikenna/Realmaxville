@@ -17,12 +17,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const design = getDesignBySlug(slug);
   if (!design) return {};
   return {
-    title: `${design.name} Design — Realmaxville`,
-    description: design.description,
+    title: `${design.name} Design — Buy Architectural Plans Online`,
+    description: `${design.description} Purchase this professional architectural design for $${design.priceUSD}. Complete plan set with floor plans, elevations, structural drawings, and 3D renders. Instant delivery.`,
+    keywords: [
+      `${design.name} design`,
+      `${design.type.toLowerCase()} building plans`,
+      "buy architectural plans Nigeria",
+      "floor plans for sale",
+      "construction drawings Lagos",
+    ],
     openGraph: {
       title: `${design.name} Design — Realmaxville`,
       description: design.description,
+      url: `https://realmaxville.com/designs/${design.slug}`,
       images: [{ url: design.cover, width: 1200, height: 630, alt: `${design.name} architectural design` }],
+      type: "website",
     },
   };
 }

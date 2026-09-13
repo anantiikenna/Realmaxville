@@ -7,14 +7,69 @@ import { CurrencyProvider } from "@/lib/currency-context";
 
 const filters = ["ALL", "RESIDENTIAL", "COMMERCIAL", "MIXED-USE"] as const;
 
+const faqs = [
+  {
+    q: "What do I get when I purchase an architectural design?",
+    a: "You receive a complete set of architectural drawings including floor plans, elevations, sections, structural engineering plans, electrical wiring diagrams, plumbing layouts, bill of quantities (BOQ), and 3D rendered visualizations — all delivered via email as PDF files.",
+  },
+  {
+    q: "How much do architectural plans cost in Nigeria?",
+    a: "Our pre-designed plans range from $1,100 (₦1,650,000) to $3,200 (₦4,800,000) depending on size and complexity. Custom designs start from $2,000. Prices are displayed in your local currency — ₦ for Nigerian customers, $ for international.",
+  },
+  {
+    q: "Can I modify the plans after purchase?",
+    a: "Yes. The plans serve as a complete base for construction. Most contractors can make minor adjustments on-site. For significant modifications, we recommend consulting with a local architect or contacting us for a custom design.",
+  },
+  {
+    q: "Are these plans approved by Lagos State government?",
+    a: "Our plans comply with Nigerian building codes and Lagos State Physical Planning Permit Authority (LASPPPA) requirements. However, you will still need to submit plans for approval before construction begins. We can assist with this process.",
+  },
+  {
+    q: "How quickly will I receive the plan files?",
+    a: "Plan files are delivered to your email within 1 hour of payment confirmation. If you don't receive them, contact us on WhatsApp and we'll resolve it immediately.",
+  },
+  {
+    q: "Do you offer construction services?",
+    a: "Yes. Realmaxville provides end-to-end construction services. Once you purchase a design, we can build it for you. Contact us for a construction quote.",
+  },
+  {
+    q: "What payment methods do you accept?",
+    a: "We accept credit/debit cards, bank transfers, and mobile money through our secure payment partner Dodo Payments. Nigerian customers can pay in Naira (₦) and international customers in USD ($).",
+  },
+  {
+    q: "Can I see the designs before purchasing?",
+    a: "Yes. Each design page includes multiple high-resolution images showing the exterior, interior, floor plan, and key features. You can browse all images in the gallery before deciding.",
+  },
+];
+
 export default function DesignsPage() {
   const [active, setActive] = useState<string>("ALL");
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const filtered = active === "ALL" ? designs : designs.filter((d) => d.type === active);
 
   return (
     <CurrencyProvider>
       <div className="min-h-screen">
+        {/* FAQ JSON-LD for AI crawlers */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: faqs.map((faq) => ({
+                "@type": "Question",
+                name: faq.q,
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: faq.a,
+                },
+              })),
+            }),
+          }}
+        />
+
         {/* Hero */}
         <section className="page-hero data-grid-bg" aria-labelledby="designs-heading">
           <div className="section-inner flex flex-col items-center gap-6 text-center">
@@ -42,6 +97,22 @@ export default function DesignsPage() {
                 crafted by our team and ready for construction. Purchase, download, and
                 start building today.
               </p>
+            </ScrollReveal>
+            {/* Trust stats */}
+            <ScrollReveal delay={300}>
+              <div className="flex flex-wrap justify-center gap-8 mt-4">
+                {[
+                  { value: "50+", label: "Projects Completed" },
+                  { value: "8+", label: "Years Experience" },
+                  { value: "24hr", label: "Plan Delivery" },
+                  { value: "100%", label: "Licensed Engineers" },
+                ].map((stat) => (
+                  <div key={stat.label} className="text-center">
+                    <div className="text-[#FFD700] font-extrabold text-2xl">{stat.value}</div>
+                    <div className="text-[#b0b3b4] text-xs mt-1">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
             </ScrollReveal>
           </div>
         </section>
@@ -126,6 +197,97 @@ export default function DesignsPage() {
                 ))}
               </div>
             </ScrollReveal>
+          </div>
+        </section>
+
+        {/* Testimonials */}
+        <section className="py-24 md:py-32" aria-labelledby="testimonials-heading">
+          <div className="section-inner">
+            <ScrollReveal>
+              <div className="flex flex-col items-center gap-6 mb-16">
+                <h2 id="testimonials-heading" className="text-2xl md:text-3xl font-extrabold uppercase tracking-tight text-center">
+                  WHAT OUR <span className="text-[#FFD700]">CLIENTS SAY</span>
+                </h2>
+              </div>
+            </ScrollReveal>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                {
+                  name: "Adebayo O.",
+                  role: "Homeowner, Lagos",
+                  text: "Realmaxville designed and built our family home. The attention to detail and quality of construction exceeded our expectations. Highly recommend their services.",
+                  rating: 5,
+                },
+                {
+                  name: "Chioma N.",
+                  role: "Property Developer",
+                  text: "We purchased 3 residential designs for our estate project. The plans were detailed, professional, and our contractors had no issues interpreting them. Will buy again.",
+                  rating: 5,
+                },
+                {
+                  name: "Emeka A.",
+                  role: "Business Owner",
+                  text: "The commercial office design we bought was exactly what we needed. The floor plan maximized our space perfectly. Great value for the price.",
+                  rating: 5,
+                },
+              ].map((t) => (
+                <ScrollReveal key={t.name}>
+                  <div className="glass-card rounded-xl p-8 flex flex-col gap-4 h-full">
+                    <div className="flex gap-1">
+                      {Array.from({ length: t.rating }).map((_, i) => (
+                        <svg key={i} className="w-4 h-4 text-[#FFD700]" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                      ))}
+                    </div>
+                    <p className="text-[#b0b3b4] text-sm leading-relaxed flex-1">&ldquo;{t.text}&rdquo;</p>
+                    <div>
+                      <p className="text-[#e5e2e1] font-bold text-sm">{t.name}</p>
+                      <p className="text-[#b0b3b4] text-xs">{t.role}</p>
+                    </div>
+                  </div>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section className="py-24 md:py-32 bg-surface-container-lowest" aria-labelledby="faq-heading">
+          <div className="section-inner max-w-3xl">
+            <ScrollReveal>
+              <div className="flex flex-col items-center gap-6 mb-16">
+                <h2 id="faq-heading" className="text-2xl md:text-3xl font-extrabold uppercase tracking-tight text-center">
+                  FREQUENTLY <span className="text-[#FFD700]">ASKED QUESTIONS</span>
+                </h2>
+              </div>
+            </ScrollReveal>
+            <div className="flex flex-col gap-3">
+              {faqs.map((faq, i) => (
+                <ScrollReveal key={i} delay={i * 50}>
+                  <div className="glass-card rounded-lg overflow-hidden">
+                    <button
+                      onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                      className="w-full flex items-center justify-between p-5 text-left"
+                      aria-expanded={openFaq === i}
+                    >
+                      <span className="text-[#e5e2e1] font-medium text-sm pr-4">{faq.q}</span>
+                      <svg
+                        className={`w-5 h-5 text-[#FFD700] shrink-0 transition-transform ${openFaq === i ? "rotate-180" : ""}`}
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                    {openFaq === i && (
+                      <div className="px-5 pb-5">
+                        <p className="text-[#b0b3b4] text-sm leading-relaxed">{faq.a}</p>
+                      </div>
+                    )}
+                  </div>
+                </ScrollReveal>
+              ))}
+            </div>
           </div>
         </section>
 

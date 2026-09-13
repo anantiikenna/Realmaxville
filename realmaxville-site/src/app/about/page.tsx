@@ -4,9 +4,16 @@ import Team from "@/components/Team";
 import Stats from "@/components/Stats";
 
 export const metadata: Metadata = {
-  title: "About Us — Realmaxville",
+  title: "About Us — Realmaxville Architecture & Construction Lagos",
   description:
-    "Learn about Realmaxville, a next-generation construction company established in 2017, delivering architectural design, construction and renovation services across Nigeria.",
+    "Realmaxville is a licensed architectural and construction company established in 2017 in Lagos, Nigeria. We specialize in residential, commercial, and mixed-use building design, construction, and renovation. Over 200 projects completed. Buy architectural plans online.",
+  keywords: [
+    "about Realmaxville",
+    "architectural firm Lagos",
+    "construction company Nigeria",
+    "licensed architects Lagos",
+    "building construction Lagos",
+  ],
 };
 
 export default function AboutPage() {

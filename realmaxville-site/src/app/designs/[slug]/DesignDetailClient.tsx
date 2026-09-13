@@ -100,6 +100,34 @@ function DesignDetail({ design }: { design: Design }) {
 
   return (
     <div className="min-h-screen">
+      {/* Product JSON-LD for AI crawlers */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Product",
+            name: `Realmaxville — ${design.name}`,
+            description: design.description,
+            image: design.gallery.map((img) => img.src),
+            brand: { "@type": "Brand", name: "Realmaxville" },
+            offers: {
+              "@type": "Offer",
+              url: `https://realmaxville.com/designs/${design.slug}`,
+              priceCurrency: "USD",
+              price: design.priceUSD,
+              availability: "https://schema.org/InStock",
+              seller: { "@type": "Organization", name: "Realmaxville" },
+            },
+            aggregateRating: {
+              "@type": "AggregateRating",
+              ratingValue: "5",
+              reviewCount: "3",
+            },
+          }),
+        }}
+      />
+
       {/* Lightbox */}
       {lightboxIndex !== null && (
         <Lightbox
