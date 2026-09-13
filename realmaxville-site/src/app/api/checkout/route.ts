@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
-  const { designSlug, designName, dodoProductId } = await req.json();
+  const { designSlug, designName, dodoProductId, country } = await req.json();
 
   if (!designSlug || !designName || !dodoProductId) {
     return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
@@ -14,6 +14,33 @@ export async function POST(req: NextRequest) {
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://realmaxville.netlify.app";
 
+  // Build checkout session payload
+  const payload: Record<string, unknown> = {
+    product_cart: [
+      {
+        product_id: dodoProductId,
+        quantity: 1,
+      },
+    ],
+    return_url: `${siteUrl}/designs/${designSlug}/success`,
+    customization: {
+      theme: "dark",
+      show_order_details: true,
+    },
+    feature_flags: {
+      allow_currency_selection: true,
+    },
+    metadata: {
+      designSlug,
+      designName,
+    },
+  };
+
+  // If user is in Nigeria, pre-fill billing currency to NGN
+  if (country === "NG") {
+    payload.billing_currency = "NGN";
+  }
+
   try {
     const res = await fetch("https://api.dodopayments.com/checkout/session", {
       method: "POST",
@@ -21,22 +48,7 @@ export async function POST(req: NextRequest) {
         "Content-Type": "application/json",
         Authorization: `Bearer ${apiKey}`,
       },
-      body: JSON.stringify({
-        product_cart: [
-          {
-            product_id: dodoProductId,
-            quantity: 1,
-          },
-        ],
-        return_url: `${siteUrl}/designs/${designSlug}/success`,
-        customization: {
-          theme: "dark",
-        },
-        metadata: {
-          designSlug,
-          designName,
-        },
-      }),
+      body: JSON.stringify(payload),
     });
 
     const data = await res.json();

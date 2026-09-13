@@ -6,7 +6,7 @@ import { CurrencyProvider, useCurrency } from "@/lib/currency-context";
 import type { Design } from "@/lib/designs-data";
 
 function DesignDetail({ design }: { design: Design }) {
-  const { formatPrice, currency } = useCurrency();
+  const { formatPrice, currency, country } = useCurrency();
   const [loading, setLoading] = useState(false);
 
   const handlePurchase = async () => {
@@ -19,6 +19,7 @@ function DesignDetail({ design }: { design: Design }) {
           designSlug: design.slug,
           designName: design.name,
           dodoProductId: design.dodoProductId,
+          country,
         }),
       });
       const data = await res.json();

@@ -1,7 +1,7 @@
 "use client";
 import { createContext, useContext, useEffect, useState, ReactNode } from "react";
 
-const NGN_RATE = 1500; // 1 USD ≈ ₦1,500 — update as needed
+export const NGN_RATE = 1500; // 1 USD ≈ ₦1,500 — Dodo's adaptive currency handles actual conversion at checkout
 
 interface CurrencyState {
   country: string | null;
