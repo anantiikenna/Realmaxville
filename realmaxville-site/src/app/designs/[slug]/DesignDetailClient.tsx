@@ -18,7 +18,7 @@ function DesignDetail({ design }: { design: Design }) {
         body: JSON.stringify({
           designSlug: design.slug,
           designName: design.name,
-          priceUSD: design.priceUSD,
+          dodoProductId: design.dodoProductId,
         }),
       });
       const data = await res.json();

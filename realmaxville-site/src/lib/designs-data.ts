@@ -3,6 +3,7 @@ export interface Design {
   name: string;
   type: "RESIDENTIAL" | "COMMERCIAL" | "MIXED-USE";
   priceUSD: number;
+  dodoProductId: string; // from Dodo dashboard — create product first, paste ID here
   beds: number;
   baths: number;
   area: string;
@@ -19,6 +20,7 @@ export const designs: Design[] = [
     name: "Lagos Villa",
     type: "RESIDENTIAL",
     priceUSD: 1500,
+    dodoProductId: "pdt_lagos_villa", // TODO: replace with actual Dodo product ID
     beds: 4,
     baths: 3,
     area: "320 m²",
@@ -33,6 +35,7 @@ export const designs: Design[] = [
     name: "Eko Residence",
     type: "RESIDENTIAL",
     priceUSD: 2200,
+    dodoProductId: "pdt_eko_residence", // TODO: replace with actual Dodo product ID
     beds: 5,
     baths: 4,
     area: "480 m²",
@@ -47,6 +50,7 @@ export const designs: Design[] = [
     name: "Island Duplex",
     type: "RESIDENTIAL",
     priceUSD: 1100,
+    dodoProductId: "pdt_island_duplex", // TODO: replace with actual Dodo product ID
     beds: 3,
     baths: 2,
     area: "250 m²",
@@ -61,6 +65,7 @@ export const designs: Design[] = [
     name: "Marina Office",
     type: "COMMERCIAL",
     priceUSD: 1800,
+    dodoProductId: "pdt_marina_office", // TODO: replace with actual Dodo product ID
     beds: 0,
     baths: 2,
     area: "200 m²",
@@ -75,6 +80,7 @@ export const designs: Design[] = [
     name: "Victoria Tower",
     type: "COMMERCIAL",
     priceUSD: 3200,
+    dodoProductId: "pdt_victoria_tower", // TODO: replace with actual Dodo product ID
     beds: 0,
     baths: 3,
     area: "350 m²",
@@ -89,6 +95,7 @@ export const designs: Design[] = [
     name: "Lekki Mixed-Use",
     type: "MIXED-USE",
     priceUSD: 2500,
+    dodoProductId: "pdt_lekki_mixed", // TODO: replace with actual Dodo product ID
     beds: 2,
     baths: 2,
     area: "280 m²",
