@@ -3,7 +3,6 @@ import { Inter, Space_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import JsonLd from "@/components/json-ld";
 import { CookieConsentProvider } from "@/components/layout/CookieConsent";
 
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
@@ -20,24 +19,14 @@ export const metadata: Metadata = {
     default: "Realmaxville — Architectural Designs & Structural Engineering",
   },
   description:
-    "WE DON'T JUST BUILD STRUCTURES, WE BUILD LEGACIES. Professional architectural design, construction, renovation and building plan services in Lagos, Nigeria. Buy architectural plans online.",
+    "WE DON'T JUST BUILD STRUCTURES, WE BUILD LEGACIES. Professional architectural design, construction, renovation and building plan services in Lagos, Nigeria.",
   keywords: [
     "architecture",
     "construction",
     "building plans",
-    "architectural designs for sale",
-    "buy building plans online",
     "interior design",
     "Lagos",
     "Nigeria",
-    "architectural firm Lagos",
-    "building construction Nigeria",
-    "residential architecture",
-    "commercial architecture",
-    "floor plans",
-    "structural engineering",
-    "renovation",
-    "realmaxville",
   ],
   icons: {
     icon: "/images/logo1.png",
@@ -64,7 +53,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${spaceMono.variable} h-full antialiased dark scroll-smooth`}>
       <body className="min-h-full flex flex-col bg-[#050505] text-[#e5e2e1] overflow-x-hidden font-sans">
-        <JsonLd />
         <CookieConsentProvider>
           <a href="#main-content" className="skip-link">
             Skip to main content

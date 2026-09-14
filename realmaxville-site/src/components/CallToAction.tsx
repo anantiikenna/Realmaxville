@@ -19,23 +19,23 @@ export default function CallToAction() {
             <span className="text-[#FFD700]">EXTRAORDINARY TOGETHER.</span>
           </h2>
           <p className="relative z-10 text-[#b0b3b4] text-lg max-w-2xl mx-auto leading-relaxed">
-            Ready to turn your vision into a legacy? Browse our ready-made architectural plans or connect with our team for a custom design.
+            Ready to turn your vision into a legacy? Connect with our team of innovators and engineers today.
           </p>
-          <div className="relative z-10 flex flex-col md:flex-row justify-center gap-4 pt-8">
+          <div className="relative z-10 flex flex-col md:flex-row justify-center gap-6 pt-8">
             <Link
-              href="/designs"
+              href="/contact"
               className="btn-cta glow-hover h-12 px-12 flex items-center justify-center gap-2"
             >
-              BROWSE DESIGNS
+              REQUEST A QUOTE
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </Link>
             <Link
-              href="/contact"
+              href="/projects"
               className="border border-white/30 text-white h-12 px-12 rounded-full font-(--font-space-mono) text-[11px] tracking-[0.2em] uppercase hover:bg-white/10 hover:border-white/60 transition-all flex items-center justify-center"
             >
-              REQUEST A QUOTE
+              BOOK CONSULTATION
             </Link>
           </div>
         </div>
