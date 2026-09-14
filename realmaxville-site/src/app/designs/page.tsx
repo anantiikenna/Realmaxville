@@ -17,14 +17,6 @@ const faqs = [
     a: "Our pre-designed plans range from $1,100 (₦1,650,000) to $3,200 (₦4,800,000) depending on size and complexity. Custom designs start from $2,000. Prices are displayed in your local currency — ₦ for Nigerian customers, $ for international.",
   },
   {
-    q: "Can I buy architectural plans from outside Nigeria?",
-    a: "Yes. We sell designs worldwide. International customers pay in USD via credit/debit card through our secure payment partner Dodo Payments. Plans are delivered digitally via email — no shipping required.",
-  },
-  {
-    q: "What currency do international customers pay in?",
-    a: "International customers pay in USD (US Dollars). Nigerian customers see prices in ₦ (Naira). Dodo Payments handles currency conversion automatically at checkout.",
-  },
-  {
     q: "Can I modify the plans after purchase?",
     a: "Yes. The plans serve as a complete base for construction. Most contractors can make minor adjustments on-site. For significant modifications, we recommend consulting with a local architect or contacting us for a custom design.",
   },
@@ -47,14 +39,6 @@ const faqs = [
   {
     q: "Can I see the designs before purchasing?",
     a: "Yes. Each design page includes multiple high-resolution images showing the exterior, interior, floor plan, and key features. You can browse all images in the gallery before deciding.",
-  },
-  {
-    q: "Do you ship physical plans internationally?",
-    a: "No. All plans are delivered digitally via email as PDF files. This means instant delivery worldwide — no shipping delays or costs regardless of your location.",
-  },
-  {
-    q: "How do I know which design is right for me?",
-    a: "Each design page shows the plot size, number of bedrooms, floor area, building floors, and style. Compare these specs with your requirements. If you're unsure, contact us on WhatsApp for free consultation.",
   },
 ];
 
